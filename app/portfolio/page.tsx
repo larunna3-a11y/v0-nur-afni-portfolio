@@ -35,14 +35,14 @@ const caseStudies = [
     id: 4,
     categories: ['E-Commerce'],
     brand: 'Livestream Campaigns',
-    result: 'Peak ROAS 96.2 (voucher) · 37.3 (livestream)',
-    description: 'Voucher and livestream commerce campaigns achieving exceptional ROAS through strategic discount mechanics and live selling.',
-    metrics: ['96.2 ROAS', '37.3 livestream ROAS', '14.7 affiliate ROAS'],
+    result: '37.3',
+    description: 'Transformation set up projects for livestream commerce campaigns or Priskila achieving exceptional ROAS through strategic discount mechanics and live selling.',
+    metrics: ['37.3 livestream ROAS'],
   },
   {
     id: 5,
     categories: ['Social Media'],
-    brand: 'Islamcendekia.id — Digital Krew',
+    brand: 'Islamcendekia.id',
     result: '6.7K → 17K followers in 4 months',
     description: 'Organic Instagram growth through short-form content strategy, trend-based posting, and campaign-period content spikes.',
     metrics: ['+189% follower growth', '+81.3% engagement rate', '+62.9% impressions', '2M+ total engagement'],
@@ -61,7 +61,7 @@ const caseStudies = [
     brand: 'KOL & Affiliate Campaign — QCY Indonesia',
     result: '200+ orders · Rp36.2M GMV · 14.7 ROAS',
     description: 'Creator and affiliate campaign managed end-to-end — from brief to performance report — across TikTok Affiliate and Shopee Affiliate.',
-    metrics: ['200+ orders', 'Rp36.2M GMV', '14.7 ROAS', '139 tracked orders'],
+    metrics: ['200+ orders', 'Rp36.2M GMV', '14.7 ROAS', '150 tracked orders'],
   },
 ]
 
