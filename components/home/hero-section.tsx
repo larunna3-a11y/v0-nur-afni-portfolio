@@ -1,4 +1,4 @@
-
+import Image from 'next/image'
 
 const stats = [
   { value: 'Rp760M', label: 'Peak Revenue' },
