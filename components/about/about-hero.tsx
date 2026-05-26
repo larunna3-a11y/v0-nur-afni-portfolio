@@ -15,7 +15,7 @@ export function AboutHero() {
           </div>
           
           {/* Right Column */}
-          <div className="space-y-6 text-[#9B97C0] leading-relaxed">
+          <div className="space-y-6 text-[#ffffff] leading-relaxed">
             <p>
               {"I'm a Digital Marketing Specialist with 3+ years of experience helping consumer, tech, and education brands grow across social media, paid ads, and marketplace platforms."}
             </p>
