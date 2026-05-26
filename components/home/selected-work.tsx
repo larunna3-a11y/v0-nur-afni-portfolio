@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 const works = [
   {
-    category: 'E-Commerce · Paid Ads',
-    brand: 'QCY & Choetech',
+    category: 'E-Commerce Management',
+    brand: 'Priskila',
     result: 'Rp24M → Rp760M (31x growth)',
     bg: 'bg-[#2D1BB8]',
     link: '/portfolio/ecommerce-growth',
