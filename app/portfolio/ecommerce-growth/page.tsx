@@ -127,14 +127,15 @@ export default function EcommerceGrowthCaseStudy() {
           
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">E-Commerce</span>
-            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Paid Ads</span>
+            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Beauty & Perfumery</span>
             <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Marketplace</span>
           </div>
           
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             E-Commerce Growth Journey
           </h1>
-          <p className="mt-2 text-xl text-[#9B97C0]">QCY & Choetech — PT Ecotech Teknologi</p>
+          <p className="mt-2 text-xl text-[#9B97C0]">Priskila — Beauty & Perfumery Products</p>
+          <p className="mt-1 text-sm text-[#9B97C0]">Brands: Casablanca, Bellagio, Regazza, Camellia, Marie Jose, Excello</p>
           
           <div className="mt-8 flex flex-wrap gap-6">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
