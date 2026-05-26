@@ -9,7 +9,7 @@ const caseStudies = [
   {
     id: 1,
     categories: ['E-Commerce', 'Paid Ads'],
-    brand: 'QCY & Choetech — PT Ecotech Teknologi',
+    brand: 'Priskila — Beauty & Perfumery Products',
     result: 'Rp24M → Rp760M in 19 months (31x growth)',
     description: 'Integrated marketplace and paid ads strategy driving consistent month-over-month revenue growth across Shopee, TikTok Shop, and Tokopedia.',
     metrics: ['31x revenue growth', '21.6K peak monthly orders', '+125% conversion improvement'],
