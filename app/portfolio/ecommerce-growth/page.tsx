@@ -18,6 +18,7 @@ import {
   Area,
 } from 'recharts'
 import { ChevronLeft, ChevronRight, TrendingUp, ShoppingCart, Target, Calendar } from 'lucide-react'
+const categories = ['Shopee', 'TikTok Shop', 'Lazada']
 
 // Monthly data extracted from screenshots (chronological order)
 const monthlyData = [
