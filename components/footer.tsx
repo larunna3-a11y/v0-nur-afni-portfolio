@@ -6,7 +6,6 @@ const footerLinks = {
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
     { href: '/portfolio', label: 'Portfolio' },
-    { href: '/kol-network', label: 'KOL Network' },
     { href: '/contact', label: 'Contact' },
   ],
   services: [
