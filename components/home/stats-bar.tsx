@@ -1,7 +1,7 @@
 const stats = [
-  { value: 'Rp286M', label: 'Campaign Sales' },
-  { value: '96.2', label: 'Peak ROAS' },
-  { value: '+189%', label: 'Follower Growth' },
+  { value: 'Rp760M', label: 'Peak Revenue' },
+  { value: '31x', label: 'Revenue Growth' },
+  { value: '21.6K', label: 'Peak Orders' },
   { value: '2M+', label: 'Total Engagement' },
   { value: 'Rp500M', label: 'Budget Managed' },
 ]

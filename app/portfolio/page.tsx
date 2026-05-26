@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL']
 
@@ -9,9 +10,10 @@ const caseStudies = [
     id: 1,
     categories: ['E-Commerce', 'Paid Ads'],
     brand: 'QCY & Choetech — PT Ecotech Teknologi',
-    result: 'Rp95.7M → Rp180.4M in 4 months',
+    result: 'Rp24M → Rp760M in 19 months (31x growth)',
     description: 'Integrated marketplace and paid ads strategy driving consistent month-over-month revenue growth across Shopee, TikTok Shop, and Tokopedia.',
-    metrics: ['88.5% revenue growth', 'ROAS up to 24 (Meta CPAS)', 'Rp100–500M budget managed'],
+    metrics: ['31x revenue growth', '21.6K peak monthly orders', '+125% conversion improvement'],
+    link: '/portfolio/ecommerce-growth',
   },
   {
     id: 2,
@@ -133,9 +135,15 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* Link */}
-                <button className="mt-6 text-[#2D1BB8] text-sm font-medium hover:underline">
-                  View Case Study →
-                </button>
+                {study.link ? (
+                  <Link href={study.link} className="mt-6 inline-block text-[#2D1BB8] text-sm font-medium hover:underline">
+                    View Case Study →
+                  </Link>
+                ) : (
+                  <button className="mt-6 text-[#2D1BB8] text-sm font-medium hover:underline">
+                    View Case Study →
+                  </button>
+                )}
               </div>
             ))}
           </div>

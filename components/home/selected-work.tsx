@@ -4,8 +4,9 @@ const works = [
   {
     category: 'E-Commerce · Paid Ads',
     brand: 'QCY & Choetech',
-    result: 'Rp95.7M → Rp180.4M in 4 months',
+    result: 'Rp24M → Rp760M (31x growth)',
     bg: 'bg-[#2D1BB8]',
+    link: '/portfolio/ecommerce-growth',
   },
   {
     category: 'Product Launch',
@@ -33,16 +34,32 @@ export function SelectedWork() {
         
         {/* Works Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {works.map((work) => (
-            <div
-              key={work.brand}
-              className={`${work.bg} rounded-2xl p-8 text-white`}
-            >
-              <p className="text-sm uppercase tracking-wider opacity-70">{work.category}</p>
-              <h3 className="mt-3 text-xl font-bold">{work.brand}</h3>
-              <p className="mt-2 text-[#F97316] font-semibold">{work.result}</p>
-            </div>
-          ))}
+          {works.map((work) => {
+            const content = (
+              <>
+                <p className="text-sm uppercase tracking-wider opacity-70">{work.category}</p>
+                <h3 className="mt-3 text-xl font-bold">{work.brand}</h3>
+                <p className="mt-2 text-[#F97316] font-semibold">{work.result}</p>
+              </>
+            )
+            
+            return work.link ? (
+              <Link
+                key={work.brand}
+                href={work.link}
+                className={`${work.bg} rounded-2xl p-8 text-white hover:scale-105 transition-transform`}
+              >
+                {content}
+              </Link>
+            ) : (
+              <div
+                key={work.brand}
+                className={`${work.bg} rounded-2xl p-8 text-white`}
+              >
+                {content}
+              </div>
+            )
+          })}
         </div>
         
         {/* Link */}

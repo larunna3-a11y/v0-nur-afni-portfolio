@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
 const stats = [
-  { value: 'Rp286M', label: 'Campaign Sales' },
-  { value: '96.2', label: 'Peak ROAS' },
+  { value: 'Rp760M', label: 'Peak Revenue' },
+  { value: '31x', label: 'Revenue Growth' },
   { value: '+189%', label: 'Follower Growth' },
 ]
 
@@ -36,7 +36,7 @@ export function HeroSection() {
             
             {/* Bio */}
             <p className="mt-6 text-[#9B97C0] leading-relaxed max-w-lg">
-              3+ years scaling brands across social media, paid ads, and marketplaces. I turn campaigns into measurable growth — from Rp95.7M to Rp180.4M in 4 months.
+              3+ years scaling brands across social media, paid ads, and marketplaces. I turn campaigns into measurable growth — from Rp24M to Rp760M in 19 months (31x).
             </p>
             
             {/* Stats Cards */}
