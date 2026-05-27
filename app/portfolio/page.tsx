@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL']
+const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate']
 
 const caseStudies = [
   {
@@ -19,7 +19,7 @@ const caseStudies = [
     id: 2,
     categories: ['E-Commerce', 'Paid Ads'],
     brand: 'QCY Indonesia',
-    result: 'Rp92M revenue · 500+ orders on day one',
+    result: 'Rp92M revenue · 250+ orders on day one',
     description: 'New Release projects and multi-marketplace product launch campaign combining paid ads, flash sale, voucher, and affiliate strategy for maximum launch-day impact.',
     metrics: ['Rp92M day-one revenue', '500+ orders', 'Multi-platform execution'],
   },
@@ -35,9 +35,9 @@ const caseStudies = [
     id: 4,
     categories: ['Paid Ads', 'E-Commerce'],
     brand: 'Livestream Campaigns',
-    result: 'ROAS 37.3',
-    description: 'Transformation set up projects for Priskila livestream commerce campaigns restructuring set and achieving exceptional ROAS through strategic discount mechanics, creative set up and live selling.',
-    metrics: ['Achive 37.3 livestream ROAS'],
+    result: 'ROAS 2.43 → 7.52',
+    description: 'Transformation set up projects for Priskila livestream commerce campaigns restructuring set and achieving exceptional ROAS through strategic discount mechanics, creative set up and live selling. aLSO Sustaining livestream frequency average30–50 streams/month consistently',
+    metrics: ['Rp87M rev on May 2026', '90–105 → 1.2K–1.6K orders', '2.5K → 82K+ visitors'],
   },
   {
     id: 5,
@@ -60,8 +60,8 @@ const caseStudies = [
     categories: ['KOL & Affiliate'],
     brand: 'QCY Indonesia',
     result: '200+ orders · Rp36.2M GMV · 14.7 ROAS',
-    description: 'Creator and affiliate campaign managed end-to-end. From brief to performance report, across TikTok Affiliate and Shopee Affiliate.',
-    metrics: ['200+ orders', 'Rp36.2M GMV', '14.7 ROAS', '150 tracked orders'],
+    description: 'KOL Creators and affiliate campaign managed end-to-end. From brief to performance report, across TikTok Affiliate and Shopee Affiliate.',
+    metrics: ['250+ orders', 'Rp36.2M GMV', '14.7 ROAS', '150 tracked orders'],
   },
 ]
 
