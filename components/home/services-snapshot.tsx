@@ -24,7 +24,7 @@ const services = [
   },
   {
     icon: Users,
-    title: 'KOL & Affiliate & Affiliator Strategy',
+    title: 'KOL & Affiliator Strategy',
     description: 'Creator and affiliate campaign management from brief to performance report.',
   },
 ]
@@ -40,7 +40,7 @@ export function ServicesSnapshot() {
             End-to-end digital marketing across every channel that drives growth.
           </p>
         </div>
-
+        
         {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
@@ -60,7 +60,7 @@ export function ServicesSnapshot() {
             </div>
           ))}
         </div>
-
+        
         {/* Link */}
         <div className="mt-10 text-center">
           <Link

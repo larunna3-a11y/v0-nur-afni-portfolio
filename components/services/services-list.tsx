@@ -62,12 +62,12 @@ const services = [
     idealFor: 'Brands launching a new product or entering a new platform and need a roadmap',
   },
   {
-    id: 'KOL & Affiliate',
+    id: 'kol',
     icon: Users,
-    title: 'KOL & Affiliate & Affiliator Strategy',
+    title: 'KOL & Affiliator Strategy',
     description: 'End-to-end creator and affiliate campaign management — from identifying the right creators to tracking GMV and ROAS per campaign.',
     deliverables: [
-      'KOL & Affiliate/creator shortlisting & briefs',
+      'KOL/creator shortlisting & briefs',
       'Campaign concept & talking points',
       'Posting schedule coordination',
       'Affiliate link/voucher setup',
@@ -100,7 +100,7 @@ export function ServicesList() {
                   <span className="font-medium">Ideal for:</span> {service.idealFor}
                 </p>
               </div>
-
+              
               {/* Right - Deliverables & Tools */}
               <div className="space-y-8">
                 {/* Deliverables */}
@@ -117,7 +117,7 @@ export function ServicesList() {
                     ))}
                   </ul>
                 </div>
-
+                
                 {/* Tools */}
                 <div>
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-[#2D1BB8] mb-4">
