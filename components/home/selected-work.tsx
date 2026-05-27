@@ -39,7 +39,7 @@ export function SelectedWork() {
               <>
                 <p className="text-sm uppercase tracking-wider opacity-70">{work.category}</p>
                 <h3 className="mt-3 text-xl font-bold">{work.brand}</h3>
-                <p className="mt-2 text-[#F97316] font-semibold">{work.result}</p>
+                <p className="mt-2 text-[#ffffffb6] font-semibold">{work.result}</p>
               </>
             )
             
