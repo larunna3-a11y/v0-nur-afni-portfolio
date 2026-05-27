@@ -21,7 +21,7 @@ const caseStudies = [
     brand: 'QCY Indonesia',
     result: 'Rp92M revenue · 250+ orders on day one',
     description: 'New Release projects and multi-marketplace product launch campaign combining paid ads, flash sale, voucher, and affiliate strategy for maximum launch-day impact.',
-    metrics: ['Rp92M day-one revenue', '500+ orders', 'Multi-platform execution'],
+    metrics: ['Rp92M day-one revenue', '250+ orders', 'Multi-platform execution'],
   },
   {
     id: 3,
