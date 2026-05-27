@@ -57,10 +57,10 @@ const caseStudies = [
   },
   {
     id: 7,
-    categories: ['KOL'],
-    brand: 'KOL & Affiliate Campaign — QCY Indonesia',
+    categories: ['KOL & Affiliate'],
+    brand: 'QCY Indonesia',
     result: '200+ orders · Rp36.2M GMV · 14.7 ROAS',
-    description: 'Creator and affiliate campaign managed end-to-end — from brief to performance report — across TikTok Affiliate and Shopee Affiliate.',
+    description: 'Creator and affiliate campaign managed end-to-end. From brief to performance report, across TikTok Affiliate and Shopee Affiliate.',
     metrics: ['200+ orders', 'Rp36.2M GMV', '14.7 ROAS', '150 tracked orders'],
   },
 ]
