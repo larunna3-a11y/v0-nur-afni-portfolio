@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate']
+const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate', 'Livestream']
 
 const caseStudies = [
   {
@@ -33,11 +33,11 @@ const caseStudies = [
   },
   {
     id: 4,
-    categories: ['Paid Ads', 'E-Commerce'],
-    brand: 'Livestream Campaigns',
+    categories: ['Livestream', 'E-Commerce'],
+    brand: 'Priskila Official Store',
     result: 'ROAS 2.43 → 7.52',
     description: 'Transformation set up projects for Priskila livestream commerce campaigns restructuring set and achieving exceptional ROAS through strategic discount mechanics, creative set up and live selling. aLSO Sustaining livestream frequency average30–50 streams/month consistently',
-    metrics: ['Rp87M rev on May 2026', '90–105 → 1.2K–1.6K orders', '2.5K → 82K+ visitors'],
+    metrics: ['Peak Revenue Rp89M', '90–105 → 1.2K–1.6K orders', '2.5K → 82K+ visitors'],
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const caseStudies = [
     brand: 'QCY Indonesia',
     result: '200+ orders · Rp36.2M GMV · 14.7 ROAS',
     description: 'KOL Creators and affiliate campaign managed end-to-end. From brief to performance report, across TikTok Affiliate and Shopee Affiliate.',
-    metrics: ['250+ orders', 'Rp36.2M GMV', '14.7 ROAS', '150 tracked orders'],
+    metrics: ['250+ orders', 'Rp36.2M GMV', '14.7 ROAS'],
   },
 ]
 
