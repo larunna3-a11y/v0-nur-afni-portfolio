@@ -16,8 +16,8 @@ const skillCategories = [
     skills: ['Marketplace Optimization', 'Product Launch Campaigns', 'Flash Sale & Seasonal Campaigns', 'Voucher Strategy', 'Livestream Commerce'],
   },
   {
-    category: 'KOL & Affiliate',
-    skills: ['KOL & Influencer Campaigns', 'Affiliate Campaign Strategy', 'TikTok Affiliate', 'Shopee Affiliate', 'Creator Briefs'],
+    category: 'KOL & Affiliate & Affiliate',
+    skills: ['KOL & Affiliate & Influencer Campaigns', 'Affiliate Campaign Strategy', 'TikTok Affiliate', 'Shopee Affiliate', 'Creator Briefs'],
   },
 ]
 
@@ -29,7 +29,7 @@ export function CoreSkills() {
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#0F0A2E]">Core Skills</h2>
         </div>
-        
+
         {/* Skills Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((cat) => (

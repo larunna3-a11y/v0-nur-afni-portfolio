@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL']
+const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate']
 
 const caseStudies = [
   {
@@ -57,7 +57,7 @@ const caseStudies = [
   },
   {
     id: 7,
-    categories: ['KOL & Affiliate'],
+    categories: ['KOL & Affiliate & Affiliate'],
     brand: 'QCY Indonesia',
     result: '200+ orders · Rp36.2M GMV · 14.7 ROAS',
     description: 'Creator and affiliate campaign managed end-to-end. From brief to performance report, across TikTok Affiliate and Shopee Affiliate.',
@@ -91,11 +91,10 @@ export default function PortfolioPage() {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeFilter === cat
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${activeFilter === cat
                     ? 'bg-[#2D1BB8] text-white'
                     : 'bg-[#E8E6F8] text-[#4B4680] hover:bg-[#2D1BB8] hover:text-white'
-                }`}
+                  }`}
               >
                 {cat}
               </button>
