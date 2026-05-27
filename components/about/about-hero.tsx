@@ -23,7 +23,7 @@ export function AboutHero() {
               {"My work sits at the intersection of strategy and execution — I don't just plan campaigns, I run them end-to-end, optimize in real time, and report on what actually matters: revenue, ROAS, and sustainable growth."}
             </p>
             <p>
-              {"Based in Jakarta, I've worked across Shopee, TikTok Shop, Tokopedia, Lazada, Meta Ads, and TikTok Ads — managing budgets up to Rp500M and campaigns that have driven Rp286M in a single season."}
+              {"Based in Jakarta, I've worked across Shopee, TikTok Shop, Tokopedia, Lazada, Meta Ads, and TikTok Ads — managing budgets up to Rp500M+ and campaigns that have driven Rp286M in a single season."}
             </p>
           </div>
         </div>

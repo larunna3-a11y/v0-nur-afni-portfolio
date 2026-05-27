@@ -3,7 +3,7 @@ const stats = [
   { value: '31x', label: 'Revenue Growth' },
   { value: '21.6K', label: 'Peak Orders' },
   { value: '2M+', label: 'Total Engagement' },
-  { value: 'Rp500M', label: 'Budget Managed' },
+  { value: 'Rp500M+', label: 'Budget Managed' },
 ]
 
 export function StatsBar() {
