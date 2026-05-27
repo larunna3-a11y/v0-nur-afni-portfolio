@@ -139,15 +139,15 @@ export default function EcommerceGrowthCaseStudy() {
           
           <div className="mt-8 flex flex-wrap gap-6">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p className="text-3xl font-bold text-[#ffffff]">31x</p>
+              <p className="text-3xl font-bold text-[#F97316]">31x</p>
               <p className="text-sm text-[#9B97C0]">Revenue Growth</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p className="text-3xl font-bold text-white">Rp24M → Rp760M</p>
+              <p className="text-3xl font-bold text-[#F97316]">Rp24M → Rp760M</p>
               <p className="text-sm text-[#9B97C0]">Monthly Revenue</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p className="text-3xl font-bold text-white">19 Months</p>
+              <p className="text-3xl font-bold text-[#F97316]">19 Months</p>
               <p className="text-sm text-[#9B97C0]">Progress Period</p>
             </div>
           </div>
