@@ -20,7 +20,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-[#2D1BB8] font-bold text-xl">
-            Nur Afni
+            Home
           </Link>
 
           {/* Desktop Navigation */}
