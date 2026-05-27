@@ -226,7 +226,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#0F0A2E]">LinkedIn</h3>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#2D1BB8] hover:underline">
+                    <a href="https://www.linkedin.com/in/nour-afni/" target="_blank" rel="noopener noreferrer" className="text-[#2D1BB8] hover:underline">
                       Connect on LinkedIn
                     </a>
                   </div>
