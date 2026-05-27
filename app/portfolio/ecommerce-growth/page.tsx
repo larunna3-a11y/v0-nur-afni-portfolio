@@ -78,7 +78,7 @@ const growthPhases = [
     phase: 'Phase 2: Recovery & Optimization',
     period: 'Jan - Jun 2025',
     description: 'After year-end dip, implemented refined promotional strategies. Focused on conversion rate improvement and cost-efficient advertising.',
-    keyActions: ['Shopee ADS Optimisation', 'Flash sale timing improvements', 'Platform campaign activations' 'Affiliate program launch'],
+    keyActions: ['Shopee ADS Optimisation', 'Flash sale timing improvements', 'Platform campaign activations', 'Affiliate program launch'],
     result: 'Conversion rate improved from 2.84% to 3.91%',
   },
   {
