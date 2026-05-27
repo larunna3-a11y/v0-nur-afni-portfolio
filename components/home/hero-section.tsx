@@ -58,9 +58,9 @@ export function HeroSection() {
             <div className="relative">
               {/* Purple glow halo */}
               <div className="absolute inset-0 bg-[#4A35D4] rounded-full blur-2xl opacity-50 scale-110" />
-              <div className="relative w-64 h-64 sm:w-100 sm:h-100 lg:w-100 lg:h-100 rounded-full border-4 border-white/13 overflow-hidden">
+              <div className="relative w-50 h-50 sm:w-50 sm:h-140 lg:w-140 lg:h-140 rounded-full border-4 border-white/13 overflow-hidden">
                 <Image
-                  src="nurafni.jpg"
+                  src="Front profile.png"
                   alt="Nur Afni - Digital Marketing Specialist"
                   fill
                   className="object-cover"
