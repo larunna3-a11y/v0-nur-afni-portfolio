@@ -60,7 +60,7 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-[#4A35D4] rounded-full blur-2xl opacity-50 scale-110" />
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full border-4 border-white/13 overflow-hidden">
                 <Image
-                  src="profile/nurafni.jpg"
+                  src="public/nurafni.jpg"
                   alt="Nur Afni - Digital Marketing Specialist"
                   fill
                   className="object-cover"
