@@ -67,6 +67,21 @@ const screenshots = [
   { month: 'May 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.45-WvSL57nJyYoeCIBcK35jCfgLbXgJau.png', revenue: 'Rp982.57M', highlight: '+42.39% Q2 New Peak' },
 ]
 
+const tiktokScreenshots = [
+{ month: 'June 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jun25.png', revenue: 'Rp28.4M', highlight: 'Starting Point' },
+{ month: 'July 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jul25.png', revenue: 'Rp38.7M', highlight: '+35.6% Early Growth' },
+{ month: 'August 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aug25.png', revenue: 'Rp70.8M', highlight: '+83% Scale-Up' },
+{ month: 'September 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sep25.png', revenue: 'Rp89.7M', highlight: '+30.5% Momentum' },
+{ month: 'October 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/oct25.png', revenue: 'Rp137.7M', highlight: '+49% Campaign Boost' },
+{ month: 'November 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nov25.png', revenue: 'Rp220M', highlight: '+63.7% Breakthrough' },
+{ month: 'December 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dec25.png', revenue: 'Rp625.1M', highlight: '+169% Viral Peak' },
+{ month: 'January 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jan26.png', revenue: 'Rp244.7M', highlight: 'Post-Holiday Reset' },
+{ month: 'February 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/feb26.png', revenue: 'Rp317.6M', highlight: '+47% Recovery' },
+{ month: 'March 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mar26.png', revenue: 'Rp539.3M', highlight: '+56.7% Ramadan Push' },
+{ month: 'April 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/apr26.png', revenue: 'Rp736M', highlight: '+43.7% Expansion' },
+{ month: 'May 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/may26.png', revenue: 'Rp760.1M', highlight: 'Highest Monthly GMV' }
+]
+
 const tiktokMonthlyData = [
   { month: 'Jun 25', revenue: 28.43, orders: 761, conversion: 2.10, growth: null },
   { month: 'Jul 25', revenue: 38.69, orders: 1074, conversion: 2.35, growth: 35.56 },
