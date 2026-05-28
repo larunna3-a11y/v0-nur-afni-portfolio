@@ -67,6 +67,21 @@ const screenshots = [
   { month: 'May 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.45-WvSL57nJyYoeCIBcK35jCfgLbXgJau.png', revenue: 'Rp982.57M', highlight: '+42.39% Q2 New Peak' },
 ]
 
+const tiktokMonthlyData = [
+  { month: 'Jun 25', revenue: 28.43, orders: 761, conversion: 2.10, growth: null },
+  { month: 'Jul 25', revenue: 38.69, orders: 1074, conversion: 2.35, growth: 35.56 },
+  { month: 'Aug 25', revenue: 70.83, orders: 1978, conversion: 2.88, growth: 83.06 },
+  { month: 'Sep 25', revenue: 89.66, orders: 2626, conversion: 3.12, growth: 30.56 },
+  { month: 'Oct 25', revenue: 137.69, orders: 4094, conversion: 3.48, growth: 49.03 },
+  { month: 'Nov 25', revenue: 219.95, orders: 6758, conversion: 3.91, growth: 63.68 },
+  { month: 'Dec 25', revenue: 625.13, orders: 16721, conversion: 4.42, growth: 169.40 },
+  { month: 'Jan 26', revenue: 244.67, orders: 7766, conversion: 3.55, growth: -60.86 },
+  { month: 'Feb 26', revenue: 317.63, orders: 11611, conversion: 3.89, growth: 47.30 },
+  { month: 'Mar 26', revenue: 539.25, orders: 19747, conversion: 4.31, growth: 56.66 },
+  { month: 'Apr 26', revenue: 736.01, orders: 26861, conversion: 4.54, growth: 43.69 },
+  { month: 'May 26', revenue: 760.16, orders: 31027, conversion: 4.54, growth: 9.16 },
+]
+
 // Growth phases for narrative
 const growthPhases = [
   {
@@ -104,19 +119,21 @@ export default function EcommerceGrowthCaseStudy() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedPlatform, setSelectedPlatform] = useState('Shopee')
   const platformData = {
-    shopee: {
-      monthlyData: shopeeMonthlyData,
-      screenshots: screenshots
-    },
+  shopee: {
+    monthlyData: shopeeMonthlyData,
+    screenshots: screenshots
+  },
 
-    tiktok: {
-      shopeeMonthlyData
-    },
+  tiktok: {
+    monthlyData: tiktokMonthlyData,
+    screenshots: screenshots
+  },
 
-    lazada: {
-      shopeeMonthlyData
-    }
+  lazada: {
+    monthlyData: shopeeMonthlyData,
+    screenshots: screenshots
   }
+}
 
   const activeScreenshots =
     platformData[selectedPlatform.toLowerCase()].screenshots
