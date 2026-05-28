@@ -372,7 +372,7 @@ export default function EcommerceGrowthCaseStudy() {
             {/* Timeline Navigation */}
             <div className="mt-8 overflow-x-auto pb-4">
               <div className="flex gap-2 min-w-max">
-                {screenshots.map((shot, index) => (
+                {activeScreenshots.map((shot, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
