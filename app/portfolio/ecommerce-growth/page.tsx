@@ -119,24 +119,24 @@ export default function EcommerceGrowthCaseStudy() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedPlatform, setSelectedPlatform] = useState('shopee')
   const platformData = {
-  shopee: {
-    monthlyData: shopeeMonthlyData,
-    screenshots: screenshots
-  },
+    shopee: {
+      monthlyData: shopeeMonthlyData,
+      screenshots: screenshots
+    },
 
-  'tiktok shop': {
-    monthlyData: tiktokMonthlyData,
-    screenshots: screenshots
-  },
+    'tiktok shop': {
+      monthlyData: tiktokMonthlyData,
+      screenshots: screenshots
+    },
 
-  lazada: {
-    monthlyData: shopeeMonthlyData,
-    screenshots: screenshots
+    lazada: {
+      monthlyData: shopeeMonthlyData,
+      screenshots: screenshots
+    }
   }
-}
 
   const activeScreenshots =
-  platformData[selectedPlatform as keyof typeof platformData].screenshots
+    platformData[selectedPlatform as keyof typeof platformData].screenshots
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % activeScreenshots.length)
@@ -243,7 +243,7 @@ export default function EcommerceGrowthCaseStudy() {
 
           <div className="bg-white rounded-2xl border border-[#E8E6F8] p-6">
             <ResponsiveContainer width="100%" height={400}>
-              <AreaChart data={platformData[selectedPlatform].monthlyData}>
+              <AreaChart data={platformData[selectedPlatform as keyof typeof platformData].monthlyData}>
                 <defs>
                   <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#2D1BB8" stopOpacity={0.3} />
@@ -275,7 +275,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={platformData[selectedPlatform].monthlyData}>
+                  <BarChart data={platformData[selectedPlatform as keyof typeof platformData].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} />
@@ -296,7 +296,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={platformData[selectedPlatform].monthlyData}>
+                  <LineChart data={platformData[selectedPlatform as keyof typeof platformData].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} tickFormatter={(v) => `${v}%`} domain={[0, 5]} />
