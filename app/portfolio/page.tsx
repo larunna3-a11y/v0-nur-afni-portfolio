@@ -3,14 +3,14 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate', 'Livestream']
+const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate']
 
 const caseStudies = [
   {
     id: 1,
     categories: ['E-Commerce', 'Paid Ads'],
     brand: 'Priskila Prima Makmur',
-    result: 'Rp24M → Rp760M',
+    result: 'Rp24M → Rp760M in 19 months (31x growth)',
     description: 'Projects on Casablanca, Bellagio, Regazza, Camellia, Marie Jose, Excello. Integrated marketplace and paid ads strategy driving consistent month-over-month revenue growth across Shopee, TikTok Shop, and Tokopedia.',
     metrics: ['31x revenue growth', '21.6K peak monthly orders', '+125% conversion improvement'],
     link: '/portfolio/ecommerce-growth',
@@ -19,7 +19,7 @@ const caseStudies = [
     id: 2,
     categories: ['E-Commerce', 'Paid Ads'],
     brand: 'QCY Indonesia',
-    result: 'Rp92M revenue · 250+ orders on Launch day',
+    result: 'Rp92M revenue · 250+ orders on day one',
     description: 'New Release projects and multi-marketplace product launch campaign combining paid ads, flash sale, voucher, and affiliate strategy for maximum launch-day impact.',
     metrics: ['Rp92M day-one revenue', '250+ orders', 'Multi-platform execution'],
   },
@@ -33,11 +33,11 @@ const caseStudies = [
   },
   {
     id: 4,
-    categories: ['Livestream', 'E-Commerce'],
-    brand: 'Priskila Official Store',
+    categories: ['Paid Ads', 'E-Commerce'],
+    brand: 'Livestream Campaigns',
     result: 'ROAS 2.43 → 7.52',
     description: 'Transformation set up projects for Priskila livestream commerce campaigns restructuring set and achieving exceptional ROAS through strategic discount mechanics, creative set up and live selling. aLSO Sustaining livestream frequency average30–50 streams/month consistently',
-    metrics: ['Peak Revenue Rp89M', '90–105 → 1.2K–1.6K orders', '2.5K → 82K+ visitors'],
+    metrics: ['Rp87M rev on May 2026', '90–105 → 1.2K–1.6K orders', '2.5K → 82K+ visitors'],
   },
   {
     id: 5,
@@ -59,9 +59,9 @@ const caseStudies = [
     id: 7,
     categories: ['KOL & Affiliate'],
     brand: 'QCY Indonesia',
-    result: '200+ orders · Rp36.2M GMV · 14.7 ROAS',
+    result: '150+ orders · Rp36.2M GMV · 14.7 ROAS',
     description: 'KOL Creators and affiliate campaign managed end-to-end. From brief to performance report, across TikTok Affiliate and Shopee Affiliate.',
-    metrics: ['250+ orders', 'Rp36.2M GMV', '14.7 ROAS'],
+    metrics: ['150+ orders', 'Rp36.2M GMV', '14.7 ROAS'],
   },
 ]
 
