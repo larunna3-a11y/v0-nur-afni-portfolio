@@ -62,24 +62,24 @@ const screenshots = [
   { month: 'November 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.14-uOix7ZDM2A0q9F1VM2bOencvUGJdPE.png', revenue: 'Rp296.94M', highlight: 'Post-Campaign' },
   { month: 'December 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.21-cYQoXbuuyapYRkNUMQ5x5LoZvC9Lzy.png', revenue: 'Rp329.57M', highlight: 'Year-End Strong' },
   { month: 'February 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.34-obfCmkvnepxFLCcPI3spacDZ8Xuvt4.png', revenue: 'Rp553.53M', highlight: '+53.9% New Year Push' },
-  { month: 'March 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.40-tZRlfsQPw3njIhQcQcQYU7frzHvw5s.png', revenue: 'Rp566.89M', highlight: 'Ramadan Campaign' },
+  { month: 'March 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.40-tZRlfsQPw3njIhQcQcQYU7frzHvw5s.png', revenue: 'Rp566.89M', highlight: 'Ramadhan Campaign' },
   { month: 'April 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.45-WvSL57nJyYoeCIBcK35jCfgLbXgJau.png', revenue: 'Rp760.53M', highlight: '+34% New growth Peak' },
   { month: 'May 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.45-WvSL57nJyYoeCIBcK35jCfgLbXgJau.png', revenue: 'Rp982.57M', highlight: '+42.39% Q2 New Peak' },
 ]
 
 const tiktokScreenshots = [
-{ month: 'June 2025', url: '/screenshots growth e-commerce/tiktokshop Jun 2025.png', revenue: 'Rp28.4M', highlight: 'Starting Point' },
-{ month: 'July 2025', url: '/screenshots growth e-commerce/tiktokshop jul 2025.png', revenue: 'Rp38.7M', highlight: '+35.6% Early Growth' },
-{ month: 'August 2025', url: '/screenshots growth e-commerce/tiktokshop agust 2025.png', revenue: 'Rp70.8M', highlight: '+83.06% Scale-Up' },
-{ month: 'September 2025', url: '/screenshots growth e-commerce/tiktokshop sep 2025.png', revenue: 'Rp89.7M', highlight: '+30.56% Momentum' },
-{ month: 'October 2025', url: '/screenshots growth e-commerce/tiktokshop okt 2025.png', revenue: 'Rp137.7M', highlight: '+49.03% Campaign Boost' },
-{ month: 'November 2025', url: '/screenshots growth e-commerce/tiktokshop nov 2025.png', revenue: 'Rp220M', highlight: '+63.68% Breakthrough' },
-{ month: 'December 2025', url: '/screenshots growth e-commerce/tiktokshop des 2025.png', revenue: 'Rp625.1M', highlight: '+169.4% Viral Peak' },
-{ month: 'January 2026', url: '/screenshots growth e-commerce/tiktokshop januari 2026.png', revenue: 'Rp244.7M', highlight: 'Post-Holiday Reset' },
-{ month: 'February 2026', url: '/screenshots growth e-commerce/tiktokshop februari 2026.png', revenue: 'Rp317.6M', highlight: '+47.3% Recovery' },
-{ month: 'March 2026', url: '/screenshots growth e-commerce/tiktokshop maret 2026.png', revenue: 'Rp539.3M', highlight: '+56.66% Ramadan Push' },
-{ month: 'April 2026', url: '/screenshots growth e-commerce/tiktokshop april 2026.png', revenue: 'Rp736M', highlight: '+43.69% Expansion' },
-{ month: 'May 2026', url: '/screenshots growth e-commerce/shopee may 2026.jpeg', revenue: 'Rp760.1M', highlight: 'Highest Monthly GMV' }
+  { month: 'June 2025', url: '/screenshots-growth-ecommerce/tiktokshop Jun 2025.png', revenue: 'Rp28.4M', highlight: 'Starting Point' },
+  { month: 'July 2025', url: '/screenshots-growth-ecommerce/tiktokshop jul 2025.png', revenue: 'Rp38.7M', highlight: '+35.6% Early Growth' },
+  { month: 'August 2025', url: '/screenshots-growth-ecommerce/tiktokshop agust 2025.png', revenue: 'Rp70.8M', highlight: '+83.06% Scale-Up' },
+  { month: 'September 2025', url: '/screenshots-growth-ecommerce/tiktokshop sep 2025.png', revenue: 'Rp89.7M', highlight: '+30.56% Momentum' },
+  { month: 'October 2025', url: '/screenshots-growth-ecommerce/tiktokshop okt 2025.png', revenue: 'Rp137.7M', highlight: '+49.03% Campaign Boost' },
+  { month: 'November 2025', url: '/screenshots-growth-ecommerce/tiktokshop nov 2025.png', revenue: 'Rp220M', highlight: '+63.68% Breakthrough' },
+  { month: 'December 2025', url: '/screenshots-growth-ecommerce/tiktokshop des 2025.png', revenue: 'Rp625.1M', highlight: '+169.4% Viral Peak' },
+  { month: 'January 2026', url: '/screenshots-growth-ecommerce/tiktokshop januari 2026.png', revenue: 'Rp244.7M', highlight: 'Post-Holiday Reset' },
+  { month: 'February 2026', url: '/screenshots-growth-ecommerce/tiktokshop februari 2026.png', revenue: 'Rp317.6M', highlight: '+47.3% Recovery' },
+  { month: 'March 2026', url: '/screenshots-growth-ecommerce/tiktokshop maret 2026.png', revenue: 'Rp539.3M', highlight: '+56.66% Ramadhan Push' },
+  { month: 'April 2026', url: '/screenshots-growth-ecommerce/tiktokshop april 2026.png', revenue: 'Rp736M', highlight: '+43.69% Expansion' },
+  { month: 'May 2026', url: '/screenshots-growth-ecommerce/shopee may 2026.jpeg', revenue: 'Rp760.1M', highlight: 'Highest Monthly GMV' }
 ]
 
 const tiktokMonthlyData = [
@@ -123,7 +123,7 @@ const growthPhases = [
   {
     phase: 'Phase 4: Dominance',
     period: 'Nov 2025 - Apr 2026',
-    description: 'Sustained high-volume operations with continuous optimization. Ramadan and holiday campaigns drove record-breaking numbers.',
+    description: 'Sustained high-volume operations with continuous optimization. Ramadhan and holiday campaigns drove record-breaking numbers.',
     keyActions: ['Seasonal campaign mastery', 'Premium placement strategies', 'Full-funnel attribution'],
     result: 'Reached Rp760M monthly revenue (31x from start)',
   },
@@ -141,7 +141,7 @@ export default function EcommerceGrowthCaseStudy() {
 
     'tiktok shop': {
       monthlyData: tiktokMonthlyData,
-      screenshots: screenshots
+      screenshots: tiktokScreenshots
     },
 
     lazada: {
