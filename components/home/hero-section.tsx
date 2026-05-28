@@ -36,7 +36,7 @@ export function HeroSection() {
             
             {/* Bio */}
             <p className="mt-6 text-[#9B97C0] leading-relaxed max-w-lg">
-              3+ years scaling brands across social media, paid ads, and marketplaces. I turn campaigns into measurable growth — from Rp24M to Rp760M in 19 months (31x).
+              3+ years scaling brands across social media, paid ads, and marketplaces. I turn campaigns into measurable growth — from Rp24M to Rp760M in 20 months (31x).
             </p>
             
             {/* Stats Cards */}
