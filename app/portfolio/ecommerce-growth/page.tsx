@@ -44,7 +44,7 @@ const shopeeMonthlyData = [
 ]
 
 // Screenshots data with source URLs (chronological order)
-const shopeeScreenshots = [
+const screenshots = [
   { month: 'September 2024', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.33.04-sfLUQUo6UWAaO2kzUdmcEnLLZuvHic.png', revenue: 'Rp24.03M', highlight: 'Starting Point' },
   { month: 'October 2024', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.33.13-WXtC0ypmKSYo9rN65ZnreJ3yqz4PQe.png', revenue: 'Rp54.97M', highlight: '+128.8% Growth' },
   { month: 'November 2024', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.33.23-Qr4jJwvCrzTfaJkkOfhJCwiQnMFg86.png', revenue: 'Rp64.54M', highlight: 'Momentum Building' },
@@ -121,22 +121,22 @@ export default function EcommerceGrowthCaseStudy() {
   const platformData = {
   shopee: {
     monthlyData: shopeeMonthlyData,
-    screenshots: shopeeScreenshots
+    screenshots: screenshots
   },
 
   'tiktok shop': {
     monthlyData: tiktokMonthlyData,
-    screenshots: tiktokScreenshots
+    screenshots: screenshots
   },
 
   lazada: {
     monthlyData: shopeeMonthlyData,
-    screenshots: shopeeScreenshots
+    screenshots: screenshots
   }
 }
 
   const activeScreenshots =
-    platformData[selectedPlatform as keyof typeof platformData].screenshots
+  platformData[selectedPlatform as keyof typeof platformData].screenshots
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % activeScreenshots.length)
@@ -243,7 +243,7 @@ export default function EcommerceGrowthCaseStudy() {
 
           <div className="bg-white rounded-2xl border border-[#E8E6F8] p-6">
             <ResponsiveContainer width="100%" height={400}>
-              <AreaChart data={platformData[selectedPlatform as keyof typeof platformData].monthlyData}>
+              <AreaChart data={platformData[selectedPlatform].monthlyData}>
                 <defs>
                   <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#2D1BB8" stopOpacity={0.3} />
@@ -275,7 +275,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={platformData[selectedPlatform as keyof typeof platformData].monthlyData}>
+                  <BarChart data={platformData[selectedPlatform].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} />
@@ -296,7 +296,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={platformData[selectedPlatform as keyof typeof platformData].monthlyData}>
+                  <LineChart data={platformData[selectedPlatform].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} tickFormatter={(v) => `${v}%`} domain={[0, 5]} />
@@ -324,11 +324,11 @@ export default function EcommerceGrowthCaseStudy() {
             <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
               <div className="bg-[#2D1BB8] px-6 py-4 flex items-center justify-between">
                 <div>
-                  <p className="text-white font-bold">{activeScreenshots[currentSlide].month}</p>
-                  <p className="text-[#9B97C0] text-sm">{activeScreenshots[currentSlide].revenue}</p>
+                  <p className="text-white font-bold">{screenshots[currentSlide].month}</p>
+                  <p className="text-[#9B97C0] text-sm">{screenshots[currentSlide].revenue}</p>
                 </div>
                 <span className="px-3 py-1 bg-[#F97316] text-white rounded-full text-sm font-medium">
-                  {activeScreenshots[currentSlide].highlight}
+                  {screenshots[currentSlide].highlight}
                 </span>
               </div>
 
