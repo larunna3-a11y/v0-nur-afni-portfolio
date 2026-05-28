@@ -324,11 +324,11 @@ export default function EcommerceGrowthCaseStudy() {
             <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
               <div className="bg-[#2D1BB8] px-6 py-4 flex items-center justify-between">
                 <div>
-                  <p className="text-white font-bold">{screenshots[currentSlide].month}</p>
-                  <p className="text-[#9B97C0] text-sm">{screenshots[currentSlide].revenue}</p>
+                  <p className="text-white font-bold">{activeScreenshots[currentSlide].month}</p>
+                  <p className="text-[#9B97C0] text-sm">{activeScreenshots[currentSlide].revenue}</p>
                 </div>
                 <span className="px-3 py-1 bg-[#F97316] text-white rounded-full text-sm font-medium">
-                  {screenshots[currentSlide].highlight}
+                  {activeScreenshots[currentSlide].highlight}
                 </span>
               </div>
 
