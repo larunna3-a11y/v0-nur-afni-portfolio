@@ -98,7 +98,7 @@ const tiktokMonthlyData = [
 ]
 
 // Growth phases for narrative
-const growthPhases = [
+const shopeeGrowthPhases = [
   {
     phase: 'Phase 1: Foundation',
     period: 'Sep - Dec 2024',
@@ -129,6 +129,78 @@ const growthPhases = [
   },
 ]
 
+const tiktokGrowthPhases = [
+  {
+    phase: 'Phase 1: Foundation',
+    period: 'Jun - Aug 2025',
+    description:
+      'Initial TikTok Shop setup focused on product visibility and marketplace adaptation. Early growth was driven mainly by product-card traffic and initial video exposure.',
+    keyActions: [
+      'Product listing optimization',
+      'Short video consistency',
+      'Marketplace traffic testing',
+    ],
+    result:
+      'Revenue scaled from Rp28.4M to Rp70.8M (+149%) with product-card traffic dominating GMV contribution.',
+  },
+
+  {
+    phase: 'Phase 2: Momentum Building',
+    period: 'Sep - Oct 2025',
+    description:
+      'Traffic sources became more balanced as video performance and affiliate exposure improved. Conversion quality increased while GMV crossed Rp100M.',
+    keyActions: [
+      'Affiliate activation',
+      'Video content scaling',
+      'Campaign synchronization',
+    ],
+    result:
+      'Revenue reached Rp137.7M with stronger contribution from video commerce and affiliate traffic.',
+  },
+
+  {
+    phase: 'Phase 3: Viral Expansion',
+    period: 'Nov - Dec 2025',
+    description:
+      'Major campaign breakthrough period. LIVE commerce and affiliate-driven sales accelerated rapidly, creating the first large-scale viral GMV spike.',
+    keyActions: [
+      'LIVE commerce scaling',
+      'Affiliate campaign push',
+      'Peak season optimization',
+    ],
+    result:
+      'Monthly GMV surged from Rp220M to Rp625M (+169%) driven heavily by LIVE and affiliate contribution.',
+  },
+
+  {
+    phase: 'Phase 4: Stabilization & Recovery',
+    period: 'Jan - Feb 2026',
+    description:
+      'After the holiday peak correction, strategy shifted toward stabilizing repeat purchases, rebuilding conversion efficiency, and maintaining traffic quality.',
+    keyActions: [
+      'Retention optimization',
+      'Traffic efficiency control',
+      'Conversion recovery',
+    ],
+    result:
+      'Business stabilized above Rp300M monthly GMV while maintaining healthy order growth.',
+  },
+
+  {
+    phase: 'Phase 5: Ramadan Scale-Up',
+    period: 'Mar - May 2026',
+    description:
+      'Ramadan campaigns and stronger LIVE-video integration created another acceleration phase. Product-card traffic remained dominant while LIVE contribution expanded significantly.',
+    keyActions: [
+      'Ramadan campaign execution',
+      'LIVE + video integration',
+      'High-volume promotional scaling',
+    ],
+    result:
+      'GMV climbed to Rp760M+ with sustained multi-channel contribution from LIVE, video, affiliate, and marketplace traffic.',
+  },
+]
+
 export default function EcommerceGrowthCaseStudy() {
 
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -136,22 +208,28 @@ export default function EcommerceGrowthCaseStudy() {
   const platformData = {
     shopee: {
       monthlyData: shopeeMonthlyData,
-      screenshots: screenshots
+      screenshots: screenshots,
+      growthPhases: shopeeGrowthPhases
     },
 
     'tiktok shop': {
       monthlyData: tiktokMonthlyData,
-      screenshots: tiktokScreenshots
+      screenshots: tiktokScreenshots,
+      growthPhases: tiktokGrowthPhases
     },
 
     lazada: {
       monthlyData: shopeeMonthlyData,
-      screenshots: screenshots
+      screenshots: screenshots,
+      growthPhases: shopeeGrowthPhases
     }
   }
 
   const activeScreenshots =
     platformData[selectedPlatform as keyof typeof platformData].screenshots
+
+  const activeGrowthPhases =
+    platformData[selectedPlatform as keyof typeof platformData].growthPhases
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % activeScreenshots.length)
@@ -412,7 +490,7 @@ export default function EcommerceGrowthCaseStudy() {
           <p className="text-[#4B4680] mb-12">How promotional improvements drove consistent revenue growth</p>
 
           <div className="space-y-8">
-            {growthPhases.map((phase, index) => (
+            {activeGrowthPhases.map((phase, index) => (
               <div key={index} className="bg-white rounded-2xl border border-[#E8E6F8] p-8 hover:shadow-lg transition-shadow">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                   <div className="lg:w-1/3">
