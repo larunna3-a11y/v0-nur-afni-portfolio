@@ -29,18 +29,6 @@ export default function ContactPage() {
     message: '',
   })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
     const data = await response.json();
 
     if (data.success) {
@@ -91,7 +79,6 @@ export default function ContactPage() {
                method="POST"
                >
                 <input type="hidden" name="_captcha" value="false" />
-                ><form onSubmit={handleSubmit} className="space-y-6"
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-[#0F0A2E] mb-2">
