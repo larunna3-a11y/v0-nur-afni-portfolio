@@ -119,21 +119,21 @@ export default function EcommerceGrowthCaseStudy() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedPlatform, setSelectedPlatform] = useState('shopee')
   const platformData = {
-  shopee: {
-    monthlyData: shopeeMonthlyData,
-    screenshots: screenshots
-  },
+    shopee: {
+      monthlyData: shopeeMonthlyData,
+      screenshots: screenshots
+    },
 
-  'Tiktok Shop': {
-    monthlyData: tiktokMonthlyData,
-    screenshots: screenshots
-  },
+    'Tiktok Shop': {
+      monthlyData: tiktokMonthlyData,
+      screenshots: screenshots
+    },
 
-  lazada: {
-    monthlyData: shopeeMonthlyData,
-    screenshots: screenshots
+    lazada: {
+      monthlyData: shopeeMonthlyData,
+      screenshots: screenshots
+    }
   }
-}
 
   const activeScreenshots =
     platformData[selectedPlatform.toLowerCase()].screenshots
@@ -171,18 +171,17 @@ export default function EcommerceGrowthCaseStudy() {
           <div className="flex gap-6 mt-8 mb-6 text-sm font-medium">
             {['shopee', 'tiktok shop', 'lazada'].map((platform) => (
               <button
-              key={platform}
-              onClick={() => setSelectedPlatform(platform)}
-              className={`transition-all ${
-                selectedPlatform === platform
-                  ? 'text-white border-b-2 border-white'
-                  : 'text-[#B9B7C0] hover:text-white'
-              }`}
-            >
-              {platform === 'tiktok shop'
-                ? 'TikTok Shop'
-                : platform.charAt(0).toUpperCase() + platform.slice(1)}
-            </button>
+                key={platform}
+                onClick={() => setSelectedPlatform(platform)}
+                className={`transition-all ${selectedPlatform === platform
+                    ? 'text-white border-b-2 border-white'
+                    : 'text-[#B9B7C0] hover:text-white'
+                  }`}
+              >
+                {platform === 'tiktok shop'
+                  ? 'TikTok Shop'
+                  : platform.charAt(0).toUpperCase() + platform.slice(1)}
+              </button>
             ))}
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
@@ -276,7 +275,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={platformData[selectedPlatform.toLowerCase()].monthlyData}>
+                  <BarChart data={platformData[selectedPlatform].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} />
@@ -297,7 +296,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={platformData[selectedPlatform.toLowerCase()].monthlyData}>
+                  <LineChart data={platformData[selectedPlatform].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} tickFormatter={(v) => `${v}%`} domain={[0, 5]} />
