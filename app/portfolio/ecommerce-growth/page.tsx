@@ -124,7 +124,7 @@ export default function EcommerceGrowthCaseStudy() {
       screenshots: screenshots
     },
 
-    'Tiktok Shop': {
+    'tiktok Shop': {
       monthlyData: tiktokMonthlyData,
       screenshots: screenshots
     },
