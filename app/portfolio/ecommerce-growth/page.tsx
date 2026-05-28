@@ -169,7 +169,7 @@ export default function EcommerceGrowthCaseStudy() {
             <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Marketplace</span>
           </div>
           <div className="flex gap-6 mt-8 mb-6 text-sm font-medium">
-            {['Shopee', 'TikTok Shop', 'Lazada'].map((platform) => (
+            {['shopee', 'tiktok shop', 'lazada'].map((platform) => (
               <button
                 key={platform}
                 onClick={() => setSelectedPlatform(platform)}
@@ -178,7 +178,9 @@ export default function EcommerceGrowthCaseStudy() {
                   : 'text-[#B9B7C0] hover:text-white'
                   }`}
               >
-                {platform}
+                {platform === 'tiktok shop'
+                  ? 'TikTok Shop'
+                  : platform.charAt(0).toUpperCase() + platform.slice(1)}
               </button>
             ))}
           </div>
