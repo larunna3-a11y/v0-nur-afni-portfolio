@@ -209,7 +209,7 @@ export default function EcommerceGrowthCaseStudy() {
             </div>
             <div className="text-center p-6">
               <Calendar className="w-8 h-8 text-[#2D1BB8] mx-auto mb-2" />
-              <p className="text-2xl font-bold text-[#0F0A2E]">Sep 24 - Apr 26</p>
+              <p className="text-2xl font-bold text-[#0F0A2E]">Sep 24 - May 26</p>
               <p className="text-sm text-[#9B97C0]">Progress Duration</p>
             </div>
           </div>
