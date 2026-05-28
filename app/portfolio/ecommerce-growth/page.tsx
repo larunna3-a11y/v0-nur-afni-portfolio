@@ -119,24 +119,24 @@ export default function EcommerceGrowthCaseStudy() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedPlatform, setSelectedPlatform] = useState('shopee')
   const platformData = {
-    shopee: {
-      monthlyData: shopeeMonthlyData,
-      screenshots: screenshots
-    },
+  shopee: {
+    monthlyData: shopeeMonthlyData,
+    screenshots: screenshots
+  },
 
-    'tiktok Shop': {
-      monthlyData: tiktokMonthlyData,
-      screenshots: screenshots
-    },
+  'tiktok shop': {
+    monthlyData: tiktokMonthlyData,
+    screenshots: screenshots
+  },
 
-    lazada: {
-      monthlyData: shopeeMonthlyData,
-      screenshots: screenshots
-    }
+  lazada: {
+    monthlyData: shopeeMonthlyData,
+    screenshots: screenshots
   }
+}
 
   const activeScreenshots =
-    platformData[selectedPlatform].screenshots
+  platformData[selectedPlatform as keyof typeof platformData].screenshots
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % activeScreenshots.length)
