@@ -10,7 +10,7 @@ const caseStudies = [
     id: 1,
     categories: ['E-Commerce', 'Paid Ads'],
     brand: 'Priskila Prima Makmur',
-    result: 'Rp24M → Rp760M',
+    result: 'Rp24M → Rp760M in 19 months (31x growth)',
     description: 'Projects on Casablanca, Bellagio, Regazza, Camellia, Marie Jose, Excello. Integrated marketplace and paid ads strategy driving consistent month-over-month revenue growth across Shopee, TikTok Shop, and Tokopedia.',
     metrics: ['31x revenue growth', '21.6K peak monthly orders', '+125% conversion improvement'],
     link: '/portfolio/ecommerce-growth',
