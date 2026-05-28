@@ -187,12 +187,12 @@ const tiktokGrowthPhases = [
   },
 
   {
-    phase: 'Phase 5: Ramadan Scale-Up',
+    phase: 'Phase 5: Ramadhan Scale-Up',
     period: 'Mar - May 2026',
     description:
-      'Ramadan campaigns and stronger LIVE-video integration created another acceleration phase. Product-card traffic remained dominant while LIVE contribution expanded significantly.',
+      'Ramadhan campaigns and stronger LIVE-video integration created another acceleration phase. Product-card traffic remained dominant while LIVE contribution expanded significantly.',
     keyActions: [
-      'Ramadan campaign execution',
+      'Ramadhan campaign execution',
       'LIVE + video integration',
       'High-volume promotional scaling',
     ],
