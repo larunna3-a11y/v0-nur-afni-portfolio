@@ -174,8 +174,8 @@ export default function EcommerceGrowthCaseStudy() {
                 key={platform}
                 onClick={() => setSelectedPlatform(platform)}
                 className={`transition-all ${selectedPlatform === platform
-                    ? 'text-white border-b-2 border-white'
-                    : 'text-[#B9B7C0] hover:text-white'
+                  ? 'text-white border-b-2 border-white'
+                  : 'text-[#B9B7C0] hover:text-white'
                   }`}
               >
                 {platform === 'tiktok shop'
@@ -275,7 +275,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={platformData[selectedPlatform.toLowerCase()].monthlyData}>
+                  <BarChart data={platformData[selectedPlatform].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} />
@@ -296,7 +296,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={platformData[selectedPlatform.toLowerCase()].monthlyData}>
+                  <LineChart data={platformData[selectedPlatform].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} tickFormatter={(v) => `${v}%`} domain={[0, 5]} />
