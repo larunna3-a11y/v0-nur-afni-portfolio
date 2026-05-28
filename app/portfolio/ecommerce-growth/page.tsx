@@ -104,7 +104,8 @@ export default function EcommerceGrowthCaseStudy() {
   const [selectedPlatform, setSelectedPlatform] = useState('Shopee')
   const platformData = {
     shopee: {
-      shopeeMonthlyData
+      monthlyData: shopeeMonthlyData,
+      screenshots: screenshots
     },
 
     tiktok: {
@@ -116,12 +117,15 @@ export default function EcommerceGrowthCaseStudy() {
     }
   }
 
+  const activeScreenshots =
+    platformData[selectedPlatform.toLowerCase()].screenshots
+
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % screenshots.length)
+    setCurrentSlide((prev) => (prev + 1) % activeScreenshots.length)
   }
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + screenshots.length) % screenshots.length)
+    setCurrentSlide((prev) => (prev - 1 + activeScreenshots.length) % activeScreenshots.length)
   }
 
   const formatRupiah = (value: number) => {
@@ -172,7 +176,7 @@ export default function EcommerceGrowthCaseStudy() {
               <p className="text-sm text-[#9B97C0]">Revenue Growth</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p className="text-3xl font-bold text-[#F97316]">Rp24M → Rp982M</p>
+              <p className="text-3xl font-bold text-[#F97316]">Rp24M → Rp760M</p>
               <p className="text-sm text-[#9B97C0]">Monthly Revenue</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
@@ -219,7 +223,7 @@ export default function EcommerceGrowthCaseStudy() {
 
           <div className="bg-white rounded-2xl border border-[#E8E6F8] p-6">
             <ResponsiveContainer width="100%" height={400}>
-              <AreaChart data={shopeeMonthlyData}>
+              <AreaChart data={platformData[selectedPlatform.toLowerCase()].monthlyData}>
                 <defs>
                   <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#2D1BB8" stopOpacity={0.3} />
@@ -251,7 +255,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={shopeeMonthlyData}>
+                  <BarChart data={platformData[selectedPlatform.toLowerCase()].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} />
@@ -272,7 +276,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={shopeeMonthlyData}>
+                  <LineChart data={platformData[selectedPlatform.toLowerCase()].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} tickFormatter={(v) => `${v}%`} domain={[0, 5]} />
