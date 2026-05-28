@@ -136,7 +136,7 @@ export default function EcommerceGrowthCaseStudy() {
   }
 
   const activeScreenshots =
-    platformData[selectedPlatform.toLowerCase()].screenshots
+    platformData[selectedPlatform].screenshots
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % activeScreenshots.length)
@@ -275,7 +275,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={platformData[selectedPlatform].monthlyData}>
+                  <BarChart data={platformData[selectedPlatform.toLowerCase()].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} />
@@ -296,7 +296,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={platformData[selectedPlatform].monthlyData}>
+                  <LineChart data={platformData[selectedPlatform.toLowerCase()].monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} tickFormatter={(v) => `${v}%`} domain={[0, 5]} />
