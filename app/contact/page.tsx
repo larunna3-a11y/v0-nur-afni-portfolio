@@ -58,6 +58,23 @@ export default function ContactPage() {
                  className="space-y-6"
                 >
                   <input type="hidden" name="_captcha" value="false" />
+                  <input
+                   type="hidden"
+                   name="_subject"
+                   value="New Portfolio Inquiry | Nur Afni"
+                  />
+
+                  <input
+                    type="hidden"
+                    name="_template"
+                    value="table"
+                  />
+
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thank you for contacting Nur Afni. Your inquiry has been received and I will respond within 24-48 hours."
+              />
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-[#0F0A2E] mb-2">
