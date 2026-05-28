@@ -117,7 +117,7 @@ const growthPhases = [
 export default function EcommerceGrowthCaseStudy() {
 
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [selectedPlatform, setSelectedPlatform] = useState('Shopee')
+  const [selectedPlatform, setSelectedPlatform] = useState('shopee')
   const platformData = {
   shopee: {
     monthlyData: shopeeMonthlyData,
