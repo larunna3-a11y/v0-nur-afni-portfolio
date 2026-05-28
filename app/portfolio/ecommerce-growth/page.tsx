@@ -40,6 +40,7 @@ const shopeeMonthlyData = [
   { month: 'Feb 26', revenue: 553.53, orders: 16566, conversion: 4.68, growth: 53.94 },
   { month: 'Mar 26', revenue: 566.89, orders: 16609, conversion: 4.61, growth: 2.41 },
   { month: 'Apr 26', revenue: 760.53, orders: 21607, conversion: 4.64, growth: 34.16 },
+  { month: 'May 26', revenue: 982.57, orders: 27393, conversion: 4.54, growth: 42.39 },
 ]
 
 // Screenshots data with source URLs (chronological order)
@@ -198,7 +199,7 @@ export default function EcommerceGrowthCaseStudy() {
             </div>
             <div className="text-center p-6">
               <ShoppingCart className="w-8 h-8 text-[#2D1BB8] mx-auto mb-2" />
-              <p className="text-2xl font-bold text-[#0F0A2E]">21,607</p>
+              <p className="text-2xl font-bold text-[#0F0A2E]">27,393</p>
               <p className="text-sm text-[#9B97C0]">Peak Monthly Orders</p>
             </div>
             <div className="text-center p-6">
@@ -251,7 +252,7 @@ export default function EcommerceGrowthCaseStudy() {
             {/* Orders Chart */}
             <div>
               <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Monthly Orders</h2>
-              <p className="text-[#4B4680] mb-6">Order volume growth from 482 to 21,607</p>
+              <p className="text-[#4B4680] mb-6">Order volume growth from 482 to 27,393</p>
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
