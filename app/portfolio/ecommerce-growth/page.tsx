@@ -20,7 +20,7 @@ import {
 import { ChevronLeft, ChevronRight, TrendingUp, ShoppingCart, Target, Calendar } from 'lucide-react'
 
 // Monthly data extracted from screenshots (chronological order)
-const monthlyData = [
+const shopeeMonthlyData = [
   { month: 'Sep 24', revenue: 24.03, orders: 482, conversion: 2.06, growth: null },
   { month: 'Oct 24', revenue: 54.97, orders: 1263, conversion: 2.38, growth: 128.8 },
   { month: 'Nov 24', revenue: 64.54, orders: 1577, conversion: 2.29, growth: 17.4 },
@@ -99,21 +99,21 @@ const growthPhases = [
 
 export default function EcommerceGrowthCaseStudy() {
 
-const [currentSlide, setCurrentSlide] = useState(0)
-const [selectedPlatform, setSelectedPlatform] = useState('Shopee')
-const platformData = {
-  shopee: {
-    monthlyData
-  },
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [selectedPlatform, setSelectedPlatform] = useState('Shopee')
+  const platformData = {
+    shopee: {
+      shopeeMonthlyData
+    },
 
-  tiktok: {
-    monthlyData
-  },
+    tiktok: {
+      shopeeMonthlyData
+    },
 
-  lazada: {
-    monthlyData
+    lazada: {
+      shopeeMonthlyData
+    }
   }
-}
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % screenshots.length)
@@ -133,39 +133,38 @@ const platformData = {
       <section className="bg-[#2D1BB8] py-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#F97316] rounded-full blur-3xl opacity-20" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4A35D4] rounded-full blur-3xl opacity-30" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <Link href="/portfolio" className="inline-flex items-center gap-2 text-[#9B97C0] hover:text-white mb-6">
             <ChevronLeft className="w-4 h-4" />
             Back to Portfolio
           </Link>
-          
+
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">E-Commerce</span>
             <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Beauty & Perfumery</span>
             <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Marketplace</span>
           </div>
           <div className="flex gap-6 mt-8 mb-6 text-sm font-medium">
-  {['Shopee', 'TikTok Shop', 'Lazada'].map((platform) => (
-    <button
-      key={platform}
-      onClick={() => setSelectedPlatform(platform)}
-      className={`transition-all ${
-        selectedPlatform === platform
-          ? 'text-white border-b-2 border-white'
-          : 'text-[#B9B7C0] hover:text-white'
-      }`}
-    >
-      {platform}
-    </button>
-  ))}
-</div>
+            {['Shopee', 'TikTok Shop', 'Lazada'].map((platform) => (
+              <button
+                key={platform}
+                onClick={() => setSelectedPlatform(platform)}
+                className={`transition-all ${selectedPlatform === platform
+                    ? 'text-white border-b-2 border-white'
+                    : 'text-[#B9B7C0] hover:text-white'
+                  }`}
+              >
+                {platform}
+              </button>
+            ))}
+          </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             E-Commerce Growth Journey
           </h1>
           <p className="mt-2 text-xl text-[#9B97C0]">Priskila — Beauty & Perfumery Products</p>
           <p className="mt-1 text-sm text-[#9B97C0]">Brands: Casablanca, Bellagio, Regazza, Camellia, Marie Jose, Excello</p>
-          
+
           <div className="mt-8 flex flex-wrap gap-6">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
               <p className="text-3xl font-bold text-[#ffffff]">31x</p>
@@ -216,10 +215,10 @@ const platformData = {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Revenue Growth Over Time</h2>
           <p className="text-[#4B4680] mb-8">Monthly revenue progression from Rp24M to Rp760M</p>
-          
+
           <div className="bg-white rounded-2xl border border-[#E8E6F8] p-6">
             <ResponsiveContainer width="100%" height={400}>
-              <AreaChart data={monthlyData}>
+              <AreaChart data={shopeeMonthlyData}>
                 <defs>
                   <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#2D1BB8" stopOpacity={0.3} />
@@ -248,10 +247,10 @@ const platformData = {
             <div>
               <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Monthly Orders</h2>
               <p className="text-[#4B4680] mb-6">Order volume growth from 482 to 21,607</p>
-              
+
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={monthlyData}>
+                  <BarChart data={shopeeMonthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} />
@@ -269,10 +268,10 @@ const platformData = {
             <div>
               <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Conversion Rate</h2>
               <p className="text-[#4B4680] mb-6">Conversion optimization from 2.06% to 4.64%</p>
-              
+
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={monthlyData}>
+                  <LineChart data={shopeeMonthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} tickFormatter={(v) => `${v}%`} domain={[0, 5]} />
@@ -294,7 +293,7 @@ const platformData = {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-white mb-2">Monthly Progress Screenshots</h2>
           <p className="text-[#9B97C0] mb-8">Actual Shopee Seller Center data showing the growth journey</p>
-          
+
           <div className="relative">
             {/* Main Slide */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
@@ -307,7 +306,7 @@ const platformData = {
                   {screenshots[currentSlide].highlight}
                 </span>
               </div>
-              
+
               <div className="relative aspect-[16/10] bg-gray-100">
                 <Image
                   src={screenshots[currentSlide].url}
@@ -339,9 +338,8 @@ const platformData = {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentSlide ? 'bg-[#F97316] w-6' : 'bg-white/40 hover:bg-white/60'
-                  }`}
+                  className={`w-2 h-2 rounded-full transition-colors ${index === currentSlide ? 'bg-[#F97316] w-6' : 'bg-white/40 hover:bg-white/60'
+                    }`}
                 />
               ))}
             </div>
@@ -353,11 +351,10 @@ const platformData = {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${
-                      index === currentSlide
+                    className={`px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${index === currentSlide
                         ? 'bg-[#F97316] text-white'
                         : 'bg-white/10 text-white/70 hover:bg-white/20'
-                    }`}
+                      }`}
                   >
                     {shot.month.split(' ')[0]} {shot.month.split(' ')[1]}
                   </button>
@@ -373,7 +370,7 @@ const platformData = {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Growth Strategy Breakdown</h2>
           <p className="text-[#4B4680] mb-12">How promotional improvements drove consistent revenue growth</p>
-          
+
           <div className="space-y-8">
             {growthPhases.map((phase, index) => (
               <div key={index} className="bg-white rounded-2xl border border-[#E8E6F8] p-8 hover:shadow-lg transition-shadow">
@@ -384,10 +381,10 @@ const platformData = {
                     </span>
                     <p className="text-[#9B97C0] text-sm">{phase.period}</p>
                   </div>
-                  
+
                   <div className="lg:w-2/3">
                     <p className="text-[#4B4680] mb-4">{phase.description}</p>
-                    
+
                     <div className="mb-4">
                       <p className="text-xs text-[#9B97C0] uppercase tracking-widest mb-2">Key Actions</p>
                       <div className="flex flex-wrap gap-2">
@@ -398,7 +395,7 @@ const platformData = {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div className="pt-4 border-t border-[#E8E6F8]">
                       <p className="text-[#F97316] font-semibold">{phase.result}</p>
                     </div>
@@ -414,7 +411,7 @@ const platformData = {
       <section className="py-16 bg-[#2D1BB8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-white mb-8 text-center">Campaign Summary</h2>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
               <p className="text-4xl font-bold text-[#F97316]">Rp760M</p>
