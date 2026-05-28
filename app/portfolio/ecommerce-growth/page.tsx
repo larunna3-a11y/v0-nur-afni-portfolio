@@ -44,7 +44,7 @@ const shopeeMonthlyData = [
 ]
 
 // Screenshots data with source URLs (chronological order)
-const screenshots = [
+const shopeeScreenshots = [
   { month: 'September 2024', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.33.04-sfLUQUo6UWAaO2kzUdmcEnLLZuvHic.png', revenue: 'Rp24.03M', highlight: 'Starting Point' },
   { month: 'October 2024', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.33.13-WXtC0ypmKSYo9rN65ZnreJ3yqz4PQe.png', revenue: 'Rp54.97M', highlight: '+128.8% Growth' },
   { month: 'November 2024', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.33.23-Qr4jJwvCrzTfaJkkOfhJCwiQnMFg86.png', revenue: 'Rp64.54M', highlight: 'Momentum Building' },
@@ -119,21 +119,21 @@ export default function EcommerceGrowthCaseStudy() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedPlatform, setSelectedPlatform] = useState('shopee')
   const platformData = {
-    shopee: {
-      monthlyData: shopeeMonthlyData,
-      screenshots: screenshots
-    },
+  shopee: {
+    monthlyData: shopeeMonthlyData,
+    screenshots: shopeeScreenshots
+  },
 
-    'tiktok shop': {
-      monthlyData: tiktokMonthlyData,
-      screenshots: screenshots
-    },
+  'tiktok shop': {
+    monthlyData: tiktokMonthlyData,
+    screenshots: tiktokScreenshots
+  },
 
-    lazada: {
-      monthlyData: shopeeMonthlyData,
-      screenshots: screenshots
-    }
+  lazada: {
+    monthlyData: shopeeMonthlyData,
+    screenshots: shopeeScreenshots
   }
+}
 
   const activeScreenshots =
     platformData[selectedPlatform as keyof typeof platformData].screenshots
