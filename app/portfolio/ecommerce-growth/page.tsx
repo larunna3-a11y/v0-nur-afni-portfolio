@@ -359,7 +359,7 @@ export default function EcommerceGrowthCaseStudy() {
 
             {/* Slide Indicators */}
             <div className="flex justify-center gap-2 mt-6">
-              {screenshots.map((_, index) => (
+              {activeScreenshots.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
