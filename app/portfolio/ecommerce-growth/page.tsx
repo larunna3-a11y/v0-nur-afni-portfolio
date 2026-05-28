@@ -334,8 +334,8 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="relative aspect-[16/10] bg-gray-100">
                 <Image
-                  src={screenshots[currentSlide].url}
-                  alt={`Shopee dashboard ${screenshots[currentSlide].month}`}
+                  src={activeScreenshots[currentSlide].url}
+                  alt={`Dashboard ${activeScreenshots[currentSlide].month}`}
                   fill
                   className="object-contain"
                   priority
