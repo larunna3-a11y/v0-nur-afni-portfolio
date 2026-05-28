@@ -244,7 +244,7 @@ export default function EcommerceGrowthCaseStudy() {
 
           <div className="bg-white rounded-2xl border border-[#E8E6F8] p-6">
             <ResponsiveContainer width="100%" height={400}>
-              <AreaChart data={platformData[selectedPlatform.toLowerCase()].monthlyData}>
+              <AreaChart data={platformData[selectedPlatform].monthlyData}>
                 <defs>
                   <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#2D1BB8" stopOpacity={0.3} />
