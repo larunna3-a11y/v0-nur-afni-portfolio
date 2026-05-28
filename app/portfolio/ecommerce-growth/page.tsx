@@ -171,17 +171,18 @@ export default function EcommerceGrowthCaseStudy() {
           <div className="flex gap-6 mt-8 mb-6 text-sm font-medium">
             {['shopee', 'tiktok shop', 'lazada'].map((platform) => (
               <button
-                key={platform}
-                onClick={() => setSelectedPlatform(platform)}
-                className={`transition-all ${selectedPlatform === platform
+              key={platform}
+              onClick={() => setSelectedPlatform(platform)}
+              className={`transition-all ${
+                selectedPlatform === platform
                   ? 'text-white border-b-2 border-white'
                   : 'text-[#B9B7C0] hover:text-white'
-                  }`}
-              >
-                {platform === 'tiktok shop'
-                  ? 'TikTok Shop'
-                  : platform.charAt(0).toUpperCase() + platform.slice(1)}
-              </button>
+              }`}
+            >
+              {platform === 'tiktok shop'
+                ? 'TikTok Shop'
+                : platform.charAt(0).toUpperCase() + platform.slice(1)}
+            </button>
             ))}
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
