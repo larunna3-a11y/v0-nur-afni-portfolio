@@ -104,7 +104,6 @@ const [platform, setPlatform] = useState<
 >('shopee')
 
 const [currentSlide, setCurrentSlide] = useState(0)
-const [selectedPlatform, setSelectedPlatform] = useState('Shopee')
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % screenshots.length)
@@ -136,21 +135,7 @@ const [selectedPlatform, setSelectedPlatform] = useState('Shopee')
             <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Beauty & Perfumery</span>
             <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Marketplace</span>
           </div>
-          <div className="flex gap-6 mt-8 mb-6 text-sm font-medium">
-  {['Shopee', 'TikTok Shop', 'Lazada'].map((platform) => (
-    <button
-      key={platform}
-      onClick={() => setSelectedPlatform(platform)}
-      className={`transition-all ${
-        selectedPlatform === platform
-          ? 'text-white border-b-2 border-white'
-          : 'text-[#B9B7C0] hover:text-white'
-      }`}
-    >
-      {platform}
-    </button>
-  ))}
-</div>
+          
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             E-Commerce Growth Journey
           </h1>
