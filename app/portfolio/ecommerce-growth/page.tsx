@@ -177,7 +177,7 @@ export default function EcommerceGrowthCaseStudy() {
               <p className="text-sm text-[#9B97C0]">Revenue Growth</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p className="text-3xl font-bold text-[#F97316]">Rp24M → Rp982M</p>
+              <p className="text-3xl font-bold text-[#F97316]">Rp24M → Rp760M</p>
               <p className="text-sm text-[#9B97C0]">Monthly Revenue</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
