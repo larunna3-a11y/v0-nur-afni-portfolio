@@ -99,12 +99,21 @@ const growthPhases = [
 
 export default function EcommerceGrowthCaseStudy() {
 
-const [platform, setPlatform] = useState<
-  'shopee' | 'tiktok' | 'lazada'
->('shopee')
-
 const [currentSlide, setCurrentSlide] = useState(0)
 const [selectedPlatform, setSelectedPlatform] = useState('Shopee')
+const platformData = {
+  shopee: {
+    monthlyData
+  },
+
+  tiktok: {
+    monthlyData
+  },
+
+  lazada: {
+    monthlyData
+  }
+}
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % screenshots.length)
