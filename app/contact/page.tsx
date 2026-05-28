@@ -29,40 +29,6 @@ export default function ContactPage() {
     message: '',
   })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      alert("Message sent successfully!");
-
-      setFormData({
-        name: "",
-        company: "",
-        email: "",
-        service: "",
-        budget: "",
-        message: "",
-      });
-    } else {
-      alert("Failed to send message.");
-    }
-  } catch (error) {
-    console.error(error);
-    alert("Something went wrong.");
-  }
-};
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
@@ -87,10 +53,11 @@ export default function ContactPage() {
             <div className="bg-white border border-[#E8E6F8] rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-[#0F0A2E] mb-6">Send a Message</h2>
               <form
-  action="https://formsubmit.co/nurafni4489@gmail.com"
-  method="POST"
-  className="space-y-6"
->
+               action="https://formsubmit.co/nurafni4489@gmail.com"
+                method="POST"
+                 className="space-y-6"
+                >
+                  <input type="hidden" name="_captcha" value="false" />
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-[#0F0A2E] mb-2">
