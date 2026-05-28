@@ -328,7 +328,7 @@ export default function EcommerceGrowthCaseStudy() {
                   <p className="text-[#9B97C0] text-sm">{screenshots[currentSlide].revenue}</p>
                 </div>
                 <span className="px-3 py-1 bg-[#F97316] text-white rounded-full text-sm font-medium">
-                  {screenshots[currentSlide].highlight}
+                  {activeScreenshots[currentSlide].highlight}
                 </span>
               </div>
 
