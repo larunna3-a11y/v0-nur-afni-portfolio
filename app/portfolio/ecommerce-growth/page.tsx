@@ -119,24 +119,24 @@ export default function EcommerceGrowthCaseStudy() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedPlatform, setSelectedPlatform] = useState('shopee')
   const platformData = {
-  shopee: {
-    monthlyData: shopeeMonthlyData,
-    screenshots: screenshots
-  },
+    shopee: {
+      monthlyData: shopeeMonthlyData,
+      screenshots: screenshots
+    },
 
-  'tiktok shop': {
-    monthlyData: tiktokMonthlyData,
-    screenshots: screenshots
-  },
+    'tiktok shop': {
+      monthlyData: tiktokMonthlyData,
+      screenshots: screenshots
+    },
 
-  lazada: {
-    monthlyData: shopeeMonthlyData,
-    screenshots: screenshots
+    lazada: {
+      monthlyData: shopeeMonthlyData,
+      screenshots: screenshots
+    }
   }
-}
 
   const activeScreenshots =
-  platformData[selectedPlatform as keyof typeof platformData].screenshots
+    platformData[selectedPlatform as keyof typeof platformData].screenshots
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % activeScreenshots.length)
@@ -324,7 +324,7 @@ export default function EcommerceGrowthCaseStudy() {
             <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
               <div className="bg-[#2D1BB8] px-6 py-4 flex items-center justify-between">
                 <div>
-                  <p className="text-white font-bold">{screenshots[currentSlide].month}</p>
+                  <p className="text-white font-bold">{activeScreenshots[currentSlide].month}</p>
                   <p className="text-[#9B97C0] text-sm">{screenshots[currentSlide].revenue}</p>
                 </div>
                 <span className="px-3 py-1 bg-[#F97316] text-white rounded-full text-sm font-medium">
