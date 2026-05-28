@@ -68,18 +68,18 @@ const screenshots = [
 ]
 
 const tiktokScreenshots = [
-{ month: 'June 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jun25.png', revenue: 'Rp28.4M', highlight: 'Starting Point' },
-{ month: 'July 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jul25.png', revenue: 'Rp38.7M', highlight: '+35.6% Early Growth' },
-{ month: 'August 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aug25.png', revenue: 'Rp70.8M', highlight: '+83% Scale-Up' },
-{ month: 'September 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sep25.png', revenue: 'Rp89.7M', highlight: '+30.5% Momentum' },
-{ month: 'October 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/oct25.png', revenue: 'Rp137.7M', highlight: '+49% Campaign Boost' },
-{ month: 'November 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nov25.png', revenue: 'Rp220M', highlight: '+63.7% Breakthrough' },
-{ month: 'December 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dec25.png', revenue: 'Rp625.1M', highlight: '+169% Viral Peak' },
-{ month: 'January 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jan26.png', revenue: 'Rp244.7M', highlight: 'Post-Holiday Reset' },
-{ month: 'February 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/feb26.png', revenue: 'Rp317.6M', highlight: '+47% Recovery' },
-{ month: 'March 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mar26.png', revenue: 'Rp539.3M', highlight: '+56.7% Ramadan Push' },
-{ month: 'April 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/apr26.png', revenue: 'Rp736M', highlight: '+43.7% Expansion' },
-{ month: 'May 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/may26.png', revenue: 'Rp760.1M', highlight: 'Highest Monthly GMV' }
+{ month: 'June 2025', url: '/screenshots growth e-commerce/tiktokshop Jun 2025.png', revenue: 'Rp28.4M', highlight: 'Starting Point' },
+{ month: 'July 2025', url: '/screenshots growth e-commerce/tiktokshop jul 2025.png', revenue: 'Rp38.7M', highlight: '+35.6% Early Growth' },
+{ month: 'August 2025', url: '/screenshots growth e-commerce/tiktokshop agust 2025.png', revenue: 'Rp70.8M', highlight: '+83.06% Scale-Up' },
+{ month: 'September 2025', url: '/screenshots growth e-commerce/tiktokshop sep 2025.png', revenue: 'Rp89.7M', highlight: '+30.56% Momentum' },
+{ month: 'October 2025', url: '/screenshots growth e-commerce/tiktokshop okt 2025.png', revenue: 'Rp137.7M', highlight: '+49.03% Campaign Boost' },
+{ month: 'November 2025', url: '/screenshots growth e-commerce/tiktokshop nov 2025.png', revenue: 'Rp220M', highlight: '+63.68% Breakthrough' },
+{ month: 'December 2025', url: '/screenshots growth e-commerce/tiktokshop des 2025.png', revenue: 'Rp625.1M', highlight: '+169.4% Viral Peak' },
+{ month: 'January 2026', url: '/screenshots growth e-commerce/tiktokshop januari 2026.png', revenue: 'Rp244.7M', highlight: 'Post-Holiday Reset' },
+{ month: 'February 2026', url: '/screenshots growth e-commerce/tiktokshop februari 2026.png', revenue: 'Rp317.6M', highlight: '+47.3% Recovery' },
+{ month: 'March 2026', url: '/screenshots growth e-commerce/tiktokshop maret 2026.png', revenue: 'Rp539.3M', highlight: '+56.66% Ramadan Push' },
+{ month: 'April 2026', url: '/screenshots growth e-commerce/tiktokshop april 2026.png', revenue: 'Rp736M', highlight: '+43.69% Expansion' },
+{ month: 'May 2026', url: '/screenshots growth e-commerce/shopee may 2026.jpeg', revenue: 'Rp760.1M', highlight: 'Highest Monthly GMV' }
 ]
 
 const tiktokMonthlyData = [
