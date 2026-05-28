@@ -10,7 +10,7 @@ const caseStudies = [
     id: 1,
     categories: ['E-Commerce', 'Paid Ads'],
     brand: 'Priskila Prima Makmur',
-    result: 'Rp24M → Rp760M',
+    result: 'Rp24M → Rp982M',
     description: 'Projects on Casablanca, Bellagio, Regazza, Camellia, Marie Jose, Excello. Integrated marketplace and paid ads strategy driving consistent month-over-month revenue growth across Shopee, TikTok Shop, and Tokopedia.',
     metrics: ['31x revenue growth', '21.6K peak monthly orders', '+125% conversion improvement'],
     link: '/portfolio/ecommerce-growth',
@@ -91,11 +91,10 @@ export default function PortfolioPage() {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeFilter === cat
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${activeFilter === cat
                     ? 'bg-[#2D1BB8] text-white'
                     : 'bg-[#E8E6F8] text-[#4B4680] hover:bg-[#2D1BB8] hover:text-white'
-                }`}
+                  }`}
               >
                 {cat}
               </button>

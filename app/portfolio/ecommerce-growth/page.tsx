@@ -152,8 +152,8 @@ export default function EcommerceGrowthCaseStudy() {
                 key={platform}
                 onClick={() => setSelectedPlatform(platform)}
                 className={`transition-all ${selectedPlatform === platform
-                    ? 'text-white border-b-2 border-white'
-                    : 'text-[#B9B7C0] hover:text-white'
+                  ? 'text-white border-b-2 border-white'
+                  : 'text-[#B9B7C0] hover:text-white'
                   }`}
               >
                 {platform}
@@ -172,7 +172,7 @@ export default function EcommerceGrowthCaseStudy() {
               <p className="text-sm text-[#9B97C0]">Revenue Growth</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p className="text-3xl font-bold text-[#F97316]">Rp24M → Rp760M</p>
+              <p className="text-3xl font-bold text-[#F97316]">Rp24M → Rp982M</p>
               <p className="text-sm text-[#9B97C0]">Monthly Revenue</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
@@ -215,7 +215,7 @@ export default function EcommerceGrowthCaseStudy() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Revenue Growth Over Time</h2>
-          <p className="text-[#4B4680] mb-8">Monthly revenue progression from Rp24M to Rp760M</p>
+          <p className="text-[#4B4680] mb-8">Monthly revenue progression from Rp24M to Rp982M</p>
 
           <div className="bg-white rounded-2xl border border-[#E8E6F8] p-6">
             <ResponsiveContainer width="100%" height={400}>
@@ -353,8 +353,8 @@ export default function EcommerceGrowthCaseStudy() {
                     key={index}
                     onClick={() => setCurrentSlide(index)}
                     className={`px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${index === currentSlide
-                        ? 'bg-[#F97316] text-white'
-                        : 'bg-white/10 text-white/70 hover:bg-white/20'
+                      ? 'bg-[#F97316] text-white'
+                      : 'bg-white/10 text-white/70 hover:bg-white/20'
                       }`}
                   >
                     {shot.month.split(' ')[0]} {shot.month.split(' ')[1]}

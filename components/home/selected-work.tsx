@@ -4,7 +4,7 @@ const works = [
   {
     category: 'E-Commerce Management',
     brand: 'Priskila',
-    result: 'Rp24M → Rp760M (31x growth)',
+    result: 'Rp24M → Rp982M (31x growth)',
     bg: 'bg-[#2D1BB8]',
     link: '/portfolio/ecommerce-growth',
   },
@@ -31,7 +31,7 @@ export function SelectedWork() {
           <h2 className="text-3xl sm:text-4xl font-bold text-[#0F0A2E]">Selected Work</h2>
           <p className="mt-4 text-[#4B4680]">Real campaigns. Real numbers.</p>
         </div>
-        
+
         {/* Works Grid */}
         <div className="grid md:grid-cols-3 gap-6">
           {works.map((work) => {
@@ -42,7 +42,7 @@ export function SelectedWork() {
                 <p className="mt-2 text-[#ffffffb6] font-semibold">{work.result}</p>
               </>
             )
-            
+
             return work.link ? (
               <Link
                 key={work.brand}
@@ -61,7 +61,7 @@ export function SelectedWork() {
             )
           })}
         </div>
-        
+
         {/* Link */}
         <div className="mt-10 text-center">
           <Link
