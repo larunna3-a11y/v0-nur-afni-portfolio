@@ -82,6 +82,21 @@ const tiktokScreenshots = [
   { month: 'May 2026', url: '/screenshots-growth-ecommerce/shopee may 2026.jpeg', revenue: 'Rp760.1M', highlight: 'Highest Monthly GMV' }
 ]
 
+const lazadaScreenshots = [
+  { month: 'May 2025', url: '/ss-growth-lazada-pris/Laz Mei 2025.png', revenue: 'Rp7.3M', highlight: 'Marketplace Launch' },
+  { month: 'June 2025', url: '/ss-growth-lazada-pris/Laz Juni 2025.png', revenue: 'Rp12.6M', highlight: '+72.38% Early Growth' },
+  { month: 'July 2025', url: '/ss-growth-lazada-pris/Laz Juli 2025.png', revenue: 'Rp18.2M', highlight: '+44.77% Expansion' },
+  { month: 'August 2025', url: '/ss-growth-lazada-pris/Laz Agust 2025.png', revenue: 'Rp37.8M', highlight: '+107.21% Breakthrough Month' },
+  { month: 'September 2025', url: '/ss-growth-lazada-pris/Laz sep 2025.png', revenue: 'Rp45.8M', highlight: '+21.21% Momentum Growth' },
+  { month: 'October 2025', url: '/ss-growth-lazada-pris/Laz Okt 2025.png', revenue: 'Rp52.9M', highlight: '+15.54% Conversion Peak' },
+  { month: 'November 2025', url: '/ss-growth-lazada-pris/Laz nov 2025.png', revenue: 'Rp65.9M', highlight: '+24.43% 11.11 Campaign Success' },
+  { month: 'December 2025', url: '/ss-growth-lazada-pris/Laz des 2025.png', revenue: 'Rp65.0M', highlight: 'Stable Holiday Performance' },
+  { month: 'January 2026', url: '/ss-growth-lazada-pris/Laz Jan 2026.png', revenue: 'Rp76.0M', highlight: 'Highest Revenue Record' },
+  { month: 'February 2026', url: '/ss-growth-lazada-pris/Laz Feb 2026.png', revenue: 'Rp66.3M', highlight: 'Post-Holiday Retention' },
+  { month: 'March 2026', url: '/ss-growth-lazada-pris/Laz Mar 2026.png', revenue: 'Rp60.3M', highlight: 'Operational Stabilization' },
+  { month: 'April 2026', url: '/ss-growth-lazada-pris/Laz Apr 2026.png', revenue: 'Rp73.3M', highlight: '+21.71% Recovery Peak' }
+]
+
 const tiktokMonthlyData = [
   { month: 'Jun 25', revenue: 28.43, orders: 761, conversion: 2.10, growth: null },
   { month: 'Jul 25', revenue: 38.69, orders: 1074, conversion: 2.35, growth: 35.56 },
