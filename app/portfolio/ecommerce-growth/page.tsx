@@ -299,9 +299,9 @@ export default function EcommerceGrowthCaseStudy() {
     },
 
     lazada: {
-      monthlyData: shopeeMonthlyData,
-      screenshots: screenshots,
-      growthPhases: shopeeGrowthPhases
+      monthlyData: lazadaMonthlyData,
+      screenshots: lazadaScreenshots,
+      growthPhases: lazadaGrowthPhases
     }
   }
 
@@ -524,7 +524,7 @@ export default function EcommerceGrowthCaseStudy() {
               <div className="bg-[#2D1BB8] px-6 py-4 flex items-center justify-between">
                 <div>
                   <p className="text-white font-bold">{activeScreenshots[currentSlide].month}</p>
-                  <p className="text-[#9B97C0] text-sm">{screenshots[currentSlide].revenue}</p>
+                  <p className="text-[#9B97C0] text-sm">{activeScreenshots[currentSlide].revenue}</p>
                 </div>
                 <span className="px-3 py-1 bg-[#F97316] text-white rounded-full text-sm font-medium">
                   {activeScreenshots[currentSlide].highlight}
