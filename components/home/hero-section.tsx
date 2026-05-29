@@ -18,7 +18,7 @@ export function HeroSection() {
           {/* Left Column */}
           <div className="order-2 lg:order-1">
             {/* Availability Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#F97316] bg-transparent mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#Ffffff] bg-transparent mb-6">
               <span className="w-2 h-2 bg-[#06D001] rounded-full animate-pulse" />
               <span className="text-[#06D001] text-sm font-medium">Available for Projects</span>
             </div>
