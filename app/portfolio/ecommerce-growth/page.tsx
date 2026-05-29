@@ -97,6 +97,21 @@ const tiktokMonthlyData = [
   { month: 'May 26', revenue: 760.16, orders: 31027, conversion: 4.54, growth: 9.16 },
 ]
 
+const lazadaMonthlyData = [
+  { month: 'May 2025', revenue: 7.3, orders: 132, conversion: 6.22, growth: null },
+  { month: 'Jun 2025', revenue: 12.6, orders: 235, conversion: 4.16, growth: 72.38 },
+  { month: 'Jul 2025', revenue: 18.2, orders: 322, conversion: 6.06, growth: 44.77 },
+  { month: 'Aug 2025', revenue: 37.8, orders: 712, conversion: 7.23, growth: 107.21 },
+  { month: 'Sep 2025', revenue: 45.8, orders: 807, conversion: 5.53, growth: 21.21 },
+  { month: 'Oct 2025', revenue: 52.9, orders: 939, conversion: 7.34, growth: 15.54 },
+  { month: 'Nov 2025', revenue: 65.9, orders: 1117, conversion: 5.12, growth: 24.43 },
+  { month: 'Dec 2025', revenue: 65.0, orders: 1090, conversion: 5.21, growth: -1.33 },
+  { month: 'Jan 2026', revenue: 76.0, orders: 1199, conversion: 5.52, growth: 16.97 },
+  { month: 'Feb 2026', revenue: 66.3, orders: 1137, conversion: 5.84, growth: -12.74 },
+  { month: 'Mar 2026', revenue: 60.3, orders: 1080, conversion: 5.81, growth: -9.15 },
+  { month: 'Apr 2026', revenue: 73.3, orders: 1264, conversion: 5.31, growth: 21.71 }
+]
+
 // Growth phases for narrative
 const shopeeGrowthPhases = [
   {
@@ -199,6 +214,56 @@ const tiktokGrowthPhases = [
     result:
       'GMV climbed to Rp760M+ with sustained multi-channel contribution from LIVE, video, affiliate, and marketplace traffic.',
   },
+]
+
+const lazadaGrowthPhases = [
+  {
+    phase: 'Phase 1: Foundation',
+    period: 'May - Jul 2025',
+    description: 'Built marketplace visibility and established early sales traction through Lazada promotional tools, with Free Shipping Max becoming the primary revenue driver.',
+    actions: [
+      'Free Shipping Max activation',
+      'Voucher setup & testing',
+      'Store and product optimization'
+    ],
+    result: 'Revenue grew from Rp7.3M to Rp18.2M (+149%)'
+  },
+
+  {
+    phase: 'Phase 2: Scale-Up Acceleration',
+    period: 'Aug - Nov 2025',
+    description: 'Expanded promotional coverage and campaign participation, leveraging Free Shipping Max, Bonus Dadakan, and Flash Sale programs to rapidly increase traffic and orders.',
+    actions: [
+      'Free Shipping Max scaling',
+      'Bonus Dadakan optimization',
+      'Mega campaign participation'
+    ],
+    result: 'Revenue increased from Rp37.8M to Rp65.9M (+74%)'
+  },
+
+  {
+    phase: 'Phase 3: Peak Performance',
+    period: 'Dec 2025 - Jan 2026',
+    description: 'Maximized year-end marketplace demand through aggressive promotional visibility and campaign execution, achieving the highest revenue milestone.',
+    actions: [
+      'Holiday campaign execution',
+      'Voucher optimization',
+      'High-volume Free Shipping strategy'
+    ],
+    result: 'Achieved record revenue of Rp76.0M'
+  },
+
+  {
+    phase: 'Phase 4: Recovery & Sustainability',
+    period: 'Feb - Apr 2026',
+    description: 'Maintained strong promotional efficiency despite post-holiday normalization, recovering revenue through consistent traffic acquisition and conversion optimization.',
+    actions: [
+      'Free Shipping Max retention',
+      'Promotion mix optimization',
+      'Traffic recovery strategy'
+    ],
+    result: 'Revenue recovered to Rp73.3M with 1,264 monthly orders'
+  }
 ]
 
 export default function EcommerceGrowthCaseStudy() {
