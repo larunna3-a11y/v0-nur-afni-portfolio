@@ -311,6 +311,9 @@ export default function EcommerceGrowthCaseStudy() {
   const activeGrowthPhases =
     platformData[selectedPlatform as keyof typeof platformData].growthPhases
 
+  const activePlatform =
+    platformData[selectedPlatform as keyof typeof platformData]
+
   const platformStats = {
     shopee: {
       growth: '+3,065%',
@@ -327,11 +330,11 @@ export default function EcommerceGrowthCaseStudy() {
     },
 
     lazada: {
-        growth: '+904%',
-        orders: '1,264',
-        conversion: '7.34%',
-        duration: 'May 25 - Apr 26'
-      }
+      growth: '+904%',
+      orders: '1,264',
+      conversion: '7.34%',
+      duration: 'May 25 - Apr 26'
+    }
   }
 
   const activeStats =
@@ -442,7 +445,7 @@ export default function EcommerceGrowthCaseStudy() {
 
           <div className="bg-white rounded-2xl border border-[#E8E6F8] p-6">
             <ResponsiveContainer width="100%" height={400}>
-              <AreaChart data={platformData[selectedPlatform].monthlyData}>
+              <AreaChart data={activePlatform.monthlyData}>
                 <defs>
                   <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#2D1BB8" stopOpacity={0.3} />
@@ -474,7 +477,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={platformData[selectedPlatform].monthlyData}>
+                  <BarChart data={activePlatform.monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} />
@@ -495,7 +498,7 @@ export default function EcommerceGrowthCaseStudy() {
 
               <div className="bg-[#F8F7FF] rounded-2xl border border-[#E8E6F8] p-6">
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={platformData[selectedPlatform].monthlyData}>
+                  <LineChart data={activePlatform.monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#E8E6F8" />
                     <XAxis dataKey="month" tick={{ fill: '#4B4680', fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
                     <YAxis tick={{ fill: '#4B4680', fontSize: 12 }} tickFormatter={(v) => `${v}%`} domain={[0, 5]} />
