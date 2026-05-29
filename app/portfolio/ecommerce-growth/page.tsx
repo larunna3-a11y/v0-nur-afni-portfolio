@@ -236,7 +236,7 @@ const lazadaGrowthPhases = [
     phase: 'Phase 1: Foundation',
     period: 'May - Jul 2025',
     description: 'Built marketplace visibility and established early sales traction through Lazada promotional tools, with Free Shipping Max becoming the primary revenue driver.',
-    actions: [
+    keyactions: [
       'Free Shipping Max activation',
       'Voucher setup & testing',
       'Store and product optimization'
@@ -248,7 +248,7 @@ const lazadaGrowthPhases = [
     phase: 'Phase 2: Scale-Up Acceleration',
     period: 'Aug - Nov 2025',
     description: 'Expanded promotional coverage and campaign participation, leveraging Free Shipping Max, Bonus Dadakan, and Flash Sale programs to rapidly increase traffic and orders.',
-    actions: [
+    keyactions: [
       'Free Shipping Max scaling',
       'Bonus Dadakan optimization',
       'Mega campaign participation'
@@ -260,7 +260,7 @@ const lazadaGrowthPhases = [
     phase: 'Phase 3: Peak Performance',
     period: 'Dec 2025 - Jan 2026',
     description: 'Maximized year-end marketplace demand through aggressive promotional visibility and campaign execution, achieving the highest revenue milestone.',
-    actions: [
+    keyactions: [
       'Holiday campaign execution',
       'Voucher optimization',
       'High-volume Free Shipping strategy'
@@ -272,7 +272,7 @@ const lazadaGrowthPhases = [
     phase: 'Phase 4: Recovery & Sustainability',
     period: 'Feb - Apr 2026',
     description: 'Maintained strong promotional efficiency despite post-holiday normalization, recovering revenue through consistent traffic acquisition and conversion optimization.',
-    actions: [
+    keyactions: [
       'Free Shipping Max retention',
       'Promotion mix optimization',
       'Traffic recovery strategy'
