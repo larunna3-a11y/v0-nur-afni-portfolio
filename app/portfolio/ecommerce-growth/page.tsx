@@ -337,7 +337,7 @@ export default function EcommerceGrowthCaseStudy() {
             </div>
             <div className="text-center p-6">
               <ShoppingCart className="w-8 h-8 text-[#2D1BB8] mx-auto mb-2" />
-              <p className="text-2xl font-bold text-[#0F0A2E]">27,393</p>
+              <p className="text-2xl font-bold text-[#0F0A2E]">{activeStats.orders}</p>
               <p className="text-sm text-[#9B97C0]">Peak Monthly Orders</p>
             </div>
             <div className="text-center p-6">
