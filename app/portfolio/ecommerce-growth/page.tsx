@@ -451,7 +451,7 @@ export default function EcommerceGrowthCaseStudy() {
                 </span>
               </div>
 
-              <div className="relative aspect-[16/10] bg-gray-100">
+              <div className={`relative bg-gray-100 ${selectedPlatform === 'tiktok shop' ? 'aspect-[16/15]' : 'aspect-[16/10]'}`}>
                 <Image
                   src={activeScreenshots[currentSlide].url}
                   alt={`Dashboard ${activeScreenshots[currentSlide].month}`}
