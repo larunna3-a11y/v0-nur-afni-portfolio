@@ -231,6 +231,32 @@ export default function EcommerceGrowthCaseStudy() {
   const activeGrowthPhases =
     platformData[selectedPlatform as keyof typeof platformData].growthPhases
 
+    const platformStats = {
+  shopee: {
+    growth: '+3,065%',
+    orders: '27,393',
+    conversion: '4.68%',
+    duration: 'Sep 24 - May 26'
+      },
+
+      'tiktok shop': {
+        growth: '+2,574%',
+        orders: '31,027',
+        conversion: '4.54%',
+        duration: 'Jun 25 - May 26'
+      },
+
+      lazada: {
+        growth: '-',
+        orders: '-',
+        conversion: '-',
+        duration: '-'
+      }
+    }
+
+const activeStats =
+  platformStats[selectedPlatform as keyof typeof platformStats]
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % activeScreenshots.length)
   }
