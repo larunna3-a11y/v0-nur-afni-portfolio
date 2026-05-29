@@ -327,11 +327,11 @@ export default function EcommerceGrowthCaseStudy() {
     },
 
     lazada: {
-      growth: '-',
-      orders: '-',
-      conversion: '-',
-      duration: '-'
-    }
+        growth: '+904%',
+        orders: '1,264',
+        conversion: '7.34%',
+        duration: 'May 25 - Apr 26'
+      }
   }
 
   const activeStats =
