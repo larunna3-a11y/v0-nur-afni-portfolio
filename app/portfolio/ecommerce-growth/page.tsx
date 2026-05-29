@@ -93,7 +93,7 @@ const lazadaScreenshots = [
   { month: 'December 2025', url: '/ss-growth-lazada-pris/Laz des 2025.png', revenue: 'Rp65.0M', highlight: 'Stable Holiday Performance' },
   { month: 'January 2026', url: '/ss-growth-lazada-pris/Laz Jan 2026.png', revenue: 'Rp76.0M', highlight: 'Highest Revenue Record' },
   { month: 'February 2026', url: '/ss-growth-lazada-pris/Laz Feb 2026.png', revenue: 'Rp66.3M', highlight: 'Post-Holiday Retention' },
-  { month: 'March 2026', url: '/ss-growth-lazada-pris/Laz Mar 2026.png', revenue: 'Rp60.3M', highlight: 'Operational Stabilization' },
+  { month: 'March 2026', url: '/ss-growth-lazada-pris/Laz March 2026.png', revenue: 'Rp60.3M', highlight: 'Operational Stabilization' },
   { month: 'April 2026', url: '/ss-growth-lazada-pris/Laz Apr 2026.png', revenue: 'Rp73.3M', highlight: '+21.71% Recovery Peak' }
 ]
 
