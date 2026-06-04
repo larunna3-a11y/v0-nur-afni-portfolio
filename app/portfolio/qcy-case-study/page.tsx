@@ -641,34 +641,6 @@ export default function QCYCaseStudy() {
                 </div>
               </div>
             </motion.div>
-
-            {/* Sales by Channel */}
-            <motion.div variants={fadeIn} className="bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-purple-900 mb-8">Sales by Channel (August 2025)</h3>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-white rounded-lg p-6 border border-purple-100">
-                  <div className="text-sm text-purple-600 font-medium">Shopee</div>
-                  <div className="text-3xl font-bold text-purple-900 mt-2">375</div>
-                  <div className="text-sm text-purple-700 mt-1">Orders</div>
-                  <div className="text-lg font-semibold text-purple-900 mt-3">Rp54.9M</div>
-                  <div className="text-xs text-purple-600">Gross Revenue</div>
-                </div>
-                <div className="bg-white rounded-lg p-6 border border-purple-100">
-                  <div className="text-sm text-purple-600 font-medium">TikTok Shop</div>
-                  <div className="text-3xl font-bold text-purple-900 mt-2">199</div>
-                  <div className="text-sm text-purple-700 mt-1">Orders</div>
-                  <div className="text-lg font-semibold text-purple-900 mt-3">Rp35.5M</div>
-                  <div className="text-xs text-purple-600">Gross Revenue</div>
-                </div>
-                <div className="bg-white rounded-lg p-6 border border-purple-100">
-                  <div className="text-sm text-purple-600 font-medium">Lazada</div>
-                  <div className="text-3xl font-bold text-purple-900 mt-2">21</div>
-                  <div className="text-sm text-purple-700 mt-1">Orders</div>
-                  <div className="text-lg font-semibold text-purple-900 mt-3">Rp1.2M</div>
-                  <div className="text-xs text-purple-600">Gross Revenue</div>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
