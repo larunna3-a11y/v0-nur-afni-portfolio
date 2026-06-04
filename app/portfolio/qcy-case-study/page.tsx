@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight, TrendingUp, ShoppingCart, Target, Calendar, Zap, Users, BarChart3, PieChart, Activity, LineChart, Eye, Briefcase, Clock, Zap as ZapIcon, MessageSquare, Search, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
+import { LineChart as RechartsLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -18,8 +19,34 @@ const staggerContainer = {
       staggerChildren: 0.1,
       delayChildren: 0.2,
     },
-  },
-}
+    },
+  }
+
+  // Monthly data for charts
+  const monthlyChartData = {
+    shopee: [
+      { month: 'Apr', sales: 93.01, orders: 394, conversion: 1.62 },
+      { month: 'May', sales: 87.18, orders: 433, conversion: 1.35 },
+      { month: 'Jun', sales: 84.54, orders: 343, conversion: 1.30 },
+      { month: 'Jul', sales: 105.86, orders: 392, conversion: 1.29 },
+      { month: 'Aug', sales: 114.04, orders: 384, conversion: 1.82 },
+      { month: 'Sep', sales: 110.97, orders: 410, conversion: 1.75 },
+    ],
+    tiktok: [
+      { month: 'Jun', sales: 20.06, orders: 71, conversion: 2.15 },
+      { month: 'Jul', sales: 26.37, orders: 92, conversion: 2.31 },
+      { month: 'Aug', sales: 40.00, orders: 112, conversion: 2.58 },
+      { month: 'Sep', sales: 34.40, orders: 107, conversion: 2.42 },
+    ],
+    tokopedia: [
+      { month: 'Apr', sales: 0, orders: 0, conversion: 0 },
+      { month: 'May', sales: 0, orders: 0, conversion: 0 },
+      { month: 'Jun', sales: 0, orders: 0, conversion: 0 },
+      { month: 'Jul', sales: 0, orders: 0, conversion: 0 },
+      { month: 'Aug', sales: 0, orders: 0, conversion: 0 },
+      { month: 'Sep', sales: 0, orders: 0, conversion: 0 },
+    ],
+  }
 
 export default function QCYCaseStudy() {
   const [activeTab, setActiveTab] = useState('shopee')
@@ -115,10 +142,10 @@ export default function QCYCaseStudy() {
       bgColor: 'bg-red-50',
       borderColor: 'border-red-200',
       metrics: [
-        { label: 'Paid Ads GMV', value: 'Rp49M', change: '10.6x ROI', icon: TrendingUp },
-        { label: 'Voucher GMV', value: 'Rp75.8M', change: '96.2x ROI', icon: ShoppingCart },
-        { label: 'Livestream GMV', value: 'Rp15M', change: '37.3x ROI', icon: Activity },
-        { label: 'Affiliate GMV', value: 'Rp36.2M', change: '14.7x ROI', icon: Users },
+        { label: 'Total Sales (Apr-Sep)', value: 'Rp595.61M', change: 'Rp3.25M/day avg', icon: TrendingUp },
+        { label: 'Total Orders', value: '2,356', change: '12.9/day avg', icon: ShoppingCart },
+        { label: 'Peak Month (Aug)', value: 'Rp114.04M', change: '+7.7% vs Jul', icon: Activity },
+        { label: 'Total Buyers', value: '2,117', change: '+5.7% vs Apr', icon: Users },
       ],
       graphImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png',
       analyticsImages: [
@@ -133,10 +160,10 @@ export default function QCYCaseStudy() {
       bgColor: 'bg-gray-50',
       borderColor: 'border-gray-300',
       metrics: [
-        { label: 'Platform Ads GMV', value: 'Rp43M', change: '12x ROI', icon: TrendingUp },
-        { label: 'Shop Campaign GMV', value: 'Rp52.6M', change: '5.5x ROI', icon: ShoppingCart },
-        { label: 'LIVE Streams GMV', value: 'Rp3.4M', change: 'Multi-channel', icon: Activity },
-        { label: 'Affiliate GMV', value: 'Rp2.2M', change: '5.29x ROI', icon: Users },
+        { label: 'Total GMV (Jun-Sep)', value: 'Rp120.84M', change: '+363.83%', icon: TrendingUp },
+        { label: 'Total Orders', value: '382', change: '+218.33%', icon: ShoppingCart },
+        { label: 'Peak Month (Aug)', value: 'Rp40.00M', change: '+51.7% vs Jul', icon: Activity },
+        { label: 'Total Customers', value: '380', change: '3.2/day avg', icon: Users },
       ],
       graphImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.08.28-DkXBAPIi3otnuNeJOhiI720dCAKEJa.png',
       analyticsImages: [
@@ -337,15 +364,45 @@ export default function QCYCaseStudy() {
               </div>
             </motion.div>
 
-            {/* Performance Graph */}
+            {/* Performance Graph with Chart */}
             <motion.div variants={fadeIn} className="mb-12">
               <h3 className="text-xl font-bold text-[#0F0A2E] mb-6">Monthly Performance Graph</h3>
-              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
-                <img 
-                  src={channelData[activeTab].graphImage} 
-                  alt={`${channelData[activeTab].name} Performance Graph`}
-                  className="w-full h-auto"
-                />
+              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm p-6">
+                {/* Line Chart */}
+                <div className="w-full h-80">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <RechartsLineChart data={monthlyChartData[activeTab]}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
+                      <XAxis dataKey="month" stroke="#666" />
+                      <YAxis stroke="#666" />
+                      <Tooltip 
+                        contentStyle={{
+                          backgroundColor: '#fff',
+                          border: '1px solid #ccc',
+                          borderRadius: '8px',
+                          padding: '8px'
+                        }}
+                        formatter={(value) => `Rp${value.toFixed(2)}M`}
+                      />
+                      <Line 
+                        type="monotone" 
+                        dataKey="sales" 
+                        stroke={activeTab === 'shopee' ? '#EF4444' : activeTab === 'tiktok' ? '#1F2937' : '#22C55E'} 
+                        strokeWidth={3}
+                        dot={{ fill: activeTab === 'shopee' ? '#EF4444' : activeTab === 'tiktok' ? '#1F2937' : '#22C55E', r: 6 }}
+                        activeDot={{ r: 8 }}
+                        name="Sales (Rp M)"
+                      />
+                    </RechartsLineChart>
+                  </ResponsiveContainer>
+                </div>
+                
+                {/* Legend */}
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <p className="text-sm text-gray-600">
+                    <span className="font-semibold">Showing:</span> Monthly sales revenue for {channelData[activeTab].name}
+                  </p>
+                </div>
               </div>
             </motion.div>
 
