@@ -30,11 +30,10 @@ const shopeeMonthlyData = [
 
 // TikTok Shop monthly data
 const tiktokMonthlyData = [
-  { month: 'May 25', revenue: 52.6, orders: 687, conversion: 2.18, growth: null },
-  { month: 'Jun 25', revenue: 68.4, orders: 892, conversion: 2.34, growth: 30.0 },
-  { month: 'Jul 25', revenue: 75.9, orders: 991, conversion: 2.41, growth: 11.0 },
-  { month: 'Aug 25', revenue: 89.2, orders: 1163, conversion: 2.58, growth: 17.4 },
-  { month: 'Sep 25', revenue: 94.1, orders: 1227, conversion: 2.63, growth: 5.5 },
+  { month: 'Jun 25', revenue: 20.06, orders: 71, conversion: 2.15, growth: null },
+  { month: 'Jul 25', revenue: 26.37, orders: 92, conversion: 2.31, growth: 31.5 },
+  { month: 'Aug 25', revenue: 40.00, orders: 112, conversion: 2.58, growth: 51.7 },
+  { month: 'Sep 25', revenue: 34.40, orders: 107, conversion: 2.42, growth: -14.0 },
 ]
 
 // Tokopedia monthly data
@@ -56,11 +55,10 @@ const shopeeScreenshots = [
 ]
 
 const tiktokScreenshots = [
-  { month: 'May 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.08.28-DkXBAPIi3otnuNeJOhiI720dCAKEJa.png', revenue: 'Rp52.6M', highlight: 'Launch' },
-  { month: 'June 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.08-VSDiqQ4QCbltmOxaHLLsDVBXFexhCH.png', revenue: 'Rp68.4M', highlight: '+30%' },
-  { month: 'July 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png', revenue: 'Rp75.9M', highlight: 'Growth' },
-  { month: 'August 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png', revenue: 'Rp89.2M', highlight: '+17.4%' },
-  { month: 'September 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.49-crpcRxhRmwtZtrRNlNmw63BeAY4HL0.png', revenue: 'Rp94.1M', highlight: 'Peak' },
+  { month: 'June 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.08.28-DkXBAPIi3otnuNeJOhiI720dCAKEJa.png', revenue: 'Rp20.06M', highlight: 'Launch' },
+  { month: 'July 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.08-VSDiqQ4QCbltmOxaHLLsDVBXFexhCH.png', revenue: 'Rp26.37M', highlight: '+31.5%' },
+  { month: 'August 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png', revenue: 'Rp40.00M', highlight: '+51.7% Peak' },
+  { month: 'September 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png', revenue: 'Rp34.40M', highlight: 'Stable' },
 ]
 
 const tokopediaScreenshots = [
@@ -98,25 +96,25 @@ const shopeeGrowthPhases = [
 
 const tiktokGrowthPhases = [
   {
-    phase: 'Phase 1: Platform Establishment',
-    period: 'May 2025',
-    description: 'TikTok Shop marketplace entry with focus on product visibility and platform-native strategies. Established initial traffic through marketplace optimization and content-first approach.',
-    keyActions: ['Product listing setup', 'Video content strategy', 'Marketplace optimization', 'Initial campaign testing'],
-    result: 'Rp52.6M launch revenue with 687 orders',
+    phase: 'Phase 1: Platform Entry',
+    period: 'June 2025',
+    description: 'Initial TikTok Shop launch with Rp20.06M GMV and 71 orders. Established product listings and foundational marketplace presence with 11,116 monthly visitors and 24,226 page views.',
+    keyActions: ['Product listing optimization', 'Shop setup and branding', 'Initial traffic acquisition', 'Marketplace positioning'],
+    result: 'Rp20.06M GMV with Rp22.48M gross revenue',
   },
   {
-    phase: 'Phase 2: Acceleration & Content',
-    period: 'Jun - Jul 2025',
-    description: 'Accelerated content strategy with influencer partnerships and LIVE commerce integration. Leveraged TikTok\'s algorithm for organic reach while scaling paid visibility campaigns.',
-    keyActions: ['Content scaling', 'Influencer collaboration', 'LIVE commerce setup', 'Engagement optimization'],
-    result: 'Revenue grew to Rp75.9M (+44% total growth)',
+    phase: 'Phase 2: Growth Acceleration',
+    period: 'July 2025',
+    description: 'Strong growth phase with 31.5% MoM increase. Orders grew from 71 to 92 with Rp26.37M GMV. Traffic momentum building with content strategy and marketplace features utilization.',
+    keyActions: ['Content strategy optimization', 'LIVE commerce testing', 'Marketplace campaigns', 'Customer engagement'],
+    result: 'Rp26.37M GMV (+31.5% MoM) with 92 orders',
   },
   {
-    phase: 'Phase 3: Viral Scale & Dominance',
-    period: 'Aug - Sep 2025',
-    description: 'Breakthrough period with viral content campaigns and sophisticated LIVE commerce operations. Multi-channel content strategy and affiliate partnerships drove exponential performance gains.',
-    keyActions: ['Viral campaign execution', 'LIVE streaming scaling', 'Affiliate expansion', 'Peak season optimization'],
-    result: 'Revenue reached Rp94.1M (+79% from launch)',
+    phase: 'Phase 3: Peak Performance',
+    period: 'August - September 2025',
+    description: 'August breakthrough with 51.7% MoM growth reaching Rp40.00M GMV and 112 orders. September normalized at Rp34.40M with 107 orders while maintaining strong metrics. Total period GMV of Rp120.8M with 382 orders represents +363.83% growth.',
+    keyActions: ['Viral campaign execution', 'LIVE commerce scaling', 'Affiliate partnerships', 'Peak season optimization'],
+    result: 'Peak revenue of Rp40.00M (Aug) with sustained Rp34.40M (Sep) | +363.83% total growth',
   },
 ]
 
@@ -152,10 +150,10 @@ const platformStats = {
     duration: 'May - Sep 2025',
   },
   'tiktok shop': {
-    growth: '+78.9%',
-    orders: '5,060',
-    conversion: '2.63%',
-    duration: 'May - Sep 2025',
+    growth: '+363.83%',
+    orders: '382',
+    conversion: '2.42%',
+    duration: 'Jun - Sep 2025',
   },
   tokopedia: {
     growth: '+30.2%',
