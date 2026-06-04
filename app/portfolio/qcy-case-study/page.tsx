@@ -534,10 +534,6 @@ export default function QCYCaseStudy() {
                 </div>
               </div>
             </motion.div>
-                  )
-                })}
-              </div>
-            </motion.div>
 
             {/* Performance Graph with Chart */}
             <motion.div variants={fadeIn} className="mb-12">
