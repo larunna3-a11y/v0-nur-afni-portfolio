@@ -204,17 +204,98 @@ export default function QCYCaseStudy() {
         </div>
       </section>
 
-      {/* Business Challenge */}
-      <section className="py-20 bg-white">
+      {/* Analytics Gallery */}
+      <section className="py-20 bg-gradient-to-b from-white to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }} className="max-w-3xl">
-            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-8 text-[#0F0A2E]">
-              Business Challenge
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-4 text-center text-[#0F0A2E]">
+              Campaign Analytics Dashboard
             </motion.h2>
-            <motion.div variants={fadeIn} className="bg-gradient-to-br from-[#6D4AFF]/10 to-[#2D1BB8]/10 border border-[#6D4AFF]/20 rounded-2xl p-8 lg:p-12">
-              <p className="text-lg text-[#4B4680] leading-relaxed">
-                QCY Indonesia needed a coordinated product launch for HT15 & C30 earbuds across multiple e-commerce platforms to achieve maximum reach and conversion. The challenge required integrating multiple marketing channels (paid advertising, affiliate networks, livestream commerce, and promotional mechanics) to drive significant day-one sales while establishing brand presence across Shopee, TikTok Shop, and Tokopedia simultaneously.
-              </p>
+            <motion.p variants={fadeIn} className="text-center text-[#6D4AFF] mb-12 max-w-2xl mx-auto">
+              Real-time performance metrics from official marketplace analytics showing livestream commerce, conversion rates, and platform-specific growth across all channels
+            </motion.p>
+
+            {/* Shopee Livestream Metrics */}
+            <motion.div variants={fadeIn} className="mb-16">
+              <h3 className="text-2xl font-bold text-red-900 mb-8">Shopee Livestream Performance</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.07-XjDfsVbLo5893RlsMLLT7b9Qbqkery.png" alt="Shopee Live May 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png" alt="Shopee Live July 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.33-LNzD4k2v1gOHdyxNtN5LOKGlIRe9zY.png" alt="Shopee Live August 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.41-LId8GNCBxjUi6bm2gVVb3RaZmgfix7.png" alt="Shopee Live September 2025" className="w-full h-auto" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Shopee Shop Analytics */}
+            <motion.div variants={fadeIn} className="mb-16">
+              <h3 className="text-2xl font-bold text-red-900 mb-8">Shopee Shop Analytics</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.04.30-4Wa0xsHtk7VY3SzCvpA2dEuaYbcLff.png" alt="Shopee Shop April 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.04.39-EIxdy7gMkVB6nMtXCJrqk1ku5G4Jq2.png" alt="Shopee Shop May 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.05.11-8GtGmeFi0uSE8Z8PJPBCnaiffNGOGp.png" alt="Shopee Shop August 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.05.20-GxJlmG0xXnebzLsZdLUUlyStkPyieZ.png" alt="Shopee Shop September 2025" className="w-full h-auto" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* TikTok Shop Analytics */}
+            <motion.div variants={fadeIn} className="mb-16">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">TikTok Shop Analytics</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-2xl overflow-hidden border border-gray-300 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.08.28-DkXBAPIi3otnuNeJOhiI720dCAKEJa.png" alt="TikTok Shop July 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-gray-300 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.08-VSDiqQ4QCbltmOxaHLLsDVBXFexhCH.png" alt="TikTok Shop August 2025" className="w-full h-auto" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Tokopedia Analytics */}
+            <motion.div variants={fadeIn} className="mb-16">
+              <h3 className="text-2xl font-bold text-green-900 mb-8">Tokopedia Analytics</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-2xl overflow-hidden border border-green-300 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png" alt="Tokopedia June 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-green-300 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png" alt="Tokopedia July 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-green-300 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.49-crpcRxhRmwtZtrRNlNmw63BeAY4HL0.png" alt="Tokopedia September 2025" className="w-full h-auto" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Livestream Affiliate Metrics */}
+            <motion.div variants={fadeIn} className="mb-16">
+              <h3 className="text-2xl font-bold text-teal-900 mb-8">Livestream Commerce & Affiliate Performance</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-2xl overflow-hidden border border-teal-300 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.04.30-4oZCmeLlt2jvz4REe8epUBlTr9GSik.png" alt="LIVE Metrics July 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-teal-300 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.05.09-WKKRqtNpRKXgbPdT6RE17x0NxHMKY9.png" alt="LIVE Metrics August 2025" className="w-full h-auto" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden border border-teal-300 shadow-sm hover:shadow-lg transition-shadow">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.05.19-IpqzaijQeeOqlkr7zMDjt7jqlejMJG.png" alt="LIVE Metrics September 2025" className="w-full h-auto" />
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
