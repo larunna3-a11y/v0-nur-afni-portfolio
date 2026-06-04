@@ -22,7 +22,6 @@ const staggerContainer = {
 }
 
 export default function QCYCaseStudy() {
-  const [activeTab, setActiveTab] = useState('shopee')
   const [activeTimeline, setActiveTimeline] = useState(0)
 
   const kpiCards = [
@@ -263,72 +262,172 @@ export default function QCYCaseStudy() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
-            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-8 text-center text-[#0F0A2E]">
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
               Channel Performance Report
             </motion.h2>
 
-            {/* Channel Tabs */}
-            <motion.div variants={fadeIn} className="flex gap-2 mb-12 border-b border-gray-200">
-              {['shopee', 'tiktok', 'tokopedia'].map((channel) => (
-                <button
-                  key={channel}
-                  onClick={() => setActiveTab(channel)}
-                  className={`px-6 py-3 font-medium transition-all ${
-                    activeTab === channel
-                      ? `border-b-2 border-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-500 text-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-600`
-                      : 'text-gray-500 hover:text-gray-700'
-                  }`}
-                >
-                  {channelData[channel].name}
-                </button>
-              ))}
-            </motion.div>
+            {/* Shopee Channel */}
+            <motion.div variants={fadeIn} className="mb-16 pb-12 border-b border-gray-200">
+              <h3 className={`text-2xl font-bold mb-8 bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent`}>
+                Shopee
+              </h3>
+              
+              {/* Performance Breakdown */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Campaign Performance Breakdown</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {channelData.shopee.metrics.map((metric, i) => {
+                    const Icon = metric.icon
+                    return (
+                      <motion.div
+                        key={i}
+                        variants={fadeIn}
+                        className={`${channelData.shopee.bgColor} border ${channelData.shopee.borderColor} rounded-xl p-6`}
+                      >
+                        <div className="flex items-center gap-3 mb-2">
+                          <Icon className="w-5 h-5 text-red-500" />
+                          <p className="text-sm text-gray-600">{metric.label}</p>
+                        </div>
+                        <p className="text-2xl font-bold text-[#0F0A2E] mb-1">{metric.value}</p>
+                        <p className="text-xs text-gray-500">{metric.change}</p>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </div>
 
-            {/* Performance Breakdown - Top Section */}
-            <motion.div variants={fadeIn} className="mb-12">
-              <h3 className="text-2xl font-bold text-[#0F0A2E] mb-6">Campaign Performance Breakdown</h3>
-              <div className="grid md:grid-cols-4 gap-4">
-                {channelData[activeTab].metrics.map((metric, i) => {
-                  const Icon = metric.icon
-                  return (
-                    <motion.div
-                      key={i}
-                      variants={fadeIn}
-                      className={`${channelData[activeTab].bgColor} border ${channelData[activeTab].borderColor} rounded-xl p-6`}
-                    >
-                      <div className="flex items-center gap-3 mb-2">
-                        <Icon className={`w-5 h-5 text-${activeTab === 'shopee' ? 'red' : activeTab === 'tiktok' ? 'gray' : 'green'}-500`} />
-                        <p className="text-sm text-gray-600">{metric.label}</p>
-                      </div>
-                      <p className="text-2xl font-bold text-[#0F0A2E] mb-1">{metric.value}</p>
-                      <p className="text-xs text-gray-500">{metric.change}</p>
-                    </motion.div>
-                  )
-                })}
+              {/* Monthly Performance Graph */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Monthly Performance Graph</h4>
+                <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                  <img 
+                    src={channelData.shopee.graphImage} 
+                    alt="Shopee Performance Graph"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              {/* Detailed Analytics */}
+              <div>
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Detailed Analytics</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {channelData.shopee.analyticsImages.map((image, i) => (
+                    <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                      <img src={image} alt={`Shopee Analytics ${i + 1}`} className="w-full h-auto" />
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
-            {/* Performance Graph */}
-            <motion.div variants={fadeIn} className="mb-12">
-              <h3 className="text-xl font-bold text-[#0F0A2E] mb-6">Monthly Performance Graph</h3>
-              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
-                <img 
-                  src={channelData[activeTab].graphImage} 
-                  alt={`${channelData[activeTab].name} Performance Graph`}
-                  className="w-full h-auto"
-                />
+            {/* TikTok Shop Channel */}
+            <motion.div variants={fadeIn} className="mb-16 pb-12 border-b border-gray-200">
+              <h3 className={`text-2xl font-bold mb-8 bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent`}>
+                TikTok Shop
+              </h3>
+              
+              {/* Performance Breakdown */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Campaign Performance Breakdown</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {channelData.tiktok.metrics.map((metric, i) => {
+                    const Icon = metric.icon
+                    return (
+                      <motion.div
+                        key={i}
+                        variants={fadeIn}
+                        className={`${channelData.tiktok.bgColor} border ${channelData.tiktok.borderColor} rounded-xl p-6`}
+                      >
+                        <div className="flex items-center gap-3 mb-2">
+                          <Icon className="w-5 h-5 text-gray-600" />
+                          <p className="text-sm text-gray-600">{metric.label}</p>
+                        </div>
+                        <p className="text-2xl font-bold text-[#0F0A2E] mb-1">{metric.value}</p>
+                        <p className="text-xs text-gray-500">{metric.change}</p>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Monthly Performance Graph */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Monthly Performance Graph</h4>
+                <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                  <img 
+                    src={channelData.tiktok.graphImage} 
+                    alt="TikTok Shop Performance Graph"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              {/* Detailed Analytics */}
+              <div>
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Detailed Analytics</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {channelData.tiktok.analyticsImages.map((image, i) => (
+                    <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                      <img src={image} alt={`TikTok Shop Analytics ${i + 1}`} className="w-full h-auto" />
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
-            {/* Additional Analytics */}
-            <motion.div variants={fadeIn} className="mb-12">
-              <h3 className="text-xl font-bold text-[#0F0A2E] mb-6">Detailed Analytics</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                {channelData[activeTab].analyticsImages.map((image, i) => (
-                  <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src={image} alt={`${channelData[activeTab].name} Analytics ${i + 1}`} className="w-full h-auto" />
-                  </div>
-                ))}
+            {/* Tokopedia Channel */}
+            <motion.div variants={fadeIn} className="mb-16">
+              <h3 className={`text-2xl font-bold mb-8 bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent`}>
+                Tokopedia
+              </h3>
+              
+              {/* Performance Breakdown */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Campaign Performance Breakdown</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {channelData.tokopedia.metrics.map((metric, i) => {
+                    const Icon = metric.icon
+                    return (
+                      <motion.div
+                        key={i}
+                        variants={fadeIn}
+                        className={`${channelData.tokopedia.bgColor} border ${channelData.tokopedia.borderColor} rounded-xl p-6`}
+                      >
+                        <div className="flex items-center gap-3 mb-2">
+                          <Icon className="w-5 h-5 text-green-600" />
+                          <p className="text-sm text-gray-600">{metric.label}</p>
+                        </div>
+                        <p className="text-2xl font-bold text-[#0F0A2E] mb-1">{metric.value}</p>
+                        <p className="text-xs text-gray-500">{metric.change}</p>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Monthly Performance Graph */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Monthly Performance Graph</h4>
+                <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                  <img 
+                    src={channelData.tokopedia.graphImage} 
+                    alt="Tokopedia Performance Graph"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              {/* Detailed Analytics */}
+              <div>
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Detailed Analytics</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {channelData.tokopedia.analyticsImages.map((image, i) => (
+                    <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                      <img src={image} alt={`Tokopedia Analytics ${i + 1}`} className="w-full h-auto" />
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </motion.div>
