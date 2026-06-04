@@ -247,16 +247,6 @@ export default function QCYCaseStudy() {
 
   return (
     <div className="min-h-screen bg-[#F8F7FF]">
-      {/* Back to Portfolio */}
-      <div className="bg-[#F8F7FF] px-4 sm:px-6 lg:px-8 py-6 border-b border-purple-100">
-        <div className="max-w-7xl mx-auto">
-          <Link href="/portfolio" className="inline-flex items-center gap-2 text-[#6D4AFF] hover:text-[#4D2AFF] font-medium transition-colors">
-            <ArrowRight className="w-4 h-4 rotate-180" />
-            Back to Portfolio
-          </Link>
-        </div>
-      </div>
-
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8] text-white py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -508,6 +498,34 @@ export default function QCYCaseStudy() {
         </div>
       </section>
 
+      
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
+              My Responsibilities
+            </motion.h2>
+            <motion.div variants={staggerContainer} className="grid md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {responsibilities.map((resp, i) => {
+                const Icon = resp.icon
+                return (
+                  <motion.div
+                    key={i}
+                    variants={fadeIn}
+                    className="bg-white rounded-xl p-6 border border-[#E8E6F8] text-center hover:shadow-md transition-shadow"
+                  >
+                    <div className={`${resp.color} mb-3 flex justify-center`}>
+                      <Icon className="w-8 h-8" />
+                    </div>
+                    <p className="text-sm font-medium text-[#0F0A2E]">{resp.label}</p>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Campaign Timeline */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -685,7 +703,101 @@ export default function QCYCaseStudy() {
         </div>
       </section>
 
+      {/* Monthly Progress Screenshots Carousel */}
+      <section className="py-20 bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            {/* Header */}
+            <motion.div variants={fadeIn} className="mb-12">
+              <h2 className="text-3xl font-bold text-white mb-2">Monthly Progress Screenshots</h2>
+              <p className="text-white/80">Actual marketplace analytics data showing the growth journey across 5 months</p>
+            </motion.div>
 
+            {/* Carousel Container */}
+            <motion.div variants={fadeIn} className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
+              {/* Main Carousel Display */}
+              <div className="relative h-96 md:h-[500px] bg-gradient-to-br from-gray-50 to-gray-100">
+                {/* Featured Screenshot */}
+                <div className="relative w-full h-full">
+                  <img
+                    src={monthlyScreenshots[monthlySlide].image}
+                    alt={monthlyScreenshots[monthlySlide].month}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Overlay with Month Info */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8">
+                    <h3 className="text-2xl font-bold text-white mb-1">{monthlyScreenshots[monthlySlide].month}</h3>
+                    <p className="text-white/90">{monthlyScreenshots[monthlySlide].description}</p>
+                  </div>
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={() => setMonthlySlide((prev) => (prev - 1 + monthlyScreenshots.length) % monthlyScreenshots.length)}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur rounded-full p-2 transition-colors"
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
+                <button
+                  onClick={() => setMonthlySlide((prev) => (prev + 1) % monthlyScreenshots.length)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur rounded-full p-2 transition-colors"
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+              </div>
+
+              {/* Navigation Dots */}
+              <div className="flex justify-center gap-2 py-6 bg-white border-t border-gray-200">
+                {monthlyScreenshots.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setMonthlySlide(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      index === monthlySlide ? 'w-8 bg-[#6D4AFF]' : 'w-2 bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to ${monthlyScreenshots[index].month}`}
+                  />
+                ))}
+              </div>
+
+              {/* Month Buttons Navigation */}
+              <div className="bg-[#6D4AFF] px-8 py-4 overflow-x-auto">
+                <div className="flex gap-2 min-w-min">
+                  {monthlyScreenshots.map((screenshot, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setMonthlySlide(index)}
+                      className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-all ${
+                        index === monthlySlide
+                          ? 'bg-orange-500 text-white'
+                          : 'bg-[#5237D9] text-white/80 hover:text-white hover:bg-[#4220C1]'
+                      }`}
+                    >
+                      {screenshot.month}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Timeline Slider */}
+              <div className="bg-white/5 px-8 py-4 flex items-center gap-4">
+                <span className="text-xs text-white/60 font-medium">Timeline:</span>
+                <input
+                  type="range"
+                  min="0"
+                  max={monthlyScreenshots.length - 1}
+                  value={monthlySlide}
+                  onChange={(e) => setMonthlySlide(parseInt(e.target.value))}
+                  className="flex-1 h-1 bg-white/20 rounded-full appearance-none cursor-pointer accent-orange-500"
+                />
+                <span className="text-xs text-white/80 font-medium">{monthlySlide + 1} / {monthlyScreenshots.length}</span>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
@@ -709,22 +821,50 @@ export default function QCYCaseStudy() {
       </section>
 
       {/* Final Results */}
-      <section className="relative py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
-            <motion.h2 variants={fadeIn} className="text-4xl lg:text-5xl font-bold mb-6 text-[#0F0A2E]">
-              Want Similar Results?
-            </motion.h2>
-            <motion.p variants={fadeIn} className="text-lg text-gray-600 mb-12 leading-relaxed">
-              Let&apos;s discuss how I can help scale your e-commerce business with proven marketplace and paid ads strategies.
-            </motion.p>
+      <section className="relative py-20 bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8] text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
 
-            <motion.div variants={fadeIn}>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.div variants={fadeIn} className="text-center mb-16">
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+                Rp91.8M Launch Day Revenue Through Integrated Digital Marketing
+              </h2>
+              <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                Executed multi-channel campaign across Shopee, TikTok Shop, and Tokopedia combining paid ads, affiliate marketing, voucher campaigns, and livestream commerce for maximum launch-day impact.
+              </p>
+            </motion.div>
+
+            <motion.div variants={staggerContainer} className="grid md:grid-cols-4 gap-6">
+              {results.map((result, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeIn}
+                  className="bg-white/10 backdrop-blur rounded-xl p-8 border border-white/20 text-center hover:bg-white/20 transition-colors"
+                >
+                  <div className="text-3xl lg:text-4xl font-bold mb-2">{result.metric}</div>
+                  <div className="font-semibold mb-1">{result.label}</div>
+                  <div className="text-sm text-white/70">{result.subtext}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#6D4AFF] px-8 py-3 rounded-lg font-medium hover:bg-white/90 transition-colors"
+              >
+                View More Projects
+                <ArrowRight className="w-4 h-4" />
+              </Link>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#6D4AFF] to-[#4D2AFF] text-white px-12 py-4 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 border border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors"
               >
-                Start a Project
+                Back to Portfolio
               </Link>
             </motion.div>
           </motion.div>
