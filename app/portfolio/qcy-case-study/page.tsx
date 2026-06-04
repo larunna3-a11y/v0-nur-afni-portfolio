@@ -1,438 +1,717 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import {
-  LineChart,
-  Line,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  AreaChart,
-  Area,
-} from 'recharts'
-import { ChevronLeft, ChevronRight, TrendingUp } from 'lucide-react'
+import { ArrowRight, TrendingUp, ShoppingCart, Target, Calendar, Zap, Users, BarChart3, PieChart, Activity, LineChart, Eye, Briefcase, Clock, Zap as ZapIcon, MessageSquare, Search } from 'lucide-react'
+import { useState } from 'react'
 
-// Shopee monthly data
-const shopeeMonthlyData = [
-  { month: 'May 25', revenue: 91.8, orders: 1205, conversion: 2.43, growth: null },
-  { month: 'Jun 25', revenue: 84.2, orders: 1089, conversion: 2.35, growth: -8.3 },
-  { month: 'Jul 25', revenue: 101.5, orders: 1342, conversion: 2.56, growth: 20.5 },
-  { month: 'Aug 25', revenue: 115.3, orders: 1523, conversion: 2.71, growth: 13.6 },
-  { month: 'Sep 25', revenue: 102.4, orders: 1358, conversion: 2.48, growth: -11.2 },
-]
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+}
 
-// TikTok Shop monthly data
-const tiktokMonthlyData = [
-  { month: 'Jun 25', revenue: 20.06, orders: 71, conversion: 2.15, growth: null },
-  { month: 'Jul 25', revenue: 26.37, orders: 92, conversion: 2.31, growth: 31.5 },
-  { month: 'Aug 25', revenue: 40.00, orders: 112, conversion: 2.58, growth: 51.7 },
-  { month: 'Sep 25', revenue: 34.40, orders: 107, conversion: 2.42, growth: -14.0 },
-]
-
-// Tokopedia monthly data
-const tokopediaMonthlyData = [
-  { month: 'May 25', revenue: 77.1, orders: 1089, conversion: 1.98, growth: null },
-  { month: 'Jun 25', revenue: 82.3, orders: 1156, conversion: 2.12, growth: 6.8 },
-  { month: 'Jul 25', revenue: 88.5, orders: 1243, conversion: 2.28, growth: 7.5 },
-  { month: 'Aug 25', revenue: 95.6, orders: 1342, conversion: 2.41, growth: 8.0 },
-  { month: 'Sep 25', revenue: 100.4, orders: 1408, conversion: 2.56, growth: 5.0 },
-]
-
-// Screenshot data
-const shopeeScreenshots = [
-  { month: 'May 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.15-Vdb6TwycvS4Eux1waWkxwAPIe2jLrl.png', revenue: 'Rp91.8M', highlight: 'Launch Phase' },
-  { month: 'June 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png', revenue: 'Rp84.2M', highlight: 'Adjustment' },
-  { month: 'July 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.33-LNzD4k2v1gOHdyxNtN5LOKGlIRe9zY.png', revenue: 'Rp101.5M', highlight: '+20.5% Growth' },
-  { month: 'August 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.41-LId8GNCBxjUi6bm2gVVb3RaZmgfix7.png', revenue: 'Rp115.3M', highlight: 'Peak' },
-  { month: 'September 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.04.30-4Wa0xsHtk7VY3SzCvpA2dEuaYbcLff.png', revenue: 'Rp102.4M', highlight: 'Stable' },
-]
-
-const tiktokScreenshots = [
-  { month: 'June 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.08.28-DkXBAPIi3otnuNeJOhiI720dCAKEJa.png', revenue: 'Rp20.06M', highlight: 'Launch' },
-  { month: 'July 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.08-VSDiqQ4QCbltmOxaHLLsDVBXFexhCH.png', revenue: 'Rp26.37M', highlight: '+31.5%' },
-  { month: 'August 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png', revenue: 'Rp40.00M', highlight: '+51.7% Peak' },
-  { month: 'September 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png', revenue: 'Rp34.40M', highlight: 'Stable' },
-]
-
-const tokopediaScreenshots = [
-  { month: 'May 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.04.39-EIxdy7gMkVB6nMtXCJrqk1ku5G4Jq2.png', revenue: 'Rp77.1M', highlight: 'Launch' },
-  { month: 'June 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.05.11-8GtGmeFi0uSE8Z8PJPBCnaiffNGOGp.png', revenue: 'Rp82.3M', highlight: '+6.8%' },
-  { month: 'July 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.05.20-GxJlmG0xXnebzLsZdLUUlyStkPyieZ.png', revenue: 'Rp88.5M', highlight: 'Growth' },
-  { month: 'August 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.04.30-4oZCmeLlt2jvz4REe8epUBlTr9GSik.png', revenue: 'Rp95.6M', highlight: '+8%' },
-  { month: 'September 2025', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.05.09-WKKRqtNpRKXgbPdT6RE17x0NxHMKY9.png', revenue: 'Rp100.4M', highlight: 'Peak' },
-]
-
-// Growth phases
-const shopeeGrowthPhases = [
-  {
-    phase: 'Phase 1: Launch & Foundation',
-    period: 'May 2025',
-    description: 'Initial product launch across Shopee marketplace with comprehensive optimization. Established listings, promotional strategies, and integrated paid advertising campaigns to maximize launch visibility.',
-    keyActions: ['Product listing optimization', 'Voucher strategy implementation', 'Paid ads setup', 'Flash sale execution'],
-    result: 'Rp91.8M launch revenue with 1,205 orders',
-  },
-  {
-    phase: 'Phase 2: Optimization & Recovery',
-    period: 'Jun - Jul 2025',
-    description: 'Refined promotional calendar and marketplace placements. Implemented data-driven A/B testing and campaign optimization to improve conversion rates and ROI across all channels.',
-    keyActions: ['Campaign optimization', 'Conversion rate improvement', 'Budget reallocation', 'Affiliate activation'],
-    result: 'Revenue grew to Rp101.5M (+20.5% growth)',
-  },
-  {
-    phase: 'Phase 3: Scale & Peak',
-    period: 'Aug - Sep 2025',
-    description: 'Aggressive scaling with proven strategies and increased budget allocation. Integrated livestream commerce and expanded affiliate partnerships while maintaining strong ROI metrics.',
-    keyActions: ['Budget scaling', 'Livestream integration', 'Multi-channel sync', 'Performance optimization'],
-    result: 'Peak revenue of Rp115.3M with 2.71% conversion rate',
-  },
-]
-
-const tiktokGrowthPhases = [
-  {
-    phase: 'Phase 1: Platform Entry',
-    period: 'June 2025',
-    description: 'Initial TikTok Shop launch with Rp20.06M GMV and 71 orders. Established product listings and foundational marketplace presence with 11,116 monthly visitors and 24,226 page views.',
-    keyActions: ['Product listing optimization', 'Shop setup and branding', 'Initial traffic acquisition', 'Marketplace positioning'],
-    result: 'Rp20.06M GMV with Rp22.48M gross revenue',
-  },
-  {
-    phase: 'Phase 2: Growth Acceleration',
-    period: 'July 2025',
-    description: 'Strong growth phase with 31.5% MoM increase. Orders grew from 71 to 92 with Rp26.37M GMV. Traffic momentum building with content strategy and marketplace features utilization.',
-    keyActions: ['Content strategy optimization', 'LIVE commerce testing', 'Marketplace campaigns', 'Customer engagement'],
-    result: 'Rp26.37M GMV (+31.5% MoM) with 92 orders',
-  },
-  {
-    phase: 'Phase 3: Peak Performance',
-    period: 'August - September 2025',
-    description: 'August breakthrough with 51.7% MoM growth reaching Rp40.00M GMV and 112 orders. September normalized at Rp34.40M with 107 orders while maintaining strong metrics. Total period GMV of Rp120.8M with 382 orders represents +363.83% growth.',
-    keyActions: ['Viral campaign execution', 'LIVE commerce scaling', 'Affiliate partnerships', 'Peak season optimization'],
-    result: 'Peak revenue of Rp40.00M (Aug) with sustained Rp34.40M (Sep) | +363.83% total growth',
-  },
-]
-
-const tokopediaGrowthPhases = [
-  {
-    phase: 'Phase 1: Marketplace Entry',
-    period: 'May 2025',
-    description: 'Tokopedia marketplace launch with emphasis on product catalog optimization and marketplace feature utilization. Established initial traction through promotional programs and voucher strategies.',
-    keyActions: ['Product catalog setup', 'Voucher programs', 'Marketplace placement', 'Initial visibility drive'],
-    result: 'Rp77.1M launch revenue with 1,089 orders',
-  },
-  {
-    phase: 'Phase 2: Campaign Development',
-    period: 'Jun - Jul 2025',
-    description: 'Developed sophisticated promotional calendar leveraging Tokopedia\'s seasonal campaigns and flash sale events. Implemented conversion optimization and customer retention strategies.',
-    keyActions: ['Seasonal campaign planning', 'Flash sale optimization', 'Conversion tracking', 'Customer segmentation'],
-    result: 'Revenue grew to Rp88.5M (+15% growth)',
-  },
-  {
-    phase: 'Phase 3: Sustained Growth',
-    period: 'Aug - Sep 2025',
-    description: 'Continuous market expansion with focus on customer lifetime value and repeat purchases. Integrated loyalty programs and advanced targeting to maintain momentum and profitability.',
-    keyActions: ['Retention programs', 'Loyalty initiatives', 'Repeat purchase optimization', 'Customer experience enhancement'],
-    result: 'Revenue reached Rp100.4M (+30% from launch)',
-  },
-]
-
-const platformStats = {
-  shopee: {
-    growth: '+25.7%',
-    orders: '6,517',
-    conversion: '2.71%',
-    duration: 'May - Sep 2025',
-  },
-  'tiktok shop': {
-    growth: '+363.83%',
-    orders: '382',
-    conversion: '2.42%',
-    duration: 'Jun - Sep 2025',
-  },
-  tokopedia: {
-    growth: '+30.2%',
-    orders: '6,238',
-    conversion: '2.56%',
-    duration: 'May - Sep 2025',
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
   },
 }
 
 export default function QCYCaseStudy() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [selectedPlatform, setSelectedPlatform] = useState('shopee')
+  const [activeTimeline, setActiveTimeline] = useState(0)
 
-  const platformData = {
-    shopee: {
-      monthlyData: shopeeMonthlyData,
-      screenshots: shopeeScreenshots,
-      growthPhases: shopeeGrowthPhases,
-      color: 'from-red-500 to-red-600',
+  const kpiCards = [
+    { label: 'August Revenue', value: 'Rp91.8M', icon: TrendingUp },
+    { label: 'Total Orders', value: '576+', icon: ShoppingCart },
+    { label: 'Active Marketplaces', value: '3', icon: Target },
+    { label: 'Marketing Channels', value: '5', icon: Zap },
+  ]
+
+  const overviewCards = [
+    { title: 'Campaign Duration', content: '6 Months', icon: Calendar },
+    { title: 'Platforms', content: 'Shopee, Tokopedia, TikTok Shop', icon: Target },
+    { title: 'Channels', content: 'Social Media, Affiliate, LIVE, Ads', icon: Zap },
+    { title: 'Role', content: 'Digital Marketing & E-Commerce Specialist', icon: Users },
+  ]
+
+  const timeline = [
+    {
+      month: 'May 2025',
+      title: 'Campaign Kickoff - HT15 & C30',
+      description: 'Launched integrated campaign for QCY HT15 & C30 products across Shopee, with Rp91.8M launch day revenue and 250+ orders through combined paid ads, flash sales, vouchers, and affiliate strategy.',
     },
-    'tiktok shop': {
-      monthlyData: tiktokMonthlyData,
-      screenshots: tiktokScreenshots,
-      growthPhases: tiktokGrowthPhases,
+    {
+      month: 'June 2025',
+      title: 'Multi-Platform Expansion',
+      description: 'Expanded to TikTok Shop and Tokopedia with platform-specific campaigns, affiliate partnerships, and marketplace optimization strategies.',
+    },
+    {
+      month: 'July 2025',
+      title: '7.7 Flash Sale Campaign',
+      description: 'Strategic flash sale campaigns combining livestream commerce, flash deals, voucher activation, and influencer partnerships to drive category awareness.',
+    },
+    {
+      month: 'August 2025',
+      title: 'Performance Optimization & Scaling',
+      description: 'Refined campaign mechanics based on performance data. Achieved Rp91.8M revenue with 576+ total orders through optimized ads (Rp8.2M GMV), affiliate activation (Rp38.5M GMV), voucher campaigns (Rp75.8M), and multi-platform execution.',
+    },
+    {
+      month: 'September 2025',
+      title: 'Seasonal Campaign & Consolidation',
+      description: 'End-of-season promotional push combining marketplace mechanics, affiliate networks, livestream commerce, and final product push before new releases.',
+    },
+  ]
+
+  const responsibilities = [
+    { icon: BarChart3, label: 'Campaign Strategy', color: 'text-blue-500' },
+    { icon: ShoppingCart, label: 'Marketplace Management', color: 'text-purple-500' },
+    { icon: TrendingUp, label: 'Product Launch Planning', color: 'text-orange-500' },
+    { icon: Calendar, label: 'Promotional Calendar', color: 'text-pink-500' },
+    { icon: Activity, label: 'TikTok LIVE Support', color: 'text-cyan-500' },
+    { icon: MessageSquare, label: 'Social Media Planning', color: 'text-indigo-500' },
+    { icon: Search, label: 'Marketplace Optimization', color: 'text-green-500' },
+    { icon: Eye, label: 'Creative Asset Design', color: 'text-red-500' },
+    { icon: LineChart, label: 'Performance Reporting', color: 'text-teal-500' },
+  ]
+
+  const channelData = {
+    shopee: {
+      name: 'Shopee',
+      color: 'from-red-500 to-red-600',
+      bgColor: 'bg-red-50',
+      borderColor: 'border-red-200',
+      metrics: [
+        { label: 'Paid Ads GMV', value: 'Rp49M', change: '10.6x ROI', icon: TrendingUp },
+        { label: 'Voucher GMV', value: 'Rp75.8M', change: '96.2x ROI', icon: ShoppingCart },
+        { label: 'Livestream GMV', value: 'Rp15M', change: '37.3x ROI', icon: Activity },
+        { label: 'Affiliate GMV', value: 'Rp36.2M', change: '14.7x ROI', icon: Users },
+      ],
+      graphImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png',
+      analyticsImages: [
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.07-XjDfsVbLo5893RlsMLLT7b9Qbqkery.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.33-LNzD4k2v1gOHdyxNtN5LOKGlIRe9zY.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.41-LId8GNCBxjUi6bm2gVVb3RaZmgfix7.png',
+      ],
+    },
+    tiktok: {
+      name: 'TikTok Shop',
       color: 'from-black to-gray-800',
+      bgColor: 'bg-gray-50',
+      borderColor: 'border-gray-300',
+      metrics: [
+        { label: 'Platform Ads GMV', value: 'Rp43M', change: '12x ROI', icon: TrendingUp },
+        { label: 'Shop Campaign GMV', value: 'Rp52.6M', change: '5.5x ROI', icon: ShoppingCart },
+        { label: 'LIVE Streams GMV', value: 'Rp3.4M', change: 'Multi-channel', icon: Activity },
+        { label: 'Affiliate GMV', value: 'Rp2.2M', change: '5.29x ROI', icon: Users },
+      ],
+      graphImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.08.28-DkXBAPIi3otnuNeJOhiI720dCAKEJa.png',
+      analyticsImages: [
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.08-VSDiqQ4QCbltmOxaHLLsDVBXFexhCH.png',
+      ],
     },
     tokopedia: {
-      monthlyData: tokopediaMonthlyData,
-      screenshots: tokopediaScreenshots,
-      growthPhases: tokopediaGrowthPhases,
+      name: 'Tokopedia',
       color: 'from-green-500 to-green-600',
+      bgColor: 'bg-green-50',
+      borderColor: 'border-green-200',
+      metrics: [
+        { label: 'Organic GMV', value: 'Rp26.4Jt', change: '+10.22%', icon: TrendingUp },
+        { label: 'Conversion Rate', value: '1.43%', change: 'Optimized', icon: Target },
+        { label: 'Total Orders', value: '95+', change: '+5.56%', icon: ShoppingCart },
+        { label: 'Campaign Reach', value: 'Wide', change: 'Multi-tier', icon: Users },
+      ],
+      graphImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png',
+      analyticsImages: [
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.49-crpcRxhRmwtZtrRNlNmw63BeAY4HL0.png',
+      ],
     },
   }
 
-  const activeScreenshots = platformData[selectedPlatform as keyof typeof platformData].screenshots
-  const activeGrowthPhases = platformData[selectedPlatform as keyof typeof platformData].growthPhases
-  const activePlatform = platformData[selectedPlatform as keyof typeof platformData]
-  const activeStats = platformStats[selectedPlatform as keyof typeof platformStats]
+  const marketplaces = [
+    {
+      name: 'Shopee',
+      activities: [
+        'Paid Ads: Rp4.2M spend, 13,344 orders, Rp49M GMV (ROI 10.6x)',
+        'Livestreaming: Rp402K spend, 53 sessions, Rp15M GMV (ROI 37.3x)',
+        'Flash Sales: Rp360K spend, 7 events, Rp2.5M GMV (ROI 7x)',
+        'Vouchers: Rp788K spend, 222 activations, Rp75.8M GMV (ROI 96.2x)',
+        'Affiliate: Rp2.4M spend, 139 partners, Rp36.2M GMV (ROI 14.7x)',
+      ],
+      color: 'from-red-500 to-red-600',
+    },
+    {
+      name: 'TikTok Shop',
+      activities: [
+        'Platform Ads: Rp3.5M spend, 228 orders, Rp43M GMV (ROI 12x)',
+        'Shop Campaign: Rp9.4M spend, 99 campaigns, Rp52.6M GMV (ROI 5.5x)',
+        'Marketing Tools: Rp2.2M spend, 44 activations, Rp11.9M GMV (ROI 5.29x)',
+        'Affiliate Program: Rp174K spend, 13 partners, Rp2.2M GMV (ROI 5.29x)',
+        'Livestream Support & Community Engagement',
+      ],
+      color: 'from-black to-gray-800',
+    },
+    {
+      name: 'Tokopedia',
+      activities: [
+        'Integrated Campaign Participation',
+        'Product Listing Optimization',
+        'Promotional Calendar Management',
+        'Customer Service & Response Management',
+        'Seasonal Campaign Coordination',
+      ],
+      color: 'from-green-500 to-green-600',
+    },
+  ]
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % activeScreenshots.length)
-  }
+  const learnings = [
+    {
+      title: 'Integrated Commerce',
+      description: 'Combining marketplace, content, affiliate and paid media improves conversion and maximizes reach across channels.',
+    },
+    {
+      title: 'Consistent Activation',
+      description: 'Monthly strategic campaigns build sustainable growth momentum and maintain customer engagement.',
+    },
+    {
+      title: 'Multi-Channel Execution',
+      description: 'Cross-platform activation increases visibility, drives redundancy in traffic, and maximizes revenue potential.',
+    },
+  ]
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + activeScreenshots.length) % activeScreenshots.length)
-  }
+  const results = [
+    { metric: 'Rp91.8M', label: 'Launch Day Revenue', subtext: 'May 2025 campaign' },
+    { metric: '250+', label: 'Launch Orders', subtext: 'Day-one performance' },
+    { metric: '576+', label: 'Total Orders (Aug)', subtext: 'Multi-platform execution' },
+    { metric: '96.2x', label: 'Voucher ROI', subtext: 'Highest performing channel' },
+  ]
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F8F7FF]">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8]">
+      <section className="relative bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8] text-white py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Link href="/portfolio" className="text-white/80 hover:text-white transition-colors flex items-center gap-2 mb-6">
-              <ChevronLeft className="w-4 h-4" />
-              Back to Portfolio
-            </Link>
+          <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div variants={fadeIn}>
+              <div className="inline-block mb-4 px-4 py-2 bg-white/20 rounded-full text-sm font-medium">
+                E-Commerce Campaign
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                QCY Indonesia Marketplace Growth Campaign
+              </h1>
+              <p className="text-lg text-white/80 mb-6">
+                6-Month Multi-Channel E-Commerce Growth & Brand Activation
+              </p>
+              <p className="text-white/70 leading-relaxed mb-8">
+                Executed integrated campaigns across Shopee, Tokopedia, TikTok Shop, TikTok LIVE, affiliate marketing, social media, and paid advertising to drive marketplace growth and product visibility.
+              </p>
+              <div className="text-sm text-white/60">
+                <p className="font-medium text-white/80">Campaign Period: April – September 2025</p>
+              </div>
+            </motion.div>
 
-            <h1 className="text-5xl font-bold text-white mb-4">
-              QCY Indonesia Multi-Platform Growth
-            </h1>
-            <p className="text-xl text-white/90 max-w-2xl">
-              Rp91.8M → Rp115.3M (26% growth) - Scaling HT15 & C30 audio products across Shopee, TikTok Shop & Tokopedia
-            </p>
+            {/* KPI Cards */}
+            <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4">
+              {kpiCards.map((card, i) => {
+                const Icon = card.icon
+                return (
+                  <div key={i} className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
+                    <Icon className="w-6 h-6 mb-3 text-white/80" />
+                    <div className="text-2xl font-bold mb-1">{card.value}</div>
+                    <div className="text-sm text-white/70">{card.label}</div>
+                  </div>
+                )
+              })}
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Platform Selector - Sticky */}
-      <section className="sticky top-0 z-40 bg-white border-b border-gray-200 backdrop-blur bg-white/95">
+      {/* Project Overview */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-0">
-            {['shopee', 'tiktok shop', 'tokopedia'].map((platform) => (
-              <button
-                key={platform}
-                onClick={() => {
-                  setSelectedPlatform(platform)
-                  setCurrentSlide(0)
-                }}
-                className={`px-6 py-4 font-medium border-b-2 transition-all capitalize ${
-                  selectedPlatform === platform
-                    ? 'border-[#6D4AFF] text-[#6D4AFF]'
-                    : 'border-transparent text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                {platform}
-              </button>
-            ))}
-          </div>
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
+              Project Overview
+            </motion.h2>
+            <motion.div variants={staggerContainer} className="grid md:grid-cols-4 gap-6">
+              {overviewCards.map((card, i) => {
+                const Icon = card.icon
+                return (
+                  <motion.div
+                    key={i}
+                    variants={fadeIn}
+                    className="bg-white rounded-xl p-8 border border-[#E8E6F8] hover:shadow-lg transition-shadow"
+                  >
+                    <Icon className="w-8 h-8 text-[#6D4AFF] mb-4" />
+                    <h3 className="font-bold text-[#0F0A2E] mb-2">{card.title}</h3>
+                    <p className="text-sm text-[#4B4680]">{card.content}</p>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Main Content */}
+      {/* Channel Performance Report */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Platform Stats */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid md:grid-cols-4 gap-4 mb-16"
-          >
-            <div className="bg-gradient-to-br from-[#6D4AFF]/10 to-[#2D1BB8]/10 rounded-lg p-6 border border-[#6D4AFF]/20">
-              <p className="text-gray-600 text-sm mb-2">Total Growth</p>
-              <p className="text-3xl font-bold text-[#6D4AFF]">{activeStats.growth}</p>
-            </div>
-            <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/10 rounded-lg p-6 border border-blue-200">
-              <p className="text-gray-600 text-sm mb-2">Total Orders</p>
-              <p className="text-3xl font-bold text-blue-600">{activeStats.orders}</p>
-            </div>
-            <div className="bg-gradient-to-br from-green-500/10 to-green-600/10 rounded-lg p-6 border border-green-200">
-              <p className="text-gray-600 text-sm mb-2">Conversion Rate</p>
-              <p className="text-3xl font-bold text-green-600">{activeStats.conversion}</p>
-            </div>
-            <div className="bg-gradient-to-br from-orange-500/10 to-orange-600/10 rounded-lg p-6 border border-orange-200">
-              <p className="text-gray-600 text-sm mb-2">Campaign Period</p>
-              <p className="text-sm font-bold text-orange-600">{activeStats.duration}</p>
-            </div>
-          </motion.div>
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
+              Channel Performance Report
+            </motion.h2>
 
-          {/* Screenshot Carousel */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mb-16 bg-gray-50 rounded-2xl overflow-hidden shadow-lg"
-          >
-            <div className="relative h-96 md:h-[500px] bg-gradient-to-br from-gray-100 to-gray-200">
-              <img
-                src={activeScreenshots[currentSlide].url}
-                alt={activeScreenshots[currentSlide].month}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8">
-                <h3 className="text-2xl font-bold text-white mb-1">
-                  {activeScreenshots[currentSlide].month}
-                </h3>
-                <p className="text-white/90">{activeScreenshots[currentSlide].highlight}</p>
+            {/* Shopee Channel */}
+            <motion.div variants={fadeIn} className="mb-16 pb-12 border-b border-gray-200">
+              <h3 className={`text-2xl font-bold mb-8 bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent`}>
+                Shopee
+              </h3>
+              
+              {/* Performance Breakdown */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Campaign Performance Breakdown</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {channelData.shopee.metrics.map((metric, i) => {
+                    const Icon = metric.icon
+                    return (
+                      <motion.div
+                        key={i}
+                        variants={fadeIn}
+                        className={`${channelData.shopee.bgColor} border ${channelData.shopee.borderColor} rounded-xl p-6`}
+                      >
+                        <div className="flex items-center gap-3 mb-2">
+                          <Icon className="w-5 h-5 text-red-500" />
+                          <p className="text-sm text-gray-600">{metric.label}</p>
+                        </div>
+                        <p className="text-2xl font-bold text-[#0F0A2E] mb-1">{metric.value}</p>
+                        <p className="text-xs text-gray-500">{metric.change}</p>
+                      </motion.div>
+                    )
+                  })}
+                </div>
               </div>
 
-              {/* Navigation Arrows */}
-              <button
-                onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur rounded-full p-2 transition-colors"
-              >
-                <ChevronLeft className="w-6 h-6 text-white" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur rounded-full p-2 transition-colors"
-              >
-                <ChevronRight className="w-6 h-6 text-white" />
-              </button>
-            </div>
+              {/* Monthly Performance Graph */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Monthly Performance Graph</h4>
+                <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                  <img 
+                    src={channelData.shopee.graphImage} 
+                    alt="Shopee Performance Graph"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
 
-            {/* Dots Navigation */}
-            <div className="flex justify-center gap-2 py-6 bg-white border-t border-gray-200">
-              {activeScreenshots.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    index === currentSlide ? 'w-8 bg-[#6D4AFF]' : 'w-2 bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
-            </div>
+              {/* Detailed Analytics */}
+              <div>
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Detailed Analytics</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {channelData.shopee.analyticsImages.map((image, i) => (
+                    <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                      <img src={image} alt={`Shopee Analytics ${i + 1}`} className="w-full h-auto" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
 
-            {/* Month Navigation */}
-            <div className="bg-[#6D4AFF] px-8 py-4 overflow-x-auto">
-              <div className="flex gap-2 min-w-min">
-                {activeScreenshots.map((screenshot, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-all ${
-                      index === currentSlide
-                        ? 'bg-orange-500 text-white'
-                        : 'bg-[#5237D9] text-white/80 hover:text-white hover:bg-[#4220C1]'
-                    }`}
+            {/* TikTok Shop Channel */}
+            <motion.div variants={fadeIn} className="mb-16 pb-12 border-b border-gray-200">
+              <h3 className={`text-2xl font-bold mb-8 bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent`}>
+                TikTok Shop
+              </h3>
+              
+              {/* Performance Breakdown */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Campaign Performance Breakdown</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {channelData.tiktok.metrics.map((metric, i) => {
+                    const Icon = metric.icon
+                    return (
+                      <motion.div
+                        key={i}
+                        variants={fadeIn}
+                        className={`${channelData.tiktok.bgColor} border ${channelData.tiktok.borderColor} rounded-xl p-6`}
+                      >
+                        <div className="flex items-center gap-3 mb-2">
+                          <Icon className="w-5 h-5 text-gray-600" />
+                          <p className="text-sm text-gray-600">{metric.label}</p>
+                        </div>
+                        <p className="text-2xl font-bold text-[#0F0A2E] mb-1">{metric.value}</p>
+                        <p className="text-xs text-gray-500">{metric.change}</p>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Monthly Performance Graph */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Monthly Performance Graph</h4>
+                <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                  <img 
+                    src={channelData.tiktok.graphImage} 
+                    alt="TikTok Shop Performance Graph"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              {/* Detailed Analytics */}
+              <div>
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Detailed Analytics</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {channelData.tiktok.analyticsImages.map((image, i) => (
+                    <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                      <img src={image} alt={`TikTok Shop Analytics ${i + 1}`} className="w-full h-auto" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Tokopedia Channel */}
+            <motion.div variants={fadeIn} className="mb-16">
+              <h3 className={`text-2xl font-bold mb-8 bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent`}>
+                Tokopedia
+              </h3>
+              
+              {/* Performance Breakdown */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Campaign Performance Breakdown</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {channelData.tokopedia.metrics.map((metric, i) => {
+                    const Icon = metric.icon
+                    return (
+                      <motion.div
+                        key={i}
+                        variants={fadeIn}
+                        className={`${channelData.tokopedia.bgColor} border ${channelData.tokopedia.borderColor} rounded-xl p-6`}
+                      >
+                        <div className="flex items-center gap-3 mb-2">
+                          <Icon className="w-5 h-5 text-green-600" />
+                          <p className="text-sm text-gray-600">{metric.label}</p>
+                        </div>
+                        <p className="text-2xl font-bold text-[#0F0A2E] mb-1">{metric.value}</p>
+                        <p className="text-xs text-gray-500">{metric.change}</p>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Monthly Performance Graph */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Monthly Performance Graph</h4>
+                <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                  <img 
+                    src={channelData.tokopedia.graphImage} 
+                    alt="Tokopedia Performance Graph"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              {/* Detailed Analytics */}
+              <div>
+                <h4 className="text-lg font-semibold text-[#0F0A2E] mb-4">Detailed Analytics</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {channelData.tokopedia.analyticsImages.map((image, i) => (
+                    <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                      <img src={image} alt={`Tokopedia Analytics ${i + 1}`} className="w-full h-auto" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Responsibilities */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
+              My Responsibilities
+            </motion.h2>
+            <motion.div variants={staggerContainer} className="grid md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {responsibilities.map((resp, i) => {
+                const Icon = resp.icon
+                return (
+                  <motion.div
+                    key={i}
+                    variants={fadeIn}
+                    className="bg-white rounded-xl p-6 border border-[#E8E6F8] text-center hover:shadow-md transition-shadow"
                   >
-                    {screenshot.month.split(' ')[0]}
-                  </button>
-                ))}
-              </div>
-            </div>
+                    <div className={`${resp.color} mb-3 flex justify-center`}>
+                      <Icon className="w-8 h-8" />
+                    </div>
+                    <p className="text-sm font-medium text-[#0F0A2E]">{resp.label}</p>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Chart Section */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="text-2xl font-bold text-[#0F0A2E] mb-6">Monthly Performance Trend</h2>
-            <div className="bg-white rounded-2xl border border-gray-200 p-8">
-              <ResponsiveContainer width="100%" height={400}>
-                <AreaChart data={activePlatform.monthlyData}>
-                  <defs>
-                    <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#6D4AFF" stopOpacity={0.3} />
-                      <stop offset="95%" stopColor="#6D4AFF" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                  <XAxis dataKey="month" stroke="#9CA3AF" />
-                  <YAxis stroke="#9CA3AF" />
-                  <Tooltip
-                    contentStyle={{
-                      backgroundColor: '#0F0A2E',
-                      border: 'none',
-                      borderRadius: '8px',
-                      color: '#fff',
-                    }}
-                  />
-                  <Area
-                    type="monotone"
-                    dataKey="revenue"
-                    stroke="#6D4AFF"
-                    strokeWidth={2}
-                    fillOpacity={1}
-                    fill="url(#colorRevenue)"
-                  />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-          </motion.div>
-
-          {/* Growth Phases */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl font-bold text-[#0F0A2E] mb-8">Growth Strategy Phases</h2>
-            <div className="space-y-6">
-              {activeGrowthPhases.map((phase, index) => (
-                <div
-                  key={index}
-                  className="border-l-4 border-[#6D4AFF] bg-gradient-to-r from-[#6D4AFF]/5 to-transparent p-6 rounded-r-lg"
+      {/* Campaign Timeline */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
+              Campaign Timeline
+            </motion.h2>
+            <motion.div variants={staggerContainer} className="space-y-4">
+              {timeline.map((event, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeIn}
+                  onClick={() => setActiveTimeline(i)}
+                  className={`cursor-pointer rounded-xl p-6 border-2 transition-all ${
+                    activeTimeline === i
+                      ? 'border-[#6D4AFF] bg-[#6D4AFF]/5'
+                      : 'border-[#E8E6F8] bg-[#F8F7FF] hover:border-[#6D4AFF]/30'
+                  }`}
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <h3 className="text-xl font-bold text-[#0F0A2E]">{phase.phase}</h3>
-                      <p className="text-sm text-gray-500">{phase.period}</p>
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <div className={`w-4 h-4 rounded-full mt-2 ${activeTimeline === i ? 'bg-[#6D4AFF]' : 'bg-[#E8E6F8]'}`}></div>
                     </div>
-                    <span className="text-xs font-semibold bg-[#6D4AFF] text-white px-3 py-1 rounded-full">
-                      Phase {index + 1}
-                    </span>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-[#0F0A2E]">{event.title}</h3>
+                      <p className="text-sm text-[#6D4AFF] font-medium mt-1">{event.month}</p>
+                      {activeTimeline === i && (
+                        <p className="text-sm text-[#4B4680] mt-3 leading-relaxed">{event.description}</p>
+                      )}
+                    </div>
                   </div>
-                  <p className="text-gray-700 mb-4">{phase.description}</p>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-xs text-gray-500 mb-2 font-semibold">Key Actions</p>
-                      <ul className="space-y-1">
-                        {phase.keyActions.map((action, i) => (
-                          <li key={i} className="text-sm text-gray-600 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 bg-[#6D4AFF] rounded-full" />
-                            {action}
-                          </li>
-                        ))}
-                      </ul>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Detailed Performance Metrics */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
+              Campaign Performance Breakdown
+            </motion.h2>
+
+            {/* Shopee Performance */}
+            <motion.div variants={fadeIn} className="mb-12 bg-gradient-to-br from-red-50 to-red-100/50 border border-red-200 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-red-900 mb-8">Shopee Performance</h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-lg p-4 border border-red-100">
+                      <div className="text-sm text-red-600 font-medium">Paid Ads</div>
+                      <div className="text-2xl font-bold text-red-900 mt-1">13,344 Orders</div>
+                      <div className="text-sm text-red-700 mt-2">Rp49M GMV • Rp4.2M Cost • 10.6x ROI</div>
                     </div>
-                    <div className="bg-white rounded-lg p-4 border border-[#6D4AFF]/20">
-                      <p className="text-xs text-gray-500 mb-2 font-semibold">Result</p>
-                      <p className="text-lg font-bold text-[#6D4AFF]">{phase.result}</p>
+                    <div className="bg-white rounded-lg p-4 border border-red-100">
+                      <div className="text-sm text-red-600 font-medium">Voucher Campaign</div>
+                      <div className="text-2xl font-bold text-red-900 mt-1">222 Activations</div>
+                      <div className="text-sm text-red-700 mt-2">Rp75.8M GMV • Rp788K Cost • 96.2x ROI</div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+                <div>
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-lg p-4 border border-red-100">
+                      <div className="text-sm text-red-600 font-medium">Livestreaming</div>
+                      <div className="text-2xl font-bold text-red-900 mt-1">53 Sessions</div>
+                      <div className="text-sm text-red-700 mt-2">Rp15M GMV • Rp402K Cost • 37.3x ROI</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 border border-red-100">
+                      <div className="text-sm text-red-600 font-medium">Affiliate Network</div>
+                      <div className="text-2xl font-bold text-red-900 mt-1">139 Partners</div>
+                      <div className="text-sm text-red-700 mt-2">Rp36.2M GMV • Rp2.4M Cost • 14.7x ROI</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* TikTok Shop Performance */}
+            <motion.div variants={fadeIn} className="mb-12 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-8">TikTok Shop Performance</h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <div className="space-y-4">
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
+                      <div className="text-sm text-white/70 font-medium">Platform Ads</div>
+                      <div className="text-2xl font-bold mt-1">228 Orders</div>
+                      <div className="text-sm text-white/60 mt-2">Rp43M GMV • Rp3.5M Cost • 12x ROI</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
+                      <div className="text-sm text-white/70 font-medium">Marketing Tools</div>
+                      <div className="text-2xl font-bold mt-1">143 Campaigns</div>
+                      <div className="text-sm text-white/60 mt-2">Rp64.5M GMV • Rp11.7M Cost • 5.5x ROI</div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="space-y-4">
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
+                      <div className="text-sm text-white/70 font-medium">Livestream & Shop Campaign</div>
+                      <div className="text-2xl font-bold mt-1">Combined Activation</div>
+                      <div className="text-sm text-white/60 mt-2">TikTok LIVE integration, shop optimization, social media amplification</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
+                      <div className="text-sm text-white/70 font-medium">Affiliate Program</div>
+                      <div className="text-2xl font-bold mt-1">13 Active Partners</div>
+                      <div className="text-sm text-white/60 mt-2">Rp2.2M GMV • Rp174K Cost • 5.29x ROI</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Sales by Channel */}
+            <motion.div variants={fadeIn} className="bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-purple-900 mb-8">Sales by Channel (August 2025)</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-white rounded-lg p-6 border border-purple-100">
+                  <div className="text-sm text-purple-600 font-medium">Shopee</div>
+                  <div className="text-3xl font-bold text-purple-900 mt-2">375</div>
+                  <div className="text-sm text-purple-700 mt-1">Orders</div>
+                  <div className="text-lg font-semibold text-purple-900 mt-3">Rp54.9M</div>
+                  <div className="text-xs text-purple-600">Gross Revenue</div>
+                </div>
+                <div className="bg-white rounded-lg p-6 border border-purple-100">
+                  <div className="text-sm text-purple-600 font-medium">TikTok Shop</div>
+                  <div className="text-3xl font-bold text-purple-900 mt-2">199</div>
+                  <div className="text-sm text-purple-700 mt-1">Orders</div>
+                  <div className="text-lg font-semibold text-purple-900 mt-3">Rp35.5M</div>
+                  <div className="text-xs text-purple-600">Gross Revenue</div>
+                </div>
+                <div className="bg-white rounded-lg p-6 border border-purple-100">
+                  <div className="text-sm text-purple-600 font-medium">Lazada</div>
+                  <div className="text-3xl font-bold text-purple-900 mt-2">21</div>
+                  <div className="text-sm text-purple-700 mt-1">Orders</div>
+                  <div className="text-lg font-semibold text-purple-900 mt-3">Rp1.2M</div>
+                  <div className="text-xs text-purple-600">Gross Revenue</div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
-    </main>
+
+      {/* Marketplace Execution */}
+      <section className="py-20 bg-gradient-to-b from-white to-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
+              Marketplace Execution
+            </motion.h2>
+            <motion.div variants={staggerContainer} className="grid md:grid-cols-3 gap-8">
+              {marketplaces.map((mp, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeIn}
+                  className={`bg-gradient-to-br ${mp.color} rounded-2xl p-8 text-white overflow-hidden group hover:shadow-lg transition-shadow`}
+                >
+                  <h3 className="text-2xl font-bold mb-6">{mp.name}</h3>
+                  <ul className="space-y-3">
+                    {mp.activities.map((activity, j) => (
+                      <li key={j} className="flex items-start gap-3 text-sm">
+                        <span className="text-white/60 font-bold">•</span>
+                        <span className="text-white/90">{activity}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Key Learnings */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
+              Key Learnings
+            </motion.h2>
+            <motion.div variants={staggerContainer} className="grid md:grid-cols-3 gap-8">
+              {learnings.map((learning, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeIn}
+                  className="bg-gradient-to-br from-[#6D4AFF]/10 to-[#2D1BB8]/10 border border-[#6D4AFF]/20 rounded-2xl p-8 hover:shadow-md transition-shadow"
+                >
+                  <h3 className="font-bold text-[#0F0A2E] mb-3">{learning.title}</h3>
+                  <p className="text-sm text-[#4B4680] leading-relaxed">{learning.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Final Results */}
+      <section className="relative py-20 bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8] text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.div variants={fadeIn} className="text-center mb-16">
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+                Rp91.8M Launch Day Revenue Through Integrated Digital Marketing
+              </h2>
+              <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                Executed multi-channel campaign across Shopee, TikTok Shop, and Tokopedia combining paid ads, affiliate marketing, voucher campaigns, and livestream commerce for maximum launch-day impact.
+              </p>
+            </motion.div>
+
+            <motion.div variants={staggerContainer} className="grid md:grid-cols-4 gap-6">
+              {results.map((result, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeIn}
+                  className="bg-white/10 backdrop-blur rounded-xl p-8 border border-white/20 text-center hover:bg-white/20 transition-colors"
+                >
+                  <div className="text-3xl lg:text-4xl font-bold mb-2">{result.metric}</div>
+                  <div className="font-semibold mb-1">{result.label}</div>
+                  <div className="text-sm text-white/70">{result.subtext}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#6D4AFF] px-8 py-3 rounded-lg font-medium hover:bg-white/90 transition-colors"
+              >
+                View More Projects
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center gap-2 border border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors"
+              >
+                Back to Portfolio
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   )
 }
