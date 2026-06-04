@@ -39,12 +39,10 @@ const staggerContainer = {
       { month: 'Sep', sales: 34.40, orders: 107, conversion: 2.42 },
     ],
     tokopedia: [
-      { month: 'Apr', sales: 0, orders: 0, conversion: 0 },
-      { month: 'May', sales: 0, orders: 0, conversion: 0 },
-      { month: 'Jun', sales: 0, orders: 0, conversion: 0 },
-      { month: 'Jul', sales: 0, orders: 0, conversion: 0 },
-      { month: 'Aug', sales: 0, orders: 0, conversion: 0 },
-      { month: 'Sep', sales: 0, orders: 0, conversion: 0 },
+      { month: 'Jun', sales: 20.06, orders: 71, conversion: 2.15 },
+      { month: 'Jul', sales: 26.37, orders: 92, conversion: 2.31 },
+      { month: 'Aug', sales: 40.00, orders: 112, conversion: 2.58 },
+      { month: 'Sep', sales: 34.40, orders: 107, conversion: 2.42 },
     ],
   }
 
@@ -176,10 +174,10 @@ export default function QCYCaseStudy() {
       bgColor: 'bg-green-50',
       borderColor: 'border-green-200',
       metrics: [
-        { label: 'Organic GMV', value: 'Rp26.4Jt', change: '+10.22%', icon: TrendingUp },
-        { label: 'Conversion Rate', value: '1.43%', change: 'Optimized', icon: Target },
-        { label: 'Total Orders', value: '95+', change: '+5.56%', icon: ShoppingCart },
-        { label: 'Campaign Reach', value: 'Wide', change: 'Multi-tier', icon: Users },
+        { label: 'Total GMV (Jun-Sep)', value: 'Rp120.84M', change: '+363.83%', icon: TrendingUp },
+        { label: 'Total Orders', value: '382', change: '+218.33%', icon: ShoppingCart },
+        { label: 'Peak Month (Aug)', value: 'Rp40.00M', change: '+51.7% vs Jul', icon: Activity },
+        { label: 'Total Customers', value: '380', change: '+216.67%', icon: Users },
       ],
       graphImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png',
       analyticsImages: [
