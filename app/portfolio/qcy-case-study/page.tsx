@@ -25,10 +25,10 @@ export default function QCYCaseStudy() {
   const [activeTimeline, setActiveTimeline] = useState(0)
 
   const kpiCards = [
-    { label: 'Peak Monthly Revenue', value: 'Rp100M+', icon: TrendingUp },
-    { label: 'Total Orders', value: '373', icon: ShoppingCart },
-    { label: 'Marketplaces', value: '3', icon: Target },
-    { label: 'Marketing Channels', value: '6+', icon: Zap },
+    { label: 'August Revenue', value: 'Rp91.8M', icon: TrendingUp },
+    { label: 'Total Orders', value: '576+', icon: ShoppingCart },
+    { label: 'Active Marketplaces', value: '3', icon: Target },
+    { label: 'Marketing Channels', value: '5', icon: Zap },
   ]
 
   const overviewCards = [
@@ -40,29 +40,29 @@ export default function QCYCaseStudy() {
 
   const timeline = [
     {
-      month: 'April 2025',
-      title: 'Campaign Kickoff',
-      description: 'Launched integrated campaign strategy across all platforms with initial product optimization and creative asset setup.',
+      month: 'May 2025',
+      title: 'Campaign Kickoff - HT15 & C30',
+      description: 'Launched integrated campaign for QCY HT15 & C30 products across Shopee, with Rp91.8M launch day revenue and 250+ orders through combined paid ads, flash sales, vouchers, and affiliate strategy.',
     },
     {
       month: 'June 2025',
-      title: '6.6 Mega Campaign',
-      description: 'Major promotional push combining flash sales, vouchers, and affiliate partnerships to drive marketplace visibility.',
+      title: 'Multi-Platform Expansion',
+      description: 'Expanded to TikTok Shop and Tokopedia with platform-specific campaigns, affiliate partnerships, and marketplace optimization strategies.',
     },
     {
       month: 'July 2025',
       title: '7.7 Flash Sale Campaign',
-      description: 'Strategic flash sale campaigns with optimized product placement and social media amplification.',
+      description: 'Strategic flash sale campaigns combining livestream commerce, flash deals, voucher activation, and influencer partnerships to drive category awareness.',
     },
     {
       month: 'August 2025',
-      title: 'Growth Optimization',
-      description: 'Refined campaign mechanics based on performance data, improved conversion rates, and marketplace efficiency.',
+      title: 'Performance Optimization & Scaling',
+      description: 'Refined campaign mechanics based on performance data. Achieved Rp91.8M revenue with 576+ total orders through optimized ads (Rp8.2M GMV), affiliate activation (Rp38.5M GMV), voucher campaigns (Rp75.8M), and multi-platform execution.',
     },
     {
       month: 'September 2025',
-      title: 'End of Season Campaign',
-      description: 'Final campaign push combining seasonal promotions with affiliate networks and livestream commerce.',
+      title: 'Seasonal Campaign & Consolidation',
+      description: 'End-of-season promotional push combining marketplace mechanics, affiliate networks, livestream commerce, and final product push before new releases.',
     },
   ]
 
@@ -81,18 +81,36 @@ export default function QCYCaseStudy() {
   const marketplaces = [
     {
       name: 'Shopee',
-      activities: ['Flash Sale Participation', 'Voucher Activation', 'Product Optimization', 'Campaign Setup'],
+      activities: [
+        'Paid Ads: Rp4.2M spend, 13,344 orders, Rp49M GMV (ROI 10.6x)',
+        'Livestreaming: Rp402K spend, 53 sessions, Rp15M GMV (ROI 37.3x)',
+        'Flash Sales: Rp360K spend, 7 events, Rp2.5M GMV (ROI 7x)',
+        'Vouchers: Rp788K spend, 222 activations, Rp75.8M GMV (ROI 96.2x)',
+        'Affiliate: Rp2.4M spend, 139 partners, Rp36.2M GMV (ROI 14.7x)',
+      ],
       color: 'from-red-500 to-red-600',
     },
     {
-      name: 'Tokopedia',
-      activities: ['Store Optimization', 'Campaign Participation', 'Product Maintenance', 'Promotional Setup'],
-      color: 'from-green-500 to-green-600',
+      name: 'TikTok Shop',
+      activities: [
+        'Platform Ads: Rp3.5M spend, 228 orders, Rp43M GMV (ROI 12x)',
+        'Shop Campaign: Rp9.4M spend, 99 campaigns, Rp52.6M GMV (ROI 5.5x)',
+        'Marketing Tools: Rp2.2M spend, 44 activations, Rp11.9M GMV (ROI 5.29x)',
+        'Affiliate Program: Rp174K spend, 13 partners, Rp2.2M GMV (ROI 5.29x)',
+        'Livestream Support & Community Engagement',
+      ],
+      color: 'from-black to-gray-800',
     },
     {
-      name: 'TikTok Shop',
-      activities: ['Affiliate Activation', 'Campaign Support', 'Product Showcase', 'Sales Optimization'],
-      color: 'from-black to-gray-800',
+      name: 'Tokopedia',
+      activities: [
+        'Integrated Campaign Participation',
+        'Product Listing Optimization',
+        'Promotional Calendar Management',
+        'Customer Service & Response Management',
+        'Seasonal Campaign Coordination',
+      ],
+      color: 'from-green-500 to-green-600',
     },
   ]
 
@@ -112,10 +130,10 @@ export default function QCYCaseStudy() {
   ]
 
   const results = [
-    { metric: 'Rp100M+', label: 'Peak Revenue', subtext: 'Highest monthly revenue achieved' },
-    { metric: '373', label: 'Total Orders', subtext: 'Across 6-month campaign' },
-    { metric: '3', label: 'Active Marketplaces', subtext: 'Shopee, Tokopedia, TikTok Shop' },
-    { metric: '6+', label: 'Marketing Channels', subtext: 'Integrated execution' },
+    { metric: 'Rp91.8M', label: 'Launch Day Revenue', subtext: 'May 2025 campaign' },
+    { metric: '250+', label: 'Launch Orders', subtext: 'Day-one performance' },
+    { metric: '576+', label: 'Total Orders (Aug)', subtext: 'Multi-platform execution' },
+    { metric: '96.2x', label: 'Voucher ROI', subtext: 'Highest performing channel' },
   ]
 
   return (
@@ -195,7 +213,7 @@ export default function QCYCaseStudy() {
             </motion.h2>
             <motion.div variants={fadeIn} className="bg-gradient-to-br from-[#6D4AFF]/10 to-[#2D1BB8]/10 border border-[#6D4AFF]/20 rounded-2xl p-8 lg:p-12">
               <p className="text-lg text-[#4B4680] leading-relaxed">
-                QCY Indonesia needed stronger marketplace visibility, better product launch execution, improved sales performance, and consistent communication across multiple channels. The brand required an integrated approach combining paid ads, affiliate marketing, social media strategy, and marketplace optimization to achieve sustainable growth during a competitive market period.
+                QCY Indonesia needed a coordinated product launch for HT15 & C30 earbuds across multiple e-commerce platforms to achieve maximum reach and conversion. The challenge required integrating multiple marketing channels (paid advertising, affiliate networks, livestream commerce, and promotional mechanics) to drive significant day-one sales while establishing brand presence across Shopee, TikTok Shop, and Tokopedia simultaneously.
               </p>
             </motion.div>
           </motion.div>
@@ -263,8 +281,116 @@ export default function QCYCaseStudy() {
         </div>
       </section>
 
-      {/* Marketplace Execution */}
-      <section className="py-20">
+      {/* Detailed Performance Metrics */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
+              Campaign Performance Breakdown
+            </motion.h2>
+
+            {/* Shopee Performance */}
+            <motion.div variants={fadeIn} className="mb-12 bg-gradient-to-br from-red-50 to-red-100/50 border border-red-200 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-red-900 mb-8">Shopee Performance</h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-lg p-4 border border-red-100">
+                      <div className="text-sm text-red-600 font-medium">Paid Ads</div>
+                      <div className="text-2xl font-bold text-red-900 mt-1">13,344 Orders</div>
+                      <div className="text-sm text-red-700 mt-2">Rp49M GMV • Rp4.2M Cost • 10.6x ROI</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 border border-red-100">
+                      <div className="text-sm text-red-600 font-medium">Voucher Campaign</div>
+                      <div className="text-2xl font-bold text-red-900 mt-1">222 Activations</div>
+                      <div className="text-sm text-red-700 mt-2">Rp75.8M GMV • Rp788K Cost • 96.2x ROI</div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-lg p-4 border border-red-100">
+                      <div className="text-sm text-red-600 font-medium">Livestreaming</div>
+                      <div className="text-2xl font-bold text-red-900 mt-1">53 Sessions</div>
+                      <div className="text-sm text-red-700 mt-2">Rp15M GMV • Rp402K Cost • 37.3x ROI</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 border border-red-100">
+                      <div className="text-sm text-red-600 font-medium">Affiliate Network</div>
+                      <div className="text-2xl font-bold text-red-900 mt-1">139 Partners</div>
+                      <div className="text-sm text-red-700 mt-2">Rp36.2M GMV • Rp2.4M Cost • 14.7x ROI</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* TikTok Shop Performance */}
+            <motion.div variants={fadeIn} className="mb-12 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-8">TikTok Shop Performance</h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <div className="space-y-4">
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
+                      <div className="text-sm text-white/70 font-medium">Platform Ads</div>
+                      <div className="text-2xl font-bold mt-1">228 Orders</div>
+                      <div className="text-sm text-white/60 mt-2">Rp43M GMV • Rp3.5M Cost • 12x ROI</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
+                      <div className="text-sm text-white/70 font-medium">Marketing Tools</div>
+                      <div className="text-2xl font-bold mt-1">143 Campaigns</div>
+                      <div className="text-sm text-white/60 mt-2">Rp64.5M GMV • Rp11.7M Cost • 5.5x ROI</div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="space-y-4">
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
+                      <div className="text-sm text-white/70 font-medium">Livestream & Shop Campaign</div>
+                      <div className="text-2xl font-bold mt-1">Combined Activation</div>
+                      <div className="text-sm text-white/60 mt-2">TikTok LIVE integration, shop optimization, social media amplification</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
+                      <div className="text-sm text-white/70 font-medium">Affiliate Program</div>
+                      <div className="text-2xl font-bold mt-1">13 Active Partners</div>
+                      <div className="text-sm text-white/60 mt-2">Rp2.2M GMV • Rp174K Cost • 5.29x ROI</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Sales by Channel */}
+            <motion.div variants={fadeIn} className="bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-purple-900 mb-8">Sales by Channel (August 2025)</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-white rounded-lg p-6 border border-purple-100">
+                  <div className="text-sm text-purple-600 font-medium">Shopee</div>
+                  <div className="text-3xl font-bold text-purple-900 mt-2">375</div>
+                  <div className="text-sm text-purple-700 mt-1">Orders</div>
+                  <div className="text-lg font-semibold text-purple-900 mt-3">Rp54.9M</div>
+                  <div className="text-xs text-purple-600">Gross Revenue</div>
+                </div>
+                <div className="bg-white rounded-lg p-6 border border-purple-100">
+                  <div className="text-sm text-purple-600 font-medium">TikTok Shop</div>
+                  <div className="text-3xl font-bold text-purple-900 mt-2">199</div>
+                  <div className="text-sm text-purple-700 mt-1">Orders</div>
+                  <div className="text-lg font-semibold text-purple-900 mt-3">Rp35.5M</div>
+                  <div className="text-xs text-purple-600">Gross Revenue</div>
+                </div>
+                <div className="bg-white rounded-lg p-6 border border-purple-100">
+                  <div className="text-sm text-purple-600 font-medium">Lazada</div>
+                  <div className="text-3xl font-bold text-purple-900 mt-2">21</div>
+                  <div className="text-sm text-purple-700 mt-1">Orders</div>
+                  <div className="text-lg font-semibold text-purple-900 mt-3">Rp1.2M</div>
+                  <div className="text-xs text-purple-600">Gross Revenue</div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
@@ -327,10 +453,10 @@ export default function QCYCaseStudy() {
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.div variants={fadeIn} className="text-center mb-16">
               <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                Driving Marketplace Growth Through Integrated Digital Marketing
+                Rp91.8M Launch Day Revenue Through Integrated Digital Marketing
               </h2>
               <p className="text-lg text-white/80 max-w-2xl mx-auto">
-                Strategic execution across multiple platforms and channels delivered measurable results and sustainable growth.
+                Executed multi-channel campaign across Shopee, TikTok Shop, and Tokopedia combining paid ads, affiliate marketing, voucher campaigns, and livestream commerce for maximum launch-day impact.
               </p>
             </motion.div>
 
