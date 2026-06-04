@@ -46,10 +46,35 @@ const staggerContainer = {
     ],
   }
 
+  // Monthly progress screenshots by platform
+  const monthlyProgressScreenshots = {
+    shopee: [
+      { month: 'April 2025', label: 'Apr', description: 'Campaign Launch Phase', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.15-Vdb6TwycvS4Eux1waWkxwAPIe2jLrl.png', badge: 'Starting Point' },
+      { month: 'May 2025', label: 'May', description: 'Ramp Up Phase', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png', badge: 'Growth' },
+      { month: 'June 2025', label: 'Jun', description: 'Optimization Phase', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png', badge: 'Scaling' },
+      { month: 'July 2025', label: 'Jul', description: 'Peak Performance', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png', badge: 'Peak' },
+      { month: 'August 2025', label: 'Aug', description: 'Sustained Growth', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.07-XjDfsVbLo5893RlsMLLT7b9Qbqkery.png', badge: 'Sustained' },
+      { month: 'September 2025', label: 'Sep', description: 'Optimization & Scale', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.15-Vdb6TwycvS4Eux1waWkxwAPIe2jLrl.png', badge: 'Optimized' },
+    ],
+    tiktok: [
+      { month: 'June 2025', label: 'Jun', description: 'Platform Entry Phase', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.15-Vdb6TwycvS4Eux1waWkxwAPIe2jLrl.png', badge: 'Starting Point' },
+      { month: 'July 2025', label: 'Jul', description: 'Growth Acceleration', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png', badge: '+31.5%' },
+      { month: 'August 2025', label: 'Aug', description: 'Peak Performance', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png', badge: '+51.7%' },
+      { month: 'September 2025', label: 'Sep', description: 'Stabilization', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png', badge: 'Stable' },
+    ],
+    tokopedia: [
+      { month: 'June 2025', label: 'Jun', description: 'Market Entry', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.07-XjDfsVbLo5893RlsMLLT7b9Qbqkery.png', badge: 'Starting Point' },
+      { month: 'July 2025', label: 'Jul', description: 'Growth Phase', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.15-Vdb6TwycvS4Eux1waWkxwAPIe2jLrl.png', badge: 'Growing' },
+      { month: 'August 2025', label: 'Aug', description: 'Peak Month', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png', badge: 'Peak' },
+      { month: 'September 2025', label: 'Sep', description: 'Sustained Growth', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png', badge: 'Strong' },
+    ],
+  }
+
 export default function QCYCaseStudy() {
   const [activeTab, setActiveTab] = useState('shopee')
   const [activeTimeline, setActiveTimeline] = useState(0)
   const [monthlySlide, setMonthlySlide] = useState(0)
+  const [progressSlide, setProgressSlide] = useState(0)
 
   const monthlyScreenshots = [
     {
@@ -356,7 +381,101 @@ export default function QCYCaseStudy() {
                       </div>
                       <p className="text-2xl font-bold text-[#0F0A2E] mb-1">{metric.value}</p>
                       <p className="text-xs text-gray-500">{metric.change}</p>
-                    </motion.div>
+            </motion.div>
+
+            {/* Monthly Progress Screenshots Carousel */}
+            <motion.div variants={fadeIn} className="mt-16 pt-12 border-t border-gray-200">
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-[#0F0A2E] mb-2">Monthly Progress Screenshots</h3>
+                <p className="text-gray-600 text-sm">Actual {channelData[activeTab].name} Seller Center data showing the growth journey</p>
+              </div>
+
+              {/* Carousel Container */}
+              <div className="relative bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8] rounded-3xl overflow-hidden shadow-2xl">
+                {/* Main Carousel Display */}
+                <div className="relative h-96 md:h-[500px] bg-gradient-to-br from-gray-900 to-gray-800">
+                  {/* Featured Screenshot */}
+                  <div className="relative w-full h-full">
+                    <img
+                      src={monthlyProgressScreenshots[activeTab][progressSlide].image}
+                      alt={monthlyProgressScreenshots[activeTab][progressSlide].month}
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Overlay with Month Info */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-between p-8">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h4 className="text-2xl font-bold text-white mb-1">{monthlyProgressScreenshots[activeTab][progressSlide].month}</h4>
+                          <p className="text-white/80 text-sm">{monthlyProgressScreenshots[activeTab][progressSlide].description}</p>
+                        </div>
+                        <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                          {monthlyProgressScreenshots[activeTab][progressSlide].badge}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={() => setProgressSlide((prev) => (prev - 1 + monthlyProgressScreenshots[activeTab].length) % monthlyProgressScreenshots[activeTab].length)}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur rounded-full p-2 transition-colors"
+                  >
+                    <ChevronLeft className="w-6 h-6 text-white" />
+                  </button>
+                  <button
+                    onClick={() => setProgressSlide((prev) => (prev + 1) % monthlyProgressScreenshots[activeTab].length)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur rounded-full p-2 transition-colors"
+                  >
+                    <ChevronRight className="w-6 h-6 text-white" />
+                  </button>
+                </div>
+
+                {/* Navigation Dots */}
+                <div className="flex justify-center gap-2 py-4 bg-white/5 backdrop-blur border-t border-white/10">
+                  {monthlyProgressScreenshots[activeTab].map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setProgressSlide(index)}
+                      className={`h-2 rounded-full transition-all ${
+                        index === progressSlide ? 'w-8 bg-orange-500' : 'w-2 bg-white/30 hover:bg-white/50'
+                      }`}
+                      aria-label={`Go to ${monthlyProgressScreenshots[activeTab][index].month}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Month Buttons Navigation */}
+                <div className="bg-[#6D4AFF] px-8 py-4 overflow-x-auto flex gap-2">
+                  {monthlyProgressScreenshots[activeTab].map((screenshot, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setProgressSlide(index)}
+                      className={`px-4 py-2 rounded-full font-semibold whitespace-nowrap transition-all ${
+                        index === progressSlide
+                          ? 'bg-orange-500 text-white'
+                          : 'bg-[#5237D9] text-white/80 hover:text-white hover:bg-[#4220C1]'
+                      }`}
+                    >
+                      {screenshot.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Timeline Slider */}
+                <div className="bg-white/5 px-8 py-4 flex items-center gap-4 border-t border-white/10">
+                  <span className="text-xs text-white/60 font-medium">Timeline:</span>
+                  <input
+                    type="range"
+                    min="0"
+                    max={monthlyProgressScreenshots[activeTab].length - 1}
+                    value={progressSlide}
+                    onChange={(e) => setProgressSlide(parseInt(e.target.value))}
+                    className="flex-1 h-1 bg-white/20 rounded-full appearance-none cursor-pointer accent-orange-500"
+                  />
+                  <span className="text-xs text-white/80 font-medium">{progressSlide + 1} / {monthlyProgressScreenshots[activeTab].length}</span>
+                </div>
+              </div>
+            </motion.div>
                   )
                 })}
               </div>
