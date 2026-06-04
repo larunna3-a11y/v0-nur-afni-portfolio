@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowRight, TrendingUp, ShoppingCart, Target, Calendar, Zap, Users, BarChart3 } from 'lucide-react'
+import { ArrowRight, TrendingUp, ShoppingCart, Target, Calendar, Zap, Users, BarChart3, PieChart, Activity, LineChart, Eye, Briefcase, Clock, Zap as ZapIcon, MessageSquare, Search } from 'lucide-react'
 import { useState } from 'react'
 
 const fadeIn = {
@@ -22,6 +22,7 @@ const staggerContainer = {
 }
 
 export default function QCYCaseStudy() {
+  const [activeTab, setActiveTab] = useState('shopee')
   const [activeTimeline, setActiveTimeline] = useState(0)
 
   const kpiCards = [
@@ -67,16 +68,70 @@ export default function QCYCaseStudy() {
   ]
 
   const responsibilities = [
-    { icon: '📊', label: 'Campaign Strategy' },
-    { icon: '🛍️', label: 'Marketplace Management' },
-    { icon: '🚀', label: 'Product Launch Planning' },
-    { icon: '📅', label: 'Promotional Calendar' },
-    { icon: '📹', label: 'TikTok LIVE Support' },
-    { icon: '📱', label: 'Social Media Planning' },
-    { icon: '⚙️', label: 'Marketplace Optimization' },
-    { icon: '🎨', label: 'Creative Asset Design' },
-    { icon: '📈', label: 'Performance Reporting' },
+    { icon: BarChart3, label: 'Campaign Strategy', color: 'text-blue-500' },
+    { icon: ShoppingCart, label: 'Marketplace Management', color: 'text-purple-500' },
+    { icon: TrendingUp, label: 'Product Launch Planning', color: 'text-orange-500' },
+    { icon: Calendar, label: 'Promotional Calendar', color: 'text-pink-500' },
+    { icon: Activity, label: 'TikTok LIVE Support', color: 'text-cyan-500' },
+    { icon: MessageSquare, label: 'Social Media Planning', color: 'text-indigo-500' },
+    { icon: Search, label: 'Marketplace Optimization', color: 'text-green-500' },
+    { icon: Eye, label: 'Creative Asset Design', color: 'text-red-500' },
+    { icon: LineChart, label: 'Performance Reporting', color: 'text-teal-500' },
   ]
+
+  const channelData = {
+    shopee: {
+      name: 'Shopee',
+      color: 'from-red-500 to-red-600',
+      bgColor: 'bg-red-50',
+      borderColor: 'border-red-200',
+      metrics: [
+        { label: 'Paid Ads GMV', value: 'Rp49M', change: '10.6x ROI', icon: TrendingUp },
+        { label: 'Voucher GMV', value: 'Rp75.8M', change: '96.2x ROI', icon: ShoppingCart },
+        { label: 'Livestream GMV', value: 'Rp15M', change: '37.3x ROI', icon: Activity },
+        { label: 'Affiliate GMV', value: 'Rp36.2M', change: '14.7x ROI', icon: Users },
+      ],
+      graphImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png',
+      analyticsImages: [
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.07-XjDfsVbLo5893RlsMLLT7b9Qbqkery.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.33-LNzD4k2v1gOHdyxNtN5LOKGlIRe9zY.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.41-LId8GNCBxjUi6bm2gVVb3RaZmgfix7.png',
+      ],
+    },
+    tiktok: {
+      name: 'TikTok Shop',
+      color: 'from-black to-gray-800',
+      bgColor: 'bg-gray-50',
+      borderColor: 'border-gray-300',
+      metrics: [
+        { label: 'Platform Ads GMV', value: 'Rp43M', change: '12x ROI', icon: TrendingUp },
+        { label: 'Shop Campaign GMV', value: 'Rp52.6M', change: '5.5x ROI', icon: ShoppingCart },
+        { label: 'LIVE Streams GMV', value: 'Rp3.4M', change: 'Multi-channel', icon: Activity },
+        { label: 'Affiliate GMV', value: 'Rp2.2M', change: '5.29x ROI', icon: Users },
+      ],
+      graphImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.08.28-DkXBAPIi3otnuNeJOhiI720dCAKEJa.png',
+      analyticsImages: [
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.08-VSDiqQ4QCbltmOxaHLLsDVBXFexhCH.png',
+      ],
+    },
+    tokopedia: {
+      name: 'Tokopedia',
+      color: 'from-green-500 to-green-600',
+      bgColor: 'bg-green-50',
+      borderColor: 'border-green-200',
+      metrics: [
+        { label: 'Organic GMV', value: 'Rp26.4Jt', change: '+10.22%', icon: TrendingUp },
+        { label: 'Conversion Rate', value: '1.43%', change: 'Optimized', icon: Target },
+        { label: 'Total Orders', value: '95+', change: '+5.56%', icon: ShoppingCart },
+        { label: 'Campaign Reach', value: 'Wide', change: 'Multi-tier', icon: Users },
+      ],
+      graphImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png',
+      analyticsImages: [
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png',
+        'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.49-crpcRxhRmwtZtrRNlNmw63BeAY4HL0.png',
+      ],
+    },
+  }
 
   const marketplaces = [
     {
@@ -204,97 +259,76 @@ export default function QCYCaseStudy() {
         </div>
       </section>
 
-      {/* Analytics Gallery */}
-      <section className="py-20 bg-gradient-to-b from-white to-purple-50">
+      {/* Channel Performance Report */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
-            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-4 text-center text-[#0F0A2E]">
-              Campaign Analytics Dashboard
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-8 text-center text-[#0F0A2E]">
+              Channel Performance Report
             </motion.h2>
-            <motion.p variants={fadeIn} className="text-center text-[#6D4AFF] mb-12 max-w-2xl mx-auto">
-              Real-time performance metrics from official marketplace analytics showing livestream commerce, conversion rates, and platform-specific growth across all channels
-            </motion.p>
 
-            {/* Shopee Livestream Metrics */}
-            <motion.div variants={fadeIn} className="mb-16">
-              <h3 className="text-2xl font-bold text-red-900 mb-8">Shopee Livestream Performance</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.07-XjDfsVbLo5893RlsMLLT7b9Qbqkery.png" alt="Shopee Live May 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png" alt="Shopee Live July 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.33-LNzD4k2v1gOHdyxNtN5LOKGlIRe9zY.png" alt="Shopee Live August 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.41-LId8GNCBxjUi6bm2gVVb3RaZmgfix7.png" alt="Shopee Live September 2025" className="w-full h-auto" />
-                </div>
+            {/* Channel Tabs */}
+            <motion.div variants={fadeIn} className="flex gap-2 mb-12 border-b border-gray-200">
+              {['shopee', 'tiktok', 'tokopedia'].map((channel) => (
+                <button
+                  key={channel}
+                  onClick={() => setActiveTab(channel)}
+                  className={`px-6 py-3 font-medium transition-all ${
+                    activeTab === channel
+                      ? `border-b-2 border-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-500 text-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-600`
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  {channelData[channel].name}
+                </button>
+              ))}
+            </motion.div>
+
+            {/* Performance Breakdown - Top Section */}
+            <motion.div variants={fadeIn} className="mb-12">
+              <h3 className="text-2xl font-bold text-[#0F0A2E] mb-6">Campaign Performance Breakdown</h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                {channelData[activeTab].metrics.map((metric, i) => {
+                  const Icon = metric.icon
+                  return (
+                    <motion.div
+                      key={i}
+                      variants={fadeIn}
+                      className={`${channelData[activeTab].bgColor} border ${channelData[activeTab].borderColor} rounded-xl p-6`}
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <Icon className={`w-5 h-5 text-${activeTab === 'shopee' ? 'red' : activeTab === 'tiktok' ? 'gray' : 'green'}-500`} />
+                        <p className="text-sm text-gray-600">{metric.label}</p>
+                      </div>
+                      <p className="text-2xl font-bold text-[#0F0A2E] mb-1">{metric.value}</p>
+                      <p className="text-xs text-gray-500">{metric.change}</p>
+                    </motion.div>
+                  )
+                })}
               </div>
             </motion.div>
 
-            {/* Shopee Shop Analytics */}
-            <motion.div variants={fadeIn} className="mb-16">
-              <h3 className="text-2xl font-bold text-red-900 mb-8">Shopee Shop Analytics</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.04.30-4Wa0xsHtk7VY3SzCvpA2dEuaYbcLff.png" alt="Shopee Shop April 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.04.39-EIxdy7gMkVB6nMtXCJrqk1ku5G4Jq2.png" alt="Shopee Shop May 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.05.11-8GtGmeFi0uSE8Z8PJPBCnaiffNGOGp.png" alt="Shopee Shop August 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-red-200 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2017.05.20-GxJlmG0xXnebzLsZdLUUlyStkPyieZ.png" alt="Shopee Shop September 2025" className="w-full h-auto" />
-                </div>
+            {/* Performance Graph */}
+            <motion.div variants={fadeIn} className="mb-12">
+              <h3 className="text-xl font-bold text-[#0F0A2E] mb-6">Monthly Performance Graph</h3>
+              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                <img 
+                  src={channelData[activeTab].graphImage} 
+                  alt={`${channelData[activeTab].name} Performance Graph`}
+                  className="w-full h-auto"
+                />
               </div>
             </motion.div>
 
-            {/* TikTok Shop Analytics */}
-            <motion.div variants={fadeIn} className="mb-16">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">TikTok Shop Analytics</h3>
+            {/* Additional Analytics */}
+            <motion.div variants={fadeIn} className="mb-12">
+              <h3 className="text-xl font-bold text-[#0F0A2E] mb-6">Detailed Analytics</h3>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-2xl overflow-hidden border border-gray-300 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.08.28-DkXBAPIi3otnuNeJOhiI720dCAKEJa.png" alt="TikTok Shop July 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-gray-300 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.08-VSDiqQ4QCbltmOxaHLLsDVBXFexhCH.png" alt="TikTok Shop August 2025" className="w-full h-auto" />
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Tokopedia Analytics */}
-            <motion.div variants={fadeIn} className="mb-16">
-              <h3 className="text-2xl font-bold text-green-900 mb-8">Tokopedia Analytics</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-2xl overflow-hidden border border-green-300 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png" alt="Tokopedia June 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-green-300 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png" alt="Tokopedia July 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-green-300 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.49-crpcRxhRmwtZtrRNlNmw63BeAY4HL0.png" alt="Tokopedia September 2025" className="w-full h-auto" />
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Livestream Affiliate Metrics */}
-            <motion.div variants={fadeIn} className="mb-16">
-              <h3 className="text-2xl font-bold text-teal-900 mb-8">Livestream Commerce & Affiliate Performance</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-2xl overflow-hidden border border-teal-300 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.04.30-4oZCmeLlt2jvz4REe8epUBlTr9GSik.png" alt="LIVE Metrics July 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-teal-300 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.05.09-WKKRqtNpRKXgbPdT6RE17x0NxHMKY9.png" alt="LIVE Metrics August 2025" className="w-full h-auto" />
-                </div>
-                <div className="bg-white rounded-2xl overflow-hidden border border-teal-300 shadow-sm hover:shadow-lg transition-shadow">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.05.19-IpqzaijQeeOqlkr7zMDjt7jqlejMJG.png" alt="LIVE Metrics September 2025" className="w-full h-auto" />
-                </div>
+                {channelData[activeTab].analyticsImages.map((image, i) => (
+                  <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                    <img src={image} alt={`${channelData[activeTab].name} Analytics ${i + 1}`} className="w-full h-auto" />
+                  </div>
+                ))}
               </div>
             </motion.div>
           </motion.div>
@@ -309,16 +343,21 @@ export default function QCYCaseStudy() {
               My Responsibilities
             </motion.h2>
             <motion.div variants={staggerContainer} className="grid md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {responsibilities.map((resp, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeIn}
-                  className="bg-white rounded-xl p-6 border border-[#E8E6F8] text-center hover:shadow-md transition-shadow"
-                >
-                  <div className="text-3xl mb-2">{resp.icon}</div>
-                  <p className="text-sm font-medium text-[#0F0A2E]">{resp.label}</p>
-                </motion.div>
-              ))}
+              {responsibilities.map((resp, i) => {
+                const Icon = resp.icon
+                return (
+                  <motion.div
+                    key={i}
+                    variants={fadeIn}
+                    className="bg-white rounded-xl p-6 border border-[#E8E6F8] text-center hover:shadow-md transition-shadow"
+                  >
+                    <div className={`${resp.color} mb-3 flex justify-center`}>
+                      <Icon className="w-8 h-8" />
+                    </div>
+                    <p className="text-sm font-medium text-[#0F0A2E]">{resp.label}</p>
+                  </motion.div>
+                )
+              })}
             </motion.div>
           </motion.div>
         </div>
