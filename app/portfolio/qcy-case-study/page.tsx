@@ -80,8 +80,8 @@ export default function QCYCaseStudy() {
   ]
 
   const kpiCards = [
-    { label: 'August Revenue', value: 'Rp91.8M', icon: TrendingUp },
-    { label: 'Total Orders', value: '576+', icon: ShoppingCart },
+    { label: 'Total Revenue (Apr-Sep)', value: 'Rp837.29M', icon: TrendingUp },
+    { label: 'Total Orders', value: '3,120+', icon: ShoppingCart },
     { label: 'Active Marketplaces', value: '3', icon: Target },
     { label: 'Marketing Channels', value: '5', icon: Zap },
   ]
@@ -419,7 +419,86 @@ export default function QCYCaseStudy() {
         </div>
       </section>
 
-      {/* Responsibilities */}
+      {/* Sales by Platform Breakdown */}
+      <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-2 text-[#0F0A2E]">
+              Overall Performance Summary
+            </motion.h2>
+            <motion.p variants={fadeIn} className="text-gray-600 mb-12">
+              Total contribution across all platforms and campaigns (Apr-Sep 2025)
+            </motion.p>
+
+            <motion.div variants={fadeIn} className="grid md:grid-cols-3 gap-6 mb-12">
+              {/* Shopee Card */}
+              <div className="bg-white rounded-2xl p-8 border-2 border-red-100 hover:shadow-lg transition-shadow">
+                <h3 className="text-lg font-semibold text-red-600 mb-6">Shopee</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-4xl font-bold text-[#0F0A2E]">2,356</p>
+                    <p className="text-gray-600 text-sm">Total Orders</p>
+                  </div>
+                  <div className="pt-2 border-t border-gray-200">
+                    <p className="text-2xl font-bold text-red-600">Rp595.61M</p>
+                    <p className="text-gray-600 text-sm">Total Revenue (Apr-Sep)</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* TikTok Shop Card */}
+              <div className="bg-white rounded-2xl p-8 border-2 border-gray-300 hover:shadow-lg transition-shadow">
+                <h3 className="text-lg font-semibold text-gray-700 mb-6">TikTok Shop</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-4xl font-bold text-[#0F0A2E]">382</p>
+                    <p className="text-gray-600 text-sm">Total Orders</p>
+                  </div>
+                  <div className="pt-2 border-t border-gray-200">
+                    <p className="text-2xl font-bold text-gray-700">Rp120.84M</p>
+                    <p className="text-gray-600 text-sm">Total Revenue (Jun-Sep)</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tokopedia Card */}
+              <div className="bg-white rounded-2xl p-8 border-2 border-green-100 hover:shadow-lg transition-shadow">
+                <h3 className="text-lg font-semibold text-green-600 mb-6">Tokopedia</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-4xl font-bold text-[#0F0A2E]">382</p>
+                    <p className="text-gray-600 text-sm">Total Orders</p>
+                  </div>
+                  <div className="pt-2 border-t border-gray-200">
+                    <p className="text-2xl font-bold text-green-600">Rp120.84M</p>
+                    <p className="text-gray-600 text-sm">Total Revenue (Jun-Sep)</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Total Summary Card */}
+            <motion.div variants={fadeIn} className="bg-gradient-to-r from-[#6D4AFF] to-[#2D1BB8] rounded-2xl p-8 text-white">
+              <div className="grid md:grid-cols-3 gap-8">
+                <div>
+                  <p className="text-white/80 text-sm mb-2">Total Revenue</p>
+                  <p className="text-4xl font-bold">Rp837.29M</p>
+                </div>
+                <div>
+                  <p className="text-white/80 text-sm mb-2">Total Orders</p>
+                  <p className="text-4xl font-bold">3,120+</p>
+                </div>
+                <div>
+                  <p className="text-white/80 text-sm mb-2">Campaign Duration</p>
+                  <p className="text-4xl font-bold">6 Months</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
