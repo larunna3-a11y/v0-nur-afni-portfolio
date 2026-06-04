@@ -33,10 +33,10 @@ const staggerContainer = {
       { month: 'Sep', sales: 110.97, orders: 410, conversion: 1.75 },
     ],
     tiktok: [
-      { month: 'Jun', sales: 13.02, orders: 45, conversion: 2.07 },
-      { month: 'Jul', sales: 11.52, orders: 43, conversion: 1.98 },
-      { month: 'Aug', sales: 18.56, orders: 62, conversion: 2.86 },
-      { month: 'Sep', sales: 18.02, orders: 67, conversion: 3.09 },
+      { month: 'Jun', sales: 20.06, orders: 71, conversion: 2.15 },
+      { month: 'Jul', sales: 26.37, orders: 92, conversion: 2.31 },
+      { month: 'Aug', sales: 40.00, orders: 112, conversion: 2.58 },
+      { month: 'Sep', sales: 34.40, orders: 107, conversion: 2.42 },
     ],
     tokopedia: [
       { month: 'Jun', sales: 20.06, orders: 71, conversion: 2.15 },
@@ -158,10 +158,10 @@ export default function QCYCaseStudy() {
       bgColor: 'bg-gray-50',
       borderColor: 'border-gray-300',
       metrics: [
-        { label: 'Total GMV (Jun-Sep)', value: 'Rp55.23M', change: '+137.29%', icon: TrendingUp },
-        { label: 'Total Orders', value: '217', change: '+117%', icon: ShoppingCart },
-        { label: 'Peak Month (Sep)', value: 'Rp18.02M', change: '67 orders', icon: Activity },
-        { label: 'Total Customers', value: '214', change: '+114%', icon: Users },
+        { label: 'Total GMV (Jun-Sep)', value: 'Rp120.84M', change: '+363.83%', icon: TrendingUp },
+        { label: 'Total Orders', value: '382', change: '+218.33%', icon: ShoppingCart },
+        { label: 'Peak Month (Aug)', value: 'Rp40.00M', change: '+51.7% vs Jul', icon: Activity },
+        { label: 'Total Customers', value: '380', change: '3.2/day avg', icon: Users },
       ],
       graphImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.08.28-DkXBAPIi3otnuNeJOhiI720dCAKEJa.png',
       analyticsImages: [
@@ -202,11 +202,11 @@ export default function QCYCaseStudy() {
     {
       name: 'TikTok Shop',
       activities: [
-        'June 2025: Rp13.02M revenue, 45 orders, 44 customers (Platform Entry)',
-        'July 2025: Rp11.52M revenue, 43 orders, 42 customers (-11.5% MoM)',
-        'August 2025: Rp18.56M revenue, 62 orders, 62 customers (+61.1% recovery)',
-        'September 2025: Rp18.02M revenue, 67 orders, 66 customers (Sustained Growth)',
-        'Total Period: Rp61.12M gross revenue, +137.29% vs previous period',
+        'Platform Ads: Rp3.5M spend, 228 orders, Rp43M GMV (ROI 12x)',
+        'Shop Campaign: Rp9.4M spend, 99 campaigns, Rp52.6M GMV (ROI 5.5x)',
+        'Marketing Tools: Rp2.2M spend, 44 activations, Rp11.9M GMV (ROI 5.29x)',
+        'Affiliate Program: Rp174K spend, 13 partners, Rp2.2M GMV (ROI 5.29x)',
+        'Livestream Support & Community Engagement',
       ],
       color: 'from-black to-gray-800',
     },
