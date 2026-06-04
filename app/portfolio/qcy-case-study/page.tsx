@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowRight, TrendingUp, ShoppingCart, Target, Calendar, Zap, Users, BarChart3, PieChart, Activity, LineChart, Eye, Briefcase, Clock, Zap as ZapIcon, MessageSquare, Search } from 'lucide-react'
+import { ArrowRight, TrendingUp, ShoppingCart, Target, Calendar, Zap, Users, BarChart3, PieChart, Activity, LineChart, Eye, Briefcase, Clock, Zap as ZapIcon, MessageSquare, Search, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 
 const fadeIn = {
@@ -24,6 +24,35 @@ const staggerContainer = {
 export default function QCYCaseStudy() {
   const [activeTab, setActiveTab] = useState('shopee')
   const [activeTimeline, setActiveTimeline] = useState(0)
+  const [monthlySlide, setMonthlySlide] = useState(0)
+
+  const monthlyScreenshots = [
+    {
+      month: 'May 2025',
+      description: 'Launch Campaign - Rp91.8M Revenue',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.15-Vdb6TwycvS4Eux1waWkxwAPIe2jLrl.png',
+    },
+    {
+      month: 'June 2025',
+      description: 'Multi-Platform Expansion Phase',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png',
+    },
+    {
+      month: 'July 2025',
+      description: 'TikTok Shop Performance Growth',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png',
+    },
+    {
+      month: 'August 2025',
+      description: 'Peak Performance & Optimization',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png',
+    },
+    {
+      month: 'September 2025',
+      description: 'Sustained Growth & Scale',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.07-XjDfsVbLo5893RlsMLLT7b9Qbqkery.png',
+    },
+  ]
 
   const kpiCards = [
     { label: 'August Revenue', value: 'Rp91.8M', icon: TrendingUp },
@@ -540,7 +569,101 @@ export default function QCYCaseStudy() {
         </div>
       </section>
 
-      {/* Key Learnings */}
+      {/* Monthly Progress Screenshots Carousel */}
+      <section className="py-20 bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            {/* Header */}
+            <motion.div variants={fadeIn} className="mb-12">
+              <h2 className="text-3xl font-bold text-white mb-2">Monthly Progress Screenshots</h2>
+              <p className="text-white/80">Actual marketplace analytics data showing the growth journey across 5 months</p>
+            </motion.div>
+
+            {/* Carousel Container */}
+            <motion.div variants={fadeIn} className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
+              {/* Main Carousel Display */}
+              <div className="relative h-96 md:h-[500px] bg-gradient-to-br from-gray-50 to-gray-100">
+                {/* Featured Screenshot */}
+                <div className="relative w-full h-full">
+                  <img
+                    src={monthlyScreenshots[monthlySlide].image}
+                    alt={monthlyScreenshots[monthlySlide].month}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Overlay with Month Info */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8">
+                    <h3 className="text-2xl font-bold text-white mb-1">{monthlyScreenshots[monthlySlide].month}</h3>
+                    <p className="text-white/90">{monthlyScreenshots[monthlySlide].description}</p>
+                  </div>
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={() => setMonthlySlide((prev) => (prev - 1 + monthlyScreenshots.length) % monthlyScreenshots.length)}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur rounded-full p-2 transition-colors"
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
+                <button
+                  onClick={() => setMonthlySlide((prev) => (prev + 1) % monthlyScreenshots.length)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur rounded-full p-2 transition-colors"
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+              </div>
+
+              {/* Navigation Dots */}
+              <div className="flex justify-center gap-2 py-6 bg-white border-t border-gray-200">
+                {monthlyScreenshots.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setMonthlySlide(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      index === monthlySlide ? 'w-8 bg-[#6D4AFF]' : 'w-2 bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to ${monthlyScreenshots[index].month}`}
+                  />
+                ))}
+              </div>
+
+              {/* Month Buttons Navigation */}
+              <div className="bg-[#6D4AFF] px-8 py-4 overflow-x-auto">
+                <div className="flex gap-2 min-w-min">
+                  {monthlyScreenshots.map((screenshot, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setMonthlySlide(index)}
+                      className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-all ${
+                        index === monthlySlide
+                          ? 'bg-orange-500 text-white'
+                          : 'bg-[#5237D9] text-white/80 hover:text-white hover:bg-[#4220C1]'
+                      }`}
+                    >
+                      {screenshot.month}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Timeline Slider */}
+              <div className="bg-white/5 px-8 py-4 flex items-center gap-4">
+                <span className="text-xs text-white/60 font-medium">Timeline:</span>
+                <input
+                  type="range"
+                  min="0"
+                  max={monthlyScreenshots.length - 1}
+                  value={monthlySlide}
+                  onChange={(e) => setMonthlySlide(parseInt(e.target.value))}
+                  className="flex-1 h-1 bg-white/20 rounded-full appearance-none cursor-pointer accent-orange-500"
+                />
+                <span className="text-xs text-white/80 font-medium">{monthlySlide + 1} / {monthlyScreenshots.length}</span>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
