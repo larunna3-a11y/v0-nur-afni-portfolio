@@ -381,6 +381,64 @@ export default function QCYCaseStudy() {
                       </div>
                       <p className="text-2xl font-bold text-[#0F0A2E] mb-1">{metric.value}</p>
                       <p className="text-xs text-gray-500">{metric.change}</p>
+                    </motion.div>
+                  )
+                })}
+              </div>
+            </motion.div>
+
+            {/* Performance Graph with Chart */}
+            <motion.div variants={fadeIn} className="mb-12">
+              <h3 className="text-xl font-bold text-[#0F0A2E] mb-6">Monthly Performance Graph</h3>
+              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm p-6">
+                {/* Line Chart */}
+                <div className="w-full h-80">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <RechartsLineChart data={monthlyChartData[activeTab]}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
+                      <XAxis dataKey="month" stroke="#666" />
+                      <YAxis stroke="#666" />
+                      <Tooltip 
+                        contentStyle={{
+                          backgroundColor: '#fff',
+                          border: '1px solid #ccc',
+                          borderRadius: '8px',
+                          padding: '8px'
+                        }}
+                        formatter={(value) => `Rp${value.toFixed(2)}M`}
+                      />
+                      <Line 
+                        type="monotone" 
+                        dataKey="sales" 
+                        stroke={activeTab === 'shopee' ? '#EF4444' : activeTab === 'tiktok' ? '#1F2937' : '#22C55E'} 
+                        strokeWidth={3}
+                        dot={{ fill: activeTab === 'shopee' ? '#EF4444' : activeTab === 'tiktok' ? '#1F2937' : '#22C55E', r: 6 }}
+                        activeDot={{ r: 8 }}
+                        name="Sales (Rp M)"
+                      />
+                    </RechartsLineChart>
+                  </ResponsiveContainer>
+                </div>
+                
+                {/* Legend */}
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <p className="text-sm text-gray-600">
+                    <span className="font-semibold">Showing:</span> Monthly sales revenue for {channelData[activeTab].name}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Additional Analytics */}
+            <motion.div variants={fadeIn} className="mb-12">
+              <h3 className="text-xl font-bold text-[#0F0A2E] mb-6">Detailed Analytics</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {channelData[activeTab].analyticsImages.map((image, i) => (
+                  <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                    <img src={image} alt={`${channelData[activeTab].name} Analytics ${i + 1}`} className="w-full h-auto" />
+                  </div>
+                ))}
+              </div>
             </motion.div>
 
             {/* Monthly Progress Screenshots Carousel */}
