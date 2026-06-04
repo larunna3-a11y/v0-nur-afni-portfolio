@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowRight, TrendingUp, ShoppingCart, Target, Calendar, Zap, Users, BarChart3, PieChart, Activity, LineChart, Eye, Briefcase, Clock, Zap as ZapIcon, MessageSquare, Search, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowRight, TrendingUp, ShoppingCart, Target, Calendar, Zap, Users, BarChart3, PieChart, Activity, LineChart, Eye, Briefcase, Clock, Zap as ZapIcon, MessageSquare, Search } from 'lucide-react'
 import { useState } from 'react'
 
 const fadeIn = {
@@ -24,7 +24,6 @@ const staggerContainer = {
 export default function QCYCaseStudy() {
   const [activeTab, setActiveTab] = useState('shopee')
   const [activeTimeline, setActiveTimeline] = useState(0)
-  const [activeMonth, setActiveMonth] = useState(0)
 
   const kpiCards = [
     { label: 'August Revenue', value: 'Rp91.8M', icon: TrendingUp },
@@ -133,44 +132,6 @@ export default function QCYCaseStudy() {
       ],
     },
   }
-
-  const monthlyProgress = [
-    {
-      month: 'May 2025',
-      revenue: 'Rp91.8M',
-      badge: 'Launch Day',
-      color: 'from-orange-500 to-red-500',
-      screenshot: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png',
-    },
-    {
-      month: 'June 2025',
-      revenue: 'Rp84.1M',
-      badge: 'Multi-Channel',
-      color: 'from-yellow-500 to-orange-500',
-      screenshot: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.04.30-4oZCmeLlt2jvz4REe8epUBlTr9GSik.png',
-    },
-    {
-      month: 'July 2025',
-      revenue: 'Rp26.4Jt',
-      badge: 'Platform Growth',
-      color: 'from-green-500 to-teal-500',
-      screenshot: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.05.09-WKKRqtNpRKXgbPdT6RE17x0NxHMKY9.png',
-    },
-    {
-      month: 'August 2025',
-      revenue: 'Rp16.9Jt',
-      badge: 'Peak Performance',
-      color: 'from-blue-500 to-cyan-500',
-      screenshot: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.08.28-DkXBAPIi3otnuNeJOhiI720dCAKEJa.png',
-    },
-    {
-      month: 'September 2025',
-      revenue: 'Rp100.4Jt',
-      badge: 'Sustained Growth',
-      color: 'from-purple-500 to-pink-500',
-      screenshot: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png',
-    },
-  ]
 
   const marketplaces = [
     {
@@ -293,81 +254,6 @@ export default function QCYCaseStudy() {
                   </motion.div>
                 )
               })}
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Monthly Progress Screenshots */}
-      <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
-            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-2 text-center text-[#0F0A2E]">
-              Monthly Progress Screenshots
-            </motion.h2>
-            <motion.p variants={fadeIn} className="text-center text-gray-600 mb-12">
-              Actual dashboard data showing the growth journey across 5 months of integrated campaign execution
-            </motion.p>
-
-            {/* Main Screenshot Card */}
-            <motion.div variants={fadeIn} className="bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8] rounded-3xl p-8 mb-8 min-h-96">
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-1">{monthlyProgress[activeMonth].month}</h3>
-                  <p className="text-2xl font-bold text-purple-100">{monthlyProgress[activeMonth].revenue}</p>
-                </div>
-                <span className={`bg-gradient-to-r ${monthlyProgress[activeMonth].color} text-white px-4 py-1 rounded-full text-sm font-semibold`}>
-                  {monthlyProgress[activeMonth].badge}
-                </span>
-              </div>
-
-              <div className="bg-white rounded-2xl overflow-hidden mb-6">
-                <img 
-                  src={monthlyProgress[activeMonth].screenshot} 
-                  alt={`${monthlyProgress[activeMonth].month} Dashboard`}
-                  className="w-full h-auto"
-                />
-              </div>
-
-              {/* Navigation Buttons */}
-              <div className="flex items-center justify-between">
-                <button
-                  onClick={() => setActiveMonth(Math.max(0, activeMonth - 1))}
-                  disabled={activeMonth === 0}
-                  className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-
-                <div className="flex-1 text-center text-white">
-                  <p className="text-sm">{activeMonth + 1} / {monthlyProgress.length}</p>
-                </div>
-
-                <button
-                  onClick={() => setActiveMonth(Math.min(monthlyProgress.length - 1, activeMonth + 1))}
-                  disabled={activeMonth === monthlyProgress.length - 1}
-                  className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
-            </motion.div>
-
-            {/* Timeline Navigation */}
-            <motion.div variants={fadeIn} className="flex items-center justify-center gap-2 flex-wrap">
-              {monthlyProgress.map((month, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveMonth(i)}
-                  className={`px-4 py-2 rounded-full font-medium text-sm transition-all ${
-                    activeMonth === i
-                      ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg'
-                      : 'bg-white border border-gray-200 text-gray-700 hover:border-purple-400'
-                  }`}
-                >
-                  {month.month}
-                </button>
-              ))}
             </motion.div>
           </motion.div>
         </div>
