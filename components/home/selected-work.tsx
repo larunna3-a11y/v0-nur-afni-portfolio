@@ -13,6 +13,7 @@ const works = [
     brand: 'QCY HT15 & C30',
     result: 'Rp91.8M revenue on launch day',
     bg: 'bg-[#F97316]',
+    link: '/portfolio/qcy-case-study',
   },
   {
     category: 'Social Media',

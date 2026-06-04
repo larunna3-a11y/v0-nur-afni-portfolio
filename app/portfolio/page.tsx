@@ -22,6 +22,7 @@ const caseStudies = [
     result: 'Rp92M revenue · 250+ orders on Launch day',
     description: 'New Release projects and multi-marketplace product launch campaign combining paid ads, flash sale, voucher, and affiliate strategy for maximum launch-day impact.',
     metrics: ['Rp92M day-one revenue', '250+ orders', 'Multi-platform execution'],
+    link: '/portfolio/qcy-case-study',
   },
   {
     id: 3,
