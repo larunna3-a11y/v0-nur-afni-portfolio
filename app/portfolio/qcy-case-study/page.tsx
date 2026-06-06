@@ -213,11 +213,11 @@ export default function QCYCaseStudy() {
     {
       name: 'Tokopedia',
       activities: [
-        'Integrated Campaign Participation',
-        'Product Listing Optimization',
-        'Promotional Calendar Management',
-        'Customer Service & Response Management',
-        'Seasonal Campaign Coordination',
+        'June 2025: Rp20.06M revenue, 71 orders, 70 customers (Platform Entry)',
+        'July 2025: Rp26.37M revenue, 92 orders, 91 customers (+31.4% MoM)',
+        'August 2025: Rp40.00M revenue, 112 orders, 111 customers (+51.7% growth)',
+        'September 2025: Rp34.40M revenue, 107 orders, 107 customers (Stable)',
+        'Total Period: Rp120.84M gross revenue, +363.83% vs previous period',
       ],
       color: 'from-green-500 to-green-600',
     },
