@@ -112,7 +112,7 @@ export default function QCYCaseStudy() {
     {
       month: 'August 2025',
       title: 'Performance Optimization & Scaling',
-      description: 'Refined campaign mechanics based on performance data. Achieved Rp91.8M revenue with 576+ total orders through optimized ads (Rp8.2M GMV), affiliate activation (Rp38.5M GMV), voucher campaigns (Rp75.8M), and multi-platform execution.',
+      description: 'Refined campaign mechanics based on performance data. Achieved Rp91.8M revenue with 2,900+ total orders through optimized ads (Rp8.2M GMV), affiliate activation (Rp38.5M GMV), voucher campaigns (Rp75.8M), and multi-platform execution.',
     },
     {
       month: 'September 2025',
@@ -241,7 +241,7 @@ export default function QCYCaseStudy() {
   const results = [
     { metric: 'Rp91.8M', label: 'Launch Day Revenue', subtext: 'May 2025 campaign' },
     { metric: '250+', label: 'Launch Orders', subtext: 'Day-one performance' },
-    { metric: '576+', label: 'Total Orders (Aug)', subtext: 'Multi-platform execution' },
+    { metric: '2,900+', label: 'Total Orders', subtext: 'Multi-platform execution' },
     { metric: '96.2x', label: 'Voucher ROI', subtext: 'Highest performing channel' },
   ]
 
@@ -451,11 +451,11 @@ export default function QCYCaseStudy() {
                 <h3 className="text-lg font-semibold text-gray-700 mb-6">TikTok Shop</h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-4xl font-bold text-[#0F0A2E]">382</p>
+                    <p className="text-4xl font-bold text-[#0F0A2E]">217</p>
                     <p className="text-gray-600 text-sm">Total Orders</p>
                   </div>
                   <div className="pt-2 border-t border-gray-200">
-                    <p className="text-2xl font-bold text-gray-700">Rp120.84M</p>
+                    <p className="text-2xl font-bold text-gray-700">Rp55.23M</p>
                     <p className="text-gray-600 text-sm">Total Revenue (Jun-Sep)</p>
                   </div>
                 </div>
