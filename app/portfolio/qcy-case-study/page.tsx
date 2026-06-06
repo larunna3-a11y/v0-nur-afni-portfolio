@@ -112,7 +112,7 @@ export default function QCYCaseStudy() {
     {
       month: 'August 2025',
       title: 'Performance Optimization & Scaling',
-      description: 'Refined campaign mechanics based on performance data. Achieved Rp91.8M revenue with 2,900+ total orders through optimized ads (Rp8.2M GMV), affiliate activation (Rp38.5M GMV), voucher campaigns (Rp75.8M), and multi-platform execution.',
+      description: 'Refined campaign mechanics based on performance data. Achieved Rp91.8M revenue with 3,120+ total orders through optimized ads (Rp8.2M GMV), affiliate activation (Rp38.5M GMV), voucher campaigns (Rp75.8M), and multi-platform execution.',
     },
     {
       month: 'September 2025',
@@ -241,8 +241,8 @@ export default function QCYCaseStudy() {
   const results = [
     { metric: 'Rp91.8M', label: 'Launch Day Revenue', subtext: 'May 2025 campaign' },
     { metric: '250+', label: 'Launch Orders', subtext: 'Day-one performance' },
-    { metric: '2,900+', label: 'Total Orders (Ap-Sep)', subtext: 'Multi-platform execution' },
-    { metric: '3,120+', label: 'Total Orders (Apr-Sep)', subtext: 'Highest performing channel' },
+    { metric: '3,120+', label: 'Total Orders (Ap-Sep)', subtext: 'Multi-platform execution' },
+    { metric: 'Rp837.29M', label: 'Total Revenue (Apr-Sep)', subtext: 'Highest performing channel' },
   ]
 
   return (
