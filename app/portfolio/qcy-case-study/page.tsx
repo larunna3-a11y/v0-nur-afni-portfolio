@@ -404,23 +404,66 @@ export default function QCYCaseStudy() {
             </motion.div>
 
             {/* Additional Analytics */}
-            <motion.div variants={fadeIn} className="mb-12">
-              <h3 className="text-xl font-bold text-[#0F0A2E] mb-6"><h2 className="text-4xl font-bold">
-              Marketplace Performance Timeline
-            </h2>
+                      <motion.div variants={fadeIn} className="mb-16">
+            <div className="bg-[#1B1464] rounded-3xl p-8">
 
-            <p className="text-muted-foreground mt-2">
-              Monthly marketplace performance across Shopee,
-              Tokopedia and TikTok Shop during the campaign period.
-            </p></h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                {channelData[activeTab].analyticsImages.map((image, i) => (
-                  <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src={image} alt={`${channelData[activeTab].name} Analytics ${i + 1}`} className="w-full h-auto" />
-                  </div>
-                ))}
+              <div className="mb-8">
+                <h2 className="text-4xl font-bold text-white">
+                  Marketplace Performance Timeline
+                </h2>
+
+                <p className="text-white/70 mt-2">
+                  Actual marketplace performance data documenting campaign growth from launch to campaign completion.
+                </p>
               </div>
-            </motion.div>
+
+              {/* Main Screenshot Area */}
+              <div className="bg-white rounded-2xl p-6 mb-6">
+
+                <div className="flex justify-between items-center mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold">
+                      September 2025
+                    </h3>
+                    <p className="text-gray-500">
+                      Campaign Closing Period
+                    </p>
+                  </div>
+
+                  <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm">
+                    End Point
+                  </span>
+                </div>
+
+                <img
+                  src={monthlyScreenshots[monthlySlide].image}
+                  alt=""
+                  className="w-full rounded-xl border"
+                />
+
+              </div>
+
+              {/* Month Navigation */}
+              <div className="flex gap-2 overflow-x-auto pb-2">
+
+                {monthlyScreenshots.map((month, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setMonthlySlide(index)}
+                    className={`px-4 py-2 rounded-lg whitespace-nowrap transition-all ${
+                      monthlySlide === index
+                        ? "bg-orange-500 text-white"
+                        : "bg-white/10 text-white"
+                    }`}
+                  >
+                    {month.month}
+                  </button>
+                ))}
+
+              </div>
+
+            </div>
+          </motion.div>
           </motion.div>
         </div>
       </section>
