@@ -751,7 +751,6 @@ export default function QCYCaseStudy() {
                 <span className="text-xs text-white/80 font-medium">{monthlySlide + 1} / {monthlyScreenshots.length}</span>
               </div>
             </motion.div>
-          </motion.div>
         </div>
       </section>
 
