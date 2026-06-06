@@ -405,7 +405,14 @@ export default function QCYCaseStudy() {
 
             {/* Additional Analytics */}
             <motion.div variants={fadeIn} className="mb-12">
-              <h3 className="text-xl font-bold text-[#0F0A2E] mb-6">Detailed Analytics</h3>
+              <h3 className="text-xl font-bold text-[#0F0A2E] mb-6"><h2 className="text-4xl font-bold">
+              Marketplace Performance Timeline
+            </h2>
+
+            <p className="text-muted-foreground mt-2">
+              Monthly marketplace performance across Shopee,
+              Tokopedia and TikTok Shop during the campaign period.
+            </p></h3>
               <div className="grid md:grid-cols-2 gap-6">
                 {channelData[activeTab].analyticsImages.map((image, i) => (
                   <div key={i} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
