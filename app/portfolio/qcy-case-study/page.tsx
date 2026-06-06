@@ -191,10 +191,10 @@ export default function QCYCaseStudy() {
     {
       name: 'Shopee',
       activities: [
-        'Paid Ads: Rp4.2M spend, 2,3522 orders, Rp49M GMV (ROI 10.6x)',
+        'Paid Ads: Rp4.2M/Month spend, 2,3522 orders, Rp49M GMV (ROI 10.6x)',
         'Livestreaming: Rp402K spend, 53 sessions, Rp15M GMV (ROI 37.3x)',
         'Flash Sales: Rp360K spend, 7 events, Rp2.5M GMV (ROI 7x)',
-        'Vouchers: Rp788K spend, 222 activations, Rp75.8M GMV (ROI 96.2x)',
+        'Vouchers: Rp788K spend, 222 activations, Rp75.8M GMV (ROI 3,120+)',
         'Affiliate: Rp2.4M spend, 139 partners, Rp36.2M GMV (ROI 14.7x)',
       ],
       color: 'from-red-500 to-red-600',
@@ -242,7 +242,7 @@ export default function QCYCaseStudy() {
     { metric: 'Rp91.8M', label: 'Launch Day Revenue', subtext: 'May 2025 campaign' },
     { metric: '250+', label: 'Launch Orders', subtext: 'Day-one performance' },
     { metric: '2,900+', label: 'Total Orders (Ap-Sep)', subtext: 'Multi-platform execution' },
-    { metric: '96.2x', label: 'Voucher ROI', subtext: 'Highest performing channel' },
+    { metric: '3,120+', label: 'Voucher ROI', subtext: 'Highest performing channel' },
   ]
 
   return (
@@ -328,8 +328,8 @@ export default function QCYCaseStudy() {
                   key={channel}
                   onClick={() => setActiveTab(channel)}
                   className={`px-6 py-3 font-medium transition-all ${activeTab === channel
-                      ? `border-b-2 border-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-500 text-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-600`
-                      : 'text-gray-500 hover:text-gray-700'
+                    ? `border-b-2 border-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-500 text-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-600`
+                    : 'text-gray-500 hover:text-gray-700'
                     }`}
                 >
                   {channelData[channel].name}
@@ -539,8 +539,8 @@ export default function QCYCaseStudy() {
                   variants={fadeIn}
                   onClick={() => setActiveTimeline(i)}
                   className={`cursor-pointer rounded-xl p-6 border-2 transition-all ${activeTimeline === i
-                      ? 'border-[#6D4AFF] bg-[#6D4AFF]/5'
-                      : 'border-[#E8E6F8] bg-[#F8F7FF] hover:border-[#6D4AFF]/30'
+                    ? 'border-[#6D4AFF] bg-[#6D4AFF]/5'
+                    : 'border-[#E8E6F8] bg-[#F8F7FF] hover:border-[#6D4AFF]/30'
                     }`}
                 >
                   <div className="flex items-start gap-4">
@@ -579,12 +579,12 @@ export default function QCYCaseStudy() {
                     <div className="bg-white rounded-lg p-4 border border-red-100">
                       <div className="text-sm text-red-600 font-medium">Paid Ads</div>
                       <div className="text-2xl font-bold text-red-900 mt-1">2,322 Orders</div>
-                      <div className="text-sm text-red-700 mt-2">Rp49M GMV • Rp4.2M Cost • 10.6x ROI</div>
+                      <div className="text-sm text-red-700 mt-2">Rp49M GMV • Rp4.2M/Month Cost • 10.6x ROI</div>
                     </div>
                     <div className="bg-white rounded-lg p-4 border border-red-100">
                       <div className="text-sm text-red-600 font-medium">Voucher Campaign</div>
                       <div className="text-2xl font-bold text-red-900 mt-1">222 Activations</div>
-                      <div className="text-sm text-red-700 mt-2">Rp75.8M GMV • Rp788K Cost • 96.2x ROI</div>
+                      <div className="text-sm text-red-700 mt-2">Rp75.8M GMV • Rp788K Cost • 3,120+ ROI</div>
                     </div>
                   </div>
                 </div>
@@ -737,8 +737,8 @@ export default function QCYCaseStudy() {
                       key={index}
                       onClick={() => setMonthlySlide(index)}
                       className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-all ${index === monthlySlide
-                          ? 'bg-orange-500 text-white'
-                          : 'bg-[#5237D9] text-white/80 hover:text-white hover:bg-[#4220C1]'
+                        ? 'bg-orange-500 text-white'
+                        : 'bg-[#5237D9] text-white/80 hover:text-white hover:bg-[#4220C1]'
                         }`}
                     >
                       {screenshot.month}
