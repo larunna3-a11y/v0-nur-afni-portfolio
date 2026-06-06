@@ -673,6 +673,16 @@ export default function QCYCaseStudy() {
         </div>
       </section>
 
+      {/* Monthly Progress Screenshots */}
+      <section className="py-20 bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            {/* Header */}
+            <motion.div variants={fadeIn} className="mb-12">
+              <h2 className="text-3xl font-bold text-white mb-2">Monthly Progress Screenshots</h2>
+              <p className="text-white/80">Actual marketplace analytics data showing the growth journey across months</p>
+            </motion.div>
+
             {/* Carousel Container */}
             <motion.div variants={fadeIn} className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
               {/* Main Carousel Display */}
@@ -751,6 +761,7 @@ export default function QCYCaseStudy() {
                 <span className="text-xs text-white/80 font-medium">{monthlySlide + 1} / {monthlyScreenshots.length}</span>
               </div>
             </motion.div>
+          </motion.div>
         </div>
       </section>
 
