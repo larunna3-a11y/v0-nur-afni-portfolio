@@ -241,7 +241,7 @@ export default function QCYCaseStudy() {
   const results = [
     { metric: 'Rp91.8M', label: 'Launch Day Revenue', subtext: 'May 2025 campaign' },
     { metric: '250+', label: 'Launch Orders', subtext: 'Day-one performance' },
-    { metric: '2,900+', label: 'Total Orders', subtext: 'Multi-platform execution' },
+    { metric: '2,900+', label: 'Total Orders (Ap-Sep)', subtext: 'Multi-platform execution' },
     { metric: '96.2x', label: 'Voucher ROI', subtext: 'Highest performing channel' },
   ]
 
