@@ -191,7 +191,7 @@ export default function QCYCaseStudy() {
     {
       name: 'Shopee',
       activities: [
-        'Paid Ads: Rp4.2M spend, 13,344 orders, Rp49M GMV (ROI 10.6x)',
+        'Paid Ads: Rp4.2M spend, 2,3522 orders, Rp49M GMV (ROI 10.6x)',
         'Livestreaming: Rp402K spend, 53 sessions, Rp15M GMV (ROI 37.3x)',
         'Flash Sales: Rp360K spend, 7 events, Rp2.5M GMV (ROI 7x)',
         'Vouchers: Rp788K spend, 222 activations, Rp75.8M GMV (ROI 96.2x)',
@@ -580,7 +580,7 @@ export default function QCYCaseStudy() {
                   <div className="space-y-4">
                     <div className="bg-white rounded-lg p-4 border border-red-100">
                       <div className="text-sm text-red-600 font-medium">Paid Ads</div>
-                      <div className="text-2xl font-bold text-red-900 mt-1">13,344 Orders</div>
+                      <div className="text-2xl font-bold text-red-900 mt-1">2,322 Orders</div>
                       <div className="text-sm text-red-700 mt-2">Rp49M GMV • Rp4.2M Cost • 10.6x ROI</div>
                     </div>
                     <div className="bg-white rounded-lg p-4 border border-red-100">
