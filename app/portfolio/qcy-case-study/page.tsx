@@ -19,32 +19,32 @@ const staggerContainer = {
       staggerChildren: 0.1,
       delayChildren: 0.2,
     },
-    },
-  }
+  },
+}
 
-  // Monthly data for charts
-  const monthlyChartData = {
-    shopee: [
-      { month: 'Apr', sales: 93.01, orders: 394, conversion: 1.62 },
-      { month: 'May', sales: 87.18, orders: 433, conversion: 1.35 },
-      { month: 'Jun', sales: 84.54, orders: 343, conversion: 1.30 },
-      { month: 'Jul', sales: 105.86, orders: 392, conversion: 1.29 },
-      { month: 'Aug', sales: 114.04, orders: 384, conversion: 1.82 },
-      { month: 'Sep', sales: 110.97, orders: 410, conversion: 1.75 },
-    ],
-    tiktok: [
-      { month: 'Jun', sales: 13.02, orders: 45, conversion: 2.07 },
-      { month: 'Jul', sales: 11.52, orders: 43, conversion: 1.98 },
-      { month: 'Aug', sales: 18.56, orders: 62, conversion: 2.86 },
-      { month: 'Sep', sales: 18.02, orders: 67, conversion: 3.09 },
-    ],
-    tokopedia: [
-      { month: 'Jun', sales: 20.06, orders: 71, conversion: 2.15 },
-      { month: 'Jul', sales: 26.37, orders: 92, conversion: 2.31 },
-      { month: 'Aug', sales: 40.00, orders: 112, conversion: 2.58 },
-      { month: 'Sep', sales: 34.40, orders: 107, conversion: 2.42 },
-    ],
-  }
+// Monthly data for charts
+const monthlyChartData = {
+  shopee: [
+    { month: 'Apr', sales: 93.01, orders: 394, conversion: 1.62 },
+    { month: 'May', sales: 87.18, orders: 433, conversion: 1.35 },
+    { month: 'Jun', sales: 84.54, orders: 343, conversion: 1.30 },
+    { month: 'Jul', sales: 105.86, orders: 392, conversion: 1.29 },
+    { month: 'Aug', sales: 114.04, orders: 384, conversion: 1.82 },
+    { month: 'Sep', sales: 110.97, orders: 410, conversion: 1.75 },
+  ],
+  tiktok: [
+    { month: 'Jun', sales: 13.02, orders: 45, conversion: 2.07 },
+    { month: 'Jul', sales: 11.52, orders: 43, conversion: 1.98 },
+    { month: 'Aug', sales: 18.56, orders: 62, conversion: 2.86 },
+    { month: 'Sep', sales: 18.02, orders: 67, conversion: 3.09 },
+  ],
+  tokopedia: [
+    { month: 'Jun', sales: 20.06, orders: 71, conversion: 2.15 },
+    { month: 'Jul', sales: 26.37, orders: 92, conversion: 2.31 },
+    { month: 'Aug', sales: 40.00, orders: 112, conversion: 2.58 },
+    { month: 'Sep', sales: 34.40, orders: 107, conversion: 2.42 },
+  ],
+}
 
 export default function QCYCaseStudy() {
   const [activeTab, setActiveTab] = useState('shopee')
@@ -175,7 +175,7 @@ export default function QCYCaseStudy() {
       borderColor: 'border-green-200',
       metrics: [
         { label: 'Total GMV (Jun-Sep)', value: 'Rp120.84M', change: '+363.83%', icon: TrendingUp },
-        { label: 'Total Orders', value: '382', change: '+218.33%', icon: ShoppingCart },
+        { label: 'Total Orders', value: '547', change: '+218.33%', icon: ShoppingCart },
         { label: 'Peak Month (Aug)', value: 'Rp40.00M', change: '+51.7% vs Jul', icon: Activity },
         { label: 'Total Customers', value: '380', change: '+216.67%', icon: Users },
       ],
@@ -327,11 +327,10 @@ export default function QCYCaseStudy() {
                 <button
                   key={channel}
                   onClick={() => setActiveTab(channel)}
-                  className={`px-6 py-3 font-medium transition-all ${
-                    activeTab === channel
+                  className={`px-6 py-3 font-medium transition-all ${activeTab === channel
                       ? `border-b-2 border-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-500 text-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-600`
                       : 'text-gray-500 hover:text-gray-700'
-                  }`}
+                    }`}
                 >
                   {channelData[channel].name}
                 </button>
@@ -373,7 +372,7 @@ export default function QCYCaseStudy() {
                       <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
                       <XAxis dataKey="month" stroke="#666" />
                       <YAxis stroke="#666" />
-                      <Tooltip 
+                      <Tooltip
                         contentStyle={{
                           backgroundColor: '#fff',
                           border: '1px solid #ccc',
@@ -382,10 +381,10 @@ export default function QCYCaseStudy() {
                         }}
                         formatter={(value) => `Rp${value.toFixed(2)}M`}
                       />
-                      <Line 
-                        type="monotone" 
-                        dataKey="sales" 
-                        stroke={activeTab === 'shopee' ? '#EF4444' : activeTab === 'tiktok' ? '#1F2937' : '#22C55E'} 
+                      <Line
+                        type="monotone"
+                        dataKey="sales"
+                        stroke={activeTab === 'shopee' ? '#EF4444' : activeTab === 'tiktok' ? '#1F2937' : '#22C55E'}
                         strokeWidth={3}
                         dot={{ fill: activeTab === 'shopee' ? '#EF4444' : activeTab === 'tiktok' ? '#1F2937' : '#22C55E', r: 6 }}
                         activeDot={{ r: 8 }}
@@ -394,7 +393,7 @@ export default function QCYCaseStudy() {
                     </RechartsLineChart>
                   </ResponsiveContainer>
                 </div>
-                
+
                 {/* Legend */}
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <p className="text-sm text-gray-600">
@@ -466,7 +465,7 @@ export default function QCYCaseStudy() {
                 <h3 className="text-lg font-semibold text-green-600 mb-6">Tokopedia</h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-4xl font-bold text-[#0F0A2E]">382</p>
+                    <p className="text-4xl font-bold text-[#0F0A2E]">547</p>
                     <p className="text-gray-600 text-sm">Total Orders</p>
                   </div>
                   <div className="pt-2 border-t border-gray-200">
@@ -498,7 +497,7 @@ export default function QCYCaseStudy() {
         </div>
       </section>
 
-      
+
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
@@ -539,11 +538,10 @@ export default function QCYCaseStudy() {
                   key={i}
                   variants={fadeIn}
                   onClick={() => setActiveTimeline(i)}
-                  className={`cursor-pointer rounded-xl p-6 border-2 transition-all ${
-                    activeTimeline === i
+                  className={`cursor-pointer rounded-xl p-6 border-2 transition-all ${activeTimeline === i
                       ? 'border-[#6D4AFF] bg-[#6D4AFF]/5'
                       : 'border-[#E8E6F8] bg-[#F8F7FF] hover:border-[#6D4AFF]/30'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
@@ -724,9 +722,8 @@ export default function QCYCaseStudy() {
                   <button
                     key={index}
                     onClick={() => setMonthlySlide(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      index === monthlySlide ? 'w-8 bg-[#6D4AFF]' : 'w-2 bg-gray-300 hover:bg-gray-400'
-                    }`}
+                    className={`h-2 rounded-full transition-all ${index === monthlySlide ? 'w-8 bg-[#6D4AFF]' : 'w-2 bg-gray-300 hover:bg-gray-400'
+                      }`}
                     aria-label={`Go to ${monthlyScreenshots[index].month}`}
                   />
                 ))}
@@ -739,11 +736,10 @@ export default function QCYCaseStudy() {
                     <button
                       key={index}
                       onClick={() => setMonthlySlide(index)}
-                      className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-all ${
-                        index === monthlySlide
+                      className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-all ${index === monthlySlide
                           ? 'bg-orange-500 text-white'
                           : 'bg-[#5237D9] text-white/80 hover:text-white hover:bg-[#4220C1]'
-                      }`}
+                        }`}
                     >
                       {screenshot.month}
                     </button>
@@ -769,7 +765,7 @@ export default function QCYCaseStudy() {
         </div>
       </section>
 
-      
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
