@@ -60,12 +60,13 @@ export default function DigitalProductLab() {
   const projects = [
     {
       id: 1,
-      name: 'SaaS Dashboard',
-      description: 'Analytics and metrics platform with real-time data visualization',
-      tools: ['V0', 'Figma AI', 'ChatGPT'],
-      status: 'Prototype',
-      statusColor: 'from-blue-500 to-blue-600',
+      name: 'Excel Template Bank',
+      description: 'Comprehensive library of pre-built Excel templates for business operations, finance, and project management',
+      tools: ['V0', 'Claude', 'ChatGPT', 'Figma AI'],
+      status: 'Live',
+      statusColor: 'from-green-500 to-green-600',
       thumbnail: '/placeholder.svg?height=300&width=400',
+      link: 'https://v0-react-project-review-three.vercel.app/',
     },
     {
       id: 2,
@@ -239,9 +240,15 @@ export default function DigitalProductLab() {
                     </div>
 
                     {/* View Button */}
-                    <button className="w-full bg-gradient-to-r from-[#6D4AFF] to-[#2D1BB8] text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-shadow flex items-center justify-center gap-2">
-                      View Project <ExternalLink className="w-4 h-4" />
-                    </button>
+                    {project.link ? (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-[#6D4AFF] to-[#2D1BB8] text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-shadow flex items-center justify-center gap-2">
+                        View Project <ExternalLink className="w-4 h-4" />
+                      </a>
+                    ) : (
+                      <button className="w-full bg-gradient-to-r from-[#6D4AFF] to-[#2D1BB8] text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-shadow flex items-center justify-center gap-2">
+                        View Project <ExternalLink className="w-4 h-4" />
+                      </button>
+                    )}
                   </div>
                 </motion.div>
               ))}
