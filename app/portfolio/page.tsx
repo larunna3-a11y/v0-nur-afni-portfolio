@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate', 'Livestream']
+const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate', 'Livestream', 'Product Design']
 
 const caseStudies = [
   {
@@ -57,12 +57,13 @@ const caseStudies = [
     metrics: ['+22% follower growth', '5K+ engagement rate', '10K+ impressions'],
   },
   {
-    id: 7,
-    categories: ['KOL & Affiliate'],
-    brand: 'QCY Indonesia',
-    result: '200+ orders · Rp36.2M GMV · 14.7 ROAS',
-    description: 'KOL Creators and affiliate campaign managed end-to-end. From brief to performance report, across TikTok Affiliate and Shopee Affiliate.',
-    metrics: ['250+ orders', 'Rp36.2M GMV', '14.7 ROAS'],
+    id: 8,
+    categories: ['Product Design'],
+    brand: 'Digital Product Lab',
+    result: '10+ AI-powered projects · 4 specialized tools',
+    description: 'A comprehensive design and development lab exploring AI-driven product creation. Leveraging ChatGPT, Claude, Figma AI, and V0 to prototype and ship 10+ innovative digital products with a focus on UI/UX excellence and rapid iteration.',
+    metrics: ['10+ projects shipped', '4 AI tools integrated', 'Rapid prototyping & design'],
+    link: '/portfolio/digital-product-lab',
   },
 ]
 
