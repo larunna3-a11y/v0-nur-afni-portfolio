@@ -65,7 +65,7 @@ export default function DigitalProductLab() {
       tools: ['V0', 'Claude', 'ChatGPT', 'Figma AI'],
       status: 'Live',
       statusColor: 'from-green-500 to-green-600',
-      thumbnail: '/placeholder.svg?height=300&width=400',
+      thumbnail: '/images/excel-template-bank.png',
       link: 'https://v0-react-project-review-three.vercel.app/',
     },
     {
