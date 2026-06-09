@@ -201,7 +201,7 @@ export default function DigitalProductLab() {
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.div variants={fadeIn} className="mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">Featured Projects</h2>
-              <p className="text-gray-600">Explore our collection of prototypes and experiments</p>
+              <p className="text-gray-600">A growing collection of websites, portfolio projects, marketplace concepts, and digital product prototypes.</p>
             </motion.div>
 
             <motion.div variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
