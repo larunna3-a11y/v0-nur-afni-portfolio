@@ -142,8 +142,6 @@ export default function DigitalProductLab() {
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">Digital Product Lab</h1>
               <p className="text-lg text-white/90 mb-8 leading-relaxed">
                 A collection of website designs, portfolio projects, marketplace concepts, and digital product prototypes created through AI-assisted workflows.
-
-                Built using ChatGPT, Claude, Figma AI, and V0 to transform ideas into functional websites, case studies, and interactive digital experiences.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button className="bg-white text-[#6D4AFF] px-6 py-3 rounded-lg font-semibold hover:bg-white/90 transition-colors flex items-center gap-2">
