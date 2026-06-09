@@ -167,7 +167,7 @@ export default function DigitalProductLab() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.div variants={fadeIn} className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">The AI Workflow</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">How These Projects Are Built</h2>
               <p className="text-gray-600 max-w-3xl">
                 Our methodology combines AI tools in a structured workflow to rapidly transform ideas into functional prototypes. Each tool plays a specific role in the development process.
               </p>
