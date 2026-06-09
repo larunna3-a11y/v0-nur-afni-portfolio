@@ -116,10 +116,10 @@ export default function DigitalProductLab() {
   ]
 
   const timelineEvents = [
-    { year: 2024, quarter: 'Q1', projects: 2, focus: 'Foundational experiments' },
-    { year: 2024, quarter: 'Q2', projects: 3, focus: 'MVP development' },
-    { year: 2024, quarter: 'Q3', projects: 4, focus: 'Design systems' },
-    { year: 2024, quarter: 'Q4', projects: 5, focus: 'Advanced prototypes' },
+    { year: 2026, quarter: 'Q1', projects: 2, focus: 'Foundational experiments' },
+    { year: 2026, quarter: 'Q2', projects: 3, focus: 'MVP development' },
+    { year: 2026, quarter: 'Q3', projects: 4, focus: 'Design systems' },
+    { year: 2026, quarter: 'Q4', projects: 5, focus: 'Advanced prototypes' },
   ]
 
   const upcomingExperiments = [
