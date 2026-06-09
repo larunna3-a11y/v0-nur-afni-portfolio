@@ -169,7 +169,7 @@ export default function DigitalProductLab() {
             <motion.div variants={fadeIn} className="mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">How These Projects Are Built</h2>
               <p className="text-gray-600 max-w-3xl">
-                Our methodology combines AI tools in a structured workflow to rapidly transform ideas into functional prototypes. Each tool plays a specific role in the development process.
+                Each project follows a practical workflow that combines research, planning, design exploration, and rapid prototyping to transform ideas into working websites and digital products.
               </p>
             </motion.div>
 
