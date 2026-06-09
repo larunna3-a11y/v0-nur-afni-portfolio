@@ -62,7 +62,7 @@ const caseStudies = [
     brand: 'Digital Product Lab',
     result: '10+ AI-powered projects · 4 specialized tools',
     description: 'A comprehensive design and development lab exploring AI-driven product creation. Leveraging ChatGPT, Claude, Figma AI, and V0 to prototype and ship 10+ innovative digital products with a focus on UI/UX excellence and rapid iteration.',
-    metrics: ['10+ projects shipped', '4 AI tools integrated', 'Rapid prototyping & design'],
+    metrics: ['3+ Projects', '4 AI tools integrated', 'Rapid prototyping & design'],
     link: '/portfolio/digital-product-lab',
   },
 ]
