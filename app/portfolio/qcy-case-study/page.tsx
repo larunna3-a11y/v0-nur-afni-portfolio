@@ -830,10 +830,10 @@ export default function QCYCaseStudy() {
               >
                 Back to Portfolio
               </Link>
-            </motion.div>
-          </motion.div>
+           </motion.div>
+        </motion.div>
         </div>
-      </section>
-    </div>
-  )
-}
+        </section>
+        </div>
+        )
+        }
