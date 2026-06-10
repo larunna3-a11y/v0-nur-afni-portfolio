@@ -70,13 +70,13 @@ export default function DigitalProductLab() {
     },
     {
       id: 2,
-      name: 'WorkflowOS-Your To Do NotificationS',
+      name: 'WorkflowOS - Workflow Management Platform',
       description: 'Structured project workflows with checkpoints, approvals, evidence uploads, role-based access, and progress tracking.',
-      tools: ['CHatGPT', 'Claude', 'LovableDev'],
+      tools: ['ChatGPT', 'Claude', 'LovableDev'],
       status: 'Prototype',
-      statusColor:'from-green-500 to-green-600',
-      thumbnail: '/images/WorkflowOS-dashboard.png',
-      thumbnail: 'https://stepbystep-app.lovable.app/',
+      statusColor: 'from-green-500 to-green-600',
+      thumbnail: '/WorkflowOS-dashboard.png',
+      link: 'https://stepbystep-app.lovable.app/'
     },
     {
       id: 3,
