@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate', 'Livestream', 'Product Design']
+const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate', 'Livestream']
 
 const caseStudies = [
   {
@@ -55,15 +55,6 @@ const caseStudies = [
     result: '4.1K → 6.3K followers in 3 months',
     description: 'Organic Instagram growth through short-form content strategy, trend-based posting, and campaign-period content spikes.',
     metrics: ['+22% follower growth', '5K+ engagement rate', '10K+ impressions'],
-  },
-  {
-    id: 8,
-    categories: ['Product Design'],
-    brand: 'Digital Product Lab',
-    result: '10+ AI-powered projects · 4 specialized tools',
-    description: 'A comprehensive design and development lab exploring AI-driven product creation. Leveraging ChatGPT, Claude, Figma AI, and V0 to prototype and ship 10+ innovative digital products with a focus on UI/UX excellence and rapid iteration.',
-    metrics: ['3+ Projects', '4 AI tools integrated', 'Rapid prototyping & design'],
-    link: '/portfolio/digital-product-lab',
   },
 ]
 
