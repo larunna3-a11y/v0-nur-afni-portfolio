@@ -70,12 +70,12 @@ export default function DigitalProductLab() {
     },
     {
       id: 2,
-      name: 'E-Commerce Marketplace',
-      description: 'Multi-vendor marketplace with advanced filtering and search',
-      tools: ['V0', 'Claude', 'Figma AI'],
+      name: 'WorkflowOS-Your To Do NotificationS',
+      description: 'Structured project workflows with checkpoints, approvals, evidence uploads, role-based access, and progress tracking.',
+      tools: ['CHatGPT', 'Claude', 'LovableDev'],
       status: 'Prototype',
-      statusColor: 'from-green-500 to-green-600',
-      thumbnail: '/placeholder.svg?height=300&width=400',
+      statusColor: '/image/WorkflowOS-dashboard.png',
+      thumbnail: 'https://stepbystep-app.lovable.app/',
     },
     {
       id: 3,
