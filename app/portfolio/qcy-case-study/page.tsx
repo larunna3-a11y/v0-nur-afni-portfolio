@@ -258,10 +258,10 @@ export default function QCYCaseStudy() {
             <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Product Launch</span>
           </div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                QCY Indonesia Marketplace Growth Campaign
+                QCY Indonesia Marketplace Product Launch
               </h1>
               <p className="text-lg text-white/80 mb-6">
-                6-Month Multi-Channel E-Commerce Growth & Brand Activation
+                6 Month Multi Channel E-Commerce Growth & Brand Activation
               </p>
               <p className="text-white/70 leading-relaxed mb-8">
                 Executed integrated campaigns across Shopee, Tokopedia, TikTok Shop, TikTok LIVE, affiliate marketing, social media, and paid advertising to drive marketplace growth and product visibility.
