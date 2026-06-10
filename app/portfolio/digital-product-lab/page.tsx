@@ -70,7 +70,7 @@ export default function DigitalProductLab() {
     },
     {
       id: 2,
-      name: 'WorkflowOS - Workflow Management Platform',
+      name: 'WorkflowOS',
       description: 'Structured project workflows with checkpoints, approvals, evidence uploads, role-based access, and progress tracking.',
       tools: ['ChatGPT', 'Claude', 'LovableDev'],
       status: 'Prototype',
