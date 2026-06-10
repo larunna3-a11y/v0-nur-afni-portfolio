@@ -63,7 +63,7 @@ export default function DigitalProductLab() {
       name: 'Excel Template Bank',
       description: 'Comprehensive library of pre-built Excel templates for business operations, finance, and project management',
       tools: ['V0', 'Claude', 'ChatGPT', 'Figma AI'],
-      status: 'Web',
+      status: 'Webite',
       statusColor: 'from-green-500 to-green-600',
       thumbnail: '/images/excel-template-bank.png',
       link: 'https://v0-react-project-review-three.vercel.app/',
