@@ -83,7 +83,7 @@ export default function DigitalProductLab() {
       name: 'ArtArchive',
       description: 'Curiosity-driven digital museum platform connecting artworks, artists, cultures, and historical stories from museums worldwide.',
       tools: ['Lovable', 'Claude', 'ChatGPT'],
-      status: 'Prototype',
+      status: 'Art Galery',
       statusColor: 'from-cyan-500 to-teal-600',
       thumbnail: '/images/ArtArchive-dashboard.png',
       link: 'https://curious-canvas-cosmos.lovable.app/'
