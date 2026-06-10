@@ -74,7 +74,8 @@ export default function DigitalProductLab() {
       description: 'Structured project workflows with checkpoints, approvals, evidence uploads, role-based access, and progress tracking.',
       tools: ['CHatGPT', 'Claude', 'LovableDev'],
       status: 'Prototype',
-      statusColor: '/image/WorkflowOS-dashboard.png',
+      statusColor:'from-green-500 to-green-600',
+      thumbnail: '/images/WorkflowOS-dashboard.png',
       thumbnail: 'https://stepbystep-app.lovable.app/',
     },
     {
