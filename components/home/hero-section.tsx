@@ -36,7 +36,7 @@ export function HeroSection() {
             
             {/* Bio */}
             <p className="mt-6 text-[#9B97C0] leading-relaxed max-w-lg">
-              3+ years scaling brands across social media, paid ads, and marketplaces. I turn campaigns into measurable growth — from Rp24M to Rp760M in 20 months (31x).
+              3+ years scaling brands across social media, paid ads, and marketplaces. I turn campaigns into measurable growth — from Rp24M to Rp982M in 20 months (31x).
             </p>
             
             {/* Stats Cards */}
@@ -60,7 +60,7 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-[#4A35D4] rounded-full blur-2xl opacity-50 scale-110" />
               <div className="relative w-30 h-30 sm:w-20 sm:h-250 lg:w-135 lg:h-140 rounded-full border-4 border-white/1 overflow-hidden">
                 <Image
-                  src="Front profile.png"
+                  src="New profile.png"
                   alt="Nur Afni - Digital Marketing Specialist"
                   fill
                   className="object-cover"
