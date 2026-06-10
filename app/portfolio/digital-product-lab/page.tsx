@@ -73,8 +73,8 @@ export default function DigitalProductLab() {
       name: 'WorkflowOS',
       description: 'Structured project workflows with checkpoints, approvals, evidence uploads, role-based access, and progress tracking.',
       tools: ['ChatGPT', 'Claude', 'LovableDev'],
-      status: 'Prototype',
-      statusColor: 'from-green-500 to-green-600',
+      status: 'Projects Task',
+      statusColor: 'from-pink-500 to-pink-600',
       thumbnail: '/images/WorkflowOS-dashboard.png',
       link: 'https://stepbystep-app.lovable.app/'
     },
@@ -85,7 +85,8 @@ export default function DigitalProductLab() {
       tools: ['Lovable', 'Claude', 'ChatGPT'],
       status: 'Prototype',
       statusColor: 'from-cyan-500 to-teal-600',
-      thumbnail: '/artarchive-cover.jpg',
+      thumbnail: '/images/ArtArchive-dashboard.png',
+      link: 'https://curious-canvas-cosmos.lovable.app/'
     },
     {
       id: 4,
