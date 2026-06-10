@@ -835,5 +835,3 @@ export default function QCYCaseStudy() {
         </div>
       </section>
     </div>
-  )
-}
