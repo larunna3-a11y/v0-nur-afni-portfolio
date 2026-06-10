@@ -252,9 +252,11 @@ export default function QCYCaseStudy() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeIn}>
-              <div className="inline-block mb-4 px-4 py-2 bg-white/20 rounded-full text-sm font-medium">
-                E-Commerce Campaign
-              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">E-Commerce</span>
+            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Consumer Electronics</span>
+            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Product Launch</span>
+          </div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                 QCY Indonesia Marketplace Growth Campaign
               </h1>
