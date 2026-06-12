@@ -52,38 +52,38 @@ export default function QCYCaseStudy() {
   const [monthlySlide, setMonthlySlide] = useState(0)
   const [activeAnalytics, setActiveAnalytics] = useState("overview")
 
-  const monthlyScreenshots = [
-  {
-    month: 'April 2025',
-    description: 'Campaign Launch & Initial Growth',
-    image: '/qcy-shopee-overview/april 2025.png',
-  },
-  {
-    month: 'May 2025',
-    description: 'Audience Acquisition Phase',
-    image: '/qcy-shopee-overview/may 2025.png',
-  },
-  {
-    month: 'June 2025',
-    description: 'Traffic Optimization & Scaling',
-    image: '/qcy-shopee-overview/june 2025.png',
-  },
-  {
-    month: 'July 2025',
-    description: 'Launch Month Peak Performance',
-    image: '/qcy-shopee-overview/July 2025.png',
-  },
-  {
-    month: 'August 2025',
-    description: 'Revenue Recovery & Expansion',
-    image: '/qcy-shopee-overview/Agustus 2025.png',
-  },
-  {
-    month: 'September 2025',
-    description: 'Sustained Growth & Store Stability',
-    image: '/qcy-shopee-overview/September 2025.png',
-  },
-]
+  const shopeeOverviewScreenshots = [
+    {
+      month: 'April 2025',
+      description: 'Campaign Launch & Initial Growth',
+      image: '/qcy-shopee-overview/april 2025.png',
+    },
+    {
+      month: 'May 2025',
+      description: 'Audience Acquisition Phase',
+      image: '/qcy-shopee-overview/may 2025.png',
+    },
+    {
+      month: 'June 2025',
+      description: 'Traffic Optimization & Scaling',
+      image: '/qcy-shopee-overview/june 2025.png',
+    },
+    {
+      month: 'July 2025',
+      description: 'Launch Month Peak Performance',
+      image: '/qcy-shopee-overview/July 2025.png',
+    },
+    {
+      month: 'August 2025',
+      description: 'Revenue Recovery & Expansion',
+      image: '/qcy-shopee-overview/Agustus 2025.png',
+    },
+    {
+      month: 'September 2025',
+      description: 'Sustained Growth & Store Stability',
+      image: '/qcy-shopee-overview/September 2025.png',
+    },
+  ]
 
   const kpiCards = [
     { label: 'Total Revenue (Apr-Sep)', value: 'Rp837.29M', icon: TrendingUp },
@@ -259,10 +259,10 @@ export default function QCYCaseStudy() {
           <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeIn}>
               <div className="flex flex-wrap gap-2 mb-4">
-            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">E-Commerce</span>
-            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Consumer Electronics</span>
-            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Product Launch</span>
-          </div>
+                <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">E-Commerce</span>
+                <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Consumer Electronics</span>
+                <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Product Launch</span>
+              </div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                 QCY Indonesia Marketplace Product Launch
               </h1>
@@ -412,116 +412,112 @@ export default function QCYCaseStudy() {
             </motion.div>
 
             {/* Additional Analytics */}
-                      <motion.div variants={fadeIn} className="mb-16">
-            <div className="bg-[#1B1464] rounded-3xl p-8">
+            <motion.div variants={fadeIn} className="mb-16">
+              <div className="bg-[#1B1464] rounded-3xl p-8">
 
-              <div className="mb-8">
-                <h2 className="text-4xl font-bold text-white mb-4">
-                Marketplace Performance Analytics
-              </h2>
+                <div className="mb-8">
+                  <h2 className="text-4xl font-bold text-white mb-4">
+                    Marketplace Performance Analytics
+                  </h2>
 
-                <p className="text-white/70 mt-2">
-                  Actual marketplace performance data documenting campaign growth from launch to campaign completion.
-                </p>
-                <div className="flex flex-wrap gap-3 mt-6 mb-8">
-
-                <button
-                  onClick={() => {
-                    setActiveAnalytics("overview")
-                    setMonthlySlide(0)
-                  }}
-                  className={`px-4 py-2 rounded-full ${
-                    activeAnalytics === "overview"
-                      ? "bg-orange-500 text-white"
-                      : "bg-white/10 text-white"
-                  }`}
-                >
-                  Overview Sales
-                </button>
-
-                <button
-                  onClick={() => {
-                    setActiveAnalytics("ads")
-                    setMonthlySlide(0)
-                  }}
-                  className={`px-4 py-2 rounded-full ${
-                    activeAnalytics === "ads"
-                      ? "bg-orange-500 text-white"
-                      : "bg-white/10 text-white"
-                  }`}
-                >
-                  Ads Performance
-                </button>
-
-                <button
-                  onClick={() => {
-                    setActiveAnalytics("live")
-                    setMonthlySlide(0)
-                  }}
-                  className={`px-4 py-2 rounded-full ${
-                    activeAnalytics === "live"
-                      ? "bg-orange-500 text-white"
-                      : "bg-white/10 text-white"
-                  }`}
-                >
-                  Livestream
-                </button>
-
-              </div>
-              </div>
-
-              {/* Main Screenshot Area */}
-              <div className="bg-white rounded-2xl p-6 mb-6">
-
-                <div className="flex justify-between items-center mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold">
-                    {monthlyScreenshots[monthlySlide].month}
-                  </h3>
-
-                  <p className="text-gray-500">
-                    {monthlyScreenshots[monthlySlide].description}
+                  <p className="text-white/70 mt-2">
+                    Actual marketplace performance data documenting campaign growth from launch to campaign completion.
                   </p>
-                  </div>
+                  <div className="flex flex-wrap gap-3 mt-6 mb-8">
 
-                  <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm">
-                  {monthlySlide === 0
-                    ? "Starting Point"
-                    : monthlySlide === monthlyScreenshots.length - 1
-                    ? "End Point"
-                    : "Growth Phase"}
-                </span>
+                    <button
+                      onClick={() => {
+                        setActiveAnalytics("overview")
+                        setMonthlySlide(0)
+                      }}
+                      className={`px-4 py-2 rounded-full ${activeAnalytics === "overview"
+                          ? "bg-orange-500 text-white"
+                          : "bg-white/10 text-white"
+                        }`}
+                    >
+                      Overview Sales
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        setActiveAnalytics("ads")
+                        setMonthlySlide(0)
+                      }}
+                      className={`px-4 py-2 rounded-full ${activeAnalytics === "ads"
+                          ? "bg-orange-500 text-white"
+                          : "bg-white/10 text-white"
+                        }`}
+                    >
+                      Ads Performance
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        setActiveAnalytics("live")
+                        setMonthlySlide(0)
+                      }}
+                      className={`px-4 py-2 rounded-full ${activeAnalytics === "live"
+                          ? "bg-orange-500 text-white"
+                          : "bg-white/10 text-white"
+                        }`}
+                    >
+                      Livestream
+                    </button>
+
+                  </div>
                 </div>
 
-                <img
-                  src={monthlyScreenshots[monthlySlide].image}
-                  alt=""
-                  className="w-full rounded-xl border"
-                />
+                {/* Main Screenshot Area */}
+                <div className="bg-white rounded-2xl p-6 mb-6">
+
+                  <div className="flex justify-between items-center mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold">
+                        {shopeeOverviewScreenshots[monthlySlide].month}
+                      </h3>
+
+                      <p className="text-gray-500">
+                        {shopeeOverviewScreenshots[monthlySlide].description}
+                      </p>
+                    </div>
+
+                    <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm">
+                      {monthlySlide === 0
+                        ? "Starting Point"
+                        : monthlySlide === shopeeOverviewScreenshots.length - 1
+                          ? "End Point"
+                          : "Growth Phase"}
+                    </span>
+                  </div>
+
+                  <img
+                    src={shopeeOverviewScreenshots[monthlySlide].image}
+                    alt=""
+                    className="w-full rounded-xl border"
+                  />
+
+                </div>
+
+                {/* Month Navigation */}
+                <div className="flex gap-2 overflow-x-auto pb-2">
+
+                  {shopeeOverviewScreenshots.map((month, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setMonthlySlide(index)}
+                      className={`px-4 py-2 rounded-lg whitespace-nowrap transition-all ${monthlySlide === index
+                          ? "bg-orange-500 text-white"
+                          : "bg-white/10 text-white"
+                        }`}
+                    >
+                      {month.month}
+                    </button>
+                  ))}
+
+                </div>
 
               </div>
-
-              {/* Month Navigation */}
-              <div className="flex gap-2 overflow-x-auto pb-2">
-
-                {monthlyScreenshots.map((month, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setMonthlySlide(index)}
-                    className={`px-4 py-2 rounded-lg whitespace-nowrap transition-all ${
-                      monthlySlide === index
-                        ? "bg-orange-500 text-white"
-                        : "bg-white/10 text-white"
-                    }`}
-                  >
-                    {month.month}
-                  </button>
-                ))}
-
-              </div>
-
-            </div>
-          </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
