@@ -50,6 +50,7 @@ export default function QCYCaseStudy() {
   const [activeTab, setActiveTab] = useState('shopee')
   const [activeTimeline, setActiveTimeline] = useState(0)
   const [monthlySlide, setMonthlySlide] = useState(0)
+  const [activeAnalytics, setActiveAnalytics] = useState("overview")
 
   const monthlyScreenshots = [
   {
@@ -415,13 +416,58 @@ export default function QCYCaseStudy() {
             <div className="bg-[#1B1464] rounded-3xl p-8">
 
               <div className="mb-8">
-                <h2 className="text-4xl font-bold text-white">
-                  Marketplace Performance Timeline
-                </h2>
+                <h2 className="text-4xl font-bold text-white mb-4">
+                Marketplace Performance Analytics
+              </h2>
 
                 <p className="text-white/70 mt-2">
                   Actual marketplace performance data documenting campaign growth from launch to campaign completion.
                 </p>
+                <div className="flex flex-wrap gap-3 mt-6 mb-8">
+
+                <button
+                  onClick={() => {
+                    setActiveAnalytics("overview")
+                    setMonthlySlide(0)
+                  }}
+                  className={`px-4 py-2 rounded-full ${
+                    activeAnalytics === "overview"
+                      ? "bg-orange-500 text-white"
+                      : "bg-white/10 text-white"
+                  }`}
+                >
+                  Overview Sales
+                </button>
+
+                <button
+                  onClick={() => {
+                    setActiveAnalytics("ads")
+                    setMonthlySlide(0)
+                  }}
+                  className={`px-4 py-2 rounded-full ${
+                    activeAnalytics === "ads"
+                      ? "bg-orange-500 text-white"
+                      : "bg-white/10 text-white"
+                  }`}
+                >
+                  Ads Performance
+                </button>
+
+                <button
+                  onClick={() => {
+                    setActiveAnalytics("live")
+                    setMonthlySlide(0)
+                  }}
+                  className={`px-4 py-2 rounded-full ${
+                    activeAnalytics === "live"
+                      ? "bg-orange-500 text-white"
+                      : "bg-white/10 text-white"
+                  }`}
+                >
+                  Livestream
+                </button>
+
+              </div>
               </div>
 
               {/* Main Screenshot Area */}
@@ -439,12 +485,12 @@ export default function QCYCaseStudy() {
                   </div>
 
                   <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm">
-  {monthlySlide === 0
-    ? "Starting Point"
-    : monthlySlide === monthlyScreenshots.length - 1
-    ? "End Point"
-    : "Growth Phase"}
-</span>
+                  {monthlySlide === 0
+                    ? "Starting Point"
+                    : monthlySlide === monthlyScreenshots.length - 1
+                    ? "End Point"
+                    : "Growth Phase"}
+                </span>
                 </div>
 
                 <img
