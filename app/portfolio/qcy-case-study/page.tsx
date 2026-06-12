@@ -117,11 +117,45 @@ export default function QCYCaseStudy() {
     image: '/qcy-shopee-overview/qcy-shopee-live/Live-September-2025.png',
   },
 ]
+const shopeeAdsScreenshots = [
+  {
+    month: 'April 2025',
+    description: 'Campaign Launch & Traffic Acquisition',
+    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-April-2025.png',
+  },
+  {
+    month: 'May 2025',
+    description: 'Scaling Ads Performance',
+    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-Mei-2025.png',
+  },
+  {
+    month: 'June 2025',
+    description: 'ROAS Optimization Phase',
+    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-juni-2025.png',
+  },
+  {
+    month: 'July 2025',
+    description: 'High Volume Traffic Growth',
+    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-Juli-2025.png',
+  },
+  {
+    month: 'August 2025',
+    description: 'Conversion Efficiency Improvement',
+    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-Agust-2025.png',
+  },
+  {
+    month: 'September 2025',
+    description: 'Sustained Performance Campaign',
+    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-Sep-2025.png',
+  },
+]
  const currentScreenshots =
   activeAnalytics === "overview"
     ? shopeeOverviewScreenshots
     : activeAnalytics === "livestream"
     ? shopeeLiveScreenshots
+    : activeAnalytics === "ads"
+    ? shopeeAdsScreenshots
     : shopeeOverviewScreenshots
 
   
