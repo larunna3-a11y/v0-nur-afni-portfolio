@@ -490,7 +490,7 @@ const shopeeAdsScreenshots = [
               <div className="bg-[#1B1464] rounded-3xl p-8">
 
                 <div className="mb-8">
-                  <h2 className="text-4xl font-bold text-white mb-4">
+                  <h2 className="text-4xl font-bold text-white mb-1">
                     {activeTab === "shopee"
                       ? "QCY Official Store — Shopee Analytics"
                       : activeTab === "tiktok"
@@ -498,14 +498,15 @@ const shopeeAdsScreenshots = [
                       : "QCY Official Store — Tokopedia Analytics"}
                   </h2>
 
-                 <p className="text-white/70 mt-2">
+                 <p className="text-white/70 mt-1 mb-6">
                   {activeTab === "shopee"
                     ? "Store performance covering sales, advertising, and livestream growth on Shopee."
                     : activeTab === "tiktok"
                     ? "Performance analysis across TikTok Shop sales, content commerce, and paid campaigns."
                     : "Marketplace growth and operational performance on Tokopedia."}
                 </p>
-                 <div className="flex gap-3 mb-8">
+
+                 <div className="flex gap-3 mb-6">
                   <button
                     onClick={() => setActiveAnalytics("overview")}
                     className={`px-5 py-2 rounded-full ${
@@ -744,9 +745,13 @@ const shopeeAdsScreenshots = [
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
-            <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-12 text-center text-[#0F0A2E]">
-              Campaign Performance Breakdown
-            </motion.h2>
+           <h2 className="text-4xl font-bold">
+            {activeTab === "shopee"
+              ? "Shopee Growth Analysis"
+              : activeTab === "tiktok"
+              ? "TikTok Shop Growth Analysis"
+              : "Tokopedia Growth Analysis"}
+          </h2>
 
             {/* Shopee Performance */}
             <motion.div variants={fadeIn} className="mb-12 bg-gradient-to-br from-red-50 to-red-100/50 border border-red-200 rounded-2xl p-8">
