@@ -51,13 +51,7 @@ export default function QCYCaseStudy() {
   const [activeTimeline, setActiveTimeline] = useState(0)
   const [monthlySlide, setMonthlySlide] = useState(0)
   const [activeAnalytics, setActiveAnalytics] = useState("overview")
-  const currentScreenshots =
-  activeAnalytics === "overview"
-    ? shopeeOverviewScreenshots
-    : activeAnalytics === "livestream"
-    ? shopeeLiveScreenshots
-    : shopeeOverviewScreenshots
-
+ 
   const shopeeOverviewScreenshots = [
     {
       month: 'April 2025',
@@ -123,6 +117,13 @@ export default function QCYCaseStudy() {
     image: '/qcy-shopee-overview/qcy-shopee-live/Live-September-2025.png',
   },
 ]
+ const currentScreenshots =
+  activeAnalytics === "overview"
+    ? shopeeOverviewScreenshots
+    : activeAnalytics === "livestream"
+    ? shopeeLiveScreenshots
+    : shopeeOverviewScreenshots
+
   
   const kpiCards = [
     { label: 'Total Revenue (Apr-Sep)', value: 'Rp837.29M', icon: TrendingUp },
