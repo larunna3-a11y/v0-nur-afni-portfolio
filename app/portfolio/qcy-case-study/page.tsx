@@ -430,16 +430,21 @@ export default function QCYCaseStudy() {
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <h3 className="text-xl font-bold">
-                      September 2025
-                    </h3>
-                    <p className="text-gray-500">
-                      Campaign Closing Period
-                    </p>
+                    {monthlyScreenshots[monthlySlide].month}
+                  </h3>
+
+                  <p className="text-gray-500">
+                    {monthlyScreenshots[monthlySlide].description}
+                  </p>
                   </div>
 
                   <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm">
-                    End Point
-                  </span>
+  {monthlySlide === 0
+    ? "Starting Point"
+    : monthlySlide === monthlyScreenshots.length - 1
+    ? "End Point"
+    : "Growth Phase"}
+</span>
                 </div>
 
                 <img
