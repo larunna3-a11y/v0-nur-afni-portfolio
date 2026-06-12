@@ -52,32 +52,37 @@ export default function QCYCaseStudy() {
   const [monthlySlide, setMonthlySlide] = useState(0)
 
   const monthlyScreenshots = [
-    {
-      month: 'May 2025',
-      description: 'Launch Campaign - Rp91.8M Revenue',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.15-Vdb6TwycvS4Eux1waWkxwAPIe2jLrl.png',
-    },
-    {
-      month: 'June 2025',
-      description: 'Multi-Platform Expansion Phase',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png',
-    },
-    {
-      month: 'July 2025',
-      description: 'TikTok Shop Performance Growth',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png',
-    },
-    {
-      month: 'August 2025',
-      description: 'Peak Performance & Optimization',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.24-b39pzaz5s50rnMAfb3cKDqrL7GFF3z.png',
-    },
-    {
-      month: 'September 2025',
-      description: 'Sustained Growth & Scale',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2012.36.07-XjDfsVbLo5893RlsMLLT7b9Qbqkery.png',
-    },
-  ]
+  {
+    month: 'April 2025',
+    description: 'Campaign Launch & Initial Growth',
+    image: '/qcy-shopee-overview/april 2025.png',
+  },
+  {
+    month: 'May 2025',
+    description: 'Audience Acquisition Phase',
+    image: '/qcy-shopee-overview/may 2025.png',
+  },
+  {
+    month: 'June 2025',
+    description: 'Traffic Optimization & Scaling',
+    image: '/qcy-shopee-overview/june 2025.png',
+  },
+  {
+    month: 'July 2025',
+    description: 'Launch Month Peak Performance',
+    image: '/qcy-shopee-overview/July 2025.png',
+  },
+  {
+    month: 'August 2025',
+    description: 'Revenue Recovery & Expansion',
+    image: '/qcy-shopee-overview/Agustus 2025.png',
+  },
+  {
+    month: 'September 2025',
+    description: 'Sustained Growth & Store Stability',
+    image: '/qcy-shopee-overview/September 2025.png',
+  },
+]
 
   const kpiCards = [
     { label: 'Total Revenue (Apr-Sep)', value: 'Rp837.29M', icon: TrendingUp },
