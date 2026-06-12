@@ -51,6 +51,12 @@ export default function QCYCaseStudy() {
   const [activeTimeline, setActiveTimeline] = useState(0)
   const [monthlySlide, setMonthlySlide] = useState(0)
   const [activeAnalytics, setActiveAnalytics] = useState("overview")
+  const currentScreenshots =
+  activeAnalytics === "overview"
+    ? shopeeOverviewScreenshots
+    : activeAnalytics === "livestream"
+    ? shopeeLiveScreenshots
+    : shopeeOverviewScreenshots
 
   const shopeeOverviewScreenshots = [
     {
@@ -85,6 +91,39 @@ export default function QCYCaseStudy() {
     },
   ]
 
+  const shopeeLiveScreenshots = [
+  {
+    month: 'April 2025',
+    description: 'Shopee Live Launch Phase',
+    image: '/qcy-shopee-overview/qcy-shopee-live/Live-April-2025.png',
+  },
+  {
+    month: 'May 2025',
+    description: 'Audience Building Through Livestream',
+    image: '/qcy-shopee-overview/qcy-shopee-live/Live-Mei-2025.png',
+  },
+  {
+    month: 'June 2025',
+    description: 'Campaign Activation via Shopee Live',
+    image: '/qcy-shopee-overview/qcy-shopee-live/Live-Juni-2025.png',
+  },
+  {
+    month: 'July 2025',
+    description: 'Livestream Traffic Growth',
+    image: '/qcy-shopee-overview/qcy-shopee-live/Live-Juli-2025.png',
+  },
+  {
+    month: 'August 2025',
+    description: 'Peak Livestream Performance',
+    image: '/qcy-shopee-overview/qcy-shopee-live/Live-Agust-2025.png',
+  },
+  {
+    month: 'September 2025',
+    description: 'Campaign Closing Livestream Performance',
+    image: '/qcy-shopee-overview/qcy-shopee-live/Live-September-2025.png',
+  },
+]
+  
   const kpiCards = [
     { label: 'Total Revenue (Apr-Sep)', value: 'Rp837.29M', icon: TrendingUp },
     { label: 'Total Orders', value: '3,120+', icon: ShoppingCart },
@@ -423,48 +462,40 @@ export default function QCYCaseStudy() {
                   <p className="text-white/70 mt-2">
                     Actual marketplace performance data documenting campaign growth from launch to campaign completion.
                   </p>
-                  <div className="flex flex-wrap gap-3 mt-6 mb-8">
+                 <div className="flex gap-3 mb-8">
+                  <button
+                    onClick={() => setActiveAnalytics("overview")}
+                    className={`px-5 py-2 rounded-full ${
+                      activeAnalytics === "overview"
+                        ? "bg-orange-500 text-white"
+                        : "bg-white text-gray-700"
+                    }`}
+                  >
+                    Overview Sales
+                  </button>
 
-                    <button
-                      onClick={() => {
-                        setActiveAnalytics("overview")
-                        setMonthlySlide(0)
-                      }}
-                      className={`px-4 py-2 rounded-full ${activeAnalytics === "overview"
-                          ? "bg-orange-500 text-white"
-                          : "bg-white/10 text-white"
-                        }`}
-                    >
-                      Overview Sales
-                    </button>
+                  <button
+                    onClick={() => setActiveAnalytics("livestream")}
+                    className={`px-5 py-2 rounded-full ${
+                      activeAnalytics === "livestream"
+                        ? "bg-orange-500 text-white"
+                        : "bg-white text-gray-700"
+                    }`}
+                  >
+                    Shopee Live
+                  </button>
 
-                    <button
-                      onClick={() => {
-                        setActiveAnalytics("ads")
-                        setMonthlySlide(0)
-                      }}
-                      className={`px-4 py-2 rounded-full ${activeAnalytics === "ads"
-                          ? "bg-orange-500 text-white"
-                          : "bg-white/10 text-white"
-                        }`}
-                    >
-                      Ads Performance
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        setActiveAnalytics("live")
-                        setMonthlySlide(0)
-                      }}
-                      className={`px-4 py-2 rounded-full ${activeAnalytics === "live"
-                          ? "bg-orange-500 text-white"
-                          : "bg-white/10 text-white"
-                        }`}
-                    >
-                      Livestream
-                    </button>
-
-                  </div>
+                  <button
+                    onClick={() => setActiveAnalytics("ads")}
+                    className={`px-5 py-2 rounded-full ${
+                      activeAnalytics === "ads"
+                        ? "bg-orange-500 text-white"
+                        : "bg-white text-gray-700"
+                    }`}
+                  >
+                    Ads Performance
+                  </button>
+                </div>
                 </div>
 
                 {/* Main Screenshot Area */}
@@ -473,25 +504,25 @@ export default function QCYCaseStudy() {
                   <div className="flex justify-between items-center mb-4">
                     <div>
                       <h3 className="text-xl font-bold">
-                        {shopeeOverviewScreenshots[monthlySlide].month}
+                        {currentScreenshots[monthlySlide].month}
                       </h3>
 
                       <p className="text-gray-500">
-                        {shopeeOverviewScreenshots[monthlySlide].description}
+                        {currentScreenshots[monthlySlide].description}
                       </p>
                     </div>
 
                     <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm">
                       {monthlySlide === 0
                         ? "Starting Point"
-                        : monthlySlide === shopeeOverviewScreenshots.length - 1
+                        : monthlySlide === currentScreenshots.length - 1
                           ? "End Point"
                           : "Growth Phase"}
                     </span>
                   </div>
 
                   <img
-                    src={shopeeOverviewScreenshots[monthlySlide].image}
+                    src={currentScreenshots[monthlySlide].image}
                     alt=""
                     className="w-full rounded-xl border"
                   />
@@ -501,7 +532,7 @@ export default function QCYCaseStudy() {
                 {/* Month Navigation */}
                 <div className="flex gap-2 overflow-x-auto pb-2">
 
-                  {shopeeOverviewScreenshots.map((month, index) => (
+                  {currentScreenshots.map((month, index) => (
                     <button
                       key={index}
                       onClick={() => setMonthlySlide(index)}
