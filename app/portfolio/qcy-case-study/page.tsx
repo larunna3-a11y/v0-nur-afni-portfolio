@@ -51,140 +51,140 @@ export default function QCYCaseStudy() {
   const [activeTimeline, setActiveTimeline] = useState(0)
   const [monthlySlide, setMonthlySlide] = useState(0)
   const [activeAnalytics, setActiveAnalytics] = useState("overview")
- 
+
   const shopeeOverviewScreenshots = [
     {
       month: 'April 2025',
       description: 'Campaign Launch & Initial Growth',
-      image: '/qcy-shopee-overview/april 2025.png',
+      image: '/qcy/april 2025.png',
     },
     {
       month: 'May 2025',
       description: 'Audience Acquisition Phase',
-      image: '/qcy-shopee-overview/may 2025.png',
+      image: '/qcy/may 2025.png',
     },
     {
       month: 'June 2025',
       description: 'Traffic Optimization & Scaling',
-      image: '/qcy-shopee-overview/june 2025.png',
+      image: '/qcy/june 2025.png',
     },
     {
       month: 'July 2025',
       description: 'Launch Month Peak Performance',
-      image: '/qcy-shopee-overview/July 2025.png',
+      image: '/qcy/July 2025.png',
     },
     {
       month: 'August 2025',
       description: 'Revenue Recovery & Expansion',
-      image: '/qcy-shopee-overview/Agustus 2025.png',
+      image: '/qcy/Agustus 2025.png',
     },
     {
       month: 'September 2025',
       description: 'Sustained Growth & Store Stability',
-      image: '/qcy-shopee-overview/September 2025.png',
+      image: '/qcy/September 2025.png',
     },
   ]
 
   const shopeeLiveScreenshots = [
-  {
-    month: 'April 2025',
-    description: 'Shopee Live Launch Phase',
-    image: '/qcy-shopee-overview/qcy-shopee-live/Live-April-2025.png',
-  },
-  {
-    month: 'May 2025',
-    description: 'Audience Building Through Livestream',
-    image: '/qcy-shopee-overview/qcy-shopee-live/Live-Mei-2025.png',
-  },
-  {
-    month: 'June 2025',
-    description: 'Campaign Activation via Shopee Live',
-    image: '/qcy-shopee-overview/qcy-shopee-live/Live-Juni-2025.png',
-  },
-  {
-    month: 'July 2025',
-    description: 'Livestream Traffic Growth',
-    image: '/qcy-shopee-overview/qcy-shopee-live/Live-Juli-2025.png',
-  },
-  {
-    month: 'August 2025',
-    description: 'Peak Livestream Performance',
-    image: '/qcy-shopee-overview/qcy-shopee-live/Live-Agust-2025.png',
-  },
-  {
-    month: 'September 2025',
-    description: 'Campaign Closing Livestream Performance',
-    image: '/qcy-shopee-overview/qcy-shopee-live/Live-September-2025.png',
-  },
-]
-const shopeeAdsScreenshots = [
-  {
-    month: 'April 2025',
-    description: 'Campaign Launch & Traffic Acquisition',
-    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-April-2025.png',
-  },
-  {
-    month: 'May 2025',
-    description: 'Scaling Ads Performance',
-    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-Mei-2025.png',
-  },
-  {
-    month: 'June 2025',
-    description: 'ROAS Optimization Phase',
-    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-juni-2025.png',
-  },
-  {
-    month: 'July 2025',
-    description: 'High Volume Traffic Growth',
-    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-Juli-2025.png',
-  },
-  {
-    month: 'August 2025',
-    description: 'Conversion Efficiency Improvement',
-    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-Agust-2025.png',
-  },
-  {
-    month: 'September 2025',
-    description: 'Sustained Performance Campaign',
-    image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-Sep-2025.png',
-  },
-]
-const tiktokOverviewScreenshots = [
-  {
-    month: 'June 2025',
-    description: 'TikTok Shop Launch Performance',
-    image: '/qcy-shopee-overview/Tiktok-overview/qcy-Overview-tiktok-June-2025.png',
-  },
-  {
-    month: 'July 2025',
-    description: 'Audience Growth & Order Increase',
-    image: '/qcy-shopee-overview/Tiktok-overview/qcy-Overview-tiktok-July-2025.png',
-  },
-  {
-    month: 'August 2025',
-    description: 'Peak Content Commerce Performance',
-    image: '/qcy-shopee-overview/Tiktok-overview/qcy-Overview-tiktok-agust-2025.png',
-  },
-  {
-    month: 'September 2025',
-    description: 'Campaign Closing & Revenue Consolidation',
-    image: '/qcy-shopee-overview/Tiktok-overview/qcy-Overview-tiktok-sep-2025.png',
-  },
-]
- const currentScreenshots =
-  activeTab === "shopee"
-    ? (
+    {
+      month: 'April 2025',
+      description: 'Shopee Live Launch Phase',
+      image: '/qcy/qcy-shopee-live/Live-April-2025.png',
+    },
+    {
+      month: 'May 2025',
+      description: 'Audience Building Through Livestream',
+      image: '/qcy/qcy-shopee-live/Live-Mei-2025.png',
+    },
+    {
+      month: 'June 2025',
+      description: 'Campaign Activation via Shopee Live',
+      image: '/qcy/qcy-shopee-live/Live-Juni-2025.png',
+    },
+    {
+      month: 'July 2025',
+      description: 'Livestream Traffic Growth',
+      image: '/qcy/qcy-shopee-live/Live-Juli-2025.png',
+    },
+    {
+      month: 'August 2025',
+      description: 'Peak Livestream Performance',
+      image: '/qcy/qcy-shopee-live/Live-Agust-2025.png',
+    },
+    {
+      month: 'September 2025',
+      description: 'Campaign Closing Livestream Performance',
+      image: '/qcy/qcy-shopee-live/Live-September-2025.png',
+    },
+  ]
+  const shopeeAdsScreenshots = [
+    {
+      month: 'April 2025',
+      description: 'Campaign Launch & Traffic Acquisition',
+      image: '/qcy/QCY-Shopee-ADS/QCY-ADS-April-2025.png',
+    },
+    {
+      month: 'May 2025',
+      description: 'Scaling Ads Performance',
+      image: '/qcy/QCY-Shopee-ADS/QCY-ADS-Mei-2025.png',
+    },
+    {
+      month: 'June 2025',
+      description: 'ROAS Optimization Phase',
+      image: '/qcy/QCY-Shopee-ADS/QCY-ADS-juni-2025.png',
+    },
+    {
+      month: 'July 2025',
+      description: 'High Volume Traffic Growth',
+      image: '/qcy/QCY-Shopee-ADS/QCY-ADS-Juli-2025.png',
+    },
+    {
+      month: 'August 2025',
+      description: 'Conversion Efficiency Improvement',
+      image: '/qcy/QCY-Shopee-ADS/QCY-ADS-Agust-2025.png',
+    },
+    {
+      month: 'September 2025',
+      description: 'Sustained Performance Campaign',
+      image: '/qcy/QCY-Shopee-ADS/QCY-ADS-Sep-2025.png',
+    },
+  ]
+  const tiktokOverviewScreenshots = [
+    {
+      month: 'June 2025',
+      description: 'TikTok Shop Launch Performance',
+      image: '/qcy/Tiktok-overview/qcy-Overview-tiktok-June-2025.png',
+    },
+    {
+      month: 'July 2025',
+      description: 'Audience Growth & Order Increase',
+      image: '/qcy/Tiktok-overview/qcy-Overview-tiktok-July-2025.png',
+    },
+    {
+      month: 'August 2025',
+      description: 'Peak Content Commerce Performance',
+      image: '/qcy/Tiktok-overview/qcy-Overview-tiktok-agust-2025.png',
+    },
+    {
+      month: 'September 2025',
+      description: 'Campaign Closing & Revenue Consolidation',
+      image: '/qcy/Tiktok-overview/qcy-Overview-tiktok-sep-2025.png',
+    },
+  ]
+  const currentScreenshots =
+    activeTab === "shopee"
+      ? (
         activeAnalytics === "overview"
           ? shopeeOverviewScreenshots
           : activeAnalytics === "livestream"
-          ? shopeeLiveScreenshots
-          : shopeeAdsScreenshots
+            ? shopeeLiveScreenshots
+            : shopeeAdsScreenshots
       )
-    : activeTab === "tiktok"
-    ? tiktokOverviewScreenshots
-    : tokopediaOverviewScreenshots
+      : activeTab === "tiktok"
+        ? tiktokOverviewScreenshots
+        : tokopediaOverviewScreenshots
 
-  
+
   const kpiCards = [
     { label: 'Total Revenue (Apr-Sep)', value: 'Rp837.29M', icon: TrendingUp },
     { label: 'Total Orders', value: '3,120+', icon: ShoppingCart },
@@ -517,55 +517,52 @@ const tiktokOverviewScreenshots = [
 
                 <div className="mb-8">
                   <h2 className="text-4xl font-bold text-white mb-4">
-                  {activeTab === "shopee"
-                    ? "QCY Official Store — Shopee Analytics"
-                    : activeTab === "tiktok"
-                    ? "QCY Official Store — TikTok Shop Analytics"
-                    : "QCY Official Store — Tokopedia Analytics"}
-                </h2>
+                    {activeTab === "shopee"
+                      ? "QCY Official Store — Shopee Analytics"
+                      : activeTab === "tiktok"
+                        ? "QCY Official Store — TikTok Shop Analytics"
+                        : "QCY Official Store — Tokopedia Analytics"}
+                  </h2>
 
-                 <p className="text-white/70">
-                  {activeTab === "shopee"
-                    ? "Store performance covering sales, advertising, and livestream growth on Shopee."
-                    : activeTab === "tiktok"
-                    ? "TikTok Shop performance covering GMV growth, content commerce, and conversion trends."
-                    : "Marketplace growth and operational performance on Tokopedia."}
-                </p>
+                  <p className="text-white/70">
+                    {activeTab === "shopee"
+                      ? "Store performance covering sales, advertising, and livestream growth on Shopee."
+                      : activeTab === "tiktok"
+                        ? "TikTok Shop performance covering GMV growth, content commerce, and conversion trends."
+                        : "Marketplace growth and operational performance on Tokopedia."}
+                  </p>
 
-                 <div className="flex gap-3 mb-6">
-                  <button
-                    onClick={() => setActiveAnalytics("overview")}
-                    className={`px-5 py-2 rounded-full ${
-                      activeAnalytics === "overview"
-                        ? "bg-orange-500 text-white"
-                        : "bg-white text-gray-700"
-                    }`}
-                  >
-                    Overview Sales
-                  </button>
+                  <div className="flex gap-3 mb-6">
+                    <button
+                      onClick={() => setActiveAnalytics("overview")}
+                      className={`px-5 py-2 rounded-full ${activeAnalytics === "overview"
+                          ? "bg-orange-500 text-white"
+                          : "bg-white text-gray-700"
+                        }`}
+                    >
+                      Overview Sales
+                    </button>
 
-                  <button
-                    onClick={() => setActiveAnalytics("livestream")}
-                    className={`px-5 py-2 rounded-full ${
-                      activeAnalytics === "livestream"
-                        ? "bg-orange-500 text-white"
-                        : "bg-white text-gray-700"
-                    }`}
-                  >
-                    Livestream
-                  </button>
+                    <button
+                      onClick={() => setActiveAnalytics("livestream")}
+                      className={`px-5 py-2 rounded-full ${activeAnalytics === "livestream"
+                          ? "bg-orange-500 text-white"
+                          : "bg-white text-gray-700"
+                        }`}
+                    >
+                      Livestream
+                    </button>
 
-                  <button
-                    onClick={() => setActiveAnalytics("ads")}
-                    className={`px-5 py-2 rounded-full ${
-                      activeAnalytics === "ads"
-                        ? "bg-orange-500 text-white"
-                        : "bg-white text-gray-700"
-                    }`}
-                  >
-                    Ads Performance
-                  </button>
-                </div>
+                    <button
+                      onClick={() => setActiveAnalytics("ads")}
+                      className={`px-5 py-2 rounded-full ${activeAnalytics === "ads"
+                          ? "bg-orange-500 text-white"
+                          : "bg-white text-gray-700"
+                        }`}
+                    >
+                      Ads Performance
+                    </button>
+                  </div>
                 </div>
 
                 {/* Main Screenshot Area */}
@@ -607,8 +604,8 @@ const tiktokOverviewScreenshots = [
                       key={index}
                       onClick={() => setMonthlySlide(index)}
                       className={`px-4 py-2 rounded-lg whitespace-nowrap transition-all ${monthlySlide === index
-                          ? "bg-orange-500 text-white"
-                          : "bg-white/10 text-white"
+                        ? "bg-orange-500 text-white"
+                        : "bg-white/10 text-white"
                         }`}
                     >
                       {month.month}
@@ -771,13 +768,13 @@ const tiktokOverviewScreenshots = [
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
-           <h2 className="text-4xl font-bold">
-            {activeTab === "shopee"
-              ? "Shopee Growth Analysis"
-              : activeTab === "tiktok"
-              ? "TikTok Shop Growth Analysis"
-              : "Tokopedia Growth Analysis"}
-          </h2>
+            <h2 className="text-4xl font-bold">
+              {activeTab === "shopee"
+                ? "Shopee Growth Analysis"
+                : activeTab === "tiktok"
+                  ? "TikTok Shop Growth Analysis"
+                  : "Tokopedia Growth Analysis"}
+            </h2>
 
             {/* Shopee Performance */}
             <motion.div variants={fadeIn} className="mb-12 bg-gradient-to-br from-red-50 to-red-100/50 border border-red-200 rounded-2xl p-8">
