@@ -552,7 +552,7 @@ const tiktokOverviewScreenshots = [
                         : "bg-white text-gray-700"
                     }`}
                   >
-                    Shopee Live
+                    Livestream
                   </button>
 
                   <button
