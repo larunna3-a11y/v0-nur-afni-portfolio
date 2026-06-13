@@ -148,7 +148,7 @@ const shopeeAdsScreenshots = [
     description: 'Sustained Performance Campaign',
     image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-Sep-2025.png',
   },
-
+]
 const tiktokOverviewScreenshots = [
   {
     month: 'June 2025',
