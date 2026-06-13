@@ -516,19 +516,19 @@ const tiktokOverviewScreenshots = [
               <div className="bg-[#1B1464] rounded-3xl p-8">
 
                 <div className="mb-8">
-                  <h2 className="text-4xl font-bold text-white mb-1">
-                    {activeTab === "shopee"
-                      ? "QCY Official Store — Shopee Analytics"
-                      : activeTab === "tiktok"
-                      ? "QCY Official Store — TikTok Shop Analytics"
-                      : "QCY Official Store — Tokopedia Analytics"}
-                  </h2>
+                  <h2 className="text-4xl font-bold text-white mb-4">
+                  {activeTab === "shopee"
+                    ? "QCY Official Store — Shopee Analytics"
+                    : activeTab === "tiktok"
+                    ? "QCY Official Store — TikTok Shop Analytics"
+                    : "QCY Official Store — Tokopedia Analytics"}
+                </h2>
 
-                 <p className="text-white/70 mt-1 mb-6">
+                 <p className="text-white/70">
                   {activeTab === "shopee"
                     ? "Store performance covering sales, advertising, and livestream growth on Shopee."
                     : activeTab === "tiktok"
-                    ? "Performance analysis across TikTok Shop sales, content commerce, and paid campaigns."
+                    ? "TikTok Shop performance covering GMV growth, content commerce, and conversion trends."
                     : "Marketplace growth and operational performance on Tokopedia."}
                 </p>
 
