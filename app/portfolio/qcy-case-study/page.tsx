@@ -153,22 +153,22 @@ const tiktokOverviewScreenshots = [
   {
     month: 'June 2025',
     description: 'TikTok Shop Launch Performance',
-    image: '/qcy-shopee-overview/qcy-Overview-tiktok-June-2025.png',
+    image: '/qcy-shopee-overview/Tiktok-overview/qcy-Overview-tiktok-June-2025.png',
   },
   {
     month: 'July 2025',
     description: 'Audience Growth & Order Increase',
-    image: '/qcy-shopee-overview/qcy-Overview-tiktok-July-2025.png',
+    image: '/qcy-shopee-overview/Tiktok-overview/qcy-Overview-tiktok-July-2025.png',
   },
   {
     month: 'August 2025',
     description: 'Peak Content Commerce Performance',
-    image: '/qcy-shopee-overview/qcy-Overview-tiktok-agust-2025.png',
+    image: '/qcy-shopee-overview/Tiktok-overview/qcy-Overview-tiktok-agust-2025.png',
   },
   {
     month: 'September 2025',
     description: 'Campaign Closing & Revenue Consolidation',
-    image: '/qcy-shopee-overview/qcy-Overview-tiktok-sep-2025.png',
+    image: '/qcy-shopee-overview/Tiktok-overview/qcy-Overview-tiktok-sep-2025.png',
   },
 ]
  const currentScreenshots =
