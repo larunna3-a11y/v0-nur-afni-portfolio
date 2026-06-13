@@ -148,15 +148,41 @@ const shopeeAdsScreenshots = [
     description: 'Sustained Performance Campaign',
     image: '/qcy-shopee-overview/QCY-Shopee-ADS/QCY-ADS-Sep-2025.png',
   },
+
+const tiktokOverviewScreenshots = [
+  {
+    month: 'June 2025',
+    description: 'TikTok Shop Launch Performance',
+    image: '/qcy-shopee-overview/qcy-Overview-tiktok-June-2025.png',
+  },
+  {
+    month: 'July 2025',
+    description: 'Audience Growth & Order Increase',
+    image: '/qcy-shopee-overview/qcy-Overview-tiktok-July-2025.png',
+  },
+  {
+    month: 'August 2025',
+    description: 'Peak Content Commerce Performance',
+    image: '/qcy-shopee-overview/qcy-Overview-tiktok-agust-2025.png',
+  },
+  {
+    month: 'September 2025',
+    description: 'Campaign Closing & Revenue Consolidation',
+    image: '/qcy-shopee-overview/qcy-Overview-tiktok-sep-2025.png',
+  },
 ]
  const currentScreenshots =
-  activeAnalytics === "overview"
-    ? shopeeOverviewScreenshots
-    : activeAnalytics === "livestream"
-    ? shopeeLiveScreenshots
-    : activeAnalytics === "ads"
-    ? shopeeAdsScreenshots
-    : shopeeOverviewScreenshots
+  activeTab === "shopee"
+    ? (
+        activeAnalytics === "overview"
+          ? shopeeOverviewScreenshots
+          : activeAnalytics === "livestream"
+          ? shopeeLiveScreenshots
+          : shopeeAdsScreenshots
+      )
+    : activeTab === "tiktok"
+    ? tiktokOverviewScreenshots
+    : tokopediaOverviewScreenshots
 
   
   const kpiCards = [
