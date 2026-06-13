@@ -171,18 +171,56 @@ export default function QCYCaseStudy() {
       image: '/qcy/Tiktok-overview/qcy-Overview-tiktok-sep-2025.png',
     },
   ]
+  const tiktokAdsScreenshots = [
+  {
+    month: 'June 2025',
+    description: 'TikTok Ads Launch Campaign',
+    image: '/qcy/Tiktok-ADS/qcy-ADS-tiktok-Juni-2025.png',
+  },
+  {
+    month: 'July 2025',
+    description: 'Audience Acquisition Phase',
+    image: '/qcy/Tiktok-ADS/qcy-ADS-tiktok-J-2025.png',
+  },
+  {
+    month: 'August 2025',
+    description: 'Peak Conversion Performance',
+    image: '/qcy/Tiktok-ADS/qcy-ADS-tiktok-agust-2025.png',
+  },
+  {
+    month: 'September 2025',
+    description: 'Scaling Revenue Growth',
+    image: '/qcy/Tiktok-ADS/qcy-ADS-tiktok-Sep-2025.png',
+  },
+  {
+    month: 'October 2025',
+    description: 'Campaign Expansion Phase',
+    image: '/qcy/Tiktok-ADS/qcy-ADS-tiktok-Oktober-2025.png',
+  },
+  {
+    month: 'November 2025',
+    description: 'Year-End Optimization',
+    image: '/qcy/Tiktok-ADS/qcy-ADS-tiktok-November-2025.png',
+  },
+]
   const currentScreenshots =
-    activeTab === "shopee"
-      ? (
+  activeTab === "shopee"
+    ? (
         activeAnalytics === "overview"
           ? shopeeOverviewScreenshots
           : activeAnalytics === "livestream"
-            ? shopeeLiveScreenshots
-            : shopeeAdsScreenshots
+          ? shopeeLiveScreenshots
+          : shopeeAdsScreenshots
       )
-      : activeTab === "tiktok"
-        ? tiktokOverviewScreenshots
-        : tokopediaOverviewScreenshots
+    : activeTab === "tiktok"
+    ? (
+        activeAnalytics === "overview"
+          ? tiktokOverviewScreenshots
+          : activeAnalytics === "livestream"
+          ? tiktokLiveScreenshots
+          : tiktokAdsScreenshots
+      )
+    : tokopediaScreenshots
 
 
   const kpiCards = [
@@ -524,7 +562,7 @@ export default function QCYCaseStudy() {
                         : "QCY Official Store — Tokopedia Analytics"}
                   </h2>
 
-                  <p className="text-white/70">
+                  <p className="text-white/70 mb-6">
                     {activeTab === "shopee"
                       ? "Store performance covering sales, advertising, and livestream growth on Shopee."
                       : activeTab === "tiktok"
