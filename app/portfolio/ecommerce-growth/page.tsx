@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import {
   LineChart,
   Line,
@@ -279,6 +280,22 @@ const lazadaGrowthPhases = [
     result: 'Revenue recovered to Rp73.3M with 1,264 monthly orders'
   }
 ]
+
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+}
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+}
 
 export default function EcommerceGrowthCaseStudy() {
 
