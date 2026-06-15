@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import {
   LineChart,
   Line,
@@ -19,6 +19,21 @@ import {
   Area,
 } from 'recharts'
 import { ChevronLeft, ChevronRight, TrendingUp, ShoppingCart, Target, Calendar } from 'lucide-react'
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+}
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+}
 
 // Monthly data extracted from screenshots (chronological order)
 const shopeeMonthlyData = [
@@ -281,22 +296,6 @@ const lazadaGrowthPhases = [
   }
 ]
 
-
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-}
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-}
-
 export default function EcommerceGrowthCaseStudy() {
 
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -375,7 +374,7 @@ export default function EcommerceGrowthCaseStudy() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#F97316] rounded-full blur-3xl opacity-20" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4A35D4] rounded-full blur-3xl opacity-30" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <Link href="/portfolio" className="inline-flex items-center gap-2 text-[#9B97C0] hover:text-white mb-6">
             <ChevronLeft className="w-4 h-4" />
             Back to Portfolio
@@ -402,9 +401,9 @@ export default function EcommerceGrowthCaseStudy() {
               </button>
             ))}
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <motion.h1 variants={fadeIn} className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             E-Commerce Growth Journey
-          </h1>
+          </motion.h1>
           <p className="mt-2 text-xl text-[#9B97C0]">Priskila — Beauty & Perfumery Products</p>
           <p className="mt-1 text-sm text-[#9B97C0]">Brands: Casablanca, Bellagio, Regazza, Camellia, Marie Jose, Excello</p>
 
@@ -422,13 +421,13 @@ export default function EcommerceGrowthCaseStudy() {
               <p className="text-sm text-[#9B97C0]">Progress Period</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Key Metrics Cards */}
       <section className="py-12 bg-white border-b border-[#E8E6F8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center p-6">
               <TrendingUp className="w-8 h-8 text-[#2D1BB8] mx-auto mb-2" />
               <p className="text-2xl font-bold text-[#0F0A2E]">{activeStats.growth}</p>
@@ -449,17 +448,17 @@ export default function EcommerceGrowthCaseStudy() {
               <p className="text-2xl font-bold text-[#0F0A2E]">{activeStats.duration}</p>
               <p className="text-sm text-[#9B97C0]">Progress Duration</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Revenue Growth Chart */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Revenue Growth Over Time</h2>
+          <motion.h2 variants={fadeIn} initial="initial" whileInView="animate" viewport={{ once: true }} className="text-2xl font-bold text-[#0F0A2E] mb-2">Revenue Growth Over Time</motion.h2>
           <p className="text-[#4B4680] mb-8">Monthly revenue progression from Rp24M to Rp982M</p>
 
-          <div className="bg-white rounded-2xl border border-[#E8E6F8] p-6">
+          <motion.div variants={fadeIn} initial="initial" whileInView="animate" viewport={{ once: true }} className="bg-white rounded-2xl border border-[#E8E6F8] p-6">
             <ResponsiveContainer width="100%" height={400}>
               <AreaChart data={activePlatform.monthlyData}>
                 <defs>
@@ -478,7 +477,7 @@ export default function EcommerceGrowthCaseStudy() {
                 <Area type="monotone" dataKey="revenue" stroke="#2D1BB8" strokeWidth={3} fill="url(#revenueGradient)" />
               </AreaChart>
             </ResponsiveContainer>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -614,9 +613,9 @@ export default function EcommerceGrowthCaseStudy() {
           <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Growth Strategy Breakdown</h2>
           <p className="text-[#4B4680] mb-12">How promotional improvements drove consistent revenue growth</p>
 
-          <div className="space-y-8">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }} className="space-y-8">
             {activeGrowthPhases.map((phase, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-[#E8E6F8] p-8 hover:shadow-lg transition-shadow">
+              <motion.div variants={fadeIn} key={index} className="bg-white rounded-2xl border border-[#E8E6F8] p-8 hover:shadow-lg transition-shadow">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                   <div className="lg:w-1/3">
                     <span className="inline-block px-3 py-1 bg-[#2D1BB8] text-white rounded-full text-xs font-medium mb-2">
@@ -644,9 +643,9 @@ export default function EcommerceGrowthCaseStudy() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -655,24 +654,24 @@ export default function EcommerceGrowthCaseStudy() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-white mb-8 text-center">Campaign Summary</h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
+          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <motion.div variants={fadeIn} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
               <p className="text-4xl font-bold text-[#F97316]">Rp760M</p>
               <p className="text-sm text-[#9B97C0] mt-2">Peak Monthly Revenue</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
+            </motion.div>
+            <motion.div variants={fadeIn} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
               <p className="text-4xl font-bold text-white">21.6K</p>
               <p className="text-sm text-[#9B97C0] mt-2">Peak Monthly Orders</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
+            </motion.div>
+            <motion.div variants={fadeIn} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
               <p className="text-4xl font-bold text-white">+125%</p>
               <p className="text-sm text-[#9B97C0] mt-2">Conversion Improvement</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
+            </motion.div>
+            <motion.div variants={fadeIn} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
               <p className="text-4xl font-bold text-[#F97316]">31x</p>
               <p className="text-sm text-[#9B97C0] mt-2">Total Revenue Multiple</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
