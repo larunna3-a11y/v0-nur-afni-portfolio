@@ -31,12 +31,12 @@ export function HeroSection() {
             
             {/* Subtitle */}
             <p className="mt-4 text-xl text-[#E8E6F8]">
-              Digital Marketing Specialist
+              Helping brands grow through social media, e-commerce, and data-driven marketing.
             </p>
             
             {/* Bio */}
             <p className="mt-6 text-[#9B97C0] leading-relaxed max-w-lg">
-              3+ years scaling brands across social media, paid ads, and marketplaces. I turn campaigns into measurable growth — from Rp24M to Rp982M in 20 months (31x).
+              Currently managing brands while building side projects and sharing insights on growth, systems, and creativity.
             </p>
             
             {/* Stats Cards */}
