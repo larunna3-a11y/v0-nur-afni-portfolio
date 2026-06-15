@@ -437,6 +437,13 @@ export default function QCYCaseStudy() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeIn}>
+
+          <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <Link href="/portfolio" className="inline-flex items-center gap-2 text-[#9B97C0] hover:text-white mb-6">
+            <ChevronLeft className="w-4 h-4" />
+            Back to Portfolio
+          </Link>
+          
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">E-Commerce</span>
                 <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Consumer Electronics</span>
