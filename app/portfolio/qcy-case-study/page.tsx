@@ -226,24 +226,6 @@ export default function QCYCaseStudy() {
   },
 
 ]
-  const tokopediaScreenshots = [
-    {
-      month: 'June 2025',
-      description: 'Tokopedia Platform Entry',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.09.41-sspyrgovKQoW1N0TgVrlsGm4aAstcu.png',
-    },
-    {
-      month: 'July 2025',
-      description: 'Audience Growth & Order Increase',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.02-bOwrFODGg0FcX0KLO8I42k87WJisGr.png',
-    },
-    {
-      month: 'August 2025',
-      description: 'Peak Revenue & Conversion Growth',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-02%20at%2014.10.49-crpcRxhRmwtZtrRNlNmw63BeAY4HL0.png',
-    },
-  ]
-
   const currentScreenshots =
   activeTab === "shopee"
     ? (
@@ -513,7 +495,7 @@ export default function QCYCaseStudy() {
               {['shopee', 'tiktok', 'tokopedia'].map((channel) => (
                 <button
                   key={channel}
-                  onClick={() => { setActiveTab(channel); setActiveAnalytics('overview'); setMonthlySlide(0); }}
+                  onClick={() => setActiveTab(channel)}
                   className={`px-6 py-3 font-medium transition-all ${activeTab === channel
                     ? `border-b-2 border-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-500 text-${channel === 'shopee' ? 'red' : channel === 'tiktok' ? 'gray' : 'green'}-600`
                     : 'text-gray-500 hover:text-gray-700'
@@ -622,29 +604,25 @@ export default function QCYCaseStudy() {
                       Overview Sales
                     </button>
 
-                    {activeTab !== "tokopedia" && (
-                      <button
-                        onClick={() => setActiveAnalytics("livestream")}
-                        className={`px-5 py-2 rounded-full ${activeAnalytics === "livestream"
-                            ? "bg-orange-500 text-white"
-                            : "bg-white text-gray-700"
-                          }`}
-                      >
-                        Livestream
-                      </button>
-                    )}
+                    <button
+                      onClick={() => setActiveAnalytics("livestream")}
+                      className={`px-5 py-2 rounded-full ${activeAnalytics === "livestream"
+                          ? "bg-orange-500 text-white"
+                          : "bg-white text-gray-700"
+                        }`}
+                    >
+                      Livestream
+                    </button>
 
-                    {activeTab !== "tokopedia" && (
-                      <button
-                        onClick={() => setActiveAnalytics("ads")}
-                        className={`px-5 py-2 rounded-full ${activeAnalytics === "ads"
-                            ? "bg-orange-500 text-white"
-                            : "bg-white text-gray-700"
-                          }`}
-                      >
-                        Ads Performance
-                      </button>
-                    )}
+                    <button
+                      onClick={() => setActiveAnalytics("ads")}
+                      className={`px-5 py-2 rounded-full ${activeAnalytics === "ads"
+                          ? "bg-orange-500 text-white"
+                          : "bg-white text-gray-700"
+                        }`}
+                    >
+                      Ads Performance
+                    </button>
                   </div>
                 </div>
 
