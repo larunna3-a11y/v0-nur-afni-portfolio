@@ -374,18 +374,11 @@ export default function EcommerceGrowthCaseStudy() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#F97316] rounded-full blur-3xl opacity-20" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4A35D4] rounded-full blur-3xl opacity-30" />
 
-       <motion.div
-  variants={fadeIn}
-  className="mb-8"
->
-  <Link
-    href="/portfolio"
-    className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-  >
-    <ChevronLeft className="w-4 h-4" />
-    Back to Portfolio
-  </Link>
-</motion.div>
+        <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <Link href="/portfolio" className="inline-flex items-center gap-2 text-[#9B97C0] hover:text-white mb-6">
+            <ChevronLeft className="w-4 h-4" />
+            Back to Portfolio
+          </Link>
 
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">E-Commerce</span>
