@@ -19,9 +19,9 @@ const caseStudies = [
     id: 2,
     categories: ['E-Commerce', 'Paid Ads'],
     brand: 'QCY Indonesia',
-    result: 'Rp92M revenue · 250+ orders on Launch day',
-    description: 'New Release projects and multi-marketplace product launch campaign combining paid ads, flash sale, voucher, and affiliate strategy for maximum launch-day impact.',
-    metrics: ['Rp92M day-one revenue', '250+ orders', 'Multi-platform execution'],
+    result: 'Rp91.8M revenue · 576 orders on launch day',
+    description: 'New release multi-marketplace product launch campaign combining paid ads, flash sale, voucher, and affiliate strategy for maximum launch-day impact.',
+    metrics: ['Rp91.8M day-one revenue', '576 orders', 'Multi-platform execution'],
     link: '/portfolio/qcy-case-study',
   },
   {
@@ -37,7 +37,7 @@ const caseStudies = [
     categories: ['Livestream', 'E-Commerce'],
     brand: 'Priskila Official Store',
     result: 'ROAS 2.43 → 7.52',
-    description: 'Transformation set up projects for Priskila livestream commerce campaigns restructuring set and achieving exceptional ROAS through strategic discount mechanics, creative set up and live selling. aLSO Sustaining livestream frequency average30–50 streams/month consistently',
+    description: 'Full restructuring of Priskila livestream commerce campaigns — achieving exceptional ROAS through strategic discount mechanics, creative set design, and live selling. Sustained livestream frequency averaging 30–50 streams/month consistently.',
     metrics: ['Peak Revenue Rp89M', '90–105 → 1.2K–1.6K orders', '2.5K → 82K+ visitors'],
   },
   {
@@ -135,14 +135,10 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* Link */}
-                {study.link ? (
+                {study.link && (
                   <Link href={study.link} className="mt-6 inline-block text-[#2D1BB8] text-sm font-medium hover:underline">
                     View Case Study →
                   </Link>
-                ) : (
-                  <button className="mt-6 text-[#2D1BB8] text-sm font-medium hover:underline">
-                    View Case Study →
-                  </button>
                 )}
               </div>
             ))}
