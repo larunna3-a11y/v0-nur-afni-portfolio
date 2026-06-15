@@ -435,10 +435,7 @@ export default function QCYCaseStudy() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8] text-white py-20 lg:py-32">
 
-        <motion.div
-          variants={fadeIn}
-          className="mb-8"
-        >
+        <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid lg:grid-cols-2 gap-12 items-center">
           <Link
             href="/portfolio"
             className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors"
