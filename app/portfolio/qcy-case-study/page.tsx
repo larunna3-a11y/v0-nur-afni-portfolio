@@ -203,6 +203,29 @@ export default function QCYCaseStudy() {
     image: '/qcy/Tiktok-ADS/qcy-ADS-tiktok-November-2025.png',
   },
 ]
+  const tiktokLiveScreenshots = [
+  {
+    month: 'June 2025',
+    description: 'TikTok LIVE Launch Performance',
+    image: '/qcy/tiktok-livestream/qcy-live-tiktok-Juni-2025.png',
+  },
+  {
+    month: 'July 2025',
+    description: 'Audience Engagement Growth',
+    image: '/qcy/tiktok-livestream/qcy-live-tiktok-Juli-2025.png',
+  },
+  {
+    month: 'August 2025',
+    description: 'Peak Livestream Conversion',
+    image: '/qcy/tiktok-livestream/qcy-live-tiktok-agust-2025.png',
+  },
+  {
+    month: 'September 2025',
+    description: 'Campaign Closing Performance',
+    image: '/qcy/tiktok-livestream/qcy-live-tiktok-sep-2025.png',
+  },
+
+]
   const currentScreenshots =
   activeTab === "shopee"
     ? (
