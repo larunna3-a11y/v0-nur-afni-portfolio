@@ -8,7 +8,7 @@ const stats = [
 
 export function HeroSection() {
   return (
-    <section className="relative bg-background overflow-hidden">
+    <section className="relative bg-[#2D1BB8] overflow-hidden">
       {/* Glow effects */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#F97316] rounded-full blur-3xl opacity-20 translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4A35D4] rounded-full blur-3xl opacity-30 -translate-x-1/2 translate-y-1/2" />
@@ -16,7 +16,7 @@ export function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column */}
-          <div className="order-2 lg:order-1 bg-[#2D1BB8] rounded-[32px] p-8 lg:p-12">
+          <div className="order-2 lg:order-1">
             {/* Availability Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#Ffffff] bg-transparent mb-6">
               <span className="w-2 h-2 bg-[#06D001] rounded-full animate-pulse" />
@@ -31,12 +31,12 @@ export function HeroSection() {
             
             {/* Subtitle */}
             <p className="mt-4 text-xl text-[#E8E6F8]">
-              Helping brands grow through social media, e-commerce, and data-driven marketing.
+              Digital Marketing Specialist
             </p>
             
             {/* Bio */}
             <p className="mt-6 text-[#9B97C0] leading-relaxed max-w-lg">
-              Currently managing brands while building side projects and sharing insights on growth, systems, and creativity.
+              3+ years scaling brands across social media, paid ads, and marketplaces. I turn campaigns into measurable growth — from Rp24M to Rp982M in 20 months (31x).
             </p>
             
             {/* Stats Cards */}
