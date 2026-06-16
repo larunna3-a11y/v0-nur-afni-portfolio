@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useRef } from 'react'
 import {
   ArrowLeft,
   Instagram,
@@ -14,6 +15,7 @@ import {
   FileText,
   Clock,
   ChevronRight,
+  ChevronLeft,
   BookOpen,
   Lightbulb,
   Settings,
@@ -199,6 +201,12 @@ const tools = [
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function IslamCendekiaCaseStudy() {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  const scroll = (dir: 'left' | 'right') => {
+    if (!scrollRef.current) return
+    scrollRef.current.scrollBy({ left: dir === 'right' ? 480 : -480, behavior: 'smooth' })
+  }
 
   return (
     <div className="min-h-screen bg-[#F8F7FF] pt-16">
@@ -486,20 +494,34 @@ export default function IslamCendekiaCaseStudy() {
       {/* ── Top Performing Content ── */}
       <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-2">
+          <div className="flex items-center justify-between mb-2">
             <h2 className="text-sm font-bold text-[#2D1BB8] uppercase tracking-wide">
               TOP PERFORMING CONTENT
             </h2>
-            <div className="flex items-center gap-1.5 text-[11px] text-[#9B97C0]">
-              <span>swipe to explore</span>
-              <ChevronRight className="w-3.5 h-3.5 animate-bounce-x" />
+            {/* Prev / Next buttons */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => scroll('left')}
+                className="w-8 h-8 rounded-full border border-[#E8E6F8] bg-white flex items-center justify-center text-[#4B4680] hover:bg-[#2D1BB8] hover:text-white hover:border-[#2D1BB8] transition-all shadow-sm"
+                aria-label="Previous"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => scroll('right')}
+                className="w-8 h-8 rounded-full border border-[#E8E6F8] bg-white flex items-center justify-center text-[#4B4680] hover:bg-[#2D1BB8] hover:text-white hover:border-[#2D1BB8] transition-all shadow-sm"
+                aria-label="Next"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
             </div>
           </div>
           <p className="text-xs text-[#9B97C0] mb-6">During my management, more than 10 pieces of content achieved 10K+ impressions with high engagement consistently across Instagram &amp; TikTok.</p>
         </div>
 
-        {/* Full-bleed scroll container */}
+        {/* Scroll container */}
         <div
+          ref={scrollRef}
           className="flex gap-4 overflow-x-auto pb-4 px-4 sm:px-6 lg:px-8 scroll-smooth"
           style={{
             scrollSnapType: 'x mandatory',
@@ -567,18 +589,11 @@ export default function IslamCendekiaCaseStudy() {
             </div>
           ))}
 
-          {/* Right fade sentinel — gives a peek effect */}
           <div className="flex-shrink-0 w-8" aria-hidden="true" />
         </div>
 
-        {/* Hide scrollbar via inline style tag */}
         <style>{`
           .overflow-x-auto::-webkit-scrollbar { display: none; }
-          @keyframes bounceX {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(4px); }
-          }
-          .animate-bounce-x { animation: bounceX 1s ease-in-out infinite; }
         `}</style>
       </section>
 
