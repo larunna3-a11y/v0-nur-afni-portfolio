@@ -133,7 +133,7 @@ const workflowSteps = [
 ]
 
 const bestTimes = {
-  Islamcendekia.id: [
+  islamCendekia: [
     { day: 'Sabtu', times: '16.30, 19.22' },
     { day: 'Jumat', times: '16.20, 20.45' },
     { day: 'Senin', times: '17.30' },
