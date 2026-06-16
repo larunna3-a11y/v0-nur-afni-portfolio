@@ -20,6 +20,7 @@ const works = [
     brand: 'Islamcendekia.id',
     result: '+189% follower growth in 4 months',
     bg: 'bg-[#1A0F7A]',
+    link: '/portfolio/islam-cendekia',
   },
 ]
 
