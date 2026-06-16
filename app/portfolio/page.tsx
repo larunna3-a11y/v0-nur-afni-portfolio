@@ -44,9 +44,10 @@ const caseStudies = [
     id: 5,
     categories: ['Social Media'],
     brand: 'Islamcendekia.id',
-    result: '6.7K → 17K followers in 4 months',
-    description: 'Organic Instagram growth through short-form content strategy, trend-based posting, and campaign-period content spikes.',
-    metrics: ['+189% follower growth', '+81.3% engagement rate', '+62.9% impressions', '2M+ total engagement'],
+    result: '6K → 17.3K followers in 6 months',
+    description: 'Social media management and content strategy for an Islamic education platform. Scaled the account organically through short-form content, hashtag frameworks, and data-driven scheduling.',
+    metrics: ['+188% follower growth', '984K accounts reached', '89.6K content interactions', '2.2M viral post views'],
+    link: '/portfolio/islam-cendekia',
   },
   {
     id: 6,
