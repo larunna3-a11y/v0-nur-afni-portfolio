@@ -484,73 +484,102 @@ export default function IslamCendekiaCaseStudy() {
       </section>
 
       {/* ── Top Performing Content ── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-sm font-bold text-[#2D1BB8] mb-2 uppercase tracking-wide">
-            TOP PERFORMING CONTENT
-          </h2>
-          <p className="text-xs text-[#9B97C0] mb-8">During my management, more than 10 pieces of content achieved 10K+ impressions with high engagement consistently across Instagram &amp; TikTok.</p>
+          <div className="flex items-end justify-between mb-2">
+            <h2 className="text-sm font-bold text-[#2D1BB8] uppercase tracking-wide">
+              TOP PERFORMING CONTENT
+            </h2>
+            <div className="flex items-center gap-1.5 text-[11px] text-[#9B97C0]">
+              <span>swipe to explore</span>
+              <ChevronRight className="w-3.5 h-3.5 animate-bounce-x" />
+            </div>
+          </div>
+          <p className="text-xs text-[#9B97C0] mb-6">During my management, more than 10 pieces of content achieved 10K+ impressions with high engagement consistently across Instagram &amp; TikTok.</p>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {topContent.map((item, i) => (
+        {/* Full-bleed scroll container */}
+        <div
+          className="flex gap-4 overflow-x-auto pb-4 px-4 sm:px-6 lg:px-8 scroll-smooth"
+          style={{
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch',
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none',
+          }}
+        >
+          {topContent.map((item, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 rounded-2xl overflow-hidden border border-[#E8E6F8] bg-white shadow-sm hover:shadow-lg transition-all hover:-translate-y-1"
+              style={{ width: 220, scrollSnapAlign: 'start' }}
+            >
+              {/* Thumbnail */}
               <div
-                key={i}
-                className="rounded-2xl overflow-hidden border border-[#E8E6F8] bg-white shadow-sm hover:shadow-md transition-shadow"
+                className="relative flex flex-col justify-between p-4"
+                style={{ background: item.gradient, height: 280 }}
               >
-                {/* Thumbnail */}
-                <div
-                  className="relative flex flex-col justify-between p-4"
-                  style={{ background: item.gradient, aspectRatio: '4/5' }}
-                >
-                  {/* IC logo badge */}
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
-                      <span className="text-white text-[6px] font-black">IC</span>
-                    </div>
-                    <span className="text-white/70 text-[8px] font-medium">Islam Cendekia</span>
+                {/* IC logo badge */}
+                <div className="flex items-center gap-1.5">
+                  <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                    <span className="text-white text-[6px] font-black">IC</span>
                   </div>
-
-                  {/* Title */}
-                  <div>
-                    {item.title.split('\n').map((line, li) => (
-                      <p key={li} className={`font-bold leading-tight text-[13px] ${li === 0 ? 'text-white' : ''}`} style={{ color: li > 0 ? item.accent : 'white' }}>
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-
-                  {/* View count badge */}
-                  <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded-full px-2 py-0.5 flex items-center gap-1">
-                    <Eye className="w-2.5 h-2.5 text-white/80" />
-                    <span className="text-white text-[9px] font-bold">{item.views}</span>
-                  </div>
+                  <span className="text-white/70 text-[8px] font-medium">Islam Cendekia</span>
                 </div>
 
-                {/* Stats row */}
-                <div className="px-4 py-3 flex items-center gap-3 border-b border-[#F0EEF8]">
-                  <div className="flex items-center gap-1 text-[11px] text-[#4B4680]">
-                    <Heart className="w-3 h-3 text-rose-400" />
-                    <span className="font-semibold">{item.likes}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-[11px] text-[#4B4680]">
-                    <MessageCircle className="w-3 h-3 text-blue-400" />
-                    <span className="font-semibold">{item.comments}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-[11px] text-[#4B4680]">
-                    <svg className="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 5v14l7-4 7 4V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/></svg>
-                    <span className="font-semibold">{item.saves}</span>
-                  </div>
-                  <span className="ml-auto text-[10px] text-[#9B97C0]">{item.date}</span>
+                {/* Title */}
+                <div>
+                  {item.title.split('\n').map((line, li) => (
+                    <p key={li} className="font-bold leading-tight text-[13px]" style={{ color: li > 0 ? item.accent : 'white' }}>
+                      {line}
+                    </p>
+                  ))}
                 </div>
 
-                {/* Caption */}
-                <div className="px-4 py-3">
-                  <p className="text-[11px] text-[#4B4680] leading-relaxed line-clamp-3">{item.caption}</p>
+                {/* View count badge */}
+                <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded-full px-2 py-0.5 flex items-center gap-1">
+                  <Eye className="w-2.5 h-2.5 text-white/80" />
+                  <span className="text-white text-[9px] font-bold">{item.views}</span>
                 </div>
               </div>
-            ))}
-          </div>
+
+              {/* Stats row */}
+              <div className="px-3 py-2.5 flex items-center gap-2.5 border-b border-[#F0EEF8]">
+                <div className="flex items-center gap-1 text-[11px] text-[#4B4680]">
+                  <Heart className="w-3 h-3 text-rose-400" />
+                  <span className="font-semibold">{item.likes}</span>
+                </div>
+                <div className="flex items-center gap-1 text-[11px] text-[#4B4680]">
+                  <MessageCircle className="w-3 h-3 text-blue-400" />
+                  <span className="font-semibold">{item.comments}</span>
+                </div>
+                <div className="flex items-center gap-1 text-[11px] text-[#4B4680]">
+                  <svg className="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 5v14l7-4 7 4V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/></svg>
+                  <span className="font-semibold">{item.saves}</span>
+                </div>
+                <span className="ml-auto text-[10px] text-[#9B97C0] whitespace-nowrap">{item.date}</span>
+              </div>
+
+              {/* Caption */}
+              <div className="px-3 py-3">
+                <p className="text-[11px] text-[#4B4680] leading-relaxed line-clamp-3">{item.caption}</p>
+              </div>
+            </div>
+          ))}
+
+          {/* Right fade sentinel — gives a peek effect */}
+          <div className="flex-shrink-0 w-8" aria-hidden="true" />
         </div>
+
+        {/* Hide scrollbar via inline style tag */}
+        <style>{`
+          .overflow-x-auto::-webkit-scrollbar { display: none; }
+          @keyframes bounceX {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(4px); }
+          }
+          .animate-bounce-x { animation: bounceX 1s ease-in-out infinite; }
+        `}</style>
       </section>
 
       {/* ── Roles & Approach (two-column) ── */}
