@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
 import {
   ArrowLeft,
   Instagram,
@@ -18,7 +17,6 @@ import {
   BookOpen,
   Lightbulb,
   Settings,
-  PieChart,
 } from 'lucide-react'
 
 // ── Data ──────────────────────────────────────────────────────────────────────
@@ -55,49 +53,87 @@ const kpiCards = [
 const topContent = [
   {
     title: 'Rata - rata orang yang sukses, mereka melakukan hal berikut',
+    caption: 'Kesuksesan mereka bukan hanya hasil kerja keras, tetapi juga hasil dari hubungan yang kuat dengan spiritualitas dan keyakinan mereka.',
     views: '2.2M',
-    likes: '55K',
-    comments: '21K',
-    saves: '152',
+    likes: '53K',
+    comments: '152',
+    saves: '21K',
     date: '26 Oct 2023',
-    bg: 'bg-[#1a2744]',
+    gradient: 'linear-gradient(180deg, #1a2f6b 0%, #2a4a8a 40%, #0d1f45 100%)',
+    textColor: 'white',
+    accent: '#7ab3f0',
   },
   {
-    title: 'Tanggal 1 Muharam, Berbagai Momen Penting Umat Islam',
-    views: '793K',
-    likes: '20K',
-    comments: '140',
-    saves: '18',
-    date: '19 Jul 2023',
-    bg: 'bg-[#2a4a2a]',
+    title: 'Amalan untuk dilakukan Di Sepertiga Malam',
+    caption: 'Doa yang mengalun dari hati, harapkan hidangan dari langit sebagai kebahagiaan dan hari raya bagi semua.',
+    views: '360,969',
+    likes: '8,462',
+    comments: '61',
+    saves: '8,102',
+    date: '28 Dec 2023',
+    gradient: 'linear-gradient(180deg, #2a1a10 0%, #3d1f0d 40%, #1a0a05 100%)',
+    textColor: 'white',
+    accent: '#7ab3f0',
   },
   {
     title: 'Amalan Rezeki Diamalkan setelah Magrib',
-    views: '21K',
+    caption: 'Rezeki datangnya dari Allah, maka mintalah pada Allah sang maha pemberi rezeki.',
+    views: '20,582',
     likes: '286',
-    comments: '33',
-    saves: '0',
+    comments: '0',
+    saves: '33',
     date: '14 Dec 2023',
-    bg: 'bg-[#7a3a1a]',
+    gradient: 'linear-gradient(180deg, #c87820 0%, #d4921c 40%, #3d1a05 100%)',
+    textColor: 'white',
+    accent: '#7ab3f0',
   },
   {
-    title: 'MENOLONG SESAMA Kebaikan yang Balik ke Diri Sendiri',
-    views: '25K',
-    likes: '3',
-    comments: '1',
-    saves: '0',
-    date: '26 Nov 2023',
-    bg: 'bg-[#e8f4ff]',
-    dark: false,
+    title: 'Doa - doa Harian',
+    caption: 'Percaya dan yakinlah bahwa Allah akan memberikan kemudahan jalan pada setiap hambanya yang senantiasa berserah diri hanya kepada-Nya.',
+    views: '18,396',
+    likes: '112',
+    comments: '0',
+    saves: '11',
+    date: '19 Oct 2023',
+    gradient: 'linear-gradient(180deg, #2a1a0a 0%, #4a2a10 40%, #1a0f05 100%)',
+    textColor: 'white',
+    accent: '#ffffff',
   },
   {
-    title: 'Q.S Ali Imran : 159',
-    views: '6.2K',
-    likes: '902',
-    comments: '429',
-    saves: '67',
-    date: '12 Aug 2023',
-    bg: 'bg-[#1a2a1a]',
+    title: 'Lakukan selama 21 Hari\nInsya Allah Hidupmu akan Berubah',
+    caption: 'Kenikmatan dalam beribadah bisa kita dapatkan jika kita memantapkan diri untuk beristiqomah.',
+    views: '55,748',
+    likes: '1,370',
+    comments: '0',
+    saves: '118',
+    date: '7 Sep 2023',
+    gradient: 'linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 40%, #0a0a0a 100%)',
+    textColor: 'white',
+    accent: '#7ab3f0',
+  },
+  {
+    title: 'Kisah Pertarungan Iblis dan Malaikat Pada Perang Badr',
+    caption: 'Penipuan dan penyamaran tidak akan pernah berhasil tersembunyi dari Allah. Taatlah kepada Allah, karena Dia Maha Mengetahui segala sesuatu.',
+    views: '94,680',
+    likes: '2,030',
+    comments: '13',
+    saves: '255',
+    date: '27 Sep 2023',
+    gradient: 'linear-gradient(180deg, #0d1f3d 0%, #1a3060 40%, #0a1520 100%)',
+    textColor: 'white',
+    accent: '#7ab3f0',
+  },
+  {
+    title: 'Petani memimpikan Firaun di neraka karena tidak Sholat',
+    caption: 'Meskipun pekerjaan dan status sosial bisa terlihat sepele, namun ketidakpedulian terhadap kualitas ibadah bisa membawa konsekuensi besar di akhirat.',
+    views: '57,873',
+    likes: '890',
+    comments: '5',
+    saves: '31',
+    date: '29 Nov 2023',
+    gradient: 'linear-gradient(180deg, #2a1a0a 0%, #3d2510 40%, #1a0f05 100%)',
+    textColor: 'white',
+    accent: '#7ab3f0',
   },
 ]
 
@@ -163,7 +199,6 @@ const tools = [
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function IslamCendekiaCaseStudy() {
-  const [expandedContent, setExpandedContent] = useState<number | null>(null)
 
   return (
     <div className="min-h-screen bg-[#F8F7FF] pt-16">
@@ -451,37 +486,69 @@ export default function IslamCendekiaCaseStudy() {
       {/* ── Top Performing Content ── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-[#2D1BB8] mb-2 uppercase text-sm tracking-wide">
+          <h2 className="text-sm font-bold text-[#2D1BB8] mb-2 uppercase tracking-wide">
             TOP PERFORMING CONTENT
           </h2>
           <p className="text-xs text-[#9B97C0] mb-8">During my management, more than 10 pieces of content achieved 10K+ impressions with high engagement consistently across Instagram &amp; TikTok.</p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {topContent.map((item, i) => (
               <div
                 key={i}
-                className={`${item.bg} rounded-xl p-3 aspect-[3/4] flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform`}
-                onClick={() => setExpandedContent(expandedContent === i ? null : i)}
+                className="rounded-2xl overflow-hidden border border-[#E8E6F8] bg-white shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className={`text-[10px] font-bold leading-tight ${item.dark === false ? 'text-[#0F0A2E]' : 'text-white'}`}>
-                  {item.title}
+                {/* Thumbnail */}
+                <div
+                  className="relative flex flex-col justify-between p-4"
+                  style={{ background: item.gradient, aspectRatio: '4/5' }}
+                >
+                  {/* IC logo badge */}
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                      <span className="text-white text-[6px] font-black">IC</span>
+                    </div>
+                    <span className="text-white/70 text-[8px] font-medium">Islam Cendekia</span>
+                  </div>
+
+                  {/* Title */}
+                  <div>
+                    {item.title.split('\n').map((line, li) => (
+                      <p key={li} className={`font-bold leading-tight text-[13px] ${li === 0 ? 'text-white' : ''}`} style={{ color: li > 0 ? item.accent : 'white' }}>
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+
+                  {/* View count badge */}
+                  <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded-full px-2 py-0.5 flex items-center gap-1">
+                    <Eye className="w-2.5 h-2.5 text-white/80" />
+                    <span className="text-white text-[9px] font-bold">{item.views}</span>
+                  </div>
                 </div>
-                <div className={`space-y-0.5 text-[9px] ${item.dark === false ? 'text-gray-600' : 'text-white/70'}`}>
-                  <div className="flex items-center gap-1"><Eye className="w-2.5 h-2.5" />{item.views}</div>
-                  <div className="flex items-center gap-1"><Heart className="w-2.5 h-2.5" />{item.likes}</div>
-                  <div className="flex items-center gap-1"><MessageCircle className="w-2.5 h-2.5" />{item.comments}</div>
-                  <div className="text-[8px] opacity-60 mt-1">{item.date}</div>
+
+                {/* Stats row */}
+                <div className="px-4 py-3 flex items-center gap-3 border-b border-[#F0EEF8]">
+                  <div className="flex items-center gap-1 text-[11px] text-[#4B4680]">
+                    <Heart className="w-3 h-3 text-rose-400" />
+                    <span className="font-semibold">{item.likes}</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-[11px] text-[#4B4680]">
+                    <MessageCircle className="w-3 h-3 text-blue-400" />
+                    <span className="font-semibold">{item.comments}</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-[11px] text-[#4B4680]">
+                    <svg className="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 5v14l7-4 7 4V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/></svg>
+                    <span className="font-semibold">{item.saves}</span>
+                  </div>
+                  <span className="ml-auto text-[10px] text-[#9B97C0]">{item.date}</span>
+                </div>
+
+                {/* Caption */}
+                <div className="px-4 py-3">
+                  <p className="text-[11px] text-[#4B4680] leading-relaxed line-clamp-3">{item.caption}</p>
                 </div>
               </div>
             ))}
-
-            {/* Add more card */}
-            <div className="border-2 border-dashed border-[#C8C4E8] rounded-xl aspect-[3/4] flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-[#2D1BB8] hover:bg-[#F0EEFF] transition-all group">
-              <div className="w-8 h-8 rounded-full bg-[#E8E6F8] group-hover:bg-[#2D1BB8] flex items-center justify-center transition-colors">
-                <ChevronRight className="w-5 h-5 text-[#2D1BB8] group-hover:text-white transition-colors" />
-              </div>
-              <span className="text-[10px] font-semibold text-[#9B97C0] group-hover:text-[#2D1BB8] text-center leading-tight transition-colors">Add<br/>Content</span>
-            </div>
           </div>
         </div>
       </section>
