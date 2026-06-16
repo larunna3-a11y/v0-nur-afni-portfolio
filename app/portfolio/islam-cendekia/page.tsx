@@ -185,21 +185,21 @@ export default function IslamCendekiaCaseStudy() {
           <div className="flex flex-col lg:flex-row lg:items-stretch gap-8">
 
             {/* Left: info */}
-            <div className="lg:w-[42%] lg:py-16 lg:pr-8 flex-shrink-0">
-              <h1 className="text-4xl lg:text-5xl font-bold text-[#0F0A2E] mb-2">
+            <div className="lg:w-[45%] lg:py-16 lg:pr-8 flex-shrink-0 flex flex-col justify-center">
+              <h1 className="text-5xl lg:text-6xl font-black text-[#0F0A2E] mb-3 leading-tight">
                 Islam Cendekia
               </h1>
-              <p className="text-[#2D1BB8] font-semibold text-lg mb-6">
+              <p className="text-[#2D1BB8] font-bold text-xl lg:text-2xl mb-8 leading-snug">
                 Social Media Management<br />& Content Strategy
               </p>
 
               {/* Platforms */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex items-center gap-2 px-3 py-1.5 border border-[#E8E6F8] rounded-full text-sm font-medium text-[#0F0A2E]">
+                <div className="flex items-center gap-2 px-4 py-2 border border-[#E8E6F8] rounded-full text-sm font-semibold text-[#0F0A2E] bg-white shadow-sm">
                   <Instagram className="w-4 h-4 text-pink-500" />
                   Instagram
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 border border-[#E8E6F8] rounded-full text-sm font-medium text-[#0F0A2E]">
+                <div className="flex items-center gap-2 px-4 py-2 border border-[#E8E6F8] rounded-full text-sm font-semibold text-[#0F0A2E] bg-white shadow-sm">
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/>
                   </svg>
@@ -220,7 +220,7 @@ export default function IslamCendekiaCaseStudy() {
             </div>
 
             {/* Right: phone + fanned content cards */}
-            <div className="lg:flex-1 relative flex items-end justify-start min-h-[420px] lg:min-h-[500px]">
+            <div className="lg:flex-1 relative flex items-end justify-start min-h-[560px] lg:min-h-[640px]">
 
               {/* ── Fanned content cards (behind phone, peeking right) ── */}
 
@@ -290,6 +290,7 @@ export default function IslamCendekiaCaseStudy() {
                   className="relative bg-[#111] shadow-2xl"
                   style={{
                     width: 240,
+                    height: 520,
                     borderRadius: 36,
                     padding: '10px 8px',
                     boxShadow: '0 30px 80px rgba(0,0,0,0.35)',
@@ -299,7 +300,7 @@ export default function IslamCendekiaCaseStudy() {
                   <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-full z-20" />
 
                   {/* Screen */}
-                  <div className="bg-white overflow-hidden" style={{ borderRadius: 28 }}>
+                  <div className="bg-white overflow-hidden h-full" style={{ borderRadius: 28 }}>
                     {/* Status bar */}
                     <div className="flex items-center justify-between px-4 pt-4 pb-1">
                       <span className="text-[10px] font-semibold text-[#0F0A2E]">9:41</span>
@@ -392,13 +393,16 @@ export default function IslamCendekiaCaseStudy() {
                     </div>
 
                     {/* Photo grid */}
-                    <div className="grid grid-cols-3 gap-[1px] bg-gray-200">
+                    <div className="grid grid-cols-3 gap-[1px] bg-gray-200 flex-1">
                       {[
                         { bg: 'bg-[#1a2744]', text: 'Amalan Rezeki Diamalkan setelah Magrib', textColor: 'text-white' },
                         { bg: 'bg-[#2a3a50]', text: 'Sony vlog camera...', textColor: 'text-white' },
                         { bg: 'bg-[#1a2744]', text: '', textColor: 'text-white' },
+                        { bg: 'bg-[#7a3a1a]', text: 'Amalan Rezeki', textColor: 'text-white' },
+                        { bg: 'bg-[#e8f4ff]', text: 'Kebaikan', textColor: 'text-[#0F0A2E]' },
+                        { bg: 'bg-[#1a2a1a]', text: 'Q.S Ali Imran', textColor: 'text-white' },
                       ].map((cell, i) => (
-                        <div key={i} className={`aspect-square ${cell.bg} relative flex items-end p-1`}>
+                        <div key={i} className={`${cell.bg} relative flex items-end p-1`} style={{ height: 72 }}>
                           <span className={`${cell.textColor} text-[5px] leading-tight opacity-80`}>{cell.text}</span>
                         </div>
                       ))}
@@ -470,6 +474,14 @@ export default function IslamCendekiaCaseStudy() {
                 </div>
               </div>
             ))}
+
+            {/* Add more card */}
+            <div className="border-2 border-dashed border-[#C8C4E8] rounded-xl aspect-[3/4] flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-[#2D1BB8] hover:bg-[#F0EEFF] transition-all group">
+              <div className="w-8 h-8 rounded-full bg-[#E8E6F8] group-hover:bg-[#2D1BB8] flex items-center justify-center transition-colors">
+                <ChevronRight className="w-5 h-5 text-[#2D1BB8] group-hover:text-white transition-colors" />
+              </div>
+              <span className="text-[10px] font-semibold text-[#9B97C0] group-hover:text-[#2D1BB8] text-center leading-tight transition-colors">Add<br/>Content</span>
+            </div>
           </div>
         </div>
       </section>
@@ -550,79 +562,6 @@ export default function IslamCendekiaCaseStudy() {
                   </div>
                 </div>
                 <p className="text-xs text-[#4B4680] italic">Meningkatkan jangkauan tanpa mengorbankan relevansi.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Best Time to Post ── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-
-            {/* Best Times */}
-            <div>
-              <h2 className="text-sm font-bold uppercase tracking-wide text-[#2D1BB8] mb-6">
-                BEST TIME TO POST (WIB)
-              </h2>
-
-              <div className="grid sm:grid-cols-2 gap-6">
-                {/* Islam Cendekia */}
-                <div>
-                  <p className="font-bold text-[#0F0A2E] text-sm mb-3">Islam Cendekia</p>
-                  <div className="space-y-1.5">
-                    {bestTimes.islamCendekia.map((row) => (
-                      <div key={row.day} className="flex items-center gap-2 text-xs">
-                        <span className="w-14 font-medium text-[#4B4680]">{row.day}</span>
-                        <span className="text-[#0F0A2E]">{row.times}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Krew */}
-                <div>
-                  <p className="font-bold text-[#0F0A2E] text-sm mb-3">Krew (Digital Krew)</p>
-                  <div className="space-y-1.5">
-                    {bestTimes.krew.map((row) => (
-                      <div key={row.day} className="flex items-center gap-2 text-xs">
-                        <span className="w-14 font-medium text-[#4B4680]">{row.day}</span>
-                        <span className="text-[#0F0A2E]">{row.times}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-[9px] text-[#9B97C0] mt-3 italic">*Berdasarkan analisis performa konten.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Clock visual */}
-            <div className="flex items-center justify-center">
-              <div className="relative w-40 h-40">
-                <svg viewBox="0 0 100 100" className="w-full h-full">
-                  <circle cx="50" cy="50" r="45" fill="none" stroke="#E8E6F8" strokeWidth="3" />
-                  {/* Hour markers */}
-                  {[0,1,2,3,4,5,6,7,8,9,10,11].map(h => {
-                    const angle = (h * 30 - 90) * Math.PI / 180
-                    const x1 = 50 + 38 * Math.cos(angle)
-                    const y1 = 50 + 38 * Math.sin(angle)
-                    const x2 = 50 + 42 * Math.cos(angle)
-                    const y2 = 50 + 42 * Math.sin(angle)
-                    return <line key={h} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#9B97C0" strokeWidth="1.5" />
-                  })}
-                  {/* Hour hand ~5pm */}
-                  <line x1="50" y1="50" x2="50" y2="25" stroke="#2D1BB8" strokeWidth="3" strokeLinecap="round" transform="rotate(150 50 50)" />
-                  {/* Minute hand */}
-                  <line x1="50" y1="50" x2="50" y2="18" stroke="#F97316" strokeWidth="2" strokeLinecap="round" transform="rotate(0 50 50)" />
-                  <circle cx="50" cy="50" r="3" fill="#2D1BB8" />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center mt-6">
-                    <p className="text-xs font-bold text-[#2D1BB8]">Peak</p>
-                    <p className="text-xs text-[#9B97C0]">17.00–20.00</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
