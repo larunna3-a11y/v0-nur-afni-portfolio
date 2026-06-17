@@ -772,7 +772,7 @@ export default function IslamCendekiaCaseStudy() {
               <div className="bg-white border border-[#E8E6F8] rounded-2xl p-6">
                 <div className="text-4xl text-[#2D1BB8] font-serif leading-none mb-3">"</div>
                 <p className="text-sm text-[#4B4680] italic leading-relaxed mb-4">
-                  Just handle them, assign their work and you supervise..
+                  Afni is a great and motivated person. selama berada di Digitalkrew, Afni adalah orang bisa belajar dengan cepat dan menjalankan pekerjaannya dengan baik. banyak dampak positif dan kontribusi yang sudah diberikan terutama untuk media sosial Digitalkrew yang menjadi tanggung jawabnya.
                 </p>
                 <div className="flex items-center gap-3 pt-4 border-t border-[#E8E6F8]">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#F97316] to-[#2D1BB8] flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
