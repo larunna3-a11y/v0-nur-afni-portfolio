@@ -318,235 +318,241 @@ export default function IslamCendekiaCaseStudy() {
 
       {/* ── Hero ── */}
       <section className="bg-white border-b border-[#E8E6F8] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-0">
-          <div className="flex flex-col lg:flex-row lg:items-stretch gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16">
 
             {/* Left: info */}
-            <div className="lg:w-[45%] lg:py-16 lg:pr-8 flex-shrink-0 flex flex-col justify-center">
+            <div className="lg:w-[42%] flex-shrink-0">
+              {/* Case study label */}
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#9B97C0] mb-4">
+                Case Study
+              </p>
+
+              {/* Title */}
               <h1 className="text-5xl lg:text-6xl font-black text-[#0F0A2E] mb-3 leading-tight">
                 Islam Cendekia
               </h1>
-              <p className="text-[#2D1BB8] font-bold text-xl lg:text-2xl mb-8 leading-snug">
-                Social Media Management<br />& Content Strategy
-              </p>
 
-              {/* Platforms */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex items-center gap-2 px-4 py-2 border border-[#E8E6F8] rounded-full text-sm font-semibold text-[#0F0A2E] bg-white shadow-sm">
-                  <Instagram className="w-4 h-4 text-pink-500" />
-                  Instagram
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 border border-[#E8E6F8] rounded-full text-sm font-semibold text-[#0F0A2E] bg-white shadow-sm">
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/>
-                  </svg>
-                  TikTok
-                </div>
-              </div>
+              {/* Subtitle */}
+              <p className="text-[#2D1BB8] font-semibold text-lg lg:text-xl mb-6 leading-snug">
+                Social Media Strategy &amp; Content Operations
+              </p>
 
               {/* Duration */}
               <div className="flex items-center gap-2 text-[#4B4680] text-sm mb-6">
-                <Clock className="w-4 h-4" />
+                <Clock className="w-4 h-4 flex-shrink-0" />
                 Jul 2023 – Dec 2023 (6 Months)
               </div>
 
               {/* Description */}
-              <p className="text-[#4B4680] leading-relaxed text-sm max-w-sm">
-                Islam Cendekia is an Islamic education media platform that shares Quranic verses, hadith, and Islamic knowledge through short-form content on Instagram and TikTok.
+              <p className="text-[#4B4680] leading-relaxed text-sm mb-8 max-w-md">
+                Joined as an intern and quickly transitioned into a Junior Social Media Specialist. Managed content development, publishing strategy, analytics, and intern supervision across Instagram and TikTok.
               </p>
+
+              {/* Social handles */}
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 text-sm font-medium text-[#0F0A2E]">
+                  <div className="w-8 h-8 rounded-full border border-[#E8E6F8] bg-white shadow-sm flex items-center justify-center">
+                    <Instagram className="w-4 h-4 text-pink-500" />
+                  </div>
+                  @islamcendekia.id
+                </div>
+                <div className="flex items-center gap-2 text-sm font-medium text-[#0F0A2E]">
+                  <div className="w-8 h-8 rounded-full border border-[#E8E6F8] bg-white shadow-sm flex items-center justify-center">
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/>
+                    </svg>
+                  </div>
+                  @islamcendekia
+                </div>
+              </div>
             </div>
 
-            {/* Right: phone + fanned content cards */}
-            <div className="lg:flex-1 relative flex items-end justify-start min-h-[560px] lg:min-h-[640px]">
+            {/* Right: two phones side by side + floating stat card */}
+            <div className="lg:flex-1 relative flex items-end justify-center lg:justify-start gap-4 min-h-[520px] lg:min-h-[580px]">
 
-              {/* ── Fanned content cards (behind phone, peeking right) ── */}
-
-              {/* Card 1 – top-right, slight rotate right */}
+              {/* ── Phone 1 – Instagram profile ── */}
               <div
-                className="absolute hidden lg:block rounded-2xl overflow-hidden shadow-xl"
-                style={{ width: 160, top: 20, right: 0, transform: 'rotate(6deg)', zIndex: 1 }}
-              >
-                <div className="bg-[#1a2744] p-3" style={{ height: 200 }}>
-                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mb-2">
-                    <span className="text-white text-[7px] font-bold">IC</span>
-                  </div>
-                  <p className="text-white text-[9px] font-bold leading-tight">Rata - rata orang yang sukses, mereka melakukan hal berikut</p>
-                  <div className="absolute bottom-2 left-3 right-3">
-                    <div className="w-full h-10 bg-[#0d1f45] rounded opacity-70" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 2 – mid-right, slight rotate left */}
-              <div
-                className="absolute hidden lg:block rounded-2xl overflow-hidden shadow-xl"
-                style={{ width: 155, top: 60, right: 40, transform: 'rotate(-3deg)', zIndex: 2 }}
-              >
-                <div className="bg-[#F97316] p-3" style={{ height: 190 }}>
-                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mb-2">
-                    <span className="text-white text-[7px] font-bold">IC</span>
-                  </div>
-                  <p className="text-white text-[9px] font-bold leading-tight">Amalan Rezeki Diamalkan setelah Magrib</p>
-                </div>
-              </div>
-
-              {/* Card 3 – lower right, tilted */}
-              <div
-                className="absolute hidden lg:block rounded-2xl overflow-hidden shadow-xl"
-                style={{ width: 148, top: 10, right: 180, transform: 'rotate(4deg)', zIndex: 1 }}
-              >
-                <div className="p-3" style={{ height: 185, background: 'linear-gradient(135deg,#1a3a6b,#2d4a8a)' }}>
-                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mb-2">
-                    <span className="text-white text-[7px] font-bold">IC</span>
-                  </div>
-                  <p className="text-white text-[9px] font-bold leading-tight">MENOLONG SESAMA Kebaikan yang Balik ke Diri Sendiri</p>
-                </div>
-              </div>
-
-              {/* Card 4 – far right, tall, slight tilt */}
-              <div
-                className="absolute hidden lg:block rounded-2xl overflow-hidden shadow-xl"
-                style={{ width: 145, top: 30, right: -10, transform: 'rotate(8deg)', zIndex: 0 }}
-              >
-                <div className="bg-white border border-gray-100 p-3" style={{ height: 210 }}>
-                  <div className="w-6 h-6 rounded-full bg-[#2D1BB8]/10 flex items-center justify-center mb-2">
-                    <span className="text-[#2D1BB8] text-[7px] font-bold">IC</span>
-                  </div>
-                  <p className="text-[#2D1BB8] text-[9px] font-bold leading-tight mb-1">Q.S Ali Imran : 159</p>
-                  <p className="text-gray-500 text-[8px] leading-tight">Maka, berkat rahmat Allah, kamu berlaku lemah lembut terhadap mereka.</p>
-                </div>
-              </div>
-
-              {/* ── Phone mockup (foreground) ── */}
-              <div
-                className="relative z-10 flex-shrink-0"
+                className="relative flex-shrink-0 z-10"
                 style={{ marginBottom: 0 }}
               >
-                {/* Phone shell */}
                 <div
                   className="relative bg-[#111] shadow-2xl"
-                  style={{
-                    width: 240,
-                    height: 520,
-                    borderRadius: 36,
-                    padding: '10px 8px',
-                    boxShadow: '0 30px 80px rgba(0,0,0,0.35)',
-                  }}
+                  style={{ width: 210, height: 460, borderRadius: 34, padding: '10px 7px', boxShadow: '0 30px 80px rgba(0,0,0,0.3)' }}
                 >
-                  {/* Notch */}
-                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-full z-20" />
-
-                  {/* Screen */}
-                  <div className="bg-white overflow-hidden h-full" style={{ borderRadius: 28 }}>
+                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-14 h-3.5 bg-black rounded-full z-20" />
+                  <div className="bg-white overflow-hidden h-full" style={{ borderRadius: 26 }}>
                     {/* Status bar */}
-                    <div className="flex items-center justify-between px-4 pt-4 pb-1">
-                      <span className="text-[10px] font-semibold text-[#0F0A2E]">9:41</span>
+                    <div className="flex items-center justify-between px-3 pt-3 pb-1">
+                      <span className="text-[9px] font-semibold text-[#0F0A2E]">9:41</span>
                       <div className="flex gap-1 items-center">
                         <div className="w-3 h-2 border border-gray-400 rounded-sm relative"><div className="absolute inset-0.5 bg-gray-400 rounded-sm w-2/3" /></div>
-                        <div className="w-2.5 h-2.5 text-gray-400">
+                        <div className="w-2 h-2 text-gray-400">
                           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
                         </div>
                       </div>
                     </div>
-
-                    {/* Nav bar */}
-                    <div className="flex items-center justify-between px-3 pb-2">
+                    {/* Nav */}
+                    <div className="flex items-center justify-between px-3 pb-1.5">
                       <div className="flex items-center gap-1">
-                        <svg className="w-3 h-3 text-gray-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-                        <span className="text-[10px] font-bold text-[#0F0A2E]">islamcendekia</span>
+                        <svg className="w-2.5 h-2.5 text-gray-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                        <span className="text-[9px] font-bold text-[#0F0A2E]">islamcendekia</span>
                       </div>
-                      <div className="flex gap-2">
-                        <svg className="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <svg className="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                      <div className="flex gap-1.5">
+                        <svg className="w-3 h-3 text-gray-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <svg className="w-3 h-3 text-gray-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
                       </div>
                     </div>
-
-                    {/* Profile section */}
-                    <div className="px-3 pb-2">
-                      {/* Avatar + stats */}
-                      <div className="flex items-center gap-3 mb-2">
-                        {/* Avatar with gradient ring */}
-                        <div className="relative flex-shrink-0">
-                          <div className="w-14 h-14 rounded-full p-[2px]" style={{ background: 'linear-gradient(135deg,#f97316,#2D1BB8)' }}>
-                            <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#2D1BB8] to-[#1a0f7a] flex items-center justify-center">
-                                <span className="text-white text-[9px] font-black">IC</span>
-                              </div>
+                    {/* Profile */}
+                    <div className="px-3 pb-1.5">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <div className="w-12 h-12 rounded-full p-[2px] flex-shrink-0" style={{ background: 'linear-gradient(135deg,#f97316,#2D1BB8)' }}>
+                          <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#2D1BB8] to-[#1a0f7a] flex items-center justify-center">
+                              <span className="text-white text-[8px] font-black">IC</span>
                             </div>
                           </div>
                         </div>
-                        {/* Stats */}
-                        <div className="flex gap-3 flex-1 justify-around">
-                          <div className="text-center">
-                            <div className="text-[11px] font-bold text-[#0F0A2E]">761</div>
-                            <div className="text-[8px] text-gray-500">Posts</div>
-                          </div>
-                          <div className="text-center">
-                            <div className="text-[11px] font-bold text-[#0F0A2E]">17.3K</div>
-                            <div className="text-[8px] text-gray-500">Followers</div>
-                          </div>
-                          <div className="text-center">
-                            <div className="text-[11px] font-bold text-[#0F0A2E]">17</div>
-                            <div className="text-[8px] text-gray-500">Following</div>
-                          </div>
+                        <div className="flex gap-2 flex-1 justify-around">
+                          <div className="text-center"><div className="text-[10px] font-bold text-[#0F0A2E]">761</div><div className="text-[7px] text-gray-500">Posts</div></div>
+                          <div className="text-center"><div className="text-[10px] font-bold text-[#0F0A2E]">17.3K</div><div className="text-[7px] text-gray-500">Followers</div></div>
+                          <div className="text-center"><div className="text-[10px] font-bold text-[#0F0A2E]">17</div><div className="text-[7px] text-gray-500">Following</div></div>
                         </div>
                       </div>
-
-                      {/* Bio */}
-                      <div className="mb-1">
-                        <p className="text-[10px] font-bold text-[#0F0A2E] leading-tight">Islam Cendekia</p>
-                        <p className="text-[8.5px] text-gray-500 leading-tight">Education</p>
-                        <p className="text-[8.5px] text-gray-600 leading-tight mt-0.5">Media edukasi Islami<br/>Membumikan Al-Qur'an dan Sunnah<br/>dalam kehidupan sehari-hari.</p>
-                        <p className="text-[8.5px] text-[#2D1BB8] mt-0.5">🔗 linktr.ee/islamcendekia</p>
-                      </div>
-
-                      {/* Buttons */}
-                      <div className="flex gap-1.5 mt-2">
-                        <div className="flex-1 py-1 bg-[#2D1BB8] text-white text-[9px] font-semibold text-center rounded-lg">Follow</div>
-                        <div className="flex-1 py-1 bg-gray-100 text-gray-700 text-[9px] font-semibold text-center rounded-lg">Message</div>
-                        <div className="w-6 py-1 bg-gray-100 text-gray-600 text-[9px] text-center rounded-lg flex items-center justify-center">▾</div>
+                      <p className="text-[9px] font-bold text-[#0F0A2E] leading-tight">Islam Cendekia</p>
+                      <p className="text-[7.5px] text-gray-500 leading-tight">Education</p>
+                      <p className="text-[7.5px] text-gray-600 leading-tight mt-0.5">Membumikan pendidikan<br/>berlandaskan Al-Qur'an dan Sunnah<br/>dalam kehidupan sehari-hari.</p>
+                      <p className="text-[7.5px] text-[#2D1BB8] mt-0.5">🔗 linktr.ee/islamcendekia</p>
+                      <div className="flex gap-1 mt-1.5">
+                        <div className="flex-1 py-0.5 bg-[#2D1BB8] text-white text-[8px] font-semibold text-center rounded-md">Follow</div>
+                        <div className="flex-1 py-0.5 bg-gray-100 text-gray-700 text-[8px] font-semibold text-center rounded-md">Message</div>
+                        <div className="w-5 py-0.5 bg-gray-100 text-gray-600 text-[8px] text-center rounded-md flex items-center justify-center">▾</div>
                       </div>
                     </div>
-
-                    {/* Highlights row */}
-                    <div className="px-3 pb-2">
-                      <div className="flex gap-2 overflow-x-hidden">
-                        {["Qur'an","Hadits","Reminder","Doa Harian","Kisah"].map((h) => (
+                    {/* Highlights */}
+                    <div className="px-3 pb-1.5">
+                      <div className="flex gap-1.5 overflow-x-hidden">
+                        {["Qur'an","Hadits","Reminder","Doa","Kisah"].map((h) => (
                           <div key={h} className="flex flex-col items-center gap-0.5 flex-shrink-0">
-                            <div className="w-8 h-8 rounded-full border border-gray-200 bg-gray-50 flex items-center justify-center">
-                              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#E8E6F8] to-[#2D1BB8]/20" />
+                            <div className="w-7 h-7 rounded-full border border-gray-200 bg-gray-50 flex items-center justify-center">
+                              <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#E8E6F8] to-[#2D1BB8]/20" />
                             </div>
-                            <span className="text-[6.5px] text-gray-500 whitespace-nowrap">{h}</span>
+                            <span className="text-[6px] text-gray-500 whitespace-nowrap">{h}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-
-                    {/* Tab icons */}
-                    <div className="border-t border-gray-100 flex justify-around py-1.5 px-3">
-                      <svg className="w-4 h-4 text-[#0F0A2E]" fill="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-                      <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="m7 2 5 10 5-10"/></svg>
-                      <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+                    {/* Tabs */}
+                    <div className="border-t border-gray-100 flex justify-around py-1 px-3">
+                      <svg className="w-3.5 h-3.5 text-[#0F0A2E]" fill="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                      <svg className="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="m7 2 5 10 5-10"/></svg>
+                      <svg className="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
                     </div>
-
-                    {/* Photo grid */}
-                    <div className="grid grid-cols-3 gap-[1px] bg-gray-200 flex-1">
+                    {/* Grid */}
+                    <div className="grid grid-cols-3 gap-[1px] bg-gray-200">
                       {[
-                        { bg: 'bg-[#1a2744]', text: 'Amalan Rezeki Diamalkan setelah Magrib', textColor: 'text-white' },
-                        { bg: 'bg-[#2a3a50]', text: 'Sony vlog camera...', textColor: 'text-white' },
-                        { bg: 'bg-[#1a2744]', text: '', textColor: 'text-white' },
-                        { bg: 'bg-[#7a3a1a]', text: 'Amalan Rezeki', textColor: 'text-white' },
-                        { bg: 'bg-[#e8f4ff]', text: 'Kebaikan', textColor: 'text-[#0F0A2E]' },
-                        { bg: 'bg-[#1a2a1a]', text: 'Q.S Ali Imran', textColor: 'text-white' },
+                        { bg: 'bg-[#1a2f6b]', text: '▶ 2.2M' },
+                        { bg: 'bg-[#3d2a1a]', text: '▶ 790K' },
+                        { bg: 'bg-[#1a3020]', text: '▶ 21K' },
+                        { bg: 'bg-[#c87820]', text: '▶ 55K' },
+                        { bg: 'bg-[#0d1f3d]', text: '▶ 94K' },
+                        { bg: 'bg-[#1a1a1a]', text: '▶ 57K' },
                       ].map((cell, i) => (
-                        <div key={i} className={`${cell.bg} relative flex items-end p-1`} style={{ height: 72 }}>
-                          <span className={`${cell.textColor} text-[5px] leading-tight opacity-80`}>{cell.text}</span>
+                        <div key={i} className={`${cell.bg} flex items-end p-1`} style={{ height: 60 }}>
+                          <span className="text-white text-[6px] font-bold opacity-90">{cell.text}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
               </div>
+
+              {/* ── Phone 2 – TikTok profile ── */}
+              <div
+                className="relative flex-shrink-0 hidden sm:block"
+                style={{ zIndex: 9, marginBottom: 40 }}
+              >
+                <div
+                  className="relative bg-[#111] shadow-2xl"
+                  style={{ width: 210, height: 460, borderRadius: 34, padding: '10px 7px', boxShadow: '0 30px 80px rgba(0,0,0,0.3)' }}
+                >
+                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-14 h-3.5 bg-black rounded-full z-20" />
+                  <div className="bg-white overflow-hidden h-full" style={{ borderRadius: 26 }}>
+                    {/* Status */}
+                    <div className="flex items-center justify-between px-3 pt-3 pb-1">
+                      <span className="text-[9px] font-semibold text-[#0F0A2E]">9:41</span>
+                      <div className="flex gap-1 items-center">
+                        <div className="w-3 h-2 border border-gray-400 rounded-sm relative"><div className="absolute inset-0.5 bg-gray-400 rounded-sm w-2/3" /></div>
+                        <div className="w-2 h-2 text-gray-400"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg></div>
+                      </div>
+                    </div>
+                    {/* TikTok header */}
+                    <div className="flex items-center justify-between px-3 pb-2">
+                      <span className="text-[9px] font-bold text-[#0F0A2E]">Islam Cendekia</span>
+                      <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    </div>
+                    {/* TikTok profile */}
+                    <div className="px-3 pb-2 flex flex-col items-center text-center">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#2D1BB8] to-[#1a0f7a] flex items-center justify-center mb-1.5">
+                        <span className="text-white text-[10px] font-black">IC</span>
+                      </div>
+                      <p className="text-[8px] text-gray-500 mb-1">@islamcendekia</p>
+                      <div className="flex gap-4 mb-2">
+                        <div className="text-center"><div className="text-[10px] font-bold text-[#0F0A2E]">89</div><div className="text-[7px] text-gray-500">Following</div></div>
+                        <div className="text-center"><div className="text-[10px] font-bold text-[#0F0A2E]">64.2K</div><div className="text-[7px] text-gray-500">Followers</div></div>
+                        <div className="text-center"><div className="text-[10px] font-bold text-[#0F0A2E]">1.1M</div><div className="text-[7px] text-gray-500">Likes</div></div>
+                      </div>
+                      <div className="flex gap-1.5 w-full mb-2">
+                        <div className="flex-1 py-1 bg-[#2D1BB8] text-white text-[8px] font-semibold text-center rounded-md">Follow</div>
+                        <div className="w-7 py-1 bg-gray-100 flex items-center justify-center rounded-md">
+                          <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+                        </div>
+                        <div className="w-7 py-1 bg-gray-100 flex items-center justify-center rounded-md">
+                          <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                        </div>
+                      </div>
+                      <p className="text-[7.5px] text-gray-600 leading-relaxed">
+                        Media edukasi Islam<br/>berlandaskan Al-Qur'an dan Sunnah<br/>dalam kehidupan sehari-hari.
+                      </p>
+                    </div>
+                    {/* Tabs */}
+                    <div className="border-t border-gray-100 flex justify-around py-1.5 px-3">
+                      <svg className="w-3.5 h-3.5 text-[#0F0A2E]" fill="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                      <svg className="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                      <svg className="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+                    </div>
+                    {/* TikTok video grid */}
+                    <div className="grid grid-cols-3 gap-[1px] bg-gray-200">
+                      {[
+                        { bg: 'bg-[#1a2f6b]', text: '▶ 2.2M' },
+                        { bg: 'bg-[#3d2a1a]', text: '▶ 360K' },
+                        { bg: 'bg-[#c87820]', text: '▶ 94K' },
+                        { bg: 'bg-[#0d1f3d]', text: '▶ 55K' },
+                        { bg: 'bg-[#1a1a1a]', text: '▶ 57K' },
+                        { bg: 'bg-[#1a3020]', text: '▶ 18K' },
+                      ].map((cell, i) => (
+                        <div key={i} className={`${cell.bg} flex items-end p-1`} style={{ height: 60 }}>
+                          <span className="text-white text-[6px] font-bold opacity-90">{cell.text}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* ── Floating stat card ── */}
+              <div
+                className="absolute hidden lg:flex flex-col gap-1 bg-white border border-[#E8E6F8] rounded-2xl shadow-xl p-5"
+                style={{ right: -20, top: 60, zIndex: 20, minWidth: 160 }}
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[10px] text-[#9B97C0] font-medium">Follower Growth</span>
+                  <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+                </div>
+                <p className="text-xl font-black text-[#0F0A2E] leading-tight">6K → 17.3K</p>
+                <p className="text-sm font-bold text-emerald-500">(+188%)</p>
+              </div>
+
             </div>
           </div>
         </div>
