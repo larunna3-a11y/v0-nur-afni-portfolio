@@ -189,15 +189,100 @@ const bestTimes = {
 }
 
 const tools = [
-  'ChatGPT',
-  'Google Trends',
-  'TikTok Creative Center',
-  'app.aurisai.io',
-  'copy.ai',
-  'pake.ai',
-  'Google Sheets',
-  'Google Docs',
-  'Google Drive',
+  {
+    name: 'ChatGPT',
+    bg: '#000000',
+    logo: (
+      <svg viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+        <path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-6.651-2.458 10.079 10.079 0 0 0-9.618 6.977 9.967 9.967 0 0 0-6.651 4.834 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 6.651 2.458 10.079 10.079 0 0 0 9.618-6.977 9.967 9.967 0 0 0 6.651-4.834 10.079 10.079 0 0 0-1.24-11.818zm-15.113 21.348a7.474 7.474 0 0 1-4.799-1.735c.061-.033.168-.091.237-.134l7.964-4.6a1.294 1.294 0 0 0 .655-1.134V19.054l3.366 1.944a.12.12 0 0 1 .066.092v9.299a7.505 7.505 0 0 1-7.49 7.829zm-16.134-6.876a7.471 7.471 0 0 1-.894-5.023c.06.036.162.099.237.141l7.964 4.6a1.297 1.297 0 0 0 1.308 0l9.724-5.614v3.888a.12.12 0 0 1-.048.103l-8.051 4.649a7.504 7.504 0 0 1-10.24-2.744zm-2.09-17.496a7.47 7.47 0 0 1 3.897-3.286c0 .068-.004.19-.004.274v9.201a1.294 1.294 0 0 0 .654 1.132l9.723 5.614-3.366 1.944a.12.12 0 0 1-.114.012L10.948 23.84a7.504 7.504 0 0 1-7.752-9.994zm27.556 6.437l-9.724-5.615 3.367-1.943a.121.121 0 0 1 .114-.012l8.048 4.648a7.498 7.498 0 0 1-1.158 13.528v-9.476a1.293 1.293 0 0 0-.647-1.13zm3.35-5.043c-.059-.037-.162-.099-.236-.141l-7.965-4.6a1.298 1.298 0 0 0-1.308 0l-9.723 5.614v-3.888a.12.12 0 0 1 .048-.103l8.05-4.645a7.497 7.497 0 0 1 11.135 7.763zm-21.063 6.929l-3.367-1.944a.12.12 0 0 1-.065-.092v-9.299a7.497 7.497 0 0 1 12.293-5.756 6.94 6.94 0 0 0-.236.134l-7.965 4.6a1.294 1.294 0 0 0-.654 1.132l-.006 11.225zm1.829-3.943l4.33-2.501 4.332 2.497v4.998l-4.331 2.5-4.331-2.5V18.24z" fill="white"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'Google Trends',
+    bg: '#4285F4',
+    logo: (
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none">
+        <path d="M3 17l4-4 4 4 4-6 4 2" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="3" cy="17" r="1.5" fill="white"/>
+        <circle cx="7" cy="13" r="1.5" fill="white"/>
+        <circle cx="11" cy="17" r="1.5" fill="white"/>
+        <circle cx="15" cy="11" r="1.5" fill="white"/>
+        <circle cx="19" cy="13" r="1.5" fill="white"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'TikTok Creative Center',
+    bg: '#000000',
+    logo: (
+      <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6">
+        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'Auris AI',
+    bg: '#7C3AED',
+    logo: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+        <path d="M12 3a9 9 0 0 1 9 9v3.5A3.5 3.5 0 0 1 17.5 19H16a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2.93A7 7 0 0 0 5.07 11H8a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H6.5A3.5 3.5 0 0 1 3 15.5V12a9 9 0 0 1 9-9z" stroke="white" strokeWidth="1.8"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'Copy.ai',
+    bg: '#6D28D9',
+    logo: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+        <rect x="9" y="9" width="13" height="13" rx="2" stroke="white" strokeWidth="1.8"/>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="white" strokeWidth="1.8"/>
+        <path d="M13 13h5M13 17h5" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'Pake.ai',
+    bg: '#0EA5E9',
+    logo: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+        <circle cx="12" cy="12" r="3" fill="white"/>
+        <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'Google Sheets',
+    bg: '#0F9D58',
+    logo: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+        <rect x="4" y="2" width="16" height="20" rx="2" stroke="white" strokeWidth="1.8"/>
+        <path d="M8 10h8M8 14h8M8 18h5" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+        <path d="M8 2v4h8" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'Google Docs',
+    bg: '#4285F4',
+    logo: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+        <rect x="4" y="2" width="16" height="20" rx="2" stroke="white" strokeWidth="1.8"/>
+        <path d="M8 10h8M8 14h8M8 18h5" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+        <path d="M14 2v5h6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'Google Drive',
+    bg: '#FBBC04',
+    logo: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+        <path d="M12 3L3 19h6l3-5 3 5h6L12 3z" stroke="white" strokeWidth="1.8" strokeLinejoin="round"/>
+        <path d="M7 14h10" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
 ]
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -751,8 +836,14 @@ export default function IslamCendekiaCaseStudy() {
               </h2>
               <div className="grid grid-cols-3 gap-3">
                 {tools.map((tool) => (
-                  <div key={tool} className="bg-white border border-[#E8E6F8] rounded-xl p-3 text-center">
-                    <p className="text-[10px] font-medium text-[#4B4680] leading-tight">{tool}</p>
+                  <div key={tool.name} className="bg-white border border-[#E8E6F8] rounded-xl p-3 flex flex-col items-center gap-2 hover:shadow-sm transition-shadow">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: tool.bg }}
+                    >
+                      {tool.logo}
+                    </div>
+                    <p className="text-[10px] font-medium text-[#4B4680] text-center leading-tight">{tool.name}</p>
                   </div>
                 ))}
               </div>
