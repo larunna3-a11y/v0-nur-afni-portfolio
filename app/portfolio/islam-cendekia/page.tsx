@@ -63,7 +63,7 @@ const topContent = [
     comments: '152',
     saves: '21K',
     date: '26 Oct 2023',
-    image: '/ic-sukses.png',
+    image: '/ic-magrib.png',
     gradient: 'linear-gradient(180deg, #1a2f6b 0%, #2a4a8a 40%, #0d1f45 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
