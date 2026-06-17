@@ -24,34 +24,34 @@ export default function DigitalProductLab() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   const statCards = [
-    { label: '10+ Projects', value: '10', suffix: '' },
-    { label: '4 AI Tools', value: '4', suffix: '' },
-    { label: 'Product Design', value: '100%', suffix: '' },
-    { label: 'UI/UX Prototyping', value: 'Active', suffix: '' },
+    { label: 'Projects Shipped', value: '3+', suffix: '' },
+    { label: 'Ideas in Progress', value: '4', suffix: '' },
+    { label: 'Self-Taught', value: '100%', suffix: '' },
+    { label: 'Always Building', value: '✦', suffix: '' },
   ]
 
   const aiWorkflow = [
     {
       tool: 'ChatGPT',
-      description: 'Research, planning, storytelling, and structure',
+      description: 'Where it starts — brainstorming, researching, and mapping out what the thing should actually do',
       icon: Lightbulb,
       color: 'from-green-500 to-green-600',
     },
     {
       tool: 'Claude',
-      description: 'Refining requirements and creating detailed prompts',
+      description: 'Thinking partner for shaping the idea, writing clearer briefs, and figuring out what I actually want to build',
       icon: Zap,
       color: 'from-amber-500 to-amber-600',
     },
     {
       tool: 'Figma AI',
-      description: 'Rapid design exploration and iterations',
+      description: 'Exploring how it could look before committing to anything — fast, low-stakes visual thinking',
       icon: Palette,
       color: 'from-purple-500 to-purple-600',
     },
     {
       tool: 'V0',
-      description: 'Transforming ideas into functional website prototypes',
+      description: 'Where the idea becomes a real, clickable thing — no coding background required',
       icon: Code,
       color: 'from-blue-500 to-blue-600',
     },
@@ -61,7 +61,7 @@ export default function DigitalProductLab() {
     {
       id: 1,
       name: 'Excel Template Bank',
-      description: 'Comprehensive library of pre-built Excel templates for business operations, finance, and project management',
+      description: 'Started because I kept making the same spreadsheets over and over. Now it\'s a proper library of ready-to-use templates for business ops, finance, and project tracking.',
       tools: ['V0', 'Claude', 'ChatGPT', 'Figma AI'],
       status: 'Webite',
       statusColor: 'from-green-500 to-green-600',
@@ -71,7 +71,7 @@ export default function DigitalProductLab() {
     {
       id: 2,
       name: 'WorkflowOS',
-      description: 'Structured project workflows with checkpoints, approvals, evidence uploads, role-based access, and progress tracking.',
+      description: 'Built out of frustration with messy group projects. A structured workspace where tasks actually get done — with checkpoints, approvals, and clear roles.',
       tools: ['ChatGPT', 'Claude', 'LovableDev'],
       status: 'Projects Task',
       statusColor: 'from-pink-500 to-pink-600',
@@ -81,7 +81,7 @@ export default function DigitalProductLab() {
     {
       id: 3,
       name: 'ArtArchive',
-      description: 'Curiosity-driven digital museum platform connecting artworks, artists, cultures, and historical stories from museums worldwide.',
+      description: 'A passion project born from late-night Wikipedia rabbit holes. A digital space that connects artworks, artists, and the stories behind them.',
       tools: ['Lovable', 'Claude', 'ChatGPT'],
       status: 'Art Galery',
       statusColor: 'from-cyan-500 to-teal-600',
@@ -91,7 +91,7 @@ export default function DigitalProductLab() {
     {
       id: 4,
       name: 'Project Management App',
-      description: 'Collaborative workspace for teams with real-time updates',
+      description: 'An idea still taking shape — what would the ideal team workspace actually look like if you designed it from scratch?',
       tools: ['V0', 'Figma AI', 'Claude'],
       status: 'Prototype',
       statusColor: 'from-blue-500 to-blue-600',
@@ -100,7 +100,7 @@ export default function DigitalProductLab() {
     {
       id: 5,
       name: 'Design System UI Kit',
-      description: 'Comprehensive component library and design tokens',
+      description: 'Building a personal design system so every future project starts with a consistent, polished foundation.',
       tools: ['Figma AI', 'V0'],
       status: 'Ongoing',
       statusColor: 'from-amber-500 to-amber-600',
@@ -109,7 +109,7 @@ export default function DigitalProductLab() {
     {
       id: 6,
       name: 'Learning Platform',
-      description: 'Interactive course platform with progress tracking',
+      description: 'What if learning something new online didn\'t feel like a chore? Exploring what a genuinely enjoyable course platform could look like.',
       tools: ['ChatGPT', 'V0', 'Figma AI'],
       status: 'Concept',
       statusColor: 'from-purple-500 to-purple-600',
@@ -118,17 +118,17 @@ export default function DigitalProductLab() {
   ]
 
   const timelineEvents = [
-    { year: 2026, quarter: 'Q1', projects: 2, focus: 'Foundational experiments' },
-    { year: 2026, quarter: 'Q2', projects: 3, focus: 'MVP development' },
-    { year: 2026, quarter: 'Q3', projects: 4, focus: 'Design systems' },
-    { year: 2026, quarter: 'Q4', projects: 5, focus: 'Advanced prototypes' },
+    { year: 2026, quarter: 'Q1', projects: 2, focus: 'First attempts, lots of learning' },
+    { year: 2026, quarter: 'Q2', projects: 3, focus: 'Ideas that actually work' },
+    { year: 2026, quarter: 'Q3', projects: 4, focus: 'Building more intentionally' },
+    { year: 2026, quarter: 'Q4', projects: 5, focus: 'Bigger, bolder experiments' },
   ]
 
   const upcomingExperiments = [
-    { name: 'Mobile App Prototype', description: 'Cross-platform mobile experience' },
-    { name: 'AI Assistant Interface', description: 'Conversational UI design' },
-    { name: 'Data Visualization Suite', description: 'Complex data storytelling' },
-    { name: 'Web3 Dashboard', description: 'Blockchain integration exploration' },
+    { name: 'Mobile App Prototype', description: 'What would this feel like on a phone? Exploring the same ideas in a smaller, more personal format.' },
+    { name: 'AI Assistant Interface', description: 'Designing a smarter, warmer way to interact with AI — less robotic, more like talking to someone useful.' },
+    { name: 'Data Visualization Suite', description: 'Because numbers don\'t tell stories on their own. Building tools that make data actually make sense.' },
+    { name: 'E-Commerce Toolkit', description: 'A practical suite of tools for marketplace sellers — built from years of managing shops firsthand.' },
   ]
 
   return (
@@ -141,13 +141,13 @@ export default function DigitalProductLab() {
               <Link href="/portfolio" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm mb-6">
                 ← Back to Portfolio
               </Link>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">Digital Product Lab</h1>
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">The Lab</h1>
               <p className="text-lg text-white/90 mb-8 leading-relaxed">
-                A collection of website designs, portfolio projects, marketplace concepts, and digital product prototypes created through AI-assisted workflows.
+                What happens when a marketer gets curious and refuses to stop at "that's not my job"? This. A personal space where ideas become real things — tools, products, and websites built out of genuine curiosity and a habit of figuring things out.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button className="bg-white text-[#6D4AFF] px-6 py-3 rounded-lg font-semibold hover:bg-white/90 transition-colors flex items-center gap-2">
-                  Explore Projects <ArrowRight className="w-4 h-4" />
+                  See What I've Built <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </motion.div>
@@ -169,9 +169,9 @@ export default function DigitalProductLab() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.div variants={fadeIn} className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">How These Projects Are Built</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">How I Actually Build These</h2>
               <p className="text-gray-600 max-w-3xl">
-                Each project follows a practical workflow that combines research, planning, design exploration, and rapid prototyping to transform ideas into working websites and digital products.
+                I'm not a developer. But I've learned that curiosity + the right tools can take you surprisingly far. Here's the honest breakdown of how I go from "what if this existed?" to something you can actually click on.
               </p>
             </motion.div>
 
@@ -202,8 +202,8 @@ export default function DigitalProductLab() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.div variants={fadeIn} className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">Featured Projects</h2>
-              <p className="text-gray-600">A growing collection of websites, portfolio projects, marketplace concepts, and digital product prototypes.</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">Things I've Built</h2>
+              <p className="text-gray-600">Each one started as a problem I noticed, a gap I wanted to fill, or just a question I couldn't stop thinking about.</p>
             </motion.div>
 
             <motion.div variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -264,8 +264,8 @@ export default function DigitalProductLab() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.div variants={fadeIn} className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">Growth Timeline</h2>
-              <p className="text-gray-600">Evolution of the Digital Product Lab throughout 2026</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">How This Has Grown</h2>
+              <p className="text-gray-600">What started as one experiment has quietly become a habit. Here's how it's been building up.</p>
             </motion.div>
 
             <motion.div variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -277,7 +277,7 @@ export default function DigitalProductLab() {
                 >
                   <div className="text-sm font-semibold text-[#6D4AFF] mb-2">{event.year} {event.quarter}</div>
                   <div className="text-3xl font-bold text-[#0F0A2E] mb-2">{event.projects}</div>
-                  <div className="text-sm text-gray-600 mb-3">Projects Created</div>
+                  <div className="text-sm text-gray-600 mb-3">Things shipped</div>
                   <p className="text-xs text-gray-500 italic">{event.focus}</p>
                 </motion.div>
               ))}
@@ -291,8 +291,8 @@ export default function DigitalProductLab() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.div variants={fadeIn} className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">Future Experiments</h2>
-              <p className="text-gray-600">Upcoming projects in development and planning</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">What's Coming Next</h2>
+              <p className="text-gray-600">Ideas living rent-free in my head. Some are half-sketched, some are just a question I haven't answered yet.</p>
             </motion.div>
 
             <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-6">
@@ -321,10 +321,10 @@ export default function DigitalProductLab() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.h2 variants={fadeIn} className="text-3xl lg:text-4xl font-bold mb-6">
-              Interested in Rapid Prototyping?
+              Got an idea you can't stop thinking about?
             </motion.h2>
             <motion.p variants={fadeIn} className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss how AI-assisted development can accelerate your product innovation and bring ideas to life faster.
+              So do I — constantly. If you want to collaborate, need a fresh perspective, or just want to talk through something, I&apos;m always up for it.
             </motion.p>
             <motion.div variants={fadeIn}>
               <Link
