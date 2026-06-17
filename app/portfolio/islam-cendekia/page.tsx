@@ -354,13 +354,13 @@ export default function IslamCendekiaCaseStudy() {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 text-sm font-medium text-[#0F0A2E]">
                   <div className="w-8 h-8 rounded-full border border-[#E8E6F8] bg-white shadow-sm overflow-hidden flex items-center justify-center">
-                    <Image src="/Instagram-ic.jpeg" alt="Instagram" width={32} height={32} className="w-full h-full object-cover rounded-full" />
+                    <Image src="/IC-Logo.png" alt="Instagram" width={32} height={32} className="w-full h-full object-cover rounded-full" />
                   </div>
                   @islamcendekia.id
                 </div>
                 <div className="flex items-center gap-2 text-sm font-medium text-[#0F0A2E]">
                   <div className="w-8 h-8 rounded-full border border-[#E8E6F8] bg-white shadow-sm overflow-hidden flex items-center justify-center">
-                    <Image src="/Tiktok-ic.jpeg" alt="TikTok" width={32} height={32} className="w-full h-full object-cover rounded-full" />
+                    <Image src="/IC-Logo.png" alt="TikTok" width={32} height={32} className="w-full h-full object-cover rounded-full" />
                   </div>
                   @islamcendekia
                 </div>
