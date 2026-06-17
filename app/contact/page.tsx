@@ -1,6 +1,18 @@
 'use client'
 
+import { motion } from 'framer-motion'
+
 import { useState } from 'react'
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+}
+
+const stagger = {
+  animate: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } }
+}
 
 const serviceOptions = [
   'Social Media Management',
@@ -38,19 +50,19 @@ export default function ContactPage() {
       {/* Header */}
       <section className="bg-[#2D1BB8] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white">{"Let's Work Together"}</h1>
-          <p className="mt-4 text-[#9B97C0] max-w-2xl mx-auto">
+          <motion.h1 variants={fadeIn} initial="initial" animate="animate" className="text-4xl sm:text-5xl font-bold text-white">{"Let's Work Together"}</motion.h1>
+          <motion.p variants={fadeIn} initial="initial" animate="animate" className="mt-4 text-[#9B97C0] max-w-2xl mx-auto">
             Have a project in mind? {"Let's"} talk about how I can help your brand grow.
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Contact Section */}
       <section className="bg-[#F8F7FF] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <motion.div variants={stagger} initial="initial" whileInView="animate" viewport={{ once: true }} className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white border border-[#E8E6F8] rounded-2xl p-8">
+            <motion.div variants={fadeIn} className="bg-white border border-[#E8E6F8] rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-[#0F0A2E] mb-6">Send a Message</h2>
               <form
                action="https://formsubmit.co/nurafni4489@gmail.com"
