@@ -63,6 +63,7 @@ const topContent = [
     comments: '152',
     saves: '21K',
     date: '26 Oct 2023',
+    image: '/ic-sukses.png',
     gradient: 'linear-gradient(180deg, #1a2f6b 0%, #2a4a8a 40%, #0d1f45 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -75,6 +76,7 @@ const topContent = [
     comments: '61',
     saves: '8,102',
     date: '28 Dec 2023',
+    image: '/ic-sepertiga-malam.png',
     gradient: 'linear-gradient(180deg, #2a1a10 0%, #3d1f0d 40%, #1a0a05 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -87,6 +89,7 @@ const topContent = [
     comments: '0',
     saves: '33',
     date: '14 Dec 2023',
+    image: '/ic-magrib.png',
     gradient: 'linear-gradient(180deg, #c87820 0%, #d4921c 40%, #3d1a05 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -99,6 +102,7 @@ const topContent = [
     comments: '0',
     saves: '11',
     date: '19 Oct 2023',
+    image: '/ic-doa-harian.png',
     gradient: 'linear-gradient(180deg, #2a1a0a 0%, #4a2a10 40%, #1a0f05 100%)',
     textColor: 'white',
     accent: '#ffffff',
@@ -111,6 +115,7 @@ const topContent = [
     comments: '0',
     saves: '118',
     date: '7 Sep 2023',
+    image: '/ic-21hari.png',
     gradient: 'linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 40%, #0a0a0a 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -123,6 +128,7 @@ const topContent = [
     comments: '13',
     saves: '255',
     date: '27 Sep 2023',
+    image: '/ic-perang-badr.png',
     gradient: 'linear-gradient(180deg, #0d1f3d 0%, #1a3060 40%, #0a1520 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -135,6 +141,7 @@ const topContent = [
     comments: '5',
     saves: '31',
     date: '29 Nov 2023',
+    image: '/ic-firaun.png',
     gradient: 'linear-gradient(180deg, #2a1a0a 0%, #3d2510 40%, #1a0f05 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -654,10 +661,23 @@ export default function IslamCendekiaCaseStudy() {
               {/* Thumbnail */}
               <div
                 className="relative flex flex-col justify-between p-4"
-                style={{ background: item.gradient, height: 280 }}
+                style={{ height: 280, overflow: 'hidden' }}
               >
+                {/* Background: real screenshot image */}
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0" style={{ background: item.gradient }} />
+                )}
+                {/* Dark overlay for readability */}
+                <div className="absolute inset-0 bg-black/30" />
+
                 {/* IC logo badge */}
-                <div className="flex items-center gap-1.5">
+                <div className="relative flex items-center gap-1.5">
                   <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
                     <span className="text-white text-[6px] font-black">IC</span>
                   </div>
@@ -665,7 +685,7 @@ export default function IslamCendekiaCaseStudy() {
                 </div>
 
                 {/* Title */}
-                <div>
+                <div className="relative">
                   {item.title.split('\n').map((line, li) => (
                     <p key={li} className="font-bold leading-tight text-[13px]" style={{ color: li > 0 ? item.accent : 'white' }}>
                       {line}
