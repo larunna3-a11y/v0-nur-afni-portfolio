@@ -28,27 +28,29 @@ const kpiCards = [
     icon: Users,
     value: '6K → 17.3K',
     label: 'Followers',
-    sub: '(+188%)',
+    sub: '+188%',
     subColor: 'text-emerald-400',
-    bg: 'bg-[#1A3A6B]',
   },
   {
     icon: Eye,
-    value: '984K',
+    value: '984,160',
     label: 'Accounts Reached',
-    bg: 'bg-[#1A3A6B]',
+    sub: '1,073,118 Impressions',
+    subColor: 'text-blue-300',
   },
   {
     icon: Users,
-    value: '73.3K',
+    value: '73,355',
     label: 'Accounts Engaged',
-    bg: 'bg-[#1A3A6B]',
+    sub: '+453% Followers · +1,015% Non-followers',
+    subColor: 'text-emerald-400',
   },
   {
     icon: Heart,
-    value: '89.6K',
+    value: '89,643',
     label: 'Content Interactions',
-    bg: 'bg-[#1A3A6B]',
+    sub: '+924% vs prev. period',
+    subColor: 'text-emerald-400',
   },
 ]
 
@@ -461,9 +463,10 @@ export default function IslamCendekiaCaseStudy() {
       {/* ── Key Results ── */}
       <section className="py-16 bg-[#F8F7FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-[#2D1BB8] mb-8 tracking-wide uppercase text-sm">
+          <h2 className="text-sm font-bold text-[#2D1BB8] mb-2 uppercase tracking-wide">
             KEY RESULTS
           </h2>
+          <p className="text-xs text-[#9B97C0] mb-8">Sep 20 – Dec 18, 2023 · Last 90 days of management</p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             {kpiCards.map((card, i) => {
@@ -472,21 +475,48 @@ export default function IslamCendekiaCaseStudy() {
                 <div key={i} className="bg-[#1A3A6B] rounded-2xl p-6 text-white">
                   <Icon className="w-7 h-7 mb-3 text-blue-300" />
                   <div className="text-2xl font-bold mb-0.5">{card.value}</div>
-                  <div className="text-sm text-blue-200">{card.label}</div>
+                  <div className="text-sm text-blue-200 mb-1">{card.label}</div>
                   {card.sub && (
-                    <div className={`text-sm font-semibold mt-1 ${card.subColor}`}>{card.sub}</div>
+                    <div className={`text-[11px] font-semibold leading-tight ${card.subColor}`}>{card.sub}</div>
                   )}
                 </div>
               )
             })}
           </div>
 
+          {/* Breakdown stats row */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            {[
+              { label: 'Reels Interactions', value: '89,594', delta: '+933%', color: 'text-emerald-600' },
+              { label: 'Likes', value: '53,212', delta: null, color: '' },
+              { label: 'Saves', value: '23,723', delta: null, color: '' },
+              { label: 'Shares', value: '12,463', delta: null, color: '' },
+            ].map((stat, i) => (
+              <div key={i} className="bg-white border border-[#E8E6F8] rounded-xl px-4 py-3">
+                <p className="text-[11px] text-[#9B97C0] mb-1">{stat.label}</p>
+                <p className="text-lg font-bold text-[#0F0A2E]">{stat.value}</p>
+                {stat.delta && <p className={`text-[11px] font-semibold ${stat.color}`}>{stat.delta} vs prev. period</p>}
+              </div>
+            ))}
+          </div>
+
           {/* Impact callout */}
           <div className="bg-white border border-[#E8E6F8] rounded-2xl p-6">
-            <p className="text-sm font-bold text-[#2D1BB8] mb-2 uppercase tracking-wide">The Impact</p>
-            <p className="text-[#4B4680] text-sm leading-relaxed">
-              Scaled the account's audience organically and built a consistent content system that drives high reach, engagement, and saves.
-            </p>
+            <p className="text-sm font-bold text-[#2D1BB8] mb-3 uppercase tracking-wide">The Impact</p>
+            <div className="grid sm:grid-cols-3 gap-4 text-sm text-[#4B4680] leading-relaxed">
+              <div className="flex gap-3">
+                <div className="w-1 rounded-full bg-[#2D1BB8] flex-shrink-0" />
+                <p>Grew reach to <span className="font-bold text-[#0F0A2E]">984,160 accounts</span> with <span className="font-bold text-[#0F0A2E]">1,073,118 impressions</span> — 980K of which were non-followers, showing strong organic discovery.</p>
+              </div>
+              <div className="flex gap-3">
+                <div className="w-1 rounded-full bg-[#2D1BB8] flex-shrink-0" />
+                <p>Drove <span className="font-bold text-[#0F0A2E]">89,643 content interactions</span> (+924%) with Reels alone generating <span className="font-bold text-[#0F0A2E]">23,723 saves</span> and <span className="font-bold text-[#0F0A2E]">12,463 shares</span>.</p>
+              </div>
+              <div className="flex gap-3">
+                <div className="w-1 rounded-full bg-[#2D1BB8] flex-shrink-0" />
+                <p>Profile visits reached <span className="font-bold text-[#0F0A2E]">6,879</span> (+445%) with <span className="font-bold text-[#0F0A2E]">34 external link taps</span> (+385%), converting content views into real audience interest.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -516,7 +546,7 @@ export default function IslamCendekiaCaseStudy() {
               </button>
             </div>
           </div>
-          <p className="text-xs text-[#9B97C0] mb-6">During my management, more than 10 pieces of content achieved 10K+ impressions with high engagement consistently across Instagram &amp; TikTok.</p>
+          <p className="text-xs text-[#9B97C0] mb-6">Top Reels by reach & engagement. The #1 reel alone hit <span className="font-semibold text-[#4B4680]">2.2M views</span> and <span className="font-semibold text-[#4B4680]">53K likes</span> — consistently outperforming across Instagram &amp; TikTok.</p>
         </div>
 
         {/* Scroll container */}
