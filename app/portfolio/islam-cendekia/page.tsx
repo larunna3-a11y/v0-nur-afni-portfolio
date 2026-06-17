@@ -305,7 +305,7 @@ export default function IslamCendekiaCaseStudy() {
           className="inline-flex items-center gap-2 text-sm text-[#4B4680] hover:text-[#2D1BB8] transition-colors font-medium"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Work
+          Back to Portfolio
         </Link>
       </div>
 
