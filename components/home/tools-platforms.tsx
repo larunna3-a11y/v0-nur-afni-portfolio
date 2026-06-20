@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from 'fram6er-motion'
+import { motion } from 'framer-motion'
 
 const fadeIn = {
-  initial: { opacity: 0, y: 1 },
+  initial: { opacity: 0, y: 16 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
 }
