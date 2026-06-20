@@ -55,6 +55,24 @@ export default function DigitalProductLab() {
       icon: Code,
       color: 'from-blue-500 to-blue-600',
     },
+    {
+      tool: 'Lovable',
+      description: 'Turning prompts into full working web apps — my go-to when I want something that actually runs, not just looks good',
+      icon: Zap,
+      color: 'from-pink-500 to-rose-600',
+    },
+    {
+      tool: 'Uizard',
+      description: 'Sketching out UI concepts fast — great for when the idea is clear in my head but I need to get it on screen quickly',
+      icon: Palette,
+      color: 'from-cyan-500 to-cyan-600',
+    },
+    {
+      tool: 'Stitch',
+      description: 'Pulling together design pieces and experimenting with how different elements can work together in one place',
+      icon: Lightbulb,
+      color: 'from-violet-500 to-violet-600',
+    },
   ]
 
   const projects = [
