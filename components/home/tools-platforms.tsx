@@ -111,9 +111,9 @@ function ToolCard({ tool }: { tool: Tool }) {
       href={tool.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group aspect-square flex flex-col items-center justify-center gap-2.5 bg-white rounded-2xl border border-[#E8E6F8] p-4 hover:border-[#2D1BB8]/40 hover:shadow-[0_8px_24px_-8px_rgba(45,27,184,0.18)] transition-all duration-300 hover:-translate-y-0.5"
+      className="group aspect-square flex flex-col items-center justify-center gap-1.5 bg-white rounded-xl border border-[#E8E6F8] p-2.5 hover:border-[#2D1BB8]/40 hover:shadow-[0_6px_16px_-6px_rgba(45,27,184,0.18)] transition-all duration-300 hover:-translate-y-0.5"
     >
-      <div className="w-11 h-11 flex items-center justify-center shrink-0">
+      <div className="w-7 h-7 flex items-center justify-center shrink-0">
         <img
           src={tool.logo}
           alt={`${tool.name} logo`}
@@ -123,8 +123,8 @@ function ToolCard({ tool }: { tool: Tool }) {
       </div>
 
       <div className="text-center min-w-0 w-full">
-        <p className="text-xs font-semibold text-[#0F0A2E] truncate px-1">{tool.name}</p>
-        <p className="text-[10px] text-[#9B97C0] mt-0.5">{tool.tag}</p>
+        <p className="text-[10px] font-semibold text-[#0F0A2E] truncate px-0.5 leading-tight">{tool.name}</p>
+        <p className="text-[9px] text-[#9B97C0] leading-tight">{tool.tag}</p>
       </div>
     </motion.a>
   )
@@ -152,7 +152,7 @@ export function ToolsPlatforms() {
         </motion.div>
 
         {/* Categories */}
-        <div className="space-y-14">
+        <div className="space-y-10">
           {categories.map((category) => (
             <motion.div
               key={category.id}
@@ -166,7 +166,7 @@ export function ToolsPlatforms() {
                 <p className="text-sm text-[#9B97C0] mt-1 max-w-xl">{category.description}</p>
               </motion.div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-2">
                 {category.tools.map((tool) => (
                   <ToolCard key={tool.name} tool={tool} />
                 ))}
