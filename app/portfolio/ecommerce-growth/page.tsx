@@ -18,7 +18,7 @@ import {
   AreaChart,
   Area,
 } from 'recharts'
-import { ChevronLeft, ChevronRight, TrendingUp, ShoppingCart, Target, Calendar } from 'lucide-react'
+import { ChevronLeft, ChevronRight, TrendingUp, ShoppingCart, Target, Calendar, Zap } from 'lucide-react'
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -296,10 +296,46 @@ const lazadaGrowthPhases = [
   }
 ]
 
+
+// ── Categorized screenshots for the QCY-style analytics tab system ──
+// Scalable structure: each platform has its own overview/ads/livestream buckets.
+// Currently all existing screenshots map to "overview" since that is the only
+// screenshot data captured so far. Empty arrays render gracefully and can be
+// filled in later without touching the UI logic.
+
+const shopeeOverviewShots = screenshots.map((s) => ({
+  month: s.month,
+  description: s.highlight,
+  image: s.url,
+  revenue: s.revenue,
+}))
+const shopeeAdsShots: typeof shopeeOverviewShots = []
+const shopeeLiveShots: typeof shopeeOverviewShots = []
+
+const tiktokOverviewShots = tiktokScreenshots.map((s) => ({
+  month: s.month,
+  description: s.highlight,
+  image: s.url,
+  revenue: s.revenue,
+}))
+const tiktokAdsShots: typeof tiktokOverviewShots = []
+const tiktokLiveShots: typeof tiktokOverviewShots = []
+
+const lazadaOverviewShots = lazadaScreenshots.map((s) => ({
+  month: s.month,
+  description: s.highlight,
+  image: s.url,
+  revenue: s.revenue,
+}))
+const lazadaAdsShots: typeof lazadaOverviewShots = []
+const lazadaLiveShots: typeof lazadaOverviewShots = []
+
 export default function EcommerceGrowthCaseStudy() {
 
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedPlatform, setSelectedPlatform] = useState('shopee')
+  const [activeAnalytics, setActiveAnalytics] = useState('overview')
+
   const platformData = {
     shopee: {
       monthlyData: shopeeMonthlyData,
@@ -320,6 +356,25 @@ export default function EcommerceGrowthCaseStudy() {
     }
   }
 
+  // Categorized screenshots per platform for the QCY-style analytics tabs
+  const categorizedScreenshots = {
+    shopee: {
+      overview: shopeeOverviewShots,
+      ads: shopeeAdsShots,
+      livestream: shopeeLiveShots,
+    },
+    'tiktok shop': {
+      overview: tiktokOverviewShots,
+      ads: tiktokAdsShots,
+      livestream: tiktokLiveShots,
+    },
+    lazada: {
+      overview: lazadaOverviewShots,
+      ads: lazadaAdsShots,
+      livestream: lazadaLiveShots,
+    },
+  }
+
   const activeScreenshots =
     platformData[selectedPlatform as keyof typeof platformData].screenshots
 
@@ -328,6 +383,15 @@ export default function EcommerceGrowthCaseStudy() {
 
   const activePlatform =
     platformData[selectedPlatform as keyof typeof platformData]
+
+  // Screenshots for the active tab (overview/ads/livestream), falling back to
+  // overview if a bucket is empty so the UI never shows a blank state.
+  const currentCategorized =
+    categorizedScreenshots[selectedPlatform as keyof typeof categorizedScreenshots]
+  const currentScreenshots =
+    currentCategorized[activeAnalytics as keyof typeof currentCategorized].length > 0
+      ? currentCategorized[activeAnalytics as keyof typeof currentCategorized]
+      : currentCategorized.overview
 
   const platformStats = {
     shopee: {
@@ -355,6 +419,14 @@ export default function EcommerceGrowthCaseStudy() {
   const activeStats =
     platformStats[selectedPlatform as keyof typeof platformStats]
 
+  // KPI cards for the new QCY-style hero (right side)
+  const kpiCards = [
+    { label: 'Monthly Revenue', value: 'Rp24M → Rp982M', icon: TrendingUp },
+    { label: 'Revenue Growth', value: '31x', icon: Zap },
+    { label: 'Progress Period', value: '20 Months', icon: Calendar },
+    { label: 'Peak Monthly Orders', value: activeStats.orders, icon: ShoppingCart },
+  ]
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % activeScreenshots.length)
   }
@@ -363,68 +435,91 @@ export default function EcommerceGrowthCaseStudy() {
     setCurrentSlide((prev) => (prev - 1 + activeScreenshots.length) % activeScreenshots.length)
   }
 
+  const monthlySlide = currentSlide >= currentScreenshots.length ? 0 : currentSlide
+
   const formatRupiah = (value: number) => {
     return `Rp${value.toFixed(0)}M`
   }
 
   return (
     <div className="pt-16 bg-[#F8F7FF]">
-      {/* Header */}
-      <section className="bg-[#2D1BB8] py-16 relative overflow-hidden">
+
+      {/* ── HERO (QCY-style gradient layout) ── */}
+      <section className="relative bg-gradient-to-br from-[#6D4AFF] to-[#2D1BB8] text-white py-20 lg:py-32 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#F97316] rounded-full blur-3xl opacity-20" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4A35D4] rounded-full blur-3xl opacity-30" />
 
-        <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <Link href="/portfolio" className="inline-flex items-center gap-2 text-[#9B97C0] hover:text-white mb-6">
-            <ChevronLeft className="w-4 h-4" />
-            Back to Portfolio
-          </Link>
-
-          <div className="flex flex-wrap gap-2 mb-4">
-            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">E-Commerce</span>
-            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Beauty & Perfumery</span>
-            <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Marketplace</span>
-          </div>
-          <div className="flex gap-6 mt-8 mb-6 text-sm font-medium">
-            {['shopee', 'tiktok shop', 'lazada'].map((platform) => (
-              <button
-                key={platform}
-                onClick={() => setSelectedPlatform(platform)}
-                className={`transition-all ${selectedPlatform === platform
-                  ? 'text-white border-b-2 border-white'
-                  : 'text-[#B9B7C0] hover:text-white'
-                  }`}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div variants={fadeIn}>
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-medium mb-6 transition-colors group"
               >
-                {platform === 'tiktok shop'
-                  ? 'TikTok Shop'
-                  : platform.charAt(0).toUpperCase() + platform.slice(1)}
-              </button>
-            ))}
-          </div>
-          <motion.h1 variants={fadeIn} className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            E-Commerce Growth Journey
-          </motion.h1>
-          <p className="mt-2 text-xl text-[#9B97C0]">Priskila — Beauty & Perfumery Products</p>
-          <p className="mt-1 text-sm text-[#9B97C0]">Brands: Casablanca, Bellagio, Regazza, Camellia, Marie Jose, Excello</p>
+                <ChevronLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+                Back to Portfolio
+              </Link>
 
-          <div className="mt-8 flex flex-wrap gap-6">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p className="text-3xl font-bold text-[#ffffff]">31x</p>
-              <p className="text-sm text-[#9B97C0]">Revenue Growth</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p className="text-3xl font-bold text-[#F97316]">Rp24M → Rp982M</p>
-              <p className="text-sm text-[#9B97C0]">Monthly Revenue</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p className="text-3xl font-bold text-[#ffffff]">20 Months</p>
-              <p className="text-sm text-[#9B97C0]">Progress Period</p>
-            </div>
-          </div>
-        </motion.div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">E-Commerce</span>
+                <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Beauty & Perfumery</span>
+                <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Marketplace</span>
+              </div>
+
+              {/* Platform switcher — unchanged behavior */}
+              <div className="flex gap-6 mb-6 text-sm font-medium">
+                {['shopee', 'tiktok shop', 'lazada'].map((platform) => (
+                  <button
+                    key={platform}
+                    onClick={() => {
+                      setSelectedPlatform(platform)
+                      setCurrentSlide(0)
+                      setActiveAnalytics('overview')
+                    }}
+                    className={`transition-all ${selectedPlatform === platform
+                      ? 'text-white border-b-2 border-white pb-1'
+                      : 'text-white/60 hover:text-white pb-1'
+                      }`}
+                  >
+                    {platform === 'tiktok shop'
+                      ? 'TikTok Shop'
+                      : platform.charAt(0).toUpperCase() + platform.slice(1)}
+                  </button>
+                ))}
+              </div>
+
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                E-Commerce Growth Journey
+              </h1>
+              <p className="text-lg text-white/80 mb-2">
+                Priskila — Beauty & Perfumery Products
+              </p>
+              <p className="text-white/70 leading-relaxed mb-8">
+                Brands: Casablanca, Bellagio, Regazza, Camellia, Marie Jose, Excello
+              </p>
+              <div className="text-sm text-white/60">
+                <p className="font-medium text-white/80">Progress Period: September 2024 – May 2026</p>
+              </div>
+            </motion.div>
+
+            {/* KPI Cards — Priskila numbers, QCY card styling */}
+            <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4">
+              {kpiCards.map((card, i) => {
+                const Icon = card.icon
+                return (
+                  <div key={i} className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
+                    <Icon className="w-6 h-6 mb-3 text-white/80" />
+                    <div className="text-2xl font-bold mb-1">{card.value}</div>
+                    <div className="text-sm text-white/70">{card.label}</div>
+                  </div>
+                )
+              })}
+            </motion.div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* Key Metrics Cards */}
+      {/* Key Metrics Cards — unchanged content, original styling */}
       <section className="py-12 bg-white border-b border-[#E8E6F8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -452,7 +547,7 @@ export default function EcommerceGrowthCaseStudy() {
         </div>
       </section>
 
-      {/* Revenue Growth Chart */}
+      {/* Revenue Growth Chart — unchanged */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2 variants={fadeIn} initial="initial" whileInView="animate" viewport={{ once: true }} className="text-2xl font-bold text-[#0F0A2E] mb-2">Revenue Growth Over Time</motion.h2>
@@ -481,11 +576,10 @@ export default function EcommerceGrowthCaseStudy() {
         </div>
       </section>
 
-      {/* Orders & Conversion Chart */}
+      {/* Orders & Conversion Chart — unchanged */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Orders Chart */}
             <div>
               <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Monthly Orders</h2>
               <p className="text-[#4B4680] mb-6">Order volume growth from 482 to 27,393</p>
@@ -506,7 +600,6 @@ export default function EcommerceGrowthCaseStudy() {
               </div>
             </div>
 
-            {/* Conversion Rate Chart */}
             <div>
               <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Conversion Rate</h2>
               <p className="text-[#4B4680] mb-6">Conversion optimization from 2.06% to 4.64%</p>
@@ -530,84 +623,137 @@ export default function EcommerceGrowthCaseStudy() {
         </div>
       </section>
 
-      {/* Screenshot Slideshow */}
+      {/* ── Monthly Progress Analytics (QCY-style tabbed screenshot browser) ── */}
       <section className="py-16 bg-[#1A0F7A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white mb-2">Monthly Progress Screenshots</h2>
-          <p className="text-[#9B97C0] mb-8">Actual Shopee Seller Center data showing the growth journey</p>
+          <motion.div variants={fadeIn} initial="initial" whileInView="animate" viewport={{ once: true }}>
+            <div className="bg-[#1B1464] rounded-3xl p-8">
 
-          <div className="relative">
-            {/* Main Slide */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
-              <div className="bg-[#2D1BB8] px-6 py-4 flex items-center justify-between">
-                <div>
-                  <p className="text-white font-bold">{activeScreenshots[currentSlide].month}</p>
-                  <p className="text-[#9B97C0] text-sm">{activeScreenshots[currentSlide].revenue}</p>
+              <div className="mb-8">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
+                  {selectedPlatform === 'shopee'
+                    ? 'Priskila — Shopee Analytics'
+                    : selectedPlatform === 'tiktok shop'
+                      ? 'Priskila — TikTok Shop Analytics'
+                      : 'Priskila — Lazada Analytics'}
+                </h2>
+                <p className="text-white/70 mb-6">
+                  Actual Seller Center data showing the growth journey, month by month.
+                </p>
+
+                {/* Tab system — Overview / Ads / Livestream (scalable, falls back gracefully if empty) */}
+                <div className="flex gap-3 mb-6">
+                  <button
+                    onClick={() => { setActiveAnalytics('overview'); setCurrentSlide(0) }}
+                    className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${activeAnalytics === 'overview'
+                      ? 'bg-[#F97316] text-white'
+                      : 'bg-white text-gray-700'
+                      }`}
+                  >
+                    Overview Sales
+                  </button>
+
+                  {currentCategorized.livestream.length > 0 && (
+                    <button
+                      onClick={() => { setActiveAnalytics('livestream'); setCurrentSlide(0) }}
+                      className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${activeAnalytics === 'livestream'
+                        ? 'bg-[#F97316] text-white'
+                        : 'bg-white text-gray-700'
+                        }`}
+                    >
+                      Livestream
+                    </button>
+                  )}
+
+                  {currentCategorized.ads.length > 0 && (
+                    <button
+                      onClick={() => { setActiveAnalytics('ads'); setCurrentSlide(0) }}
+                      className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${activeAnalytics === 'ads'
+                        ? 'bg-[#F97316] text-white'
+                        : 'bg-white text-gray-700'
+                        }`}
+                    >
+                      Ads Performance
+                    </button>
+                  )}
                 </div>
-                <span className="px-3 py-1 bg-[#F97316] text-white rounded-full text-sm font-medium">
-                  {activeScreenshots[currentSlide].highlight}
-                </span>
               </div>
 
-              <div className={`relative bg-gray-100 ${selectedPlatform === 'tiktok shop' ? 'aspect-[16/15]' : 'aspect-[16/10]'}`}>
-                <Image
-                  src={activeScreenshots[currentSlide].url}
-                  alt={`Dashboard ${activeScreenshots[currentSlide].month}`}
-                  fill
-                  className="object-contain"
-                  priority
-                />
+              {/* Main Screenshot Area */}
+              <div className="bg-white rounded-2xl p-6 mb-6">
+                <div className="flex flex-wrap justify-between items-start gap-3 mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#0F0A2E]">
+                      {currentScreenshots[monthlySlide]?.month}
+                    </h3>
+                    <p className="text-gray-500">
+                      {currentScreenshots[monthlySlide]?.description}
+                    </p>
+                    {currentScreenshots[monthlySlide]?.revenue && (
+                      <p className="text-sm text-[#2D1BB8] font-semibold mt-1">
+                        {currentScreenshots[monthlySlide].revenue}
+                      </p>
+                    )}
+                  </div>
+
+                  <span className="bg-[#F97316] text-white px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">
+                    {monthlySlide === 0
+                      ? 'Starting Point'
+                      : monthlySlide === currentScreenshots.length - 1
+                        ? 'End Point'
+                        : 'Growth Phase'}
+                  </span>
+                </div>
+
+                <div className={`relative bg-gray-100 rounded-xl overflow-hidden border ${selectedPlatform === 'tiktok shop' ? 'aspect-[16/15]' : 'aspect-[16/10]'}`}>
+                  <Image
+                    src={currentScreenshots[monthlySlide]?.image || '/placeholder.svg'}
+                    alt={`Dashboard ${currentScreenshots[monthlySlide]?.month ?? ''}`}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+
+                {/* Prev / Next */}
+                <div className="relative">
+                  <button
+                    onClick={prevSlide}
+                    className="absolute -left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-[#E8E6F8] rounded-full flex items-center justify-center shadow hover:bg-[#F8F7FF] transition-colors"
+                  >
+                    <ChevronLeft className="w-5 h-5 text-[#2D1BB8]" />
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    className="absolute -right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-[#E8E6F8] rounded-full flex items-center justify-center shadow hover:bg-[#F8F7FF] transition-colors"
+                  >
+                    <ChevronRight className="w-5 h-5 text-[#2D1BB8]" />
+                  </button>
+                </div>
               </div>
-            </div>
 
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6 text-[#2D1BB8]" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors"
-            >
-              <ChevronRight className="w-6 h-6 text-[#2D1BB8]" />
-            </button>
-
-            {/* Slide Indicators */}
-            <div className="flex justify-center gap-2 mt-6">
-              {activeScreenshots.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${index === currentSlide ? 'bg-[#F97316] w-6' : 'bg-white/40 hover:bg-white/60'
-                    }`}
-                />
-              ))}
-            </div>
-
-            {/* Timeline Navigation */}
-            <div className="mt-8 overflow-x-auto pb-4">
-              <div className="flex gap-2 min-w-max">
-                {activeScreenshots.map((shot, index) => (
+              {/* Month Navigation */}
+              <div className="flex gap-2 overflow-x-auto pb-2">
+                {currentScreenshots.map((shot, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${index === currentSlide
+                    className={`px-4 py-2 rounded-lg whitespace-nowrap text-sm font-medium transition-all ${monthlySlide === index
                       ? 'bg-[#F97316] text-white'
                       : 'bg-white/10 text-white/70 hover:bg-white/20'
                       }`}
                   >
-                    {shot.month.split(' ')[0]} {shot.month.split(' ')[1]}
+                    {shot.month}
                   </button>
                 ))}
               </div>
+
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Growth Phases */}
+      {/* Growth Phases — unchanged */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-[#0F0A2E] mb-2">Growth Strategy Breakdown</h2>
@@ -649,7 +795,7 @@ export default function EcommerceGrowthCaseStudy() {
         </div>
       </section>
 
-      {/* Summary Stats */}
+      {/* Summary Stats — unchanged */}
       <section className="py-16 bg-[#2D1BB8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-white mb-8 text-center">Campaign Summary</h2>
@@ -675,7 +821,7 @@ export default function EcommerceGrowthCaseStudy() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — unchanged */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold text-[#0F0A2E] mb-4">Want Similar Results?</h2>
