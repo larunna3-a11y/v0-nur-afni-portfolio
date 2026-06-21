@@ -686,9 +686,6 @@ export default function EcommerceGrowthCaseStudy() {
                     <h3 className="text-xl font-bold text-[#0F0A2E]">
                       {currentScreenshots[monthlySlide]?.month}
                     </h3>
-                    <p className="text-gray-500">
-                      {currentScreenshots[monthlySlide]?.description}
-                    </p>
                     {currentScreenshots[monthlySlide]?.revenue && (
                       <p className="text-sm text-[#2D1BB8] font-semibold mt-1">
                         {currentScreenshots[monthlySlide].revenue}
@@ -696,13 +693,11 @@ export default function EcommerceGrowthCaseStudy() {
                     )}
                   </div>
 
-                  <span className="bg-[#F97316] text-white px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">
-                    {monthlySlide === 0
-                      ? 'Starting Point'
-                      : monthlySlide === currentScreenshots.length - 1
-                        ? 'End Point'
-                        : 'Growth Phase'}
-                  </span>
+                  {currentScreenshots[monthlySlide]?.description && (
+                    <span className="bg-[#F97316] text-white px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">
+                      {currentScreenshots[monthlySlide].description}
+                    </span>
+                  )}
                 </div>
 
                 <div className={`relative bg-gray-100 rounded-xl overflow-hidden border ${selectedPlatform === 'tiktok shop' ? 'aspect-[16/15]' : 'aspect-[16/10]'}`}>
