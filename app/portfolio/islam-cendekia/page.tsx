@@ -64,7 +64,7 @@ const topContent = [
     comments: '152',
     saves: '21K',
     date: '26 Oct 2023',
-    image: '/ic-magrib.png',
+    image: '/islamcendekia/ic-magrib.png',
     gradient: 'linear-gradient(180deg, #1a2f6b 0%, #2a4a8a 40%, #0d1f45 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -77,7 +77,7 @@ const topContent = [
     comments: '61',
     saves: '8,102',
     date: '28 Dec 2023',
-    image: '/ic-doa-harian.png',
+    image: '/islamcendekia/ic-doa-harian.png',
     gradient: 'linear-gradient(180deg, #2a1a10 0%, #3d1f0d 40%, #1a0a05 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -90,7 +90,7 @@ const topContent = [
     comments: '0',
     saves: '33',
     date: '14 Dec 2023',
-    image: '/ic-21hari.png',
+    image: '/islamcendekia/ic-21hari.png',
     gradient: 'linear-gradient(180deg, #c87820 0%, #d4921c 40%, #3d1a05 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -103,7 +103,7 @@ const topContent = [
     comments: '0',
     saves: '11',
     date: '19 Oct 2023',
-    image: '/ic-sepertiga-malam.png',
+    image: '/islamcendekia/ic-sepertiga-malam.png',
     gradient: 'linear-gradient(180deg, #2a1a0a 0%, #4a2a10 40%, #1a0f05 100%)',
     textColor: 'white',
     accent: '#ffffff',
@@ -116,7 +116,7 @@ const topContent = [
     comments: '0',
     saves: '118',
     date: '7 Sep 2023',
-    image: '/Doa-21-hari.png',
+    image: '/islamcendekia/Doa-21-hari.png',
     gradient: 'linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 40%, #0a0a0a 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -129,7 +129,7 @@ const topContent = [
     comments: '13',
     saves: '255',
     date: '27 Sep 2023',
-    image: '/ic-firaun.png',
+    image: '/islamcendekia/ic-firaun.png',
     gradient: 'linear-gradient(180deg, #0d1f3d 0%, #1a3060 40%, #0a1520 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -142,7 +142,7 @@ const topContent = [
     comments: '5',
     saves: '31',
     date: '29 Nov 2023',
-    image: '/ic-sukses.png',
+    image: '/islamcendekia/ic-sukses.png',
     gradient: 'linear-gradient(180deg, #2a1a0a 0%, #3d2510 40%, #1a0f05 100%)',
     textColor: 'white',
     accent: '#7ab3f0',
@@ -354,13 +354,13 @@ export default function IslamCendekiaCaseStudy() {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 text-sm font-medium text-[#0F0A2E]">
                   <div className="w-8 h-8 rounded-full border border-[#E8E6F8] bg-white shadow-sm overflow-hidden flex items-center justify-center">
-                    <Image src="/IC-Logo.png" alt="Instagram" width={32} height={32} className="w-full h-full object-cover rounded-full" />
+                    <Image src="/islamcendekia/IC-Logo.png" alt="Instagram" width={32} height={32} className="w-full h-full object-cover rounded-full" />
                   </div>
                   @islamcendekia.id
                 </div>
                 <div className="flex items-center gap-2 text-sm font-medium text-[#0F0A2E]">
                   <div className="w-8 h-8 rounded-full border border-[#E8E6F8] bg-white shadow-sm overflow-hidden flex items-center justify-center">
-                    <Image src="/IC-Logo.png" alt="TikTok" width={32} height={32} className="w-full h-full object-cover rounded-full" />
+                    <Image src="/islamcendekia/IC-Logo.png" alt="TikTok" width={32} height={32} className="w-full h-full object-cover rounded-full" />
                   </div>
                   @islamcendekia
                 </div>
@@ -382,7 +382,7 @@ export default function IslamCendekiaCaseStudy() {
                   <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-14 h-3.5 bg-black rounded-full z-20" />
                   <div className="overflow-hidden h-full" style={{ borderRadius: 26 }}>
                     <Image
-                      src="/Instagram-ic.jpeg"
+                      src="/islamcendekia/Instagram-ic.jpeg"
                       alt="Islam Cendekia Instagram"
                       width={210}
                       height={460}
@@ -419,7 +419,7 @@ export default function IslamCendekiaCaseStudy() {
                   <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-14 h-3.5 bg-black rounded-full z-20" />
                   <div className="overflow-hidden h-full" style={{ borderRadius: 26 }}>
                     <Image
-                      src="/Tiktok-ic.jpeg"
+                      src="/islamcendekia/Tiktok-ic.jpeg"
                       alt="Islam Cendekia TikTok"
                       width={210}
                       height={460}
@@ -574,7 +574,7 @@ export default function IslamCendekiaCaseStudy() {
                 {/* IC logo badge */}
                 <div className="relative flex items-center gap-1.5">
                   <div className="w-5 h-5 rounded-full overflow-hidden bg-white flex items-center justify-center">
-                    <Image src="/IC-Logo.png" alt="Islam Cendekia" width={20} height={20} className="w-full h-full object-contain" />
+                    <Image src="/islamcendekia/IC-Logo.png" alt="Islam Cendekia" width={20} height={20} className="w-full h-full object-contain" />
                   </div>
                   <span className="text-white/70 text-[8px] font-medium">Islam Cendekia</span>
                 </div>
