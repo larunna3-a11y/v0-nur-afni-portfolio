@@ -263,6 +263,14 @@ export default function QCYCaseStudy() {
       )
     : tokopediaScreenshots
 
+  const nextSlide = () => {
+    setMonthlySlide((prev) => (prev + 1) % currentScreenshots.length)
+  }
+
+  const prevSlide = () => {
+    setMonthlySlide((prev) => (prev - 1 + currentScreenshots.length) % currentScreenshots.length)
+  }
+
 
   const kpiCards = [
     { label: 'Total Revenue (Apr-Sep)', value: 'Rp837.29M', icon: TrendingUp },
@@ -666,26 +674,35 @@ export default function QCYCaseStudy() {
                       <h3 className="text-xl font-bold">
                         {currentScreenshots[monthlySlide].month}
                       </h3>
-
-                      <p className="text-gray-500">
-                        {currentScreenshots[monthlySlide].description}
-                      </p>
                     </div>
 
-                    <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm">
-                      {monthlySlide === 0
-                        ? "Starting Point"
-                        : monthlySlide === currentScreenshots.length - 1
-                          ? "End Point"
-                          : "Growth Phase"}
-                    </span>
+                    {currentScreenshots[monthlySlide]?.description && (
+                      <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm whitespace-nowrap">
+                        {currentScreenshots[monthlySlide].description}
+                      </span>
+                    )}
                   </div>
 
-                  <img
-                    src={currentScreenshots[monthlySlide].image}
-                    alt=""
-                    className="w-full rounded-xl border"
-                  />
+                  <div className="relative">
+                    <img
+                      src={currentScreenshots[monthlySlide].image}
+                      alt=""
+                      className="w-full rounded-xl border"
+                    />
+
+                    <button
+                      onClick={prevSlide}
+                      className="absolute -left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-[#E8E6F8] rounded-full flex items-center justify-center shadow hover:bg-[#F8F7FF] transition-colors"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-[#2D1BB8]" />
+                    </button>
+                    <button
+                      onClick={nextSlide}
+                      className="absolute -right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-[#E8E6F8] rounded-full flex items-center justify-center shadow hover:bg-[#F8F7FF] transition-colors"
+                    >
+                      <ChevronRight className="w-5 h-5 text-[#2D1BB8]" />
+                    </button>
+                  </div>
 
                 </div>
 
