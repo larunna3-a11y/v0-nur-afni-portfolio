@@ -354,13 +354,13 @@ export default function IslamCendekiaCaseStudy() {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 text-sm font-medium text-[#0F0A2E]">
                   <div className="w-8 h-8 rounded-full border border-[#E8E6F8] bg-white shadow-sm overflow-hidden flex items-center justify-center">
-                    <Image src="/@islamcendekia.id/islamcendekia/IC-Logo.png" alt="Instagram" width={32} height={32} className="w-full h-full object-cover rounded-full" />
+                    <Image src="/islamcendekia/IC-Logo.png" alt="Instagram" width={32} height={32} className="w-full h-full object-cover rounded-full" />
                   </div>
                   @islamcendekia.id
                 </div>
                 <div className="flex items-center gap-2 text-sm font-medium text-[#0F0A2E]">
                   <div className="w-8 h-8 rounded-full border border-[#E8E6F8] bg-white shadow-sm overflow-hidden flex items-center justify-center">
-                    <Image src="/@islamcendekia.id/islamcendekia/IC-Logo.png" alt="TikTok" width={32} height={32} className="w-full h-full object-cover rounded-full" />
+                    <Image src="/islamcendekia/IC-Logo.png" alt="TikTok" width={32} height={32} className="w-full h-full object-cover rounded-full" />
                   </div>
                   @islamcendekia
                 </div>
@@ -574,7 +574,7 @@ export default function IslamCendekiaCaseStudy() {
                 {/* IC logo badge */}
                 <div className="relative flex items-center gap-1.5">
                   <div className="w-5 h-5 rounded-full overflow-hidden bg-white flex items-center justify-center">
-                    <Image src="/@islamcendekia.id/islamcendekia/IC-Logo.png" alt="Islam Cendekia" width={20} height={20} className="w-full h-full object-contain" />
+                    <Image src="/islamcendekia/IC-Logo.png" alt="Islam Cendekia" width={20} height={20} className="w-full h-full object-contain" />
                   </div>
                   <span className="text-white/70 text-[8px] font-medium">Islam Cendekia</span>
                 </div>
