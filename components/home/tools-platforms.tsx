@@ -30,7 +30,6 @@ type Category = {
 const tools: Record<string, Tool[]> = {
   marketplace: [
     { name: 'Shopee Seller Center', logo: 'https://cdn.simpleicons.org/shopee/ffffff', url: 'https://seller.shopee.co.id', tag: 'Marketplace', bg: '#EE4D2D' },
-    { name: 'Tokopedia Seller', logo: 'https://cdn.simpleicons.org/tokopedia/ffffff', url: 'https://seller.tokopedia.com', tag: 'Marketplace', bg: '#42B549' },
     { name: 'TikTok Shop', logo: 'https://cdn.simpleicons.org/tiktok/ffffff', url: 'https://seller-id.tiktok.com', tag: 'Marketplace', bg: '#000000' },
     { name: 'Lazada Seller Center', logo: 'https://cdn.simpleicons.org/lazada/ffffff', url: 'https://sellercenter.lazada.co.id', tag: 'Marketplace', bg: '#0F146D' },
     { name: 'Blibli Merchant', logo: 'https://www.static-src.com/frontend/static/img/logo-blibli.svg', url: 'https://merchant.blibli.com', tag: 'Marketplace', bg: '#0072CE' },

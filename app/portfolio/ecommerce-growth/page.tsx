@@ -708,19 +708,17 @@ export default function EcommerceGrowthCaseStudy() {
                     className="object-contain"
                     priority
                   />
-                </div>
 
-                {/* Prev / Next */}
-                <div className="relative">
+                  {/* Prev / Next — centered on the image, either side */}
                   <button
                     onClick={prevSlide}
-                    className="absolute -left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-[#E8E6F8] rounded-full flex items-center justify-center shadow hover:bg-[#F8F7FF] transition-colors"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-[#E8E6F8] rounded-full flex items-center justify-center shadow hover:bg-[#F8F7FF] transition-colors z-10"
                   >
                     <ChevronLeft className="w-5 h-5 text-[#2D1BB8]" />
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="absolute -right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-[#E8E6F8] rounded-full flex items-center justify-center shadow hover:bg-[#F8F7FF] transition-colors"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-[#E8E6F8] rounded-full flex items-center justify-center shadow hover:bg-[#F8F7FF] transition-colors z-10"
                   >
                     <ChevronRight className="w-5 h-5 text-[#2D1BB8]" />
                   </button>
