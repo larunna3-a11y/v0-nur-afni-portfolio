@@ -792,7 +792,7 @@ export default function IslamCendekiaCaseStudy() {
       {/* ── Key Takeaway ── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#2D1BB8] to-[#6D4AFF] rounded-2xl p-8 flex items-start gap-4">
+          <div className="bg-gradient-to-r from-[#2D1BB8] to-[#4A35D4] rounded-2xl p-8 flex items-start gap-4">
             <div className="text-2xl">🏆</div>
             <div>
               <p className="text-[10px] font-bold text-white/60 uppercase tracking-wider mb-2">KEY TAKEAWAY</p>
