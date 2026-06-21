@@ -17,6 +17,7 @@ type Tool = {
   logo: string
   url: string
   tag: string
+  bg: string // brand color / gradient for the icon tile
 }
 
 type Category = {
@@ -28,40 +29,40 @@ type Category = {
 
 const tools: Record<string, Tool[]> = {
   marketplace: [
-    { name: 'Shopee Seller Center', logo: 'https://cdn.simpleicons.org/shopee', url: 'https://seller.shopee.co.id', tag: 'Marketplace' },
-    { name: 'Tokopedia Seller', logo: 'https://cdn.simpleicons.org/tokopedia', url: 'https://seller.tokopedia.com', tag: 'Marketplace' },
-    { name: 'TikTok Shop', logo: 'https://cdn.simpleicons.org/tiktok', url: 'https://seller-id.tiktok.com', tag: 'Marketplace' },
-    { name: 'Lazada Seller Center', logo: 'https://cdn.simpleicons.org/lazada', url: 'https://sellercenter.lazada.co.id', tag: 'Marketplace' },
-    { name: 'Blibli Merchant', logo: 'https://www.static-src.com/frontend/static/img/logo-blibli.svg', url: 'https://merchant.blibli.com', tag: 'Marketplace' },
+    { name: 'Shopee Seller Center', logo: 'https://cdn.simpleicons.org/shopee/ffffff', url: 'https://seller.shopee.co.id', tag: 'Marketplace', bg: '#EE4D2D' },
+    { name: 'Tokopedia Seller', logo: 'https://cdn.simpleicons.org/tokopedia/ffffff', url: 'https://seller.tokopedia.com', tag: 'Marketplace', bg: '#42B549' },
+    { name: 'TikTok Shop', logo: 'https://cdn.simpleicons.org/tiktok/ffffff', url: 'https://seller-id.tiktok.com', tag: 'Marketplace', bg: '#000000' },
+    { name: 'Lazada Seller Center', logo: 'https://cdn.simpleicons.org/lazada/ffffff', url: 'https://sellercenter.lazada.co.id', tag: 'Marketplace', bg: '#0F146D' },
+    { name: 'Blibli Merchant', logo: 'https://www.static-src.com/frontend/static/img/logo-blibli.svg', url: 'https://merchant.blibli.com', tag: 'Marketplace', bg: '#0072CE' },
   ],
   advertising: [
-    { name: 'Meta Business Suite', logo: 'https://cdn.simpleicons.org/meta', url: 'https://business.facebook.com', tag: 'Paid Ads' },
-    { name: 'TikTok Ads Manager', logo: 'https://cdn.simpleicons.org/tiktok', url: 'https://ads.tiktok.com', tag: 'Paid Ads' },
-    { name: 'Shopee CPAS', logo: 'https://cdn.simpleicons.org/shopee', url: 'https://seller.shopee.co.id', tag: 'Paid Ads' },
+    { name: 'Meta Business Suite', logo: 'https://cdn.simpleicons.org/meta/ffffff', url: 'https://business.facebook.com', tag: 'Paid Ads', bg: '#0866FF' },
+    { name: 'TikTok Ads Manager', logo: 'https://cdn.simpleicons.org/tiktok/ffffff', url: 'https://ads.tiktok.com', tag: 'Paid Ads', bg: '#000000' },
+    { name: 'Shopee CPAS', logo: 'https://cdn.simpleicons.org/shopee/ffffff', url: 'https://seller.shopee.co.id', tag: 'Paid Ads', bg: '#EE4D2D' },
   ],
   affiliate: [
-    { name: 'TikTok Affiliate', logo: 'https://cdn.simpleicons.org/tiktok', url: 'https://seller-id.tiktok.com', tag: 'Affiliate' },
-    { name: 'Shopee Affiliate', logo: 'https://cdn.simpleicons.org/shopee', url: 'https://affiliate.shopee.co.id', tag: 'Affiliate' },
+    { name: 'TikTok Affiliate', logo: 'https://cdn.simpleicons.org/tiktok/ffffff', url: 'https://seller-id.tiktok.com', tag: 'Affiliate', bg: '#000000' },
+    { name: 'Shopee Affiliate', logo: 'https://cdn.simpleicons.org/shopee/ffffff', url: 'https://affiliate.shopee.co.id', tag: 'Affiliate', bg: '#EE4D2D' },
   ],
   creative: [
-    { name: 'Canva', logo: 'https://cdn.simpleicons.org/canva', url: 'https://canva.com', tag: 'Design' },
-    { name: 'CapCut', logo: 'https://cdn.simpleicons.org/capcut', url: 'https://capcut.com', tag: 'Video' },
+    { name: 'Canva', logo: 'https://freepnglogo.com/images/all_img/1691829400logo-canva-png.png', url: 'https://canva.com', tag: 'Design', bg: '#00C4CC' },
+    { name: 'CapCut', logo: 'https://www.pngmart.com/files/23/Capcut-Logo-PNG-Photos.png', url: 'https://capcut.com', tag: 'Video', bg: '#000000' },
   ],
   analytics: [
-    { name: 'Google Sheets', logo: 'https://cdn.simpleicons.org/googlesheets', url: 'https://sheets.google.com', tag: 'Analytics' },
-    { name: 'Google Workspace', logo: 'https://cdn.simpleicons.org/googleworkspace', url: 'https://workspace.google.com', tag: 'Operations' },
-    { name: 'Google Trends', logo: 'https://cdn.simpleicons.org/google', url: 'https://trends.google.com', tag: 'Research' },
-    { name: 'Asana', logo: 'https://cdn.simpleicons.org/asana', url: 'https://asana.com', tag: 'Planning' },
-    { name: 'Accurate', logo: 'https://accurate.id/assets/images/logo.svg', url: 'https://accurate.id', tag: 'Finance' },
+    { name: 'Google Sheets', logo: 'https://cdn.simpleicons.org/googlesheets/ffffff', url: 'https://sheets.google.com', tag: 'Analytics', bg: '#0F9D58' },
+    { name: 'Google Workspace', logo: 'https://cdn.simpleicons.org/googleworkspace/ffffff', url: 'https://workspace.google.com', tag: 'Operations', bg: '#4285F4' },
+    { name: 'Google Trends', logo: 'https://cdn.simpleicons.org/google/ffffff', url: 'https://trends.google.com', tag: 'Research', bg: '#4285F4' },
+    { name: 'Asana', logo: 'https://cdn.simpleicons.org/asana/ffffff', url: 'https://asana.com', tag: 'Planning', bg: '#F06A6A' },
+    { name: 'Accurate', logo: 'https://penjualanonline.id/wp-content/uploads/2022/01/Logo-Accurate-Cloud.png', url: 'https://accurate.id', tag: 'Finance', bg: '#1B5FAA' },
   ],
   ai: [
-    { name: 'ChatGPT', logo: 'https://cdn.simpleicons.org/openai', url: 'https://chatgpt.com', tag: 'AI' },
-    { name: 'Claude', logo: 'https://www.anthropic.com/images/icons/apple-touch-icon.png', url: 'https://claude.ai', tag: 'AI' },
-    { name: 'Lovable', logo: 'https://lovable.dev/favicon.ico', url: 'https://lovable.dev/invite/SP4QTLM', tag: 'Builder' },
-    { name: 'v0', logo: 'https://v0.dev/favicon.ico', url: 'https://v0.dev', tag: 'Builder' },
-    { name: 'Figma', logo: 'https://cdn.simpleicons.org/figma', url: 'https://figma.com', tag: 'Design' },
-    { name: 'Gemini', logo: 'https://gemini.google.com/favicon.ico', url: 'https://gemini.google.com', tag: 'AI' },
-    { name: 'UseAI', logo: 'https://useai.com/favicon.ico', url: 'https://useai.com', tag: 'AI' },
+    { name: 'ChatGPT', logo: 'https://cdn.simpleicons.org/openai/ffffff', url: 'https://chatgpt.com', tag: 'AI', bg: '#10A37F' },
+    { name: 'Claude', logo: 'https://www.anthropic.com/images/icons/apple-touch-icon.png', url: 'https://claude.ai', tag: 'AI', bg: '#D97757' },
+    { name: 'Lovable', logo: 'https://lovable.dev/favicon.ico', url: 'https://lovable.dev/invite/SP4QTLM', tag: 'Builder', bg: '#FF5D5D' },
+    { name: 'v0', logo: 'https://cdn.simpleicons.org/vercel/ffffff', url: 'https://v0.dev', tag: 'Builder', bg: '#000000' },
+    { name: 'Figma', logo: 'https://cdn.simpleicons.org/figma/ffffff', url: 'https://figma.com', tag: 'Design', bg: '#A259FF' },
+    { name: 'Gemini', logo: 'https://gemini.google.com/favicon.ico', url: 'https://gemini.google.com', tag: 'AI', bg: '#4285F4' },
+    { name: 'UseAI', logo: 'https://useai.com/favicon.ico', url: 'https://useai.com', tag: 'AI', bg: '#2D1BB8' },
   ],
 }
 
@@ -111,20 +112,22 @@ function ToolCard({ tool }: { tool: Tool }) {
       href={tool.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group aspect-square flex flex-col items-center justify-center gap-1.5 bg-white rounded-xl border border-[#E8E6F8] p-2.5 hover:border-[#2D1BB8]/40 hover:shadow-[0_6px_16px_-6px_rgba(45,27,184,0.18)] transition-all duration-300 hover:-translate-y-0.5"
+      className="group flex flex-col items-center gap-2.5 p-2"
     >
-      <div className="w-7 h-7 flex items-center justify-center shrink-0">
+      <div
+        className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shrink-0 shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg"
+        style={{ backgroundColor: tool.bg }}
+      >
         <img
           src={tool.logo}
           alt={`${tool.name} logo`}
-          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+          className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
           loading="lazy"
         />
       </div>
 
       <div className="text-center min-w-0 w-full">
-        <p className="text-[10px] font-semibold text-[#0F0A2E] truncate px-0.5 leading-tight">{tool.name}</p>
-        <p className="text-[9px] text-[#9B97C0] leading-tight">{tool.tag}</p>
+        <p className="text-xs font-semibold text-[#0F0A2E] leading-tight">{tool.name}</p>
       </div>
     </motion.a>
   )
@@ -152,7 +155,7 @@ export function ToolsPlatforms() {
         </motion.div>
 
         {/* Categories */}
-        <div className="space-y-10">
+        <div className="space-y-12">
           {categories.map((category) => (
             <motion.div
               key={category.id}
@@ -161,12 +164,16 @@ export function ToolsPlatforms() {
               whileInView="animate"
               viewport={{ once: true, margin: '-60px' }}
             >
-              <motion.div variants={fadeIn} className="mb-5">
-                <h3 className="text-lg font-bold text-[#0F0A2E]">{category.title}</h3>
-                <p className="text-sm text-[#9B97C0] mt-1 max-w-xl">{category.description}</p>
+              {/* Category label with divider lines, like the reference */}
+              <motion.div variants={fadeIn} className="flex items-center gap-4 mb-6">
+                <span className="flex-1 h-px bg-gradient-to-r from-transparent via-[#E8E6F8] to-[#E8E6F8]" />
+                <span className="px-4 py-1.5 bg-[#F0EEFF] border border-[#E0DCFF] rounded-full text-xs font-bold text-[#2D1BB8] uppercase tracking-wide whitespace-nowrap">
+                  {category.title}
+                </span>
+                <span className="flex-1 h-px bg-gradient-to-l from-transparent via-[#E8E6F8] to-[#E8E6F8]" />
               </motion.div>
 
-              <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-2">
+              <div className="flex flex-wrap justify-center gap-x-8 gap-y-6">
                 {category.tools.map((tool) => (
                   <ToolCard key={tool.name} tool={tool} />
                 ))}
