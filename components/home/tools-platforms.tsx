@@ -45,15 +45,15 @@ const tools: Record<string, Tool[]> = {
     { name: 'Shopee Affiliate', logo: 'https://cdn.simpleicons.org/shopee/ffffff', url: 'https://affiliate.shopee.co.id', tag: 'Affiliate', bg: '#EE4D2D' },
   ],
   creative: [
-    { name: 'Canva', logo: 'https://cdn.simpleicons.org/canva/ffffff', url: 'https://canva.com', tag: 'Design', bg: '#00C4CC' },
-    { name: 'CapCut', logo: 'https://cdn.simpleicons.org/capcut/ffffff', url: 'https://capcut.com', tag: 'Video', bg: '#000000' },
+    { name: 'Canva', logo: 'https://freepnglogo.com/images/all_img/1691829400logo-canva-png.png', url: 'https://canva.com', tag: 'Design', bg: '#00C4CC' },
+    { name: 'CapCut', logo: 'https://www.pngmart.com/files/23/Capcut-Logo-PNG-Photos.png', url: 'https://capcut.com', tag: 'Video', bg: '#000000' },
   ],
   analytics: [
     { name: 'Google Sheets', logo: 'https://cdn.simpleicons.org/googlesheets/ffffff', url: 'https://sheets.google.com', tag: 'Analytics', bg: '#0F9D58' },
     { name: 'Google Workspace', logo: 'https://cdn.simpleicons.org/googleworkspace/ffffff', url: 'https://workspace.google.com', tag: 'Operations', bg: '#4285F4' },
     { name: 'Google Trends', logo: 'https://cdn.simpleicons.org/google/ffffff', url: 'https://trends.google.com', tag: 'Research', bg: '#4285F4' },
     { name: 'Asana', logo: 'https://cdn.simpleicons.org/asana/ffffff', url: 'https://asana.com', tag: 'Planning', bg: '#F06A6A' },
-    { name: 'Accurate', logo: 'https://accurate.id/assets/images/logo.svg', url: 'https://accurate.id', tag: 'Finance', bg: '#1B5FAA' },
+    { name: 'Accurate', logo: 'https://penjualanonline.id/wp-content/uploads/2022/01/Logo-Accurate-Cloud.png', url: 'https://accurate.id', tag: 'Finance', bg: '#1B5FAA' },
   ],
   ai: [
     { name: 'ChatGPT', logo: 'https://cdn.simpleicons.org/openai/ffffff', url: 'https://chatgpt.com', tag: 'AI', bg: '#10A37F' },
