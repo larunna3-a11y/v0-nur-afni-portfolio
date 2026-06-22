@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, Zap, Lightbulb, Code, Palette, Layers, ExternalLink, ArrowUpRight } from 'lucide-react'
+import { ArrowRight, Zap, Lightbulb, Code, Palette, Layers, ExternalLink, ArrowUpRight, FileText, Presentation, Download } from 'lucide-react'
 import { useState } from 'react'
 
 const fadeIn = {
@@ -135,11 +135,46 @@ export default function DigitalProductLab() {
     },
   ]
 
-  const timelineEvents = [
-    { year: 2026, quarter: 'Q1', projects: 2, focus: 'First attempts, lots of learning' },
-    { year: 2026, quarter: 'Q2', projects: 3, focus: 'Ideas that actually work' },
-    { year: 2026, quarter: 'Q3', projects: 4, focus: 'Building more intentionally' },
-    { year: 2026, quarter: 'Q4', projects: 5, focus: 'Bigger, bolder experiments' },
+  // Mock data — swap `cover`, `pdfUrl`, and `pptxUrl` for the real files later.
+  // Files should live in /public (e.g. /public/files/digital-marketing-101.pdf)
+  // so the `download` attribute can fetch them same-origin.
+  const modules = [
+    {
+      id: 1,
+      title: 'Digital Marketing 101',
+      level: 'Beginner & Business Practitioners',
+      description: 'Understanding how a business earns attention, customers, and sales in the digital era.',
+      cover: '/moduel/digimar101.png',
+      pdfUrl: '/moduel/Digital-Marketing-101.pdf',
+      pptxUrl: '/moduel/Digital-Marketing-101.pptx',
+    },
+    {
+      id: 2,
+      title: 'Content Strategy Playbook',
+      level: 'Intermediate',
+      description: 'A practical framework for planning content that supports real business goals, not just a calendar.',
+      cover: '/placeholder.svg?height=300&width=400',
+      pdfUrl: '/files/content-strategy-playbook.pdf',
+      pptxUrl: '/files/content-strategy-playbook.pptx',
+    },
+    {
+      id: 3,
+      title: 'Social Ads Crash Course',
+      level: 'Beginner',
+      description: 'The basics of running paid social campaigns that find an audience before they burn the budget.',
+      cover: '/placeholder.svg?height=300&width=400',
+      pdfUrl: '/files/social-ads-crash-course.pdf',
+      pptxUrl: '/files/social-ads-crash-course.pptx',
+    },
+    {
+      id: 4,
+      title: 'Email Marketing Fundamentals',
+      level: 'Beginner',
+      description: 'Building lists, writing subject lines people open, and setting up flows that work while you sleep.',
+      cover: '/placeholder.svg?height=300&width=400',
+      pdfUrl: '/files/email-marketing-fundamentals.pdf',
+      pptxUrl: '/files/email-marketing-fundamentals.pptx',
+    },
   ]
 
   const upcomingExperiments = [
@@ -277,26 +312,63 @@ export default function DigitalProductLab() {
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Modules Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.div variants={fadeIn} className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">How This Has Grown</h2>
-              <p className="text-gray-600">What started as one experiment has quietly become a habit. Here's how it's been building up.</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">Modules You Can Download</h2>
+              <p className="text-gray-600 max-w-2xl">Guides I've put together along the way — free to grab as a PDF or PowerPoint, whichever you'll actually use.</p>
             </motion.div>
 
             <motion.div variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {timelineEvents.map((event, i) => (
+              {modules.map((mod) => (
                 <motion.div
-                  key={i}
+                  key={mod.id}
                   variants={fadeIn}
-                  className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow flex flex-col"
                 >
-                  <div className="text-sm font-semibold text-[#6D4AFF] mb-2">{event.year} {event.quarter}</div>
-                  <div className="text-3xl font-bold text-[#0F0A2E] mb-2">{event.projects}</div>
-                  <div className="text-sm text-gray-600 mb-3">Things shipped</div>
-                  <p className="text-xs text-gray-500 italic">{event.focus}</p>
+                  {/* Cover */}
+                  <div className="relative h-40 bg-gray-100 overflow-hidden">
+                    <img
+                      src={mod.cover}
+                      alt={mod.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Info */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="text-xs font-semibold text-[#6D4AFF] mb-2 uppercase tracking-wide">{mod.level}</div>
+                    <h3 className="text-lg font-bold text-[#0F0A2E] mb-2">{mod.title}</h3>
+                    <p className="text-sm text-gray-600 mb-6 flex-1">{mod.description}</p>
+
+                    {/* Downloads */}
+                    <div className="space-y-2">
+                      <a
+                        href={mod.pdfUrl}
+                        download
+                        className="flex items-center gap-3 bg-red-50 hover:bg-red-100 transition-colors rounded-xl px-3 py-2.5"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-red-500 flex items-center justify-center flex-shrink-0">
+                          <FileText className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-sm font-semibold text-[#0F0A2E] flex-1">PDF</span>
+                        <Download className="w-4 h-4 text-gray-400" />
+                      </a>
+                      <a
+                        href={mod.pptxUrl}
+                        download
+                        className="flex items-center gap-3 bg-orange-50 hover:bg-orange-100 transition-colors rounded-xl px-3 py-2.5"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center flex-shrink-0">
+                          <Presentation className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-sm font-semibold text-[#0F0A2E] flex-1">PPTX</span>
+                        <Download className="w-4 h-4 text-gray-400" />
+                      </a>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
