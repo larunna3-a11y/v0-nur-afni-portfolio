@@ -144,9 +144,9 @@ export default function DigitalProductLab() {
       title: 'Digital Marketing 101',
       level: 'Beginner & Business Practitioners',
       description: 'Understanding how a business earns attention, customers, and sales in the digital era.',
-      cover: '/images/digital-marketing-101-cover.png',
-      pdfUrl: '/files/digital-marketing-101.pdf',
-      pptxUrl: '/files/digital-marketing-101.pptx',
+      cover: '/moduel/digimar101.png',
+      pdfUrl: '/moduel/Digital-Marketing-101.pdf',
+      pptxUrl: '/moduel/Digital-Marketing-101.pptx',
     },
     {
       id: 2,
