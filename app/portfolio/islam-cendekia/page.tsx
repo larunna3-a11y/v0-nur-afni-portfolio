@@ -459,7 +459,7 @@ export default function IslamCendekiaCaseStudy() {
             {kpiCards.map((card, i) => {
               const Icon = card.icon
               return (
-                <div key={i} className="bg-[#1A3A6B] rounded-2xl p-6 text-white">
+                <div key={i} className="bg-[#2D1BB8] rounded-2xl p-6 text-white">
                   <Icon className="w-7 h-7 mb-3 text-blue-300" />
                   <div className="text-2xl font-bold mb-0.5">{card.value}</div>
                   <div className="text-sm text-blue-200 mb-1">{card.label}</div>
