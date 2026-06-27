@@ -98,7 +98,7 @@ export default function DigitalProductLab() {
     },
     {
       id: 3,
-      name: 'ArtArchive',
+      name: 'ArtChy',
       description: 'A passion project born from late-night Wikipedia rabbit holes. A digital space that connects artworks, artists, and the stories behind them.',
       tools: ['Lovable', 'Claude', 'ChatGPT'],
       status: 'Art Galery',
@@ -109,11 +109,11 @@ export default function DigitalProductLab() {
     {
       id: 4,
       name: 'FlowOp warehouse manager',
-      description: An idea still taking shape — what would the ideal team workspace actually look like if you designed it from scratch?',
+      description: 'FlowOps unifies packing, scanning, returns and reporting in a single workspace built for e-commerce brands, marketplace sellers and warehouse teams.',
       tools: ['Lovable', 'chatGPT', 'Claude', 'bolt'],
-      status: 'Prototype',
+      status: 'Website Apps',
       statusColor: 'from-blue-500 to-blue-600',
-      thumbnail: '/placeholder.svg?height=300&width=400',
+      thumbnail: '/images/flowops.png',
        link:'https://flowops-light-mvp.lovable.app'
     },
     {
