@@ -1,23 +1,15 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { useRouter, usePathname } from 'next/navigation'
 
-const navLinks = [
-  { href: '/about', label: 'About' },
-  { label: 'Services', isDropdown: true },
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/digital-product-lab', label: 'Lab' },
-  { href: '/contact', label: 'Contact' },
-]
-
 const serviceOptions = [
-  { href: '/services/marketing', label: 'Marketing', subtitle: 'End-to-End Digital Marketing' },
-  { href: '/services/operations', label: 'Operations', subtitle: 'Business Operations & Optimization' },
-  { href: '/services/ai-101', label: 'AI 101', subtitle: 'AI Training & Team Enablement' },
-  { href: '/services/strategy', label: 'Strategy', subtitle: 'Business Strategy & Decisions' },
+  { path: '/services/marketing', label: 'Marketing', subtitle: 'End-to-End Digital Marketing' },
+  { path: '/services/operations', label: 'Operations', subtitle: 'Business Operations & Optimization' },
+  { path: '/services/ai-101', label: 'AI 101', subtitle: 'AI Training & Team Enablement' },
+  { path: '/services/strategy', label: 'Strategy', subtitle: 'Business Strategy & Decisions' },
 ]
 
 export function Navbar() {
@@ -27,19 +19,36 @@ export function Navbar() {
   const router = useRouter()
   const pathname = usePathname()
 
+  useEffect(() => {
+    const langMatch = pathname.match(/^\/(en|id)/)
+    if (langMatch) {
+      setLanguage(langMatch[1] as 'en' | 'id')
+    }
+  }, [pathname])
+
+  const getLocalizedHref = (path: string) => {
+    return `/${language}${path}`
+  }
+
   const handleLanguageSwitch = (lang: 'en' | 'id') => {
     setLanguage(lang)
-    // Extract the current path without language prefix
     const pathWithoutLang = pathname.replace(/^\/(en|id)/, '') || '/'
     router.push(`/${lang}${pathWithoutLang}`)
   }
+
+  const navLinks = [
+    { href: getLocalizedHref('/about'), label: 'About' },
+    { label: 'Services', isDropdown: true },
+    { href: getLocalizedHref('/portfolio'), label: 'Portfolio' },
+    { href: getLocalizedHref('/contact'), label: 'Contact' },
+  ]
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#E8E6F8]">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="text-[#2D1BB8] font-bold text-xl">
+          <Link href={getLocalizedHref('/')} className="text-[#2D1BB8] font-bold text-xl">
             Home
           </Link>
 
@@ -55,11 +64,11 @@ export function Navbar() {
                     </button>
                     
                     {/* Services Dropdown */}
-                    <div className="absolute left-0 mt-0 w-56 bg-white border border-[#E8E6F8] rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pt-2">
+                    <div className="absolute left-0 mt-0 w-56 bg-white border border-[#E8E6F8] rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pt-2 z-50">
                       {serviceOptions.map((service) => (
                         <Link
-                          key={service.href}
-                          href={service.href}
+                          key={service.path}
+                          href={getLocalizedHref(service.path)}
                           className="block px-4 py-3 hover:bg-[#F8F7FF] first:rounded-t-[11px] last:rounded-b-[11px]"
                         >
                           <div className="text-sm font-semibold text-[#2D1BB8] hover:text-[#0F0A2E]">
@@ -140,8 +149,8 @@ export function Navbar() {
                         <div className="ml-4 mt-2 space-y-2 border-l-2 border-[#E8E6F8] pl-4">
                           {serviceOptions.map((service) => (
                             <Link
-                              key={service.href}
-                              href={service.href}
+                              key={service.path}
+                              href={getLocalizedHref(service.path)}
                               className="block text-[#2D1BB8] hover:text-[#0F0A2E] text-sm font-medium py-1"
                               onClick={() => setMobileMenuOpen(false)}
                             >
