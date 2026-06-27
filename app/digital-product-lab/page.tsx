@@ -62,7 +62,7 @@ export default function DigitalProductLab() {
       color: 'from-pink-500 to-rose-600',
     },
     {
-      tool: 'Uizard',
+      tool: 'UseAi',
       description: 'Sketching out UI concepts fast — great for when the idea is clear in my head but I need to get it on screen quickly',
       icon: Palette,
       color: 'from-cyan-500 to-cyan-600',
@@ -98,22 +98,23 @@ export default function DigitalProductLab() {
     },
     {
       id: 3,
-      name: 'ArtArchive',
+      name: 'ArtChy',
       description: 'A passion project born from late-night Wikipedia rabbit holes. A digital space that connects artworks, artists, and the stories behind them.',
       tools: ['Lovable', 'Claude', 'ChatGPT'],
       status: 'Art Galery',
       statusColor: 'from-cyan-500 to-teal-600',
-      thumbnail: '/images/ArtArchive-dashboard.png',
+      thumbnail: '/images/Artchy.png',
       link: 'https://curious-canvas-cosmos.lovable.app/'
     },
     {
       id: 4,
-      name: 'Project Management App',
-      description: 'An idea still taking shape — what would the ideal team workspace actually look like if you designed it from scratch?',
-      tools: ['V0', 'Figma AI', 'Claude'],
-      status: 'Prototype',
+      name: 'FlowOp warehouse manager',
+      description: 'FlowOps unifies packing, scanning, returns and reporting in a single workspace built for e-commerce brands, marketplace sellers and warehouse teams.',
+      tools: ['Lovable', 'chatGPT', 'Claude', 'bolt'],
+      status: 'Website Apps',
       statusColor: 'from-blue-500 to-blue-600',
-      thumbnail: '/placeholder.svg?height=300&width=400',
+      thumbnail: '/images/flowops.png',
+       link:'https://flowops-light-mvp.lovable.app'
     },
     {
       id: 5,
