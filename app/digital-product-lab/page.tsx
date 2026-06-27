@@ -108,12 +108,13 @@ export default function DigitalProductLab() {
     },
     {
       id: 4,
-      name: 'Project Management App',
-      description: 'An idea still taking shape — what would the ideal team workspace actually look like if you designed it from scratch?',
-      tools: ['V0', 'Figma AI', 'Claude'],
+      name: 'FlowOp warehouse manager',
+      description: An idea still taking shape — what would the ideal team workspace actually look like if you designed it from scratch?',
+      tools: ['Lovable', 'chatGPT', 'Claude', 'bolt'],
       status: 'Prototype',
       statusColor: 'from-blue-500 to-blue-600',
       thumbnail: '/placeholder.svg?height=300&width=400',
+       link:'https://flowops-light-mvp.lovable.app'
     },
     {
       id: 5,
