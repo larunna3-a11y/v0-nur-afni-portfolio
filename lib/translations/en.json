@@ -1,0 +1,202 @@
+{
+  "common": {
+    "language": "English",
+    "back": "Back",
+    "contactUs": "Contact Us",
+    "learnMore": "Learn More",
+    "exploreService": "Explore Service"
+  },
+  "services": {
+    "marketing": {
+      "title": "Marketing",
+      "subtitle": "End-to-End Digital Marketing & Marketplace Growth",
+      "heroDescription": "Develop scalable marketing systems that connect content, marketplaces, paid campaigns, customer journeys, analytics, and business growth into one integrated strategy.",
+      "description": "Marketing isn't just about campaigns—it's about building systems that consistently drive qualified customers to your business. I help you design and execute a full-funnel marketing strategy that connects every channel into one cohesive engine for growth.",
+      "whyChoose": "Why Choose This Service?",
+      "whyDescription": "Most businesses run marketing in silos—social media here, marketplace there, ads scattered everywhere. This approach leaves money on the table and confuses your customers. I bridge those gaps by creating integrated systems where each channel amplifies the others.",
+      "services": [
+        "Marketplace Strategy & Optimization",
+        "Campaign Planning & Execution",
+        "Content Calendar & Asset Development",
+        "Performance Analysis & Reporting",
+        "Customer Journey Mapping",
+        "Growth System Design",
+        "AI-Assisted Marketing Workflows",
+        "Competitive Analysis & Positioning"
+      ],
+      "idealFor": "E-commerce businesses, SMEs, growing brands, marketplace sellers, and startups looking to scale systematically.",
+      "processTitle": "The Marketing Process",
+      "processSteps": [
+        {
+          "title": "Audit & Strategy",
+          "description": "We analyze your current marketing, identify gaps, and design a system tailored to your business model and targets."
+        },
+        {
+          "title": "Build & Execute",
+          "description": "We set up campaigns, optimize marketplaces, create content calendars, and establish tracking for every channel."
+        },
+        {
+          "title": "Optimize & Scale",
+          "description": "We track performance, test new strategies, and continuously improve based on real data."
+        },
+        {
+          "title": "Handoff & Support",
+          "description": "We document everything and provide ongoing support as your team takes over execution."
+        }
+      ],
+      "metricsTitle": "Key Metrics We Track",
+      "metrics": [
+        "Customer Acquisition Cost (CAC)",
+        "Return on Ad Spend (ROAS)",
+        "Conversion Rate",
+        "Customer Lifetime Value (CLV)",
+        "Marketing-Sourced Revenue"
+      ]
+    },
+    "operations": {
+      "title": "Operations",
+      "subtitle": "Business Operations & Workflow Optimization",
+      "heroDescription": "Design efficient operational systems including SOPs, reporting dashboards, warehouse workflows, KPI frameworks, and process improvements that support sustainable growth.",
+      "description": "Operations is the invisible backbone of growth. When your warehouse moves inventory faster, your reporting is accurate, and your processes are clear—revenue compounds. I help you build those systems.",
+      "whyChoose": "Why Choose This Service?",
+      "whyDescription": "Most teams rely on tribal knowledge and manual workarounds. This creates bottlenecks, increases errors, and makes scaling painful. I design standardized, documented systems that work without heroics.",
+      "services": [
+        "Standard Operating Procedures (SOPs)",
+        "Warehouse & Fulfillment Workflows",
+        "KPI & Metrics Framework",
+        "Reporting Dashboard Development",
+        "Marketplace Operations Optimization",
+        "Process Bottleneck Analysis",
+        "Team Training & Documentation",
+        "Continuous Improvement Systems"
+      ],
+      "idealFor": "Warehouse teams, e-commerce businesses, fulfillment operations, growing teams, and businesses with complex workflows.",
+      "processTitle": "The Operations Process",
+      "processSteps": [
+        {
+          "title": "Current State Assessment",
+          "description": "We map your existing workflows, identify pain points, and measure current performance."
+        },
+        {
+          "title": "System Design",
+          "description": "We design improved workflows, create SOPs, and build reporting dashboards tailored to your metrics."
+        },
+        {
+          "title": "Implementation & Training",
+          "description": "We roll out new systems, train your team, and adjust based on real-world execution."
+        },
+        {
+          "title": "Ongoing Optimization",
+          "description": "We monitor performance and continuously improve based on emerging bottlenecks."
+        }
+      ],
+      "metricsTitle": "Key Metrics We Track",
+      "metrics": [
+        "Order Fulfillment Time",
+        "Error Rate",
+        "Cost Per Unit",
+        "Warehouse Efficiency",
+        "Team Productivity"
+      ]
+    },
+    "ai101": {
+      "title": "AI 101",
+      "subtitle": "AI Training & Team Enablement",
+      "heroDescription": "Practical AI workshops designed for businesses that want to integrate ChatGPT and modern AI tools into marketing, operations, documentation, reporting, and daily productivity.",
+      "description": "AI is no longer a future technology—it's a competitive advantage today. But most teams don't know where to start. I provide practical, business-focused AI training that helps your team leverage these tools immediately.",
+      "whyChoose": "Why Choose This Service?",
+      "whyDescription": "Generic AI courses teach theory. This training teaches application. We focus on real problems your business faces and show exactly how AI tools solve them—with hands-on practice and concrete workflows.",
+      "services": [
+        "AI Fundamentals & Business Context",
+        "ChatGPT & LLM Prompt Engineering",
+        "AI for Marketing & Content Creation",
+        "AI for Operations & Documentation",
+        "AI for Data Analysis & Reporting",
+        "AI for Customer Service",
+        "Responsible AI & Ethical Considerations",
+        "Custom AI Workflow Design"
+      ],
+      "idealFor": "Corporate teams, marketing departments, operations teams, business owners, and anyone wanting to leverage AI for competitive advantage.",
+      "processTitle": "The AI 101 Process",
+      "processSteps": [
+        {
+          "title": "Needs Assessment",
+          "description": "We identify where AI can create the most value for your specific business challenges."
+        },
+        {
+          "title": "Training & Practice",
+          "description": "We teach AI fundamentals, demonstrate practical applications, and have teams practice hands-on."
+        },
+        {
+          "title": "Workflow Design",
+          "description": "We design specific AI workflows for your team's unique use cases."
+        },
+        {
+          "title": "Ongoing Support",
+          "description": "We provide templates, frameworks, and ongoing guidance as your team masters new tools."
+        }
+      ],
+      "metricsTitle": "Success Indicators",
+      "metrics": [
+        "Time Saved Per Team Member",
+        "Content Output Quality",
+        "Documentation Completeness",
+        "Team AI Confidence Level",
+        "Process Efficiency Gains"
+      ]
+    },
+    "strategy": {
+      "title": "Strategy",
+      "subtitle": "Business Strategy & Decision Support",
+      "heroDescription": "Transform complex business challenges into actionable strategies by connecting marketing, operations, finance, customer experience, and data into clear executive decisions.",
+      "description": "Strategy isn't about perfect plans—it's about seeing the full picture and making decisions that compound. I help you connect scattered business information into clear, data-informed strategies that drive profitable growth.",
+      "whyChoose": "Why Choose This Service?",
+      "whyDescription": "Most businesses make decisions in isolation: marketing optimizes for clicks, operations optimizes for cost, finance optimizes for cash. I help you see the whole system and make decisions that optimize for sustainable business growth.",
+      "services": [
+        "Business Audit & Health Assessment",
+        "Marketplace Strategy & Positioning",
+        "Growth Roadmap & Prioritization",
+        "Financial Modeling & Scenarios",
+        "Customer Experience Strategy",
+        "Competitive & Market Analysis",
+        "AI Integration Strategy",
+        "Executive Decision Support"
+      ],
+      "idealFor": "Business owners, executives, directors, startups, and management teams facing complex growth decisions.",
+      "processTitle": "The Strategy Process",
+      "processSteps": [
+        {
+          "title": "Deep Dive Assessment",
+          "description": "We analyze your business, market, competition, and data to understand your true competitive position."
+        },
+        {
+          "title": "Strategy Development",
+          "description": "We develop a clear, prioritized strategy backed by data and aligned with your business goals."
+        },
+        {
+          "title": "Roadmap & Execution Plan",
+          "description": "We create a detailed roadmap with milestones, KPIs, and implementation steps."
+        },
+        {
+          "title": "Ongoing Strategy Support",
+          "description": "We review performance regularly and adjust strategy based on market changes and results."
+        }
+      ],
+      "metricsTitle": "Key Outcomes",
+      "metrics": [
+        "Revenue Growth",
+        "Profitability Improvement",
+        "Market Share",
+        "Customer Retention",
+        "Strategic Milestone Achievement"
+      ]
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  }
+}
