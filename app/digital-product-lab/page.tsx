@@ -62,7 +62,7 @@ export default function DigitalProductLab() {
       color: 'from-pink-500 to-rose-600',
     },
     {
-      tool: 'Uizard',
+      tool: 'UseAi',
       description: 'Sketching out UI concepts fast — great for when the idea is clear in my head but I need to get it on screen quickly',
       icon: Palette,
       color: 'from-cyan-500 to-cyan-600',
@@ -103,7 +103,7 @@ export default function DigitalProductLab() {
       tools: ['Lovable', 'Claude', 'ChatGPT'],
       status: 'Art Galery',
       statusColor: 'from-cyan-500 to-teal-600',
-      thumbnail: '/images/ArtArchive-dashboard.png',
+      thumbnail: '/images/Artchy.png',
       link: 'https://curious-canvas-cosmos.lovable.app/'
     },
     {
