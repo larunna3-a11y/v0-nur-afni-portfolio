@@ -24,8 +24,8 @@ export default function DigitalProductLab() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   const statCards = [
-    { label: 'Projects Shipped', value: '3+', suffix: '' },
-    { label: 'Ideas in Progress', value: '4', suffix: '' },
+    { label: 'Projects Shipped', value: '4', suffix: '' },
+    { label: 'Ideas in Progress', value: '6', suffix: '' },
     { label: 'Self-Taught', value: '100%', suffix: '' },
     { label: 'Always Building', value: '✦', suffix: '' },
   ]
