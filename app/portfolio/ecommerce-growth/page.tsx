@@ -95,7 +95,7 @@ const tiktokScreenshots = [
   { month: 'February 2026', url: '/screenshots-growth-ecommerce/tiktokshop februari 2026.png', revenue: 'Rp317.6M', highlight: '+47.3% Recovery' },
   { month: 'March 2026', url: '/screenshots-growth-ecommerce/tiktokshop maret 2026.png', revenue: 'Rp539.3M', highlight: '+56.66% Ramadhan Push' },
   { month: 'April 2026', url: '/screenshots-growth-ecommerce/tiktokshop april 2026.png', revenue: 'Rp736M', highlight: '+43.69% Expansion' },
-  { month: 'May 2026', url: '/screenshots-growth-ecommerce/shopee may 2026.jpeg', revenue: 'Rp760.1M', highlight: 'Highest Monthly GMV' }
+  { month: 'May 2026', url: '/screenshots-growth-ecommerce/tiktokshopmay2026.png', revenue: 'Rp842.2M', highlight: 'Highest Monthly GMV' }
 ]
 
 const lazadaScreenshots = [
