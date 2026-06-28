@@ -114,7 +114,7 @@ export default function DigitalProductLab() {
       status: 'Website Apps',
       statusColor: 'from-blue-500 to-blue-600',
       thumbnail: '/images/flowops.png',
-       link:'https://flowops-light-mvp.lovable.app'
+       link:'https://flow-ops-hq.lovable.app/'
     },
     {
       id: 5,
