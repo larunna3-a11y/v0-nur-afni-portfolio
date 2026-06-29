@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 const stats = [
-  { value: 'Rp982M', label: 'Peak Revenue' },
+  { value: 'Rp1,8B', label: 'Peak Revenue' },
   { value: '31x', label: 'Revenue Growth' },
   { value: '+189%', label: 'Follower Growth' },
 ]
@@ -13,7 +13,7 @@ export function HeroSection() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#F97316] rounded-full blur-3xl opacity-20 translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4A35D4] rounded-full blur-3xl opacity-30 -translate-x-1/2 translate-y-1/2" />
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column */}
           <div className="order-2 lg:order-1">
