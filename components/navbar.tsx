@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+import { Menu, X } from 'lucide-react'
 import { WorkWithMeDropdown } from './work-with-me-dropdown'
 
 const otherNavLinks = [
@@ -23,6 +23,33 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [workWithMeOpen, setWorkWithMeOpen] = useState(false)
   const [mobileWorkWithMeOpen, setMobileWorkWithMeOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown on Escape
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && workWithMeOpen) {
+        setWorkWithMeOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [workWithMeOpen])
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setWorkWithMeOpen(false)
+      }
+    }
+
+    if (workWithMeOpen) {
+      document.addEventListener('click', handleClickOutside)
+      return () => document.removeEventListener('click', handleClickOutside)
+    }
+  }, [workWithMeOpen])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#E8E6F8]">
@@ -46,19 +73,28 @@ export function Navbar() {
             ))}
 
             {/* Work With Me - Desktop */}
-            <div className="relative group">
+            <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setWorkWithMeOpen(!workWithMeOpen)}
                 onMouseEnter={() => setWorkWithMeOpen(true)}
-                className="flex items-center gap-1.5 text-[#4B4680] hover:text-[#2D1BB8] transition-colors text-sm font-medium"
+                className={[
+                  'relative text-sm font-medium transition-colors duration-200',
+                  workWithMeOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
+                ].join(' ')}
               >
                 Work With Me
-                <ChevronDown className="w-4 h-4" />
+                {/* Animated underline */}
+                <span
+                  className={[
+                    'absolute bottom-0 left-0 right-0 h-0.5 bg-[#2D1BB8] transition-all duration-300 origin-left',
+                    workWithMeOpen ? 'scale-x-100' : 'scale-x-0',
+                  ].join(' ')}
+                />
               </button>
               <div
                 onMouseEnter={() => setWorkWithMeOpen(true)}
                 onMouseLeave={() => setWorkWithMeOpen(false)}
-                className="absolute left-0 top-full pt-2"
+                className="absolute left-0 top-full pt-3"
               >
                 <WorkWithMeDropdown isOpen={workWithMeOpen} onClose={() => setWorkWithMeOpen(false)} />
               </div>
@@ -105,12 +141,12 @@ export function Navbar() {
               <div className="py-2">
                 <button
                   onClick={() => setMobileWorkWithMeOpen(!mobileWorkWithMeOpen)}
-                  className="flex items-center justify-between w-full text-[#4B4680] hover:text-[#2D1BB8] transition-colors text-sm font-medium px-2"
+                  className={[
+                    'w-full text-left text-sm font-medium px-2 py-2 transition-colors duration-200',
+                    mobileWorkWithMeOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
+                  ].join(' ')}
                 >
                   Work With Me
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${mobileWorkWithMeOpen ? 'rotate-180' : ''}`}
-                  />
                 </button>
 
                 {mobileWorkWithMeOpen && (

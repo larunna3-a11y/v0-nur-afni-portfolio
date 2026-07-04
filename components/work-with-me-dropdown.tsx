@@ -57,9 +57,11 @@ export function WorkWithMeDropdown({ isOpen, onClose }: WorkWithMeDropdownProps)
     <div
       ref={dropdownRef}
       className={[
-        'absolute top-full left-0 mt-2 w-80 bg-white rounded-xl border border-[#E8E6F8] shadow-lg',
-        'transition-all duration-200 origin-top',
-        isOpen ? 'opacity-100 visible scale-y-100' : 'opacity-0 invisible scale-y-95 pointer-events-none',
+        'absolute top-full left-0 w-80 bg-white rounded-xl border border-[#E8E6F8] shadow-lg',
+        'transition-all duration-300 ease-out origin-top',
+        isOpen
+          ? 'opacity-100 visible translate-y-0'
+          : 'opacity-0 invisible -translate-y-2 pointer-events-none',
       ].join(' ')}
       onMouseLeave={onClose}
     >
