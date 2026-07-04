@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
@@ -104,13 +103,11 @@ export function AboutHero() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="absolute inset-0 rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
               >
-                <Image
-                  src="/images/nur-afni-profile.jpg"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/nur-afni-hero.png"
                   alt="Nur Afni"
-                  fill
-                  className="object-cover object-top"
-                  priority
-                  quality={95}
+                  className="w-full h-full object-cover object-top"
                 />
                 {/* Subtle overlay gradient at bottom */}
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1A0F7A]/60 to-transparent" />
