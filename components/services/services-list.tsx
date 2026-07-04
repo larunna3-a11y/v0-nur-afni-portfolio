@@ -1,144 +1,160 @@
-import { Smartphone, ShoppingCart, Megaphone, Compass, Users } from 'lucide-react'
+'use client'
 
-const services = [
+import { useState } from 'react'
+import Link from 'next/link'
+import { Lightbulb, TrendingUp, Monitor, GraduationCap, ArrowRight } from 'lucide-react'
+
+const cards = [
   {
-    id: 'social-media',
-    icon: Smartphone,
-    title: 'Social Media Management',
-    description: 'Full Instagram and TikTok management — from strategy and content calendar to posting, community engagement, and monthly performance reporting.',
-    deliverables: [
-      'Monthly content calendar',
-      'Platform-specific creative direction',
-      'Reels & short-form video strategy',
-      'Community management',
-      'Monthly performance report',
+    id: 'consulting',
+    icon: Lightbulb,
+    title: 'Consulting',
+    description: 'Helping businesses make better digital decisions through strategy, audits, and process improvements.',
+    services: [
+      'Marketplace Growth Strategy',
+      'Business Growth Audit',
+      'AI Workflow Consultation',
+      'Digital Transformation',
+      'Marketing Strategy',
     ],
-    tools: ['Meta Business Suite', 'TikTok Creative Center', 'Canva', 'CapCut', 'Google Sheets'],
-    idealFor: 'Brands building organic presence on Instagram and TikTok',
+    cta: 'Book Consultation',
+    href: '/contact',
   },
   {
-    id: 'ecommerce',
-    icon: ShoppingCart,
-    title: 'E-Commerce End-to-End Management',
-    description: 'Complete marketplace management across Shopee, TikTok Shop, Tokopedia, Lazada, and Blibli — from product listing optimization to campaign execution and revenue reporting.',
-    deliverables: [
-      'Product listing optimization',
-      'Flash sale & seasonal campaign planning',
-      'Voucher and discount strategy',
-      'Livestream commerce coordination',
-      'Monthly GMV & revenue report',
+    id: 'marketing',
+    icon: TrendingUp,
+    title: 'Marketing',
+    description: 'Planning, executing, and optimizing digital marketing initiatives across marketplaces and social platforms.',
+    services: [
+      'Marketplace Management',
+      'Paid Advertising',
+      'Affiliate Programs',
+      'Livestream Commerce',
+      'Social Media Management',
+      'Performance Reporting',
     ],
-    tools: ['Shopee Seller Center', 'TikTok Shop Seller Center', 'Tokopedia', 'Lazada Seller Center', 'Blibli', 'Google Sheets'],
-    idealFor: 'Brands selling on Indonesian marketplaces who need a dedicated growth partner',
+    cta: 'View Case Studies',
+    href: '/portfolio',
   },
   {
-    id: 'paid-ads',
-    icon: Megaphone,
-    title: 'Paid Ads (Social & Marketplace)',
-    description: 'Performance-driven ad campaigns on Meta, TikTok, and Shopee CPAS — built to maximize ROAS and minimize wasted spend.',
-    deliverables: [
-      'Campaign structure & audience setup',
-      'Creative direction & ad copy',
-      'A/B testing & optimization',
-      'Budget allocation strategy',
-      'Weekly and monthly ROAS reports',
+    id: 'builder',
+    icon: Monitor,
+    title: 'Builder',
+    description: 'Designing and building digital products, internal systems, and AI-powered experiences.',
+    services: [
+      'Portfolio Websites',
+      'Business Dashboards',
+      'Internal Systems',
+      'AI Applications',
+      'Workflow Automation',
+      'Knowledge Platforms',
     ],
-    tools: ['Meta Business Suite', 'TikTok Ads Manager', 'Shopee CPAS', 'TikTok Creative Center'],
-    idealFor: 'Brands with ad budget who want measurable return, not just impressions',
+    cta: 'Explore Projects',
+    href: '/digital-product-lab',
   },
   {
-    id: 'strategy',
-    icon: Compass,
-    title: 'Digital Strategy',
-    description: 'A clear, data-informed growth plan that connects your social media, paid ads, marketplace, and creator strategy into one cohesive funnel.',
-    deliverables: [
-      'Full-funnel strategy deck',
-      'Channel prioritization',
-      'Campaign calendar',
-      'KPI framework',
-      'Quarterly review and optimization plan',
+    id: 'learning',
+    icon: GraduationCap,
+    title: 'Learning',
+    description: 'Helping individuals and teams develop practical digital marketing and AI skills.',
+    services: [
+      'One-on-One Mentoring',
+      'Corporate Training',
+      'AI for Marketing',
+      'Marketplace Workshops',
+      'Portfolio Reviews',
     ],
-    tools: ['Google Trends', 'TikTok Creative Center', 'Google Sheets', 'Google Workspace'],
-    idealFor: 'Brands launching a new product or entering a new platform and need a roadmap',
-  },
-  {
-    id: 'kol',
-    icon: Users,
-    title: 'KOL & Affiliator Strategy',
-    description: 'End-to-end creator and affiliate campaign management — from identifying the right creators to tracking GMV and ROAS per campaign.',
-    deliverables: [
-      'KOL/creator shortlisting & briefs',
-      'Campaign concept & talking points',
-      'Posting schedule coordination',
-      'Affiliate link/voucher setup',
-      'Performance report (GMV, orders, ROAS)',
-    ],
-    tools: ['TikTok Affiliate', 'Shopee Affiliate', 'TikTok Creative Center', 'Canva'],
-    idealFor: 'Brands wanting to leverage creators for conversion, not just awareness',
+    cta: 'See Learning',
+    href: '/digital-product-lab',
   },
 ]
 
 export function ServicesList() {
+  const [activeId, setActiveId] = useState<string | null>(null)
+
   return (
-    <section>
-      {services.map((service, index) => (
-        <div
-          key={service.id}
-          id={service.id}
-          className={index % 2 === 0 ? 'bg-white' : 'bg-[#F8F7FF]'}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              {/* Left - Info */}
-              <div>
-                <div className="w-14 h-14 rounded-xl bg-[#2D1BB8]/[0.08] flex items-center justify-center mb-6">
-                  <service.icon className="w-7 h-7 text-[#2D1BB8]" />
+    <section className="bg-[#F8F7FF] py-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {cards.map((card) => {
+            const isActive = activeId === card.id
+            const isOtherActive = activeId !== null && !isActive
+
+            return (
+              <div
+                key={card.id}
+                onMouseEnter={() => setActiveId(card.id)}
+                onMouseLeave={() => setActiveId(null)}
+                onClick={() => setActiveId(isActive ? null : card.id)}
+                className={[
+                  'group relative bg-white rounded-2xl border cursor-pointer',
+                  'transition-all duration-300 ease-out overflow-hidden',
+                  'flex flex-col p-7',
+                  isActive
+                    ? 'border-[#2D1BB8] shadow-[0_0_0_1px_#2D1BB8,0_8px_40px_rgba(45,27,184,0.12)]'
+                    : 'border-[#E8E6F8] shadow-sm',
+                  isOtherActive ? 'opacity-60 scale-[0.98]' : 'opacity-100 scale-100',
+                ].join(' ')}
+              >
+                {/* Icon */}
+                <div
+                  className={[
+                    'w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-colors duration-300',
+                    isActive ? 'bg-[#2D1BB8]' : 'bg-[#2D1BB8]/[0.08]',
+                  ].join(' ')}
+                >
+                  <card.icon
+                    className={[
+                      'w-5 h-5 transition-colors duration-300',
+                      isActive ? 'text-white' : 'text-[#2D1BB8]',
+                    ].join(' ')}
+                  />
                 </div>
-                <h2 className="text-2xl font-bold text-[#0F0A2E]">{service.title}</h2>
-                <p className="mt-4 text-[#4B4680] leading-relaxed">{service.description}</p>
-                <p className="mt-6 text-sm italic text-[#9B97C0]">
-                  <span className="font-medium">Ideal for:</span> {service.idealFor}
-                </p>
-              </div>
-              
-              {/* Right - Deliverables & Tools */}
-              <div className="space-y-8">
-                {/* Deliverables */}
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-[#2D1BB8] mb-4">
-                    Deliverables
-                  </h3>
-                  <ul className="space-y-2">
-                    {service.deliverables.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-[#4B4680]">
-                        <span className="w-2 h-2 bg-[#2D1BB8] rounded-full mt-2 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                {/* Tools */}
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-[#2D1BB8] mb-4">
-                    Tools
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {service.tools.map((tool) => (
-                      <span
-                        key={tool}
-                        className="px-3 py-1 bg-[#E8E6F8] text-[#4B4680] rounded-full text-sm"
-                      >
-                        {tool}
-                      </span>
-                    ))}
+
+                {/* Title */}
+                <h2 className="text-xl font-bold text-[#0F0A2E] mb-2">{card.title}</h2>
+
+                {/* Description */}
+                <p className="text-sm text-[#4B4680] leading-relaxed">{card.description}</p>
+
+                {/* Expandable content */}
+                <div
+                  className={[
+                    'grid transition-all duration-300 ease-out',
+                    isActive ? 'grid-rows-[1fr] mt-6 opacity-100' : 'grid-rows-[0fr] mt-0 opacity-0',
+                  ].join(' ')}
+                >
+                  <div className="overflow-hidden">
+                    <ul className="space-y-2 mb-6">
+                      {card.services.map((service, i) => (
+                        <li
+                          key={service}
+                          className="flex items-center gap-2.5 text-sm text-[#4B4680]"
+                          style={{
+                            transitionDelay: isActive ? `${i * 30}ms` : '0ms',
+                          }}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#2D1BB8] flex-shrink-0" />
+                          {service}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link
+                      href={card.href}
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#2D1BB8] hover:gap-3 transition-all duration-200"
+                    >
+                      {card.cta}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
-      ))}
+      </div>
     </section>
   )
 }
