@@ -82,7 +82,7 @@ export function HeroSection() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-44 h-44 sm:w-52 sm:h-52 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl">
                   <Image
-                    src="/images/nur-afni-hero.webp"
+                    src="/images/nur-afni-hero.png"
                     alt="Nur Afni"
                     fill
                     className="object-cover object-top"
