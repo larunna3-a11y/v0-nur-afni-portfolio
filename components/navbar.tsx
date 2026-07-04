@@ -151,10 +151,17 @@ export function Navbar() {
 
                 {mobileWorkWithMeOpen && (
                   <div className="ml-4 mt-2 space-y-1 border-l-2 border-[#E8E6F8] pl-3">
+                    <Link
+                      href="/work-with-me"
+                      className="block text-[#4B4680] hover:text-[#2D1BB8] text-sm font-medium py-1.5"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      All Services
+                    </Link>
                     {workWithMeCategories.map((category) => (
                       <Link
                         key={category.id}
-                        href={`/services#${category.id}`}
+                        href={`/work-with-me/${category.id}`}
                         className="block text-[#2D1BB8] hover:text-[#0F0A2E] text-sm font-medium py-1.5"
                         onClick={() => setMobileMenuOpen(false)}
                       >

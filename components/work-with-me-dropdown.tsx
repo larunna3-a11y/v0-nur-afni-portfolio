@@ -79,7 +79,7 @@ export function WorkWithMeDropdown({ isOpen, onClose }: WorkWithMeDropdownProps)
           return (
             <Link
               key={category.id}
-              href={`/services#${category.id}`}
+              href={`/work-with-me/${category.id}`}
               onMouseEnter={() => setHoveredId(category.id)}
               onMouseLeave={() => setHoveredId(null)}
               onClick={onClose}
@@ -121,7 +121,7 @@ export function WorkWithMeDropdown({ isOpen, onClose }: WorkWithMeDropdownProps)
       {/* Footer CTA */}
       <div className="px-5 py-3 border-t border-[#E8E6F8]">
         <Link
-          href="/services"
+          href="/work-with-me"
           onClick={onClose}
           className="inline-flex items-center gap-2 text-xs font-semibold text-[#2D1BB8] hover:gap-3 transition-all"
         >
