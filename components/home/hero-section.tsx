@@ -50,7 +50,7 @@ export function HeroSection() {
               ))}
             </div>
           </div>
-          
+
           {/* Right Column - Profile Image with floating labels */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px]">
