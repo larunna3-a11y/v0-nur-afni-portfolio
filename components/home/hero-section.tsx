@@ -55,43 +55,12 @@ export function HeroSection() {
           
           {/* Right Column - Profile Image */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px]">
-
-              {/* Corner floating labels */}
-              <div className="absolute top-0 left-0 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 -translate-x-4 -translate-y-4 z-10 whitespace-nowrap">
-                <span className="text-blue-300 text-base">📈</span>
-                <span className="text-white text-sm font-medium">Marketplace Growth</span>
+            <div className="relative">
+              {/* Purple glow halo */}
+              <div className="absolute inset-0 bg-[#4A35D4] rounded-full blur-2xl opacity-50 scale-110" />
+              <div className="relative w-30 h-30 sm:w-20 sm:h-250 lg:w-135 lg:h-170 rounded-full border-4 border-white/1 overflow-hidden">
+              
               </div>
-              <div className="absolute top-0 right-0 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 translate-x-4 -translate-y-4 z-10 whitespace-nowrap">
-                <span className="text-purple-300 text-base">🤖</span>
-                <span className="text-white text-sm font-medium">AI Product Builder</span>
-              </div>
-              <div className="absolute bottom-0 left-0 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 -translate-x-4 translate-y-4 z-10 whitespace-nowrap">
-                <span className="text-sky-300 text-base">💻</span>
-                <span className="text-white text-sm font-medium">Digital Systems</span>
-              </div>
-              <div className="absolute bottom-0 right-0 flex items-center gap-2 bg-[#1a0f6e]/80 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 translate-x-4 translate-y-4 z-10 whitespace-nowrap">
-                <span className="bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded">ID</span>
-                <span className="text-white text-sm font-medium">Based in Indonesia</span>
-              </div>
-
-              {/* Connecting lines (the square frame) */}
-              <div className="absolute inset-0 border border-white/20 rounded-none" />
-
-              {/* Center profile portrait */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-44 h-44 sm:w-52 sm:h-52 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl">
-                  <Image
-                    src="/images/nur-afni-hero.png"
-                    alt="Nur Afni"
-                    fill
-                    className="object-cover object-top"
-                    priority
-                    quality={95}
-                  />
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
