@@ -9,63 +9,82 @@ const cards = [
     id: 'consulting',
     icon: Lightbulb,
     title: 'Consulting',
-    description: 'Helping businesses make better digital decisions through strategy, audits, and process improvements.',
-    services: [
+    description: 'Helping businesses make smarter digital decisions through strategy, audits, AI adoption, and operational improvements.',
+    capabilities: [
       'Marketplace Growth Strategy',
       'Business Growth Audit',
       'AI Workflow Consultation',
+      'Business Process Improvement',
       'Digital Transformation',
       'Marketing Strategy',
     ],
-    cta: 'Book Consultation',
+    featuredAreas: ['Marketplace', 'AI', 'Operations', 'Growth'],
+    cta: 'Book a Consultation',
     href: '/contact',
   },
   {
     id: 'marketing',
     icon: TrendingUp,
     title: 'Marketing',
-    description: 'Planning, executing, and optimizing digital marketing initiatives across marketplaces and social platforms.',
-    services: [
+    description: 'Helping brands grow through marketplace optimization, paid media, content systems, livestream commerce, and performance marketing.',
+    capabilities: [
       'Marketplace Management',
       'Paid Advertising',
       'Affiliate Programs',
       'Livestream Commerce',
-      'Social Media Management',
-      'Performance Reporting',
+      'Social Media Strategy',
+      'Performance Analytics',
+      'Campaign Planning',
     ],
-    cta: 'View Case Studies',
+    featuredProjects: [
+      { name: 'QCY Indonesia', category: 'Marketplace Growth' },
+      { name: 'Priskila', category: 'E-commerce Optimization' },
+      { name: 'Islam Cendekia', category: 'Content Strategy' },
+    ],
+    cta: 'View Marketing Case Studies',
     href: '/portfolio',
   },
   {
     id: 'builder',
     icon: Monitor,
     title: 'Builder',
-    description: 'Designing and building digital products, internal systems, and AI-powered experiences.',
-    services: [
+    description: 'Designing and building digital products, AI-powered experiences, internal systems, dashboards, and business tools.',
+    capabilities: [
       'Portfolio Websites',
-      'Business Dashboards',
-      'Internal Systems',
       'AI Applications',
+      'Internal Systems',
+      'Business Dashboards',
       'Workflow Automation',
       'Knowledge Platforms',
+      'Landing Pages',
+      'CMS',
     ],
-    cta: 'Explore Projects',
+    featuredProjects: [
+      { name: 'FlowOps', category: 'Workflow Platform' },
+      { name: 'StyleDNA', category: 'AI Tool' },
+      { name: 'Artchy', category: 'Content Management' },
+      { name: 'Pustakara', category: 'Coming Soon', soon: true },
+    ],
+    cta: 'Explore Digital Products',
     href: '/digital-product-lab',
   },
   {
     id: 'learning',
     icon: GraduationCap,
     title: 'Learning',
-    description: 'Helping individuals and teams develop practical digital marketing and AI skills.',
-    services: [
+    description: 'Helping individuals and teams improve digital marketing, AI, marketplace operations, and modern workflows.',
+    capabilities: [
       'One-on-One Mentoring',
       'Corporate Training',
-      'AI for Marketing',
       'Marketplace Workshops',
+      'AI for Marketing',
+      'Prompt Engineering',
       'Portfolio Reviews',
+      'Digital Strategy Sessions',
     ],
-    cta: 'See Learning',
-    href: '/digital-product-lab',
+    suitableFor: ['Students', 'Professionals', 'Business Owners', 'Marketing Teams'],
+    cta: 'Explore Learning',
+    href: '/contact',
   },
 ]
 
@@ -125,26 +144,91 @@ export function ServicesList() {
                     isActive ? 'grid-rows-[1fr] mt-6 opacity-100' : 'grid-rows-[0fr] mt-0 opacity-0',
                   ].join(' ')}
                 >
-                  <div className="overflow-hidden">
-                    <ul className="space-y-2 mb-6">
-                      {card.services.map((service, i) => (
-                        <li
-                          key={service}
-                          className="flex items-center gap-2.5 text-sm text-[#4B4680]"
-                          style={{
-                            transitionDelay: isActive ? `${i * 30}ms` : '0ms',
-                          }}
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#2D1BB8] flex-shrink-0" />
-                          {service}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="overflow-hidden space-y-6">
+                    {/* Capabilities as Pills */}
+                    <div>
+                      <div className="flex flex-wrap gap-2">
+                        {card.capabilities.map((capability, i) => (
+                          <span
+                            key={capability}
+                            className={[
+                              'inline-block px-3 py-1.5 rounded-full text-xs font-medium',
+                              'bg-[#F8F7FF] text-[#2D1BB8] border border-[#E8E6F8]',
+                              'hover:bg-[#2D1BB8] hover:text-white transition-colors duration-200',
+                            ].join(' ')}
+                            style={{
+                              transitionDelay: isActive ? `${i * 20}ms` : '0ms',
+                            }}
+                          >
+                            {capability}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
 
+                    {/* Featured Areas (Consulting) or Featured Projects (Others) */}
+                    {card.featuredAreas && (
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wider text-[#4B4680] mb-3">
+                          Featured Areas
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {card.featuredAreas.map((area) => (
+                            <span
+                              key={area}
+                              className="px-3 py-1.5 rounded-full text-xs font-medium bg-[#2D1BB8]/10 text-[#2D1BB8] border border-[#2D1BB8]/20"
+                            >
+                              {area}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {card.featuredProjects && (
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wider text-[#4B4680] mb-3">
+                          Featured Projects
+                        </p>
+                        <div className="space-y-2">
+                          {card.featuredProjects.map((project) => (
+                            <div key={project.name} className="flex items-center justify-between">
+                              <span className="text-sm font-medium text-[#0F0A2E]">
+                                {project.name}
+                                {project.soon && (
+                                  <span className="text-xs text-[#4B4680] ml-2">(Coming Soon)</span>
+                                )}
+                              </span>
+                              <span className="text-xs text-[#4B4680]">{project.category}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {card.suitableFor && (
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wider text-[#4B4680] mb-3">
+                          Suitable For
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {card.suitableFor.map((audience) => (
+                            <span
+                              key={audience}
+                              className="px-3 py-1.5 rounded-full text-xs font-medium bg-[#2D1BB8]/10 text-[#2D1BB8] border border-[#2D1BB8]/20"
+                            >
+                              {audience}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* CTA */}
                     <Link
                       href={card.href}
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#2D1BB8] hover:gap-3 transition-all duration-200"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#2D1BB8] hover:gap-3 transition-all duration-200 pt-2"
                     >
                       {card.cta}
                       <ArrowRight className="w-4 h-4" />
