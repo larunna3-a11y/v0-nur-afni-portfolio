@@ -82,6 +82,7 @@ export function ServicesList() {
 
             return (
               <div
+                id={card.id}
                 key={card.id}
                 onMouseEnter={() => setActiveId(card.id)}
                 onMouseLeave={() => setActiveId(null)}
