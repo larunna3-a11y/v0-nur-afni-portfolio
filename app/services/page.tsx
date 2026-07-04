@@ -1,13 +1,16 @@
 import { ServicesHeader } from '@/components/services/services-header'
 import { ServicesList } from '@/components/services/services-list'
-import { ProcessSection } from '@/components/services/process-section'
+
+export const metadata = {
+  title: 'Work With Me — Nur Afni',
+  description: 'Choose how you&apos;d like to collaborate — consulting, marketing, building digital products, or learning.',
+}
 
 export default function ServicesPage() {
   return (
     <div className="pt-16">
       <ServicesHeader />
       <ServicesList />
-      <ProcessSection />
     </div>
   )
 }

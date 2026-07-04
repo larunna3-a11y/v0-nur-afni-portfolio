@@ -1,19 +1,55 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { WorkWithMeDropdown } from './work-with-me-dropdown'
 
-const navLinks = [
+const otherNavLinks = [
   { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/digital-product-lab', label: 'Lab' },
   { href: '/contact', label: 'Contact' },
 ]
 
+const workWithMeCategories = [
+  { id: 'consulting', label: 'Consulting' },
+  { id: 'marketing', label: 'Marketing' },
+  { id: 'builder', label: 'Builder' },
+  { id: 'learning', label: 'Learning' },
+]
+
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [workWithMeOpen, setWorkWithMeOpen] = useState(false)
+  const [mobileWorkWithMeOpen, setMobileWorkWithMeOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown on Escape
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && workWithMeOpen) {
+        setWorkWithMeOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [workWithMeOpen])
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setWorkWithMeOpen(false)
+      }
+    }
+
+    if (workWithMeOpen) {
+      document.addEventListener('click', handleClickOutside)
+      return () => document.removeEventListener('click', handleClickOutside)
+    }
+  }, [workWithMeOpen])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#E8E6F8]">
@@ -26,7 +62,45 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {otherNavLinks.slice(0, 1).map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[#4B4680] hover:text-[#2D1BB8] transition-colors text-sm font-medium"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            {/* Work With Me - Desktop */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setWorkWithMeOpen(!workWithMeOpen)}
+                onMouseEnter={() => setWorkWithMeOpen(true)}
+                className={[
+                  'relative text-sm font-medium transition-colors duration-200',
+                  workWithMeOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
+                ].join(' ')}
+              >
+                Work With Me
+                {/* Animated underline */}
+                <span
+                  className={[
+                    'absolute bottom-0 left-0 right-0 h-0.5 bg-[#2D1BB8] transition-all duration-300 origin-left',
+                    workWithMeOpen ? 'scale-x-100' : 'scale-x-0',
+                  ].join(' ')}
+                />
+              </button>
+              <div
+                onMouseEnter={() => setWorkWithMeOpen(true)}
+                onMouseLeave={() => setWorkWithMeOpen(false)}
+                className="absolute left-0 top-full pt-3"
+              >
+                <WorkWithMeDropdown isOpen={workWithMeOpen} onClose={() => setWorkWithMeOpen(false)} />
+              </div>
+            </div>
+
+            {otherNavLinks.slice(1).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -51,12 +125,58 @@ export function Navbar() {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-[#E8E6F8]">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
+            <div className="flex flex-col gap-2">
+              {otherNavLinks.slice(0, 1).map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[#4B4680] hover:text-[#2D1BB8] transition-colors text-sm font-medium py-2"
+                  className="text-[#4B4680] hover:text-[#2D1BB8] transition-colors text-sm font-medium py-2 px-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              {/* Work With Me - Mobile Accordion */}
+              <div className="py-2">
+                <button
+                  onClick={() => setMobileWorkWithMeOpen(!mobileWorkWithMeOpen)}
+                  className={[
+                    'w-full text-left text-sm font-medium px-2 py-2 transition-colors duration-200',
+                    mobileWorkWithMeOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
+                  ].join(' ')}
+                >
+                  Work With Me
+                </button>
+
+                {mobileWorkWithMeOpen && (
+                  <div className="ml-4 mt-2 space-y-1 border-l-2 border-[#E8E6F8] pl-3">
+                    <Link
+                      href="/work-with-me"
+                      className="block text-[#4B4680] hover:text-[#2D1BB8] text-sm font-medium py-1.5"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      All Services
+                    </Link>
+                    {workWithMeCategories.map((category) => (
+                      <Link
+                        key={category.id}
+                        href={`/work-with-me/${category.id}`}
+                        className="block text-[#2D1BB8] hover:text-[#0F0A2E] text-sm font-medium py-1.5"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {category.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {otherNavLinks.slice(1).map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-[#4B4680] hover:text-[#2D1BB8] transition-colors text-sm font-medium py-2 px-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
