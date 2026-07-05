@@ -51,51 +51,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column - Profile Image with floating labels */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px]">
 
-              {/* Subtle border frame connecting the four corners */}
-              <div className="absolute inset-8 border border-white/15 rounded-none" />
-
-              {/* Top-left label */}
-              <div className="absolute top-0 left-0 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 py-2 z-10">
-                <span className="text-blue-300 text-sm">📈</span>
-                <span className="text-white text-xs font-medium whitespace-nowrap">Marketplace Growth</span>
-              </div>
-
-              {/* Top-right label */}
-              <div className="absolute top-0 right-0 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 py-2 z-10">
-                <span className="text-purple-300 text-sm">🤖</span>
-                <span className="text-white text-xs font-medium whitespace-nowrap">AI Product Builder</span>
-              </div>
-
-              {/* Bottom-left label */}
-              <div className="absolute bottom-0 left-0 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 py-2 z-10">
-                <span className="text-sky-300 text-sm">💻</span>
-                <span className="text-white text-xs font-medium whitespace-nowrap">Digital Systems</span>
-              </div>
-
-              {/* Bottom-right label */}
-              <div className="absolute bottom-0 right-0 flex items-center gap-2 bg-[#1a0f6e]/80 backdrop-blur-md border border-white/20 rounded-full px-3 py-2 z-10">
-                <span className="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">ID</span>
-                <span className="text-white text-xs font-medium whitespace-nowrap">Based in Indonesia</span>
-              </div>
-
-              {/* Center portrait */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-44 h-44 sm:w-52 sm:h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden border-4 border-white/25 shadow-2xl flex-shrink-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/images/nur-afni-hero.png"
-                    alt="Nur Afni"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-              </div>
-
-            </div>
-          </div>
         </div>
       </div>
     </section>
