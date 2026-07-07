@@ -170,7 +170,7 @@ const shopeeGrowthPhases = [
     period: 'Nov 2025 - Apr 2026',
     description: 'Sustained high-volume operations with continuous optimization. Ramadhan and holiday campaigns drove record-breaking numbers.',
     keyActions: ['Seasonal campaign mastery', 'Premium placement strategies', 'Full-funnel attribution'],
-    result: 'Reached Rp760M monthly revenue (31x from start)',
+    result: 'Reached Rp982M monthly revenue (31x from start)',
   },
 ]
 
@@ -242,7 +242,7 @@ const tiktokGrowthPhases = [
       'High-volume promotional scaling',
     ],
     result:
-      'GMV climbed to Rp760M+ with sustained multi-channel contribution from LIVE, video, affiliate, and marketplace traffic.',
+      'GMV climbed to Rp982M+ with sustained multi-channel contribution from LIVE, video, affiliate, and marketplace traffic.',
   },
 ]
 
@@ -795,7 +795,7 @@ export default function EcommerceGrowthCaseStudy() {
 
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <motion.div variants={fadeIn} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
-              <p className="text-4xl font-bold text-[#F97316]">Rp760M</p>
+              <p className="text-4xl font-bold text-[#F97316]">Rp982M</p>
               <p className="text-sm text-[#9B97C0] mt-2">Peak Monthly Revenue</p>
             </motion.div>
             <motion.div variants={fadeIn} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
