@@ -335,6 +335,7 @@ export default function EcommerceGrowthCaseStudy() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedPlatform, setSelectedPlatform] = useState('shopee')
   const [activeAnalytics, setActiveAnalytics] = useState('overview')
+  const [activeMarketplace, setActiveMarketplace] = useState('shopee')
 
   const platformData = {
     shopee: {
