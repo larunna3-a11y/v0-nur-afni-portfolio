@@ -1,5 +1,5 @@
 const stats = [
-  { value: 'Rp1,8B', label: 'Peak Revenue' },
+  { value: 'Rp982M', label: 'Peak Revenue' },
   { value: '31x', label: 'Revenue Growth' },
   { value: '+189%', label: 'Follower Growth' },
 ]
