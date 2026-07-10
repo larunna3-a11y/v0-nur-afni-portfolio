@@ -1,61 +1,87 @@
 'use client'
 
-import { BookOpen } from 'lucide-react'
+import { motion } from 'framer-motion'
 
-const education = [
-  {
-    degree: 'Marketing & Communication Studies',
-    school: 'Indonesian University',
-    year: '2020 - 2024',
-    focus: 'Digital Marketing, Consumer Behavior, Strategic Communications',
-  },
-]
+const education = {
+  degree: 'Bachelor of Communication',
+  school: 'Bina Nusantara University',
+  year: 'Graduated 2021',
+  focus: 'Marketing & Digital Communication',
+  gpa: '3.7 / 4.0',
+}
 
 const certifications = [
-  { title: 'Google Analytics Certified', issuer: 'Google' },
-  { title: 'Meta Blueprint Certified', issuer: 'Meta' },
-  { title: 'TikTok Ads Manager Certified', issuer: 'TikTok' },
-  { title: 'AI Integration Fundamentals', issuer: 'Coursera' },
+  { title: 'Google Analytics Certified', issuer: 'Google', year: '2023' },
+  { title: 'Meta Blueprint Certified', issuer: 'Meta', year: '2023' },
+  { title: 'TikTok Ads Manager Certified', issuer: 'TikTok', year: '2023' },
+  { title: 'Digital Marketing Professional', issuer: 'HubSpot', year: '2022' },
 ]
+
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+}
 
 export function RecruitEducation() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Education */}
-        <div className="mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F0A2E] mb-8">Education</h2>
+        <motion.div
+          variants={fadeUp}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-12"
+        >
+          <span className="inline-block text-xs font-semibold tracking-widest text-[#2D1BB8] uppercase mb-3">
+            Learning & Development
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F0A2E]">Education & Certifications</h2>
+        </motion.div>
 
-          {education.map((edu, idx) => (
-            <div key={idx} className="bg-[#F8F7FF] border border-[#E8E6F8] rounded-2xl p-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-[#2D1BB8]/10 flex items-center justify-center flex-shrink-0">
-                  <BookOpen className="w-6 h-6 text-[#2D1BB8]" />
-                </div>
-
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-[#0F0A2E]">{edu.degree}</h3>
-                  <p className="text-sm font-medium text-[#2D1BB8] mt-1">{edu.school}</p>
-                  <p className="text-sm text-[#9B97C0] mt-1">{edu.year}</p>
-                  <p className="text-sm text-[#4B4680] mt-3">{edu.focus}</p>
-                </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Education */}
+          <motion.div
+            variants={fadeUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="bg-[#F8F7FF] border border-[#E8E6F8] rounded-2xl p-8"
+          >
+            <h3 className="text-lg font-bold text-[#0F0A2E] mb-4">Education</h3>
+            <div className="space-y-3">
+              <div>
+                <p className="font-semibold text-[#2D1BB8]">{education.degree}</p>
+                <p className="text-sm text-[#4B4680] mt-1">{education.focus}</p>
+              </div>
+              <div className="pt-3 border-t border-[#E8E6F8] space-y-2 text-sm">
+                <p className="text-[#4B4680]"><span className="font-medium text-[#0F0A2E]">University:</span> {education.school}</p>
+                <p className="text-[#4B4680]"><span className="font-medium text-[#0F0A2E]">Year:</span> {education.year}</p>
+                <p className="text-[#4B4680]"><span className="font-medium text-[#0F0A2E]">GPA:</span> {education.gpa}</p>
               </div>
             </div>
-          ))}
-        </div>
+          </motion.div>
 
-        {/* Certifications */}
-        <div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F0A2E] mb-8">Certifications</h2>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            {certifications.map((cert, idx) => (
-              <div key={idx} className="bg-[#2D1BB8]/5 border border-[#2D1BB8]/20 rounded-xl p-4">
-                <p className="font-semibold text-[#2D1BB8]">{cert.title}</p>
-                <p className="text-sm text-[#4B4680] mt-1">{cert.issuer}</p>
-              </div>
-            ))}
-          </div>
+          {/* Certifications */}
+          <motion.div
+            variants={fadeUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
+            <h3 className="text-lg font-bold text-[#0F0A2E] mb-4">Professional Certifications</h3>
+            <div className="space-y-3">
+              {certifications.map((cert, idx) => (
+                <div key={idx} className="bg-[#F8F7FF] border border-[#E8E6F8] rounded-lg p-4">
+                  <p className="font-medium text-[#2D1BB8] text-sm">{cert.title}</p>
+                  <p className="text-xs text-[#4B4680] mt-1">{cert.issuer} • {cert.year}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
