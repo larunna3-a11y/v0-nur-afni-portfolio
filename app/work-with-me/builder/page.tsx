@@ -6,8 +6,8 @@ import { ServiceProcess } from '@/components/work-with-me/service-process'
 import { ServiceFAQ } from '@/components/work-with-me/service-faq'
 
 export const metadata = {
-  title: 'Custom Digital Products & Internal Systems — Nur Afni',
-  description: 'Build custom websites, dashboards, operational systems, and AI-powered solutions that solve your specific business problems.',
+  title: 'Digital Product & Internal System Development — Nur Afni',
+  description: 'Building websites, dashboards, AI-powered workflows, and internal business systems that improve efficiency.',
 }
 
 const packages = [
@@ -95,10 +95,10 @@ export default function BuilderPage() {
   return (
     <div className="pt-16">
       <ServiceHero
-        title="Build Custom Systems & Digital Products"
-        subtitle="From operational dashboards to customer-facing web products, I design and build solutions that directly impact your business. Focus on your core business while I build the tools you need."
+        title="Digital Product & Internal System Development"
+        subtitle="Building websites, dashboards, AI-powered workflows, and internal business systems that improve efficiency and decision-making."
         primaryCta={{ label: 'Start a Project', href: '/contact' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        secondaryCta={{ label: 'View Products', href: '/digital-product-lab' }}
       />
 
       <section className="bg-[#F8F7FF] py-20">

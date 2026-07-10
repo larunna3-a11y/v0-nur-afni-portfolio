@@ -3,12 +3,20 @@
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { WorkDropdown } from './work-dropdown'
+import { WorkWithMeDropdown } from './work-with-me-dropdown'
 
 const otherNavLinks = [
   { href: '/about', label: 'About' },
+  { href: '/portfolio', label: 'Portfolio' },
   { href: '/digital-product-lab', label: 'Lab' },
   { href: '/contact', label: 'Contact' },
+]
+
+const workWithMeCategories = [
+  { id: 'consulting', label: 'Consulting' },
+  { id: 'marketing', label: 'Marketing' },
+  { id: 'builder', label: 'Builder' },
+  { id: 'learning', label: 'Learning' },
 ]
 
 export function Navbar() {
@@ -64,7 +72,7 @@ export function Navbar() {
               </Link>
             ))}
 
-            {/* Work - Desktop */}
+            {/* Work With Me - Desktop */}
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setWorkWithMeOpen(!workWithMeOpen)}
@@ -74,7 +82,7 @@ export function Navbar() {
                   workWithMeOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
                 ].join(' ')}
               >
-                Work
+                Work With Me
                 {/* Animated underline */}
                 <span
                   className={[
@@ -88,7 +96,7 @@ export function Navbar() {
                 onMouseLeave={() => setWorkWithMeOpen(false)}
                 className="absolute left-0 top-full pt-3"
               >
-                <WorkDropdown isOpen={workWithMeOpen} onClose={() => setWorkWithMeOpen(false)} />
+                <WorkWithMeDropdown isOpen={workWithMeOpen} onClose={() => setWorkWithMeOpen(false)} />
               </div>
             </div>
 
@@ -129,7 +137,7 @@ export function Navbar() {
                 </Link>
               ))}
 
-              {/* Work - Mobile Accordion */}
+              {/* Work With Me - Mobile Accordion */}
               <div className="py-2">
                 <button
                   onClick={() => setMobileWorkWithMeOpen(!mobileWorkWithMeOpen)}
@@ -138,32 +146,28 @@ export function Navbar() {
                     mobileWorkWithMeOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
                   ].join(' ')}
                 >
-                  Work
+                  Work With Me
                 </button>
 
                 {mobileWorkWithMeOpen && (
                   <div className="ml-4 mt-2 space-y-1 border-l-2 border-[#E8E6F8] pl-3">
                     <Link
-                      href="/hire-me"
-                      className="block text-[#2D1BB8] hover:text-[#0F0A2E] text-sm font-medium py-1.5"
+                      href="/work-with-me"
+                      className="block text-[#4B4680] hover:text-[#2D1BB8] text-sm font-medium py-1.5"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Hire Me
+                      All Services
                     </Link>
-                    <Link
-                      href="/recruit-me"
-                      className="block text-[#2D1BB8] hover:text-[#0F0A2E] text-sm font-medium py-1.5"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Recruit Me
-                    </Link>
-                    <Link
-                      href="/portfolio"
-                      className="block text-[#2D1BB8] hover:text-[#0F0A2E] text-sm font-medium py-1.5"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Case Studies
-                    </Link>
+                    {workWithMeCategories.map((category) => (
+                      <Link
+                        key={category.id}
+                        href={`/work-with-me/${category.id}`}
+                        className="block text-[#2D1BB8] hover:text-[#0F0A2E] text-sm font-medium py-1.5"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {category.label}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>

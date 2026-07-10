@@ -6,8 +6,8 @@ import { ServiceProcess } from '@/components/work-with-me/service-process'
 import { ServiceFAQ } from '@/components/work-with-me/service-faq'
 
 export const metadata = {
-  title: 'Marketplace Growth & Performance Marketing — Nur Afni',
-  description: 'Scale your marketplace presence with proven strategies for Shopee, TikTok Shop, Lazada, and beyond. Marketplace optimization, paid advertising, affiliate management, and growth hacking.',
+  title: 'Marketplace Growth & Digital Marketing — Nur Afni',
+  description: 'Helping brands scale through marketplace strategy, content commerce, paid advertising, livestream, and affiliate marketing.',
 }
 
 const packages = [
@@ -71,8 +71,8 @@ export default function MarketingPage() {
   return (
     <div className="pt-16">
       <ServiceHero
-        title="Scale Across Shopee, TikTok Shop & Lazada"
-        subtitle="Proven strategies to grow marketplace revenue consistently. From store optimization to paid advertising management, I help you maximize sales while controlling costs across every channel."
+        title="Marketplace Growth & Digital Marketing"
+        subtitle="Helping brands scale through marketplace strategy, content commerce, paid advertising, livestream, and affiliate marketing."
         primaryCta={{ label: "Let's Grow", href: '/contact' }}
         secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
       />

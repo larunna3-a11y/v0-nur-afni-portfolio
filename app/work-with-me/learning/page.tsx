@@ -6,8 +6,8 @@ import { ServiceProcess } from '@/components/work-with-me/service-process'
 import { ServiceFAQ } from '@/components/work-with-me/service-faq'
 
 export const metadata = {
-  title: 'Mentoring, Training & Workshops — Nur Afni',
-  description: 'Develop your team in marketplace growth, digital marketing, operations, and AI integration through hands-on mentoring and training.',
+  title: 'Training, Mentoring & Knowledge Sharing — Nur Afni',
+  description: 'Helping individuals, teams, and organizations develop practical digital marketing and AI skills.',
 }
 
 const packages = [
@@ -107,10 +107,10 @@ export default function LearningPage() {
   return (
     <div className="pt-16">
       <ServiceHero
-        title="Develop Your Team's Digital & AI Skills"
-        subtitle="Hands-on training and mentoring in marketplace growth, digital marketing, AI integration, and modern business operations. Build real skills your team can apply immediately."
-        primaryCta={{ label: 'Schedule Training', href: '/contact' }}
-        secondaryCta={{ label: 'See Topics', href: '#topics' }}
+        title="Training, Mentoring & Knowledge Sharing"
+        subtitle="Helping individuals, teams, and organizations develop practical digital marketing and AI skills through mentoring, workshops, and corporate training."
+        primaryCta={{ label: 'Book Training', href: '/contact' }}
+        secondaryCta={{ label: 'View Topics', href: '#topics' }}
       />
 
       <section className="bg-[#F8F7FF] py-20">
