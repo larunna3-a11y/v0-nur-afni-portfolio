@@ -1,8 +1,10 @@
 'use client'
 
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Download, Linkedin, Mail } from 'lucide-react'
+import { Download, Linkedin, Mail, ChevronDown } from 'lucide-react'
+import { ResumeDropdown } from './resume-dropdown'
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -10,6 +12,35 @@ const fadeUp = {
 }
 
 export function RecruitHero() {
+  const [resumeDropdownOpen, setResumeDropdownOpen] = useState(false)
+  const resumeButtonRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown on Escape
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && resumeDropdownOpen) {
+        setResumeDropdownOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [resumeDropdownOpen])
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (resumeButtonRef.current && !resumeButtonRef.current.contains(e.target as Node)) {
+        setResumeDropdownOpen(false)
+      }
+    }
+
+    if (resumeDropdownOpen) {
+      document.addEventListener('click', handleClickOutside)
+      return () => document.removeEventListener('click', handleClickOutside)
+    }
+  }, [resumeDropdownOpen])
+
   return (
     <section className="relative bg-[#2D1BB8] overflow-hidden">
       {/* Background glow */}
@@ -56,14 +87,26 @@ export function RecruitHero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-8 flex flex-wrap gap-4"
         >
-          <a
-            href="/Nur_Afni_Resume.pdf"
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white rounded-lg font-medium hover:bg-[#EA8509] transition-colors"
-          >
-            <Download size={18} />
-            Download Resume
-          </a>
+          {/* Resume Dropdown */}
+          <div className="relative" ref={resumeButtonRef}>
+            <button
+              onClick={() => setResumeDropdownOpen(!resumeDropdownOpen)}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white rounded-lg font-medium hover:bg-[#EA8509] transition-colors"
+            >
+              <Download size={18} />
+              Download Resume
+              <ChevronDown
+                size={16}
+                className={`transition-transform duration-300 ${
+                  resumeDropdownOpen ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+            <ResumeDropdown
+              isOpen={resumeDropdownOpen}
+              onClose={() => setResumeDropdownOpen(false)}
+            />
+          </div>
           <a
             href="https://www.linkedin.com/in/nour-afni/"
             target="_blank"
