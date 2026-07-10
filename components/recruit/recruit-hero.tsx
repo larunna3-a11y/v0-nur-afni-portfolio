@@ -65,7 +65,7 @@ export function RecruitHero() {
             Download Resume
           </a>
           <a
-            href="https://linkedin.com/in/nurafni"
+            href="https://www.linkedin.com/in/nour-afni/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white rounded-lg font-medium hover:bg-white/10 transition-colors"
