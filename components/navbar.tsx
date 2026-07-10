@@ -3,53 +3,55 @@
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { WorkWithMeDropdown } from './work-with-me-dropdown'
+import { PortfolioDropdown } from './portfolio-dropdown'
 
 const otherNavLinks = [
   { href: '/about', label: 'About' },
-  { href: '/portfolio', label: 'Portfolio' },
   { href: '/digital-product-lab', label: 'Lab' },
   { href: '/contact', label: 'Contact' },
 ]
 
-const workWithMeCategories = [
-  { id: 'consulting', label: 'Consulting' },
-  { id: 'marketing', label: 'Marketing' },
-  { id: 'builder', label: 'Builder' },
-  { id: 'learning', label: 'Learning' },
+const servicesLinks = [
+  { href: '/services', label: 'Services' },
+]
+
+const portfolioDropdownLinks = [
+  { href: '/portfolio/case-studies', label: 'Case Studies' },
+  { href: '/portfolio/recruit-me', label: 'Recruit Me' },
+  { href: '/portfolio/hire-me', label: 'Hire Me' },
 ]
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [workWithMeOpen, setWorkWithMeOpen] = useState(false)
-  const [mobileWorkWithMeOpen, setMobileWorkWithMeOpen] = useState(false)
+  const [portfolioOpen, setPortfolioOpen] = useState(false)
+  const [mobilePortfolioOpen, setMobilePortfolioOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   // Close dropdown on Escape
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && workWithMeOpen) {
-        setWorkWithMeOpen(false)
+      if (e.key === 'Escape' && portfolioOpen) {
+        setPortfolioOpen(false)
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [workWithMeOpen])
+  }, [portfolioOpen])
 
   // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setWorkWithMeOpen(false)
+        setPortfolioOpen(false)
       }
     }
 
-    if (workWithMeOpen) {
+    if (portfolioOpen) {
       document.addEventListener('click', handleClickOutside)
       return () => document.removeEventListener('click', handleClickOutside)
     }
-  }, [workWithMeOpen])
+  }, [portfolioOpen])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#E8E6F8]">
@@ -72,31 +74,39 @@ export function Navbar() {
               </Link>
             ))}
 
-            {/* Work With Me - Desktop */}
+            {/* Services */}
+            <Link
+              href="/services"
+              className="text-[#4B4680] hover:text-[#2D1BB8] transition-colors text-sm font-medium"
+            >
+              Services
+            </Link>
+
+            {/* Portfolio Dropdown - Desktop */}
             <div className="relative" ref={dropdownRef}>
               <button
-                onClick={() => setWorkWithMeOpen(!workWithMeOpen)}
-                onMouseEnter={() => setWorkWithMeOpen(true)}
+                onClick={() => setPortfolioOpen(!portfolioOpen)}
+                onMouseEnter={() => setPortfolioOpen(true)}
                 className={[
                   'relative text-sm font-medium transition-colors duration-200',
-                  workWithMeOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
+                  portfolioOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
                 ].join(' ')}
               >
-                Work With Me
+                Portfolio
                 {/* Animated underline */}
                 <span
                   className={[
                     'absolute bottom-0 left-0 right-0 h-0.5 bg-[#2D1BB8] transition-all duration-300 origin-left',
-                    workWithMeOpen ? 'scale-x-100' : 'scale-x-0',
+                    portfolioOpen ? 'scale-x-100' : 'scale-x-0',
                   ].join(' ')}
                 />
               </button>
               <div
-                onMouseEnter={() => setWorkWithMeOpen(true)}
-                onMouseLeave={() => setWorkWithMeOpen(false)}
+                onMouseEnter={() => setPortfolioOpen(true)}
+                onMouseLeave={() => setPortfolioOpen(false)}
                 className="absolute left-0 top-full pt-3"
               >
-                <WorkWithMeDropdown isOpen={workWithMeOpen} onClose={() => setWorkWithMeOpen(false)} />
+                <PortfolioDropdown isOpen={portfolioOpen} onClose={() => setPortfolioOpen(false)} />
               </div>
             </div>
 
@@ -137,35 +147,37 @@ export function Navbar() {
                 </Link>
               ))}
 
-              {/* Work With Me - Mobile Accordion */}
+              {/* Services - Mobile */}
+              <Link
+                href="/services"
+                className="text-[#4B4680] hover:text-[#2D1BB8] transition-colors text-sm font-medium py-2 px-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Services
+              </Link>
+
+              {/* Portfolio - Mobile Accordion */}
               <div className="py-2">
                 <button
-                  onClick={() => setMobileWorkWithMeOpen(!mobileWorkWithMeOpen)}
+                  onClick={() => setMobilePortfolioOpen(!mobilePortfolioOpen)}
                   className={[
                     'w-full text-left text-sm font-medium px-2 py-2 transition-colors duration-200',
-                    mobileWorkWithMeOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
+                    mobilePortfolioOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
                   ].join(' ')}
                 >
-                  Work With Me
+                  Portfolio
                 </button>
 
-                {mobileWorkWithMeOpen && (
+                {mobilePortfolioOpen && (
                   <div className="ml-4 mt-2 space-y-1 border-l-2 border-[#E8E6F8] pl-3">
-                    <Link
-                      href="/work-with-me"
-                      className="block text-[#4B4680] hover:text-[#2D1BB8] text-sm font-medium py-1.5"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      All Services
-                    </Link>
-                    {workWithMeCategories.map((category) => (
+                    {portfolioDropdownLinks.map((link) => (
                       <Link
-                        key={category.id}
-                        href={`/work-with-me/${category.id}`}
+                        key={link.href}
+                        href={link.href}
                         className="block text-[#2D1BB8] hover:text-[#0F0A2E] text-sm font-medium py-1.5"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        {category.label}
+                        {link.label}
                       </Link>
                     ))}
                   </div>
