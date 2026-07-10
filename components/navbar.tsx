@@ -71,7 +71,13 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div
+            className="hidden md:flex items-center gap-8"
+            onMouseLeave={() => {
+              setServicesOpen(false)
+              setPortfolioOpen(false)
+            }}
+          >
             {otherNavLinks.slice(0, 1).map((link) => (
               <Link
                 key={link.href}
@@ -83,10 +89,13 @@ export function Navbar() {
             ))}
 
             {/* Services Dropdown - Desktop */}
-            <div className="relative" ref={dropdownRef}>
+            <div className="relative">
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                onMouseEnter={() => setServicesOpen(true)}
+                onMouseEnter={() => {
+                  setServicesOpen(true)
+                  setPortfolioOpen(false)
+                }}
                 className={[
                   'relative text-sm font-medium transition-colors duration-200',
                   servicesOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
@@ -111,10 +120,13 @@ export function Navbar() {
             </div>
 
             {/* Portfolio Dropdown - Desktop */}
-            <div className="relative" ref={dropdownRef}>
+            <div className="relative">
               <button
                 onClick={() => setPortfolioOpen(!portfolioOpen)}
-                onMouseEnter={() => setPortfolioOpen(true)}
+                onMouseEnter={() => {
+                  setPortfolioOpen(true)
+                  setServicesOpen(false)
+                }}
                 className={[
                   'relative text-sm font-medium transition-colors duration-200',
                   portfolioOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
