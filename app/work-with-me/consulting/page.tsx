@@ -6,8 +6,8 @@ import { ServiceProcess } from '@/components/work-with-me/service-process'
 import { ServiceFAQ } from '@/components/work-with-me/service-faq'
 
 export const metadata = {
-  title: 'Digital Strategy & Marketplace Consulting — Nur Afni',
-  description: 'Helping businesses make smarter digital decisions through strategy, marketplace optimization, AI adoption, and operational improvements.',
+  title: 'Marketplace Growth & Digital Strategy Consulting — Nur Afni',
+  description: 'Strategic consulting for founders and brands. Marketplace optimization, growth strategy, AI implementation, and operational scaling.',
 }
 
 const packages = [
@@ -73,8 +73,8 @@ export default function ConsultingPage() {
   return (
     <div className="pt-16">
       <ServiceHero
-        title="Digital Strategy & Marketplace Consulting"
-        subtitle="Helping businesses make smarter digital decisions through strategy, marketplace optimization, AI adoption, and operational improvements."
+        title="Marketplace Growth Strategy & Consulting"
+        subtitle="Get expert guidance on scaling your marketplace presence, optimizing operations, and building sustainable growth systems. Whether you're entering new channels or optimizing existing ones, I help you avoid costly mistakes and accelerate results."
         primaryCta={{ label: 'Book Consultation', href: '/contact' }}
         secondaryCta={{ label: 'View Case Studies', href: '/portfolio' }}
       />
