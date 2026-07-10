@@ -1,32 +1,19 @@
-import { RecruitHero } from '@/components/recruit/recruit-hero'
-import { RecruitSnapshot } from '@/components/recruit/recruit-snapshot'
-import { RecruitSummary } from '@/components/recruit/recruit-summary'
-import { RecruitExperience } from '@/components/recruit/recruit-experience'
-import { RecruitSkills } from '@/components/recruit/recruit-skills'
-import { RecruitTools } from '@/components/recruit/recruit-tools'
-import { RecruitEducation } from '@/components/recruit/recruit-education'
-import { RecruitLanguages } from '@/components/recruit/recruit-languages'
-import { RecruitProjects } from '@/components/recruit/recruit-projects'
-import { RecruitCTA } from '@/components/recruit/recruit-cta'
-
 export const metadata = {
-  title: 'Recruit Me — Digital Marketing Specialist & Marketplace Growth Expert',
-  description: 'Professional profile of Nur Afni. Digital Marketing Specialist with 4+ years of expertise in marketplace growth, performance marketing, and AI-assisted workflows. Available for full-time, contract, or consulting opportunities.',
+  title: 'Recruit Me — Nur Afni',
+  description: 'Professional profile and recruitment information. Coming soon in Phase 2.',
 }
 
 export default function RecruitMePage() {
   return (
-    <main className="min-h-screen bg-white pt-16">
-      <RecruitHero />
-      <RecruitSnapshot />
-      <RecruitSummary />
-      <RecruitExperience />
-      <RecruitSkills />
-      <RecruitTools />
-      <RecruitEducation />
-      <RecruitLanguages />
-      <RecruitProjects />
-      <RecruitCTA />
+    <main className="min-h-screen bg-white">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-[#1A0F7A] mb-4">Recruit Me</h1>
+          <p className="text-lg text-[#4B4680] max-w-2xl mx-auto">
+            This page will be fully developed in Phase 2. Please check back soon for professional profile information.
+          </p>
+        </div>
+      </section>
     </main>
   )
 }
