@@ -25,6 +25,7 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [portfolioOpen, setPortfolioOpen] = useState(false)
   const [mobilePortfolioOpen, setMobilePortfolioOpen] = useState(false)
+  const [servicesHovered, setServicesHovered] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   // Close dropdown on Escape
@@ -77,9 +78,20 @@ export function Navbar() {
             {/* Services */}
             <Link
               href="/services"
-              className="text-[#4B4680] hover:text-[#2D1BB8] transition-colors text-sm font-medium"
+              className="relative text-sm font-medium transition-colors duration-200 group"
+              onMouseEnter={() => setServicesHovered(true)}
+              onMouseLeave={() => setServicesHovered(false)}
             >
-              Services
+              <span className={servicesHovered ? 'text-[#2D1BB8]' : 'text-[#4B4680] group-hover:text-[#2D1BB8]'}>
+                Services
+              </span>
+              {/* Animated underline */}
+              <span
+                className={[
+                  'absolute bottom-0 left-0 right-0 h-0.5 bg-[#2D1BB8] transition-all duration-300 origin-left',
+                  servicesHovered ? 'scale-x-100' : 'scale-x-0',
+                ].join(' ')}
+              />
             </Link>
 
             {/* Portfolio Dropdown - Desktop */}
