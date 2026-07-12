@@ -77,7 +77,7 @@ export function RecruitHero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-6 text-lg text-[#9B97C0] max-w-2xl leading-relaxed"
         >
-          I build marketplace growth systems, manage high-performing advertising campaigns, and optimize digital ecosystems for sustainable business results. 4+ years of proven experience scaling revenue from 0 to 1B+ across Shopee, TikTok Shop, and Lazada.
+          Digital Marketing Specialist with 3+ years scaling revenue across Shopee, TikTok Shop, Lazada, and Tokopedia. I design marketplace growth strategies, manage multi-million rupiah ad budgets, and drive sustainable business results through data-driven campaigns.
         </motion.p>
 
         <motion.div
@@ -132,9 +132,9 @@ export function RecruitHero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 flex flex-wrap gap-4 text-sm text-[#9B97C0]"
         >
-          <span>📍 Based in Indonesia</span>
+          <span>📍 Jakarta, Indonesia</span>
           <span>•</span>
-          <span>💼 4+ Years Experience</span>
+          <span>💼 3+ Years Experience</span>
           <span>•</span>
           <span>🌐 Remote Available</span>
         </motion.div>

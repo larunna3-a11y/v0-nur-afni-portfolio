@@ -2,28 +2,24 @@
 
 const toolCategories = [
   {
+    category: 'Paid Ads & Analytics',
+    tools: ['Meta Business Suite', 'TikTok Ads Manager', 'Google Trends', 'TikTok Creative Center'],
+  },
+  {
     category: 'Marketplace Platforms',
-    tools: ['Shopee Ads', 'TikTok Shop', 'Lazada Ads', 'Marketplace APIs', 'Affiliate Platforms'],
+    tools: ['Shopee Seller Center', 'TikTok Shop Seller Center', 'Tokopedia', 'Lazada Seller Center'],
   },
   {
-    category: 'Marketing & Advertising',
-    tools: ['Meta Ads Manager', 'Google Ads', 'TikTok Ads Manager', 'Affilitracks', 'Influencer Networks'],
+    category: 'Content & Creative',
+    tools: ['Canva', 'CapCut'],
   },
   {
-    category: 'Analytics & Tracking',
-    tools: ['Google Analytics', 'Looker Studio', 'Excel/Sheets', 'Custom Dashboards', 'ROAS Tracking'],
+    category: 'Reporting & Collaboration',
+    tools: ['Google Sheets', 'Google Workspace'],
   },
   {
-    category: 'Creative Tools',
-    tools: ['Figma', 'Canva', 'Adobe Suite', 'Video Editing (CapCut)', 'Design Systems'],
-  },
-  {
-    category: 'Project & Collaboration',
-    tools: ['Notion', 'Google Workspace', 'Monday.com', 'Slack', 'Airtable'],
-  },
-  {
-    category: 'AI & Automation',
-    tools: ['ChatGPT', 'AI Content Tools', 'Zapier', 'IFTTT', 'Custom API Integration'],
+    category: 'Affiliate & Marketplace',
+    tools: ['Shopee Affiliate', 'TikTok Affiliate'],
   },
 ]
 

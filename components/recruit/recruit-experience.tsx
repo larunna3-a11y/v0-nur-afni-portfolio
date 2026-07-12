@@ -4,40 +4,39 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    role: 'Marketing Director / Growth Lead',
-    company: 'Priskila Prima Makmur',
-    period: '2024 - Present',
-    description: 'Leading marketplace growth strategy and paid advertising for 5 beauty brands (Casablanca, Bellagio, Regazza, Camellia, Excello).',
-    achievements: [
-      'Scaled revenue from Rp24M to Rp982M (31x growth over 20 months)',
-      'Managed Rp500M+ advertising budget across Shopee, TikTok Shop, and Lazada',
-      'Achieved 27,393 peak monthly orders with 60%+ cost optimization',
-      'Built and managed affiliate and influencer programs with 50+ partners',
-      'Collaborated with warehouse, finance, and product teams for cross-functional alignment',
-    ],
-  },
-  {
-    role: 'E-Commerce Strategist',
-    company: 'QCY Indonesia',
-    period: '2023 - 2024',
-    description: 'Designed and executed multi-marketplace product launch campaigns with coordinated paid ads, flash sales, and affiliate strategies.',
-    achievements: [
-      'Achieved Rp91.8M revenue on launch day with 576 orders',
-      'Coordinated 5 marketplace platforms with optimized timing and creative strategy',
-      'Sustained growth to 31x monthly revenue through continued campaign optimization',
-      'Managed affiliate programs and negotiated marketplace promotional space',
-    ],
-  },
-  {
     role: 'Digital Marketing Specialist',
-    company: 'Multiple Brands (Choetech, Islamcendekia.id, Digital Krew)',
-    period: '2022 - 2023',
-    description: 'Managed social media growth, paid advertising, and content strategy for consumer brands and educational platforms.',
+    company: 'PT Ecotech Teknologi',
+    period: 'Nov 2023 – Present',
+    description: 'Managing digital campaigns for QCY, Choetech, and Priskila across social media, paid ads, and marketplace platforms.',
     achievements: [
-      'Achieved 4x ROAS improvement for Choetech through campaign restructuring (2.28 → 11.05)',
-      'Grew Islamcendekia.id from 6K to 17.3K followers (+188%) with organic content strategy',
-      'Generated 2.2M viral views and 984K account reaches through data-driven content planning',
-      'Managed campaigns with budgets up to Rp300M+ with consistent profitability',
+      'Increased marketplace revenue from Rp95.7M to Rp180.4M within 4 months through integrated campaign strategy',
+      'Generated Rp286M in peak sales through paid ads, voucher, affiliate, and promotional campaigns',
+      'Managed campaign budgets of Rp100–500M across Meta Ads, TikTok Ads, affiliate, and marketplace channels',
+      'Achieved ROAS up to 16.2 through voucher campaigns, 24 through Meta CPAS, and 14.7 through affiliate programs',
+      'Improved TikTok Ads performance from 2.28 ROAS to 11.05 ROAS through optimization and budget reallocation',
+    ],
+  },
+  {
+    role: 'Social Media Strategist (Jr. Officer)',
+    company: 'Digital Krew',
+    period: 'Jul 2023 – Jan 2024',
+    description: 'Grew social media presence and managed content planning for multiple brands on Instagram and TikTok.',
+    achievements: [
+      'Grew Instagram followers from 6.7K to 17K within 4 months (+189% growth)',
+      'Increased engagement rate by +81.3% and impressions by +62.9%',
+      'Generated over 2M engagement through social media campaigns and short-form content',
+      'Managed content planning and performance reporting across 3 brands',
+    ],
+  },
+  {
+    role: 'Social Media Planner Intern',
+    company: 'Tukangtulis.co (PT Hendrawan Media Artha)',
+    period: 'May 2023 – Jul 2023',
+    description: 'Created content strategies and managed social media planning for client accounts.',
+    achievements: [
+      'Created content calendars and platform-specific social media strategies',
+      'Conducted trend research and monitored campaign performance',
+      'Built foundation for content-driven digital marketing approaches',
     ],
   },
 ]

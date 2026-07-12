@@ -4,28 +4,24 @@ import { motion } from 'framer-motion'
 
 const skillCategories = [
   {
-    category: 'Marketplace Strategy',
-    skills: ['Marketplace Optimization', 'Multi-platform Strategy', 'Seller Dashboard Management', 'Competitive Analysis', 'Pricing Strategy'],
+    category: 'Digital Marketing Strategy',
+    skills: ['Campaign Planning & Execution', 'Digital Marketing Strategy', 'Trend Research & Audience Analysis', 'Budget Allocation & Reporting'],
   },
   {
     category: 'Performance Marketing',
-    skills: ['Paid Advertising', 'Campaign Optimization', 'ROAS Maximization', 'Budget Allocation', 'A/B Testing', 'Conversion Rate Optimization'],
+    skills: ['Meta Ads & TikTok Ads', 'Paid Social Optimization', 'ROAS / ROI Analysis', 'Conversion Rate Optimization', 'Performance Tracking'],
   },
   {
-    category: 'Growth & Analytics',
-    skills: ['Growth Strategy', 'Data Analysis', 'Customer Acquisition', 'Retention Optimization', 'Dashboard Development', 'KPI Tracking'],
+    category: 'E-Commerce & Marketplace',
+    skills: ['Shopee, TikTok Shop, Tokopedia, Lazada', 'E-Commerce & Marketplace Marketing', 'Marketplace Optimization', 'Seller Dashboard Management'],
+  },
+  {
+    category: 'Social Media Marketing',
+    skills: ['Instagram & TikTok Strategy', 'Content Planning & Content Calendar', 'KOL & Influencer Campaigns', 'Social Media Marketing'],
   },
   {
     category: 'Campaign Management',
-    skills: ['Flash Sales', 'Seasonal Campaigns', 'Product Launches', 'Affiliate Management', 'Influencer Partnerships', 'Cross-channel Coordination'],
-  },
-  {
-    category: 'Digital Marketing',
-    skills: ['Social Media Marketing', 'Content Strategy', 'Email Marketing', 'Storytelling', 'Community Engagement', 'Brand Positioning'],
-  },
-  {
-    category: 'Team & Operations',
-    skills: ['Team Leadership', 'Cross-functional Collaboration', 'Project Management', 'Process Optimization', 'Mentoring', 'Vendor Management'],
+    skills: ['Affiliate Marketing', 'Campaign Optimization', 'Multi-channel Coordination', 'Flash Sales & Promotional Campaigns'],
   },
 ]
 

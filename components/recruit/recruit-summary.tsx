@@ -3,12 +3,12 @@
 import { motion } from 'framer-motion'
 
 const highlights = [
-  'Designed and executed marketplace growth strategies across Shopee, TikTok Shop, Lazada, and Tokopedia',
-  'Managed high-performance paid advertising campaigns with budgets up to Rp500M+ with consistent ROI optimization',
-  'Scaled revenue from Rp24M to Rp982M (31x growth) through integrated marketing and marketplace optimization',
-  'Built cross-functional teams managing affiliate programs, flash sales, livestream commerce, and seasonal campaigns',
-  'Utilized AI-assisted tools and custom dashboards for data-driven decision making and campaign optimization',
-  'Mentored junior team members and collaborated with product, warehouse, and finance teams to align growth with profitability',
+  'Managed marketplace campaigns across Shopee, TikTok Shop, Lazada, and Tokopedia with budgets up to Rp500M',
+  'Achieved 31x revenue growth (Rp24M → Rp982M) through integrated paid ads, affiliate, and marketplace strategy',
+  'Optimized ad performance from 2.28 ROAS to 11.05 ROAS through data-driven campaign restructuring',
+  'Generated Rp286M+ in peak campaign periods through coordinated multi-channel paid ads, vouchers, and affiliate programs',
+  'Managed 50+ influencer and affiliate partnerships generating 139 orders and Rp36.2M in GMV',
+  'Collaborated with product, warehouse, and finance teams to align growth strategies with profitability targets',
 ]
 
 const fadeUp = {

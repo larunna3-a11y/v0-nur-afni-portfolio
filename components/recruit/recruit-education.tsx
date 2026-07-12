@@ -3,18 +3,16 @@
 import { motion } from 'framer-motion'
 
 const education = {
-  degree: 'Bachelor of Communication',
-  school: 'Bina Nusantara University',
-  year: 'Graduated 2021',
-  focus: 'Marketing & Digital Communication',
-  gpa: '3.7 / 4.0',
+  degree: 'Bachelor of Constitutional Law',
+  school: 'UIN Syarif Hidayatullah Jakarta',
+  year: 'Graduated 2022',
+  focus: 'Legal Studies',
+  gpa: '3.45 / 4.0',
 }
 
 const certifications = [
-  { title: 'Google Analytics Certified', issuer: 'Google', year: '2023' },
-  { title: 'Meta Blueprint Certified', issuer: 'Meta', year: '2023' },
-  { title: 'TikTok Ads Manager Certified', issuer: 'TikTok', year: '2023' },
-  { title: 'Digital Marketing Professional', issuer: 'HubSpot', year: '2022' },
+  { title: 'Digital Marketing for Beginners', issuer: 'MySkill Academy', year: '2023' },
+  { title: 'Copywriting & Advertising', issuer: 'CKI Center', year: '2022' },
 ]
 
 const fadeUp = {
