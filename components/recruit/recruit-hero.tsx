@@ -88,10 +88,7 @@ export function RecruitHero() {
           className="mt-8 flex flex-wrap gap-4"
         >
           {/* Resume Dropdown */}
-          <div
-            className="relative"
-            ref={resumeButtonRef}
-          >
+          <div className="relative" ref={resumeButtonRef}>
             <button
               onClick={() => setResumeDropdownOpen(!resumeDropdownOpen)}
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white rounded-lg font-medium hover:bg-[#EA8509] transition-colors"
