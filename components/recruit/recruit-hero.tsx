@@ -91,8 +91,6 @@ export function RecruitHero() {
           <div
             className="relative"
             ref={resumeButtonRef}
-            onMouseEnter={() => setResumeDropdownOpen(true)}
-            onMouseLeave={() => setResumeDropdownOpen(false)}
           >
             <button
               onClick={() => setResumeDropdownOpen(!resumeDropdownOpen)}
