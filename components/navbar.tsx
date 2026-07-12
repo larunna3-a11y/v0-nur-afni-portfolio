@@ -110,11 +110,7 @@ export function Navbar() {
                   ].join(' ')}
                 />
               </button>
-              <div
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
-                className="absolute left-0 top-full pt-3"
-              >
+              <div className="absolute left-0 top-full pt-3">
                 <ServicesDropdown isOpen={servicesOpen} onClose={() => setServicesOpen(false)} />
               </div>
             </div>
@@ -141,11 +137,7 @@ export function Navbar() {
                   ].join(' ')}
                 />
               </button>
-              <div
-                onMouseEnter={() => setPortfolioOpen(true)}
-                onMouseLeave={() => setPortfolioOpen(false)}
-                className="absolute left-0 top-full pt-3"
-              >
+              <div className="absolute left-0 top-full pt-3">
                 <PortfolioDropdown isOpen={portfolioOpen} onClose={() => setPortfolioOpen(false)} />
               </div>
             </div>
