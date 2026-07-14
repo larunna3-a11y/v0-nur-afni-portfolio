@@ -32,6 +32,35 @@ export function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [mobilePortfolioOpen, setMobilePortfolioOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const servicesCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const portfolioCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Helper to clear timeouts and open dropdown
+  const openServices = () => {
+    if (servicesCloseTimeoutRef.current) clearTimeout(servicesCloseTimeoutRef.current)
+    setServicesOpen(true)
+    setPortfolioOpen(false)
+  }
+
+  const closeServices = () => {
+    if (servicesCloseTimeoutRef.current) clearTimeout(servicesCloseTimeoutRef.current)
+    servicesCloseTimeoutRef.current = setTimeout(() => {
+      setServicesOpen(false)
+    }, 150)
+  }
+
+  const openPortfolio = () => {
+    if (portfolioCloseTimeoutRef.current) clearTimeout(portfolioCloseTimeoutRef.current)
+    setPortfolioOpen(true)
+    setServicesOpen(false)
+  }
+
+  const closePortfolio = () => {
+    if (portfolioCloseTimeoutRef.current) clearTimeout(portfolioCloseTimeoutRef.current)
+    portfolioCloseTimeoutRef.current = setTimeout(() => {
+      setPortfolioOpen(false)
+    }, 150)
+  }
 
   // Close dropdown on Escape
   useEffect(() => {
@@ -61,6 +90,14 @@ export function Navbar() {
     }
   }, [servicesOpen, portfolioOpen])
 
+  // Cleanup timeouts on unmount
+  useEffect(() => {
+    return () => {
+      if (servicesCloseTimeoutRef.current) clearTimeout(servicesCloseTimeoutRef.current)
+      if (portfolioCloseTimeoutRef.current) clearTimeout(portfolioCloseTimeoutRef.current)
+    }
+  }, [])
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#E8E6F8]">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,13 +126,13 @@ export function Navbar() {
             ))}
 
             {/* Services Dropdown - Desktop */}
-            <div className="relative">
+            <div
+              className="relative"
+              onMouseEnter={openServices}
+              onMouseLeave={closeServices}
+            >
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                onMouseEnter={() => {
-                  setServicesOpen(true)
-                  setPortfolioOpen(false)
-                }}
                 className={[
                   'relative text-sm font-medium transition-colors duration-200',
                   servicesOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
@@ -110,19 +147,19 @@ export function Navbar() {
                   ].join(' ')}
                 />
               </button>
-              <div className="absolute left-0 top-full pt-3">
+              <div className="absolute left-0 top-full pt-3 pointer-events-none" style={{ pointerEvents: servicesOpen ? 'auto' : 'none' }}>
                 <ServicesDropdown isOpen={servicesOpen} onClose={() => setServicesOpen(false)} />
               </div>
             </div>
 
             {/* Portfolio Dropdown - Desktop */}
-            <div className="relative">
+            <div
+              className="relative"
+              onMouseEnter={openPortfolio}
+              onMouseLeave={closePortfolio}
+            >
               <button
                 onClick={() => setPortfolioOpen(!portfolioOpen)}
-                onMouseEnter={() => {
-                  setPortfolioOpen(true)
-                  setServicesOpen(false)
-                }}
                 className={[
                   'relative text-sm font-medium transition-colors duration-200',
                   portfolioOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
@@ -137,7 +174,7 @@ export function Navbar() {
                   ].join(' ')}
                 />
               </button>
-              <div className="absolute left-0 top-full pt-3">
+              <div className="absolute left-0 top-full pt-3 pointer-events-none" style={{ pointerEvents: portfolioOpen ? 'auto' : 'none' }}>
                 <PortfolioDropdown isOpen={portfolioOpen} onClose={() => setPortfolioOpen(false)} />
               </div>
             </div>
