@@ -11,12 +11,12 @@ import { RecruitCTA } from '@/components/recruit/recruit-cta'
 
 export const metadata = {
   title: 'Recruit Me — Digital Marketing Specialist & Marketplace Growth Expert',
-  description: 'Professional profile of Nur Afni. Digital Marketing Specialist with 4+ years of expertise in marketplace growth, performance marketing, and AI-assisted workflows. Available for full-time, contract, or consulting opportunities.',
+  description: 'Professional profile of Nur Afni. Digital Marketing Specialist with 3+ years of experience in marketplace growth and performance marketing across Shopee, TikTok Shop, Tokopedia, and Lazada. Available for full-time, contract, or consulting opportunities.',
 }
 
 export default function RecruitMePage() {
   return (
-    <main className="min-h-screen bg-white pt-16">
+    <div className="pt-16">
       <RecruitHero />
       <RecruitSnapshot />
       <RecruitSummary />
@@ -27,6 +27,6 @@ export default function RecruitMePage() {
       <RecruitLanguages />
       <RecruitProjects />
       <RecruitCTA />
-    </main>
+    </div>
   )
 }

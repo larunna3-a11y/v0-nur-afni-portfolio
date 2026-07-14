@@ -58,7 +58,7 @@ export function RecruitCTA() {
 
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com/in/nurafni"
+            href="https://www.linkedin.com/in/nour-afni/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/10 border border-white/20 rounded-xl p-6 hover:bg-white/20 transition-colors group"
@@ -91,12 +91,12 @@ export function RecruitCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#2D1BB8] rounded-xl font-semibold hover:shadow-lg transition-all"
-        >
-          Schedule a Call
-        </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#2D1BB8] rounded-xl font-semibold hover:shadow-lg transition-all"
+          >
+            Schedule a Call
+          </Link>
         </motion.div>
       </div>
     </section>

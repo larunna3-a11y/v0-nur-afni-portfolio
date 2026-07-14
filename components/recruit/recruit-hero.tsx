@@ -1,8 +1,10 @@
 'use client'
 
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Download, Linkedin, Mail } from 'lucide-react'
+import { Download, Linkedin, Mail, ChevronDown } from 'lucide-react'
+import { ResumeDropdown } from './resume-dropdown'
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -10,6 +12,35 @@ const fadeUp = {
 }
 
 export function RecruitHero() {
+  const [resumeDropdownOpen, setResumeDropdownOpen] = useState(false)
+  const resumeButtonRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown on Escape
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && resumeDropdownOpen) {
+        setResumeDropdownOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [resumeDropdownOpen])
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (resumeButtonRef.current && !resumeButtonRef.current.contains(e.target as Node)) {
+        setResumeDropdownOpen(false)
+      }
+    }
+
+    if (resumeDropdownOpen) {
+      document.addEventListener('click', handleClickOutside)
+      return () => document.removeEventListener('click', handleClickOutside)
+    }
+  }, [resumeDropdownOpen])
+
   return (
     <section className="relative bg-[#2D1BB8] overflow-hidden">
       {/* Background glow */}
@@ -46,7 +77,7 @@ export function RecruitHero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-6 text-lg text-[#9B97C0] max-w-2xl leading-relaxed"
         >
-          I build marketplace growth systems, manage high-performing advertising campaigns, and optimize digital ecosystems for sustainable business results. 4+ years of proven experience scaling revenue from 0 to 1B+ across Shopee, TikTok Shop, and Lazada.
+          Digital Marketing Specialist with 3+ years scaling revenue across Shopee, TikTok Shop, Lazada, and Tokopedia. I design marketplace growth strategies, manage multi-million rupiah ad budgets, and drive sustainable business results through data-driven campaigns.
         </motion.p>
 
         <motion.div
@@ -56,16 +87,28 @@ export function RecruitHero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-8 flex flex-wrap gap-4"
         >
+          {/* Resume Dropdown */}
+          <div className="relative" ref={resumeButtonRef}>
+            <button
+              onClick={() => setResumeDropdownOpen(!resumeDropdownOpen)}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white rounded-lg font-medium hover:bg-[#EA8509] transition-colors"
+            >
+              <Download size={18} />
+              Download Resume
+              <ChevronDown
+                size={16}
+                className={`transition-transform duration-300 ${
+                  resumeDropdownOpen ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+            <ResumeDropdown
+              isOpen={resumeDropdownOpen}
+              onClose={() => setResumeDropdownOpen(false)}
+            />
+          </div>
           <a
-            href="/Nur_Afni_Resume.pdf"
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white rounded-lg font-medium hover:bg-[#EA8509] transition-colors"
-          >
-            <Download size={18} />
-            Download Resume
-          </a>
-          <a
-            href="https://linkedin.com/in/nurafni"
+            href="https://www.linkedin.com/in/nour-afni/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white rounded-lg font-medium hover:bg-white/10 transition-colors"
@@ -89,9 +132,9 @@ export function RecruitHero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 flex flex-wrap gap-4 text-sm text-[#9B97C0]"
         >
-          <span>📍 Based in Indonesia</span>
+          <span>📍 Jakarta, Indonesia</span>
           <span>•</span>
-          <span>💼 4+ Years Experience</span>
+          <span>💼 3+ Years Experience</span>
           <span>•</span>
           <span>🌐 Remote Available</span>
         </motion.div>
