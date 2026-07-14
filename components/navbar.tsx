@@ -109,6 +109,7 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div
+            className="hidden md:flex items-center gap-8"
             onMouseLeave={() => {
               setServicesOpen(false)
               setPortfolioOpen(false)
