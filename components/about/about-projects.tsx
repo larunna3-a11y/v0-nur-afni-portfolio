@@ -54,11 +54,11 @@ const projects = [
     href: '/digital-product-lab',
   },
   {
-    title: 'Pustaka Hukum Indonesia',
+    title: 'Pustakara',
     category: 'AI Legal Knowledge',
     status: 'Coming Soon',
-    statusColor: 'bg-amber-50 text-amber-700',
-    bg: 'bg-[#6B4E3D]',
+    statusColor: 'bg-green-50 text-green-700',
+    bg: 'bg-[#374151]',
     href: '/digital-product-lab',
   },
 ]

@@ -30,7 +30,7 @@ const projects = [
     href: '/digital-product-lab',
   },
   {
-    name: 'Pustaka Hukum Indonesia',
+    name: 'Pustakara',
     description: 'AI-assisted legal knowledge platform making Indonesian law accessible and understandable.',
     status: 'Concept & Research',
     statusColor: 'bg-amber-50 text-amber-700 border-amber-200',
