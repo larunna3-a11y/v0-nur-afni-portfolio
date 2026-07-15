@@ -118,12 +118,13 @@ export default function DigitalProductLab() {
     },
     {
       id: 5,
-      name: 'Design System UI Kit',
+      name: 'pustakara',
       description: 'Building a personal design system so every future project starts with a consistent, polished foundation.',
-      tools: ['Figma AI', 'V0'],
-      status: 'Ongoing',
+      tools: ['Figma AI', 'V0, Lovable, clearAllModuleContexts, ChatGPT'],
+      status: 'Legal Library',
       statusColor: 'from-amber-500 to-amber-600',
-      thumbnail: '/placeholder.svg?height=300&width=400',
+      thumbnail: '/images/pustakara.png',
+      Link: 'https://hukum-cerita-raya.lovable.app'
     },
     {
       id: 6,
