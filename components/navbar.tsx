@@ -31,13 +31,23 @@ export function Navbar() {
   const [portfolioOpen, setPortfolioOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [mobilePortfolioOpen, setMobilePortfolioOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Each dropdown "group" (trigger button + panel) gets its own ref so click-outside
+  // detection can tell whether a click landed inside that specific group.
+  const servicesGroupRef = useRef<HTMLDivElement>(null)
+  const portfolioGroupRef = useRef<HTMLDivElement>(null)
+
+  // Close delay: keeps the dropdown alive briefly while the cursor travels
+  // between the trigger and the panel, so it doesn't feel like it "slams shut".
+  const CLOSE_DELAY = 200
+
   const servicesCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const portfolioCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // Helper to clear timeouts and open dropdown
   const openServices = () => {
     if (servicesCloseTimeoutRef.current) clearTimeout(servicesCloseTimeoutRef.current)
+    if (portfolioCloseTimeoutRef.current) clearTimeout(portfolioCloseTimeoutRef.current)
     setServicesOpen(true)
     setPortfolioOpen(false)
   }
@@ -46,11 +56,19 @@ export function Navbar() {
     if (servicesCloseTimeoutRef.current) clearTimeout(servicesCloseTimeoutRef.current)
     servicesCloseTimeoutRef.current = setTimeout(() => {
       setServicesOpen(false)
-    }, 150)
+    }, CLOSE_DELAY)
+  }
+
+  const toggleServices = () => {
+    if (servicesCloseTimeoutRef.current) clearTimeout(servicesCloseTimeoutRef.current)
+    if (portfolioCloseTimeoutRef.current) clearTimeout(portfolioCloseTimeoutRef.current)
+    setServicesOpen((prev) => !prev)
+    setPortfolioOpen(false)
   }
 
   const openPortfolio = () => {
     if (portfolioCloseTimeoutRef.current) clearTimeout(portfolioCloseTimeoutRef.current)
+    if (servicesCloseTimeoutRef.current) clearTimeout(servicesCloseTimeoutRef.current)
     setPortfolioOpen(true)
     setServicesOpen(false)
   }
@@ -59,15 +77,28 @@ export function Navbar() {
     if (portfolioCloseTimeoutRef.current) clearTimeout(portfolioCloseTimeoutRef.current)
     portfolioCloseTimeoutRef.current = setTimeout(() => {
       setPortfolioOpen(false)
-    }, 150)
+    }, CLOSE_DELAY)
+  }
+
+  const togglePortfolio = () => {
+    if (portfolioCloseTimeoutRef.current) clearTimeout(portfolioCloseTimeoutRef.current)
+    if (servicesCloseTimeoutRef.current) clearTimeout(servicesCloseTimeoutRef.current)
+    setPortfolioOpen((prev) => !prev)
+    setServicesOpen(false)
+  }
+
+  const closeAllImmediately = () => {
+    if (servicesCloseTimeoutRef.current) clearTimeout(servicesCloseTimeoutRef.current)
+    if (portfolioCloseTimeoutRef.current) clearTimeout(portfolioCloseTimeoutRef.current)
+    setServicesOpen(false)
+    setPortfolioOpen(false)
   }
 
   // Close dropdown on Escape
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        if (servicesOpen) setServicesOpen(false)
-        if (portfolioOpen) setPortfolioOpen(false)
+      if (e.key === 'Escape' && (servicesOpen || portfolioOpen)) {
+        closeAllImmediately()
       }
     }
 
@@ -75,12 +106,15 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [servicesOpen, portfolioOpen])
 
-  // Close dropdown on click outside
+  // Close dropdown on click outside (checks both groups individually,
+  // since a click inside one group's panel shouldn't close that same group)
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setServicesOpen(false)
-        setPortfolioOpen(false)
+      const target = e.target as Node
+      const insideServices = servicesGroupRef.current?.contains(target)
+      const insidePortfolio = portfolioGroupRef.current?.contains(target)
+      if (!insideServices && !insidePortfolio) {
+        closeAllImmediately()
       }
     }
 
@@ -108,13 +142,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div
-            className="hidden md:flex items-center gap-8"
-            onMouseLeave={() => {
-              setServicesOpen(false)
-              setPortfolioOpen(false)
-            }}
-          >
+          <div className="hidden md:flex items-center gap-8">
             {otherNavLinks.slice(0, 1).map((link) => (
               <Link
                 key={link.href}
@@ -127,12 +155,13 @@ export function Navbar() {
 
             {/* Services Dropdown - Desktop */}
             <div
+              ref={servicesGroupRef}
               className="relative"
               onMouseEnter={openServices}
               onMouseLeave={closeServices}
             >
               <button
-                onClick={() => setServicesOpen(!servicesOpen)}
+                onClick={toggleServices}
                 className={[
                   'relative text-sm font-medium transition-colors duration-200',
                   servicesOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
@@ -154,12 +183,13 @@ export function Navbar() {
 
             {/* Portfolio Dropdown - Desktop */}
             <div
+              ref={portfolioGroupRef}
               className="relative"
               onMouseEnter={openPortfolio}
               onMouseLeave={closePortfolio}
             >
               <button
-                onClick={() => setPortfolioOpen(!portfolioOpen)}
+                onClick={togglePortfolio}
                 className={[
                   'relative text-sm font-medium transition-colors duration-200',
                   portfolioOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
