@@ -118,8 +118,8 @@ export default function DigitalProductLab() {
     },
     {
       id: 5,
-      name: 'pustakara',
-      description: 'Building a personal design system so every future project starts with a consistent, polished foundation.',
+      name: 'PUSTAKARA',
+      description: 'Temukan. Pahami. Navigasi Hukum Indonesia. Akses peraturan perundang-undangan, putusan pengadilan, dan referensi hukum terpercaya dalam satu platform.',
       tools: ['Figma AI', 'V0, Lovable, clearAllModuleContexts, ChatGPT'],
       status: 'Legal Library',
       statusColor: 'from-amber-500 to-amber-600',
