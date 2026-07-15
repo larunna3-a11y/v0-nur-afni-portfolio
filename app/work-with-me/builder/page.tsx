@@ -81,7 +81,7 @@ const featuredProjects = [
   { name: 'FlowOps', category: 'Workflow Platform', href: '/digital-product-lab', status: 'Completed' },
   { name: 'StyleDNA', category: 'AI Styling Tool', href: '/digital-product-lab', status: 'In Progress' },
   { name: 'Artchy', category: 'Digital Art Museum', href: '/digital-product-lab', status: 'Live' },
-  { name: 'Pustaka Hukum Indonesia', category: 'Legal Knowledge Platform', href: '/digital-product-lab', status: 'Coming Soon' },
+  { name: 'Pustakara', category: 'Legal Knowledge Platform', href: '/digital-product-lab', status: 'Coming Soon' },
 ]
 
 const statusColor: Record<string, string> = {
