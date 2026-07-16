@@ -120,10 +120,10 @@ export default function DigitalProductLab() {
       id: 5,
       name: 'PUSTAKARA',
       description: 'Temukan. Pahami. Navigasi Hukum Indonesia. Akses peraturan perundang-undangan, putusan pengadilan, dan referensi hukum terpercaya dalam satu platform.',
-      tools: ['Figma AI', 'V0, Lovable, clearAllModuleContexts, ChatGPT'],
+      tools: ['Figma AI', 'V0', 'Lovable', 'clearAllModuleContext', 'ChatGPT'],
       status: 'Legal Library',
       statusColor: 'from-amber-500 to-amber-600',
-      thumbnail: '/images/pustakara.png',
+      thumbnail: '/images/Pustakara.png',
       Link: 'https://hukum-cerita-raya.lovable.app'
     },
     {
