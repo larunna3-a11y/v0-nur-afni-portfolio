@@ -482,27 +482,7 @@ export default function EcommerceGrowthCaseStudy() {
                 <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-medium">Marketplace</span>
               </div>
 
-              {/* Platform switcher — unchanged behavior */}
-              <div className="flex gap-6 mb-6 text-sm font-medium">
-                {['shopee', 'tiktok shop', 'lazada'].map((platform) => (
-                  <button
-                    key={platform}
-                    onClick={() => {
-                      setSelectedPlatform(platform)
-                      setCurrentSlide(0)
-                      setActiveAnalytics('overview')
-                    }}
-                    className={`transition-all ${selectedPlatform === platform
-                      ? 'text-white border-b-2 border-white pb-1'
-                      : 'text-white/60 hover:text-white pb-1'
-                      }`}
-                  >
-                    {platform === 'tiktok shop'
-                      ? 'TikTok Shop'
-                      : platform.charAt(0).toUpperCase() + platform.slice(1)}
-                  </button>
-                ))}
-              </div>
+              {/* Platform switcher moved below hero, directly above the metrics bar */}
 
               <h1 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                 E-Commerce Growth Journey
@@ -538,6 +518,29 @@ export default function EcommerceGrowthCaseStudy() {
       {/* Key Metrics Cards — unchanged content, original styling */}
       <section className="py-12 bg-white border-b border-[#E8E6F8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Platform switcher — now sits directly above the metrics it controls */}
+          <div className="flex gap-6 mb-8 text-sm font-medium justify-center">
+            {['shopee', 'tiktok shop', 'lazada'].map((platform) => (
+              <button
+                key={platform}
+                onClick={() => {
+                  setSelectedPlatform(platform)
+                  setCurrentSlide(0)
+                  setActiveAnalytics('overview')
+                }}
+                className={`transition-all ${selectedPlatform === platform
+                  ? 'text-[#2D1BB8] border-b-2 border-[#2D1BB8] pb-1'
+                  : 'text-[#9B97C0] hover:text-[#4B4680] pb-1'
+                  }`}
+              >
+                {platform === 'tiktok shop'
+                  ? 'TikTok Shop'
+                  : platform.charAt(0).toUpperCase() + platform.slice(1)}
+              </button>
+            ))}
+          </div>
+
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center p-6">
               <TrendingUp className="w-8 h-8 text-[#2D1BB8] mx-auto mb-2" />
