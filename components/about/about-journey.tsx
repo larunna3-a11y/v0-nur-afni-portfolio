@@ -21,7 +21,7 @@ const milestones = [
   {
     year: '2023',
     icon: TrendingUp, 
-    role: 'jr Social Media Specialist',
+    role: 'Jr Social Media Specialist',
     description: 'Helped grow brand awareness by creating strategic content, managing social media campaigns, and tracking performance metrics.',
     accent: false,
   },
