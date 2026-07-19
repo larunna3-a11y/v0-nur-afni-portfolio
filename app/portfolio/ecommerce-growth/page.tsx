@@ -82,7 +82,7 @@ const screenshots = [
   { month: 'March 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.40-tZRlfsQPw3njIhQcQcQYU7frzHvw5s.png', revenue: 'Rp566.89M', highlight: 'Ramadhan Campaign' },
   { month: 'April 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.45-WvSL57nJyYoeCIBcK35jCfgLbXgJau.png', revenue: 'Rp760.53M', highlight: '+34% New growth Peak' },
   { month: 'May 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.45-WvSL57nJyYoeCIBcK35jCfgLbXgJau.png', revenue: 'Rp982.57M', highlight: '+42.39% Q2 New Peak' },
-  { month: 'June 2026', url: '/screenshots-growth-ecommerce/Shopee-priskila-Juni-2026.png', revenue: 'Rp939.95M', highlight: '-14.97% Post-Peak Normalization' },
+  { month: 'June 2026', url: '/screenshots-growth-ecommerce/shopee juni 2026.png', revenue: 'Rp939.95M', highlight: '-14.97% Post-Peak Normalization' },
 ]
 
 const tiktokScreenshots = [
@@ -98,7 +98,7 @@ const tiktokScreenshots = [
   { month: 'March 2026', url: '/screenshots-growth-ecommerce/tiktokshop maret 2026.png', revenue: 'Rp539.3M', highlight: '+56.66% Ramadhan Push' },
   { month: 'April 2026', url: '/screenshots-growth-ecommerce/tiktokshop april 2026.png', revenue: 'Rp736M', highlight: '+43.69% Expansion' },
   { month: 'May 2026', url: '/screenshots-growth-ecommerce/tiktokshopmay2026.png', revenue: 'Rp842.2M', highlight: 'Highest Monthly GMV' },
-  { month: 'June 2026', url: '/screenshots-growth-ecommerce/Tiktok-priskila-juni-2026.png', revenue: 'Rp1.24B', highlight: '+50.94% New GMV Record' }
+  { month: 'June 2026', url: '/screenshots-growth-ecommerce/tiktokshopjune2026.png', revenue: 'Rp1.24B', highlight: '+50.94% New GMV Record' }
 ]
 
 const lazadaScreenshots = [
@@ -113,7 +113,7 @@ const lazadaScreenshots = [
   { month: 'January 2026', url: '/ss-growth-lazada-pris/Laz Jan 2026.png', revenue: 'Rp76.0M', highlight: 'Highest Revenue Record' },
   { month: 'February 2026', url: '/ss-growth-lazada-pris/Laz Feb 2026.png', revenue: 'Rp66.3M', highlight: 'Post-Holiday Retention' },
   { month: 'April 2026', url: '/ss-growth-lazada-pris/Laz Apr 2026.png', revenue: 'Rp73.3M', highlight: '+21.71% Recovery Peak' },
-  { month: 'June 2026', url: '/ss-growth-lazada-pris/Laz-Jun-2026.png', revenue: 'Rp121.38M', highlight: '+65.6% New Revenue Record' }
+  { month: 'June 2026', url: '/ss-growth-lazada-pris/Laz Jun 2026.png', revenue: 'Rp121.38M', highlight: '+65.6% New Revenue Record' }
 ]
 
 const tiktokMonthlyData = [
@@ -173,7 +173,7 @@ const shopeeGrowthPhases = [
   },
   {
     phase: 'Phase 4: Dominance',
-    period: 'Nov 2025 - June 2026',
+    period: 'Nov 2025 - Apr 2026',
     description: 'Sustained high-volume operations with continuous optimization. Ramadhan and holiday campaigns drove record-breaking numbers.',
     keyActions: ['Seasonal campaign mastery', 'Premium placement strategies', 'Full-funnel attribution'],
     result: 'Reached Rp1.2B monthly revenue (31x from start)',
@@ -402,24 +402,33 @@ export default function EcommerceGrowthCaseStudy() {
 
   const platformStats = {
     shopee: {
-      growth: '+3,065%',
-      orders: '27,393',
+      growth: '+3,989%',
+      growthMultiple: '41x',
+      revenueRange: 'Rp24M → Rp983M',
+      orders: '28,795',
       conversion: '4.68%',
-      duration: 'Sep 24 - May 26'
+      duration: 'Sep 24 - Jun 26',
+      durationMonths: '22 Months'
     },
 
     'tiktok shop': {
-      growth: '+2,574%',
-      orders: '31,027',
+      growth: '+4,256%',
+      growthMultiple: '44x',
+      revenueRange: 'Rp28.4M → Rp1.24B',
+      orders: '53,746',
       conversion: '4.54%',
-      duration: 'Jun 25 - May 26'
+      duration: 'Jun 25 - Jun 26',
+      durationMonths: '13 Months'
     },
 
     lazada: {
-      growth: '+904%',
-      orders: '1,264',
+      growth: '+1,563%',
+      growthMultiple: '17x',
+      revenueRange: 'Rp7.3M → Rp121.4M',
+      orders: '2,240',
       conversion: '7.34%',
-      duration: 'May 25 - Apr 26'
+      duration: 'May 25 - Jun 26',
+      durationMonths: '14 Months'
     }
   }
 
@@ -428,9 +437,9 @@ export default function EcommerceGrowthCaseStudy() {
 
   // KPI cards for the new QCY-style hero (right side)
   const kpiCards = [
-    { label: 'Monthly Revenue', value: 'Rp24M → Rp1.2B', icon: TrendingUp },
-    { label: 'Revenue Growth', value: '31x', icon: Zap },
-    { label: 'Progress Period', value: '20 Months', icon: Calendar },
+    { label: 'Monthly Revenue', value: activeStats.revenueRange, icon: TrendingUp },
+    { label: 'Revenue Growth', value: activeStats.growthMultiple, icon: Zap },
+    { label: 'Progress Period', value: activeStats.durationMonths, icon: Calendar },
     { label: 'Peak Monthly Orders', value: activeStats.orders, icon: ShoppingCart },
   ]
 
