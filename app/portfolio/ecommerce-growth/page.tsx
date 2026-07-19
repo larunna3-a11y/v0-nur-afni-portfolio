@@ -81,8 +81,8 @@ const screenshots = [
   { month: 'February 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.34-obfCmkvnepxFLCcPI3spacDZ8Xuvt4.png', revenue: 'Rp553.53M', highlight: '+53.9% New Year Push' },
   { month: 'March 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.40-tZRlfsQPw3njIhQcQcQYU7frzHvw5s.png', revenue: 'Rp566.89M', highlight: 'Ramadhan Campaign' },
   { month: 'April 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.45-WvSL57nJyYoeCIBcK35jCfgLbXgJau.png', revenue: 'Rp760.53M', highlight: '+34% New growth Peak' },
-  { month: 'May 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.45-WvSL57nJyYoeCIBcK35jCfgLbXgJau.png', revenue: 'Rp982.57M', highlight: '+42.39% Q2 New Peak' },
-  { month: 'June 2026', url: '/screenshots-growth-ecommerce/shopee juni 2026.png', revenue: 'Rp939.95M', highlight: '-14.97% Post-Peak Normalization' },
+  { month: 'May 2026', url: '/screenshots-growth-ecommerce/shopee-may-2026.jpeg', revenue: 'Rp982.57M', highlight: '+42.39% Q2 New Peak' },
+  { month: 'June 2026', url: '/screenshots-growth-ecommerce/Shopee-priskila-Juni-2026.png', revenue: 'Rp939.95M', highlight: '-14.97% Post-Peak Normalization' },
 ]
 
 const tiktokScreenshots = [
@@ -98,7 +98,7 @@ const tiktokScreenshots = [
   { month: 'March 2026', url: '/screenshots-growth-ecommerce/tiktokshop maret 2026.png', revenue: 'Rp539.3M', highlight: '+56.66% Ramadhan Push' },
   { month: 'April 2026', url: '/screenshots-growth-ecommerce/tiktokshop april 2026.png', revenue: 'Rp736M', highlight: '+43.69% Expansion' },
   { month: 'May 2026', url: '/screenshots-growth-ecommerce/tiktokshopmay2026.png', revenue: 'Rp842.2M', highlight: 'Highest Monthly GMV' },
-  { month: 'June 2026', url: '/screenshots-growth-ecommerce/tiktokshopjune2026.png', revenue: 'Rp1.24B', highlight: '+50.94% New GMV Record' }
+  { month: 'June 2026', url: '/screenshots-growth-ecommerce/Tiktok-priskila-juni-2026.png', revenue: 'Rp1.24B', highlight: '+50.94% New GMV Record' }
 ]
 
 const lazadaScreenshots = [
@@ -113,7 +113,7 @@ const lazadaScreenshots = [
   { month: 'January 2026', url: '/ss-growth-lazada-pris/Laz Jan 2026.png', revenue: 'Rp76.0M', highlight: 'Highest Revenue Record' },
   { month: 'February 2026', url: '/ss-growth-lazada-pris/Laz Feb 2026.png', revenue: 'Rp66.3M', highlight: 'Post-Holiday Retention' },
   { month: 'April 2026', url: '/ss-growth-lazada-pris/Laz Apr 2026.png', revenue: 'Rp73.3M', highlight: '+21.71% Recovery Peak' },
-  { month: 'June 2026', url: '/ss-growth-lazada-pris/Laz Jun 2026.png', revenue: 'Rp121.38M', highlight: '+65.6% New Revenue Record' }
+  { month: 'June 2026', url: '/ss-growth-lazada-pris/Laz-Jun-2026.png', revenue: 'Rp121.38M', highlight: '+65.6% New Revenue Record' }
 ]
 
 const tiktokMonthlyData = [
