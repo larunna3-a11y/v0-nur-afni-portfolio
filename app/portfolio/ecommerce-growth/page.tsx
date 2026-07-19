@@ -170,7 +170,7 @@ const shopeeGrowthPhases = [
     period: 'Nov 2025 - Apr 2026',
     description: 'Sustained high-volume operations with continuous optimization. Ramadhan and holiday campaigns drove record-breaking numbers.',
     keyActions: ['Seasonal campaign mastery', 'Premium placement strategies', 'Full-funnel attribution'],
-    result: 'Reached Rp982M monthly revenue (31x from start)',
+    result: 'Reached Rp1.2B monthly revenue (31x from start)',
   },
 ]
 
@@ -242,7 +242,7 @@ const tiktokGrowthPhases = [
       'High-volume promotional scaling',
     ],
     result:
-      'GMV climbed to Rp982M+ with sustained multi-channel contribution from LIVE, video, affiliate, and marketplace traffic.',
+      'GMV climbed to Rp1.2B+ with sustained multi-channel contribution from LIVE, video, affiliate, and marketplace traffic.',
   },
 ]
 
@@ -422,7 +422,7 @@ export default function EcommerceGrowthCaseStudy() {
 
   // KPI cards for the new QCY-style hero (right side)
   const kpiCards = [
-    { label: 'Monthly Revenue', value: 'Rp24M → Rp982M', icon: TrendingUp },
+    { label: 'Monthly Revenue', value: 'Rp24M → Rp1.2B', icon: TrendingUp },
     { label: 'Revenue Growth', value: '31x', icon: Zap },
     { label: 'Progress Period', value: '20 Months', icon: Calendar },
     { label: 'Peak Monthly Orders', value: activeStats.orders, icon: ShoppingCart },
@@ -552,7 +552,7 @@ export default function EcommerceGrowthCaseStudy() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2 variants={fadeIn} initial="initial" whileInView="animate" viewport={{ once: true }} className="text-2xl font-bold text-[#0F0A2E] mb-2">Revenue Growth Over Time</motion.h2>
-          <p className="text-[#4B4680] mb-8">Monthly revenue progression from Rp24M to Rp982M</p>
+          <p className="text-[#4B4680] mb-8">Monthly revenue progression from Rp24M to Rp1.2B</p>
 
           <motion.div variants={fadeIn} initial="initial" whileInView="animate" viewport={{ once: true }} className="bg-white rounded-2xl border border-[#E8E6F8] p-6">
             <ResponsiveContainer width="100%" height={400}>
@@ -796,7 +796,7 @@ export default function EcommerceGrowthCaseStudy() {
 
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <motion.div variants={fadeIn} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
-              <p className="text-4xl font-bold text-[#F97316]">Rp982M</p>
+              <p className="text-4xl font-bold text-[#F97316]">Rp1.2B</p>
               <p className="text-sm text-[#9B97C0] mt-2">Peak Monthly Revenue</p>
             </motion.div>
             <motion.div variants={fadeIn} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">

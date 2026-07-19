@@ -4,7 +4,7 @@ const works = [
   {
     category: 'E-Commerce Management',
     brand: 'Priskila',
-    result: 'Rp24M → Rp982M (31x growth)',
+    result: 'Rp24M → Rp1.2B (31x growth)',
     bg: 'bg-[#2D1BB8]',
     link: '/portfolio/ecommerce-growth',
   },

@@ -7,7 +7,7 @@ const highlights = [
   {
     icon: TrendingUp,
     title: 'Marketplace Growth',
-    description: 'Scaled revenue from Rp24M to Rp982M (31x growth) across multiple brands within 20 months through strategic marketplace optimization.',
+    description: 'Scaled revenue from Rp24M to Rp1.2B (31x growth) across multiple brands within 20 months through strategic marketplace optimization.',
   },
   {
     icon: Zap,

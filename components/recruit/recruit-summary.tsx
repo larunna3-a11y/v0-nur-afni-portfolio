@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const highlights = [
   'Managed marketplace campaigns across Shopee, TikTok Shop, Lazada, and Tokopedia with budgets up to Rp500M',
-  'Achieved 31x revenue growth (Rp24M → Rp982M) through integrated paid ads, affiliate, and marketplace strategy',
+  'Achieved 31x revenue growth (Rp24M → Rp1.2B) through integrated paid ads, affiliate, and marketplace strategy',
   'Optimized ad performance from 2.28 ROAS to 11.05 ROAS through data-driven campaign restructuring',
   'Generated Rp286M+ in peak campaign periods through coordinated multi-channel paid ads, vouchers, and affiliate programs',
   'Managed 50+ influencer and affiliate partnerships generating 139 orders and Rp36.2M in GMV',
