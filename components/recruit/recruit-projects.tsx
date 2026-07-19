@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 const projects = [
   {
     title: 'Priskila Prima Makmur',
-    result: 'Rp24M → Rp982M',
+    result: 'Rp24M → Rp1.2B',
     description: 'Multi-brand marketplace growth spanning 5 beauty brands. Developed integrated strategy across Shopee, TikTok Shop, and Lazada with focus on sustainable profitability and operational excellence.',
     impact: '31x revenue growth over 20 months',
     link: '/portfolio/ecommerce-growth',
