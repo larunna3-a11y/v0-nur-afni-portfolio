@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 const languages = [
   { name: 'Indonesian', proficiency: 'Native', level: 100 },
   { name: 'English', proficiency: 'Fluent', level: 90 },
-  { name: 'Mandarin', proficiency: 'Basic', level: 40 },
 ]
 
 const fadeUp = {
