@@ -57,6 +57,7 @@ const shopeeMonthlyData = [
   { month: 'Mar 26', revenue: 566.89, orders: 16609, conversion: 4.61, growth: 2.41 },
   { month: 'Apr 26', revenue: 760.53, orders: 21607, conversion: 4.64, growth: 34.16 },
   { month: 'May 26', revenue: 982.57, orders: 27393, conversion: 4.54, growth: 42.39 },
+  { month: 'Jun 26', revenue: 939.95, orders: 28795, conversion: 4.45, growth: -14.97 },
 ]
 
 // Screenshots data with source URLs (chronological order)
@@ -81,6 +82,7 @@ const screenshots = [
   { month: 'March 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.40-tZRlfsQPw3njIhQcQcQYU7frzHvw5s.png', revenue: 'Rp566.89M', highlight: 'Ramadhan Campaign' },
   { month: 'April 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.45-WvSL57nJyYoeCIBcK35jCfgLbXgJau.png', revenue: 'Rp760.53M', highlight: '+34% New growth Peak' },
   { month: 'May 2026', url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-05-25%20at%2017.35.45-WvSL57nJyYoeCIBcK35jCfgLbXgJau.png', revenue: 'Rp982.57M', highlight: '+42.39% Q2 New Peak' },
+  { month: 'June 2026', url: '/screenshots-growth-ecommerce/Shopee-priskila-Juni-2026.png', revenue: 'Rp939.95M', highlight: '-14.97% Post-Peak Normalization' },
 ]
 
 const tiktokScreenshots = [
@@ -95,7 +97,8 @@ const tiktokScreenshots = [
   { month: 'February 2026', url: '/screenshots-growth-ecommerce/tiktokshop februari 2026.png', revenue: 'Rp317.6M', highlight: '+47.3% Recovery' },
   { month: 'March 2026', url: '/screenshots-growth-ecommerce/tiktokshop maret 2026.png', revenue: 'Rp539.3M', highlight: '+56.66% Ramadhan Push' },
   { month: 'April 2026', url: '/screenshots-growth-ecommerce/tiktokshop april 2026.png', revenue: 'Rp736M', highlight: '+43.69% Expansion' },
-  { month: 'May 2026', url: '/screenshots-growth-ecommerce/tiktokshopmay2026.png', revenue: 'Rp842.2M', highlight: 'Highest Monthly GMV' }
+  { month: 'May 2026', url: '/screenshots-growth-ecommerce/tiktokshopmay2026.png', revenue: 'Rp842.2M', highlight: 'Highest Monthly GMV' },
+  { month: 'June 2026', url: '/screenshots-growth-ecommerce/Tiktok-priskila-juni-2026.png', revenue: 'Rp1.24B', highlight: '+50.94% New GMV Record' }
 ]
 
 const lazadaScreenshots = [
@@ -109,7 +112,8 @@ const lazadaScreenshots = [
   { month: 'December 2025', url: '/ss-growth-lazada-pris/Laz des 2025.png', revenue: 'Rp65.0M', highlight: 'Stable Holiday Performance' },
   { month: 'January 2026', url: '/ss-growth-lazada-pris/Laz Jan 2026.png', revenue: 'Rp76.0M', highlight: 'Highest Revenue Record' },
   { month: 'February 2026', url: '/ss-growth-lazada-pris/Laz Feb 2026.png', revenue: 'Rp66.3M', highlight: 'Post-Holiday Retention' },
-  { month: 'April 2026', url: '/ss-growth-lazada-pris/Laz Apr 2026.png', revenue: 'Rp73.3M', highlight: '+21.71% Recovery Peak' }
+  { month: 'April 2026', url: '/ss-growth-lazada-pris/Laz Apr 2026.png', revenue: 'Rp73.3M', highlight: '+21.71% Recovery Peak' },
+  { month: 'June 2026', url: '/ss-growth-lazada-pris/Laz-Jun-2026.png', revenue: 'Rp121.38M', highlight: '+65.6% New Revenue Record' }
 ]
 
 const tiktokMonthlyData = [
@@ -125,6 +129,7 @@ const tiktokMonthlyData = [
   { month: 'Mar 26', revenue: 539.25, orders: 19747, conversion: 4.31, growth: 56.66 },
   { month: 'Apr 26', revenue: 736.01, orders: 26861, conversion: 4.54, growth: 43.69 },
   { month: 'May 26', revenue: 760.16, orders: 31027, conversion: 4.54, growth: 9.16 },
+  { month: 'Jun 26', revenue: 1238.62, orders: 53746, conversion: 4.54, growth: 50.94 },
 ]
 
 const lazadaMonthlyData = [
@@ -139,7 +144,8 @@ const lazadaMonthlyData = [
   { month: 'Jan 2026', revenue: 76.0, orders: 1199, conversion: 5.52, growth: 16.97 },
   { month: 'Feb 2026', revenue: 66.3, orders: 1137, conversion: 5.84, growth: -12.74 },
   { month: 'Mar 2026', revenue: 60.3, orders: 1080, conversion: 5.81, growth: -9.15 },
-  { month: 'Apr 2026', revenue: 73.3, orders: 1264, conversion: 5.31, growth: 21.71 }
+  { month: 'Apr 2026', revenue: 73.3, orders: 1264, conversion: 5.31, growth: 21.71 },
+  { month: 'Jun 2026', revenue: 121.38, orders: 2240, conversion: 5.49, growth: 65.62 }
 ]
 
 // Growth phases for narrative
@@ -167,7 +173,7 @@ const shopeeGrowthPhases = [
   },
   {
     phase: 'Phase 4: Dominance',
-    period: 'Nov 2025 - Apr 2026',
+    period: 'Nov 2025 - June 2026',
     description: 'Sustained high-volume operations with continuous optimization. Ramadhan and holiday campaigns drove record-breaking numbers.',
     keyActions: ['Seasonal campaign mastery', 'Premium placement strategies', 'Full-funnel attribution'],
     result: 'Reached Rp1.2B monthly revenue (31x from start)',
