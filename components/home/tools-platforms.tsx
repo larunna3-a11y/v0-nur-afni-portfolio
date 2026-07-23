@@ -31,8 +31,8 @@ const tools: Record<string, Tool[]> = {
   marketplace: [
     { name: 'Shopee Seller Center', logo: 'https://cdn.simpleicons.org/shopee/ffffff', url: 'https://seller.shopee.co.id', tag: 'Marketplace', bg: '#EE4D2D' },
     { name: 'TikTok Shop', logo: 'https://cdn.simpleicons.org/tiktok/ffffff', url: 'https://seller-id.tiktok.com', tag: 'Marketplace', bg: '#000000' },
-    { name: 'Lazada Seller Center', logo: 'https://cdn.simpleicons.org/lazada/ffffff', url: 'https://sellercenter.lazada.co.id', tag: 'Marketplace', bg: '#0F146D' },
-    { name: 'Blibli Merchant', logo: 'https://www.static-src.com/frontend/static/img/logo-blibli.svg', url: 'https://merchant.blibli.com', tag: 'Marketplace', bg: '#0072CE' },
+    { name: 'Lazada Seller Center', logo: 'https://freepnglogo.com/images/all_img/1701498708lazada-png-logo.png', url: 'https://sellercenter.lazada.co.id', tag: 'Marketplace', bg: '#0F146D' },
+    { name: 'Blibli Merchant', logo: 'https://static.vecteezy.com/system/resources/previews/067/565/460/non_2x/blibli-rounded-logo-design-free-png.png', url: 'https://merchant.blibli.com', tag: 'Marketplace', bg: '#0072CE' },
   ],
   advertising: [
     { name: 'Meta Business Suite', logo: 'https://cdn.simpleicons.org/meta/ffffff', url: 'https://business.facebook.com', tag: 'Paid Ads', bg: '#0866FF' },
@@ -49,19 +49,19 @@ const tools: Record<string, Tool[]> = {
   ],
   analytics: [
     { name: 'Google Sheets', logo: 'https://cdn.simpleicons.org/googlesheets/ffffff', url: 'https://sheets.google.com', tag: 'Analytics', bg: '#0F9D58' },
-    { name: 'Google Workspace', logo: 'https://cdn.simpleicons.org/googleworkspace/ffffff', url: 'https://workspace.google.com', tag: 'Operations', bg: '#4285F4' },
+    { name: 'Google Workspace', logo: 'https://cdn4.iconfinder.com/data/icons/logos-brands-7/512/google_logo-google_icongoogle-1024.png', url: 'https://workspace.google.com', tag: 'Operations', bg: '#4B1426' },
     { name: 'Google Trends', logo: 'https://cdn.simpleicons.org/google/ffffff', url: 'https://trends.google.com', tag: 'Research', bg: '#4285F4' },
     { name: 'Asana', logo: 'https://cdn.simpleicons.org/asana/ffffff', url: 'https://asana.com', tag: 'Planning', bg: '#F06A6A' },
     { name: 'Accurate', logo: 'https://penjualanonline.id/wp-content/uploads/2022/01/Logo-Accurate-Cloud.png', url: 'https://accurate.id', tag: 'Finance', bg: '#1B5FAA' },
   ],
   ai: [
-    { name: 'ChatGPT', logo: 'https://cdn.simpleicons.org/openai/ffffff', url: 'https://chatgpt.com', tag: 'AI', bg: '#10A37F' },
+    { name: 'ChatGPT', logo: 'https://cdn.freebiesupply.com/logos/large/2x/chatgpt-symbol.png', url: 'https://chatgpt.com', tag: 'AI', bg: '#10A37F' },
     { name: 'Claude', logo: 'https://www.anthropic.com/images/icons/apple-touch-icon.png', url: 'https://claude.ai', tag: 'AI', bg: '#D97757' },
     { name: 'Lovable', logo: 'https://lovable.dev/favicon.ico', url: 'https://lovable.dev/invite/SP4QTLM', tag: 'Builder', bg: '#FF5D5D' },
     { name: 'v0', logo: 'https://cdn.simpleicons.org/vercel/ffffff', url: 'https://v0.dev', tag: 'Builder', bg: '#000000' },
     { name: 'Figma', logo: 'https://cdn.simpleicons.org/figma/ffffff', url: 'https://figma.com', tag: 'Design', bg: '#A259FF' },
-    { name: 'Gemini', logo: 'https://gemini.google.com/favicon.ico', url: 'https://gemini.google.com', tag: 'AI', bg: '#4285F4' },
-    { name: 'UseAI', logo: 'https://useai.com/favicon.ico', url: 'https://useai.com', tag: 'AI', bg: '#2D1BB8' },
+    { name: 'Gemini', logo: 'https://logos-world.net/wp-content/uploads/2025/02/Google-Gemini-Symbol.png', url: 'https://gemini.google.com', tag: 'AI', bg: '#8B639B' },
+   
   ],
 }
 
