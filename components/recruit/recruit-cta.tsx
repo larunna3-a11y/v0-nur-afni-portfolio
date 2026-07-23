@@ -53,7 +53,7 @@ export function RecruitCTA() {
               <Mail className="w-6 h-6 text-white" />
             </div>
             <h3 className="font-semibold text-white mb-1">Email</h3>
-            <p className="text-sm text-[#9B97C0]">nur@example.com</p>
+            <p className="text-sm text-[#9B97C0]">nurafni4489@gmail.com</p>
           </a>
 
           {/* LinkedIn */}
