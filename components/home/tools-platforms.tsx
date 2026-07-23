@@ -49,19 +49,19 @@ const tools: Record<string, Tool[]> = {
   ],
   analytics: [
     { name: 'Google Sheets', logo: 'https://cdn.simpleicons.org/googlesheets/ffffff', url: 'https://sheets.google.com', tag: 'Analytics', bg: '#0F9D58' },
-    { name: 'Google Workspace', logo: 'https://cdn.simpleicons.org/googleworkspace/ffffff', url: 'https://workspace.google.com', tag: 'Operations', bg: '#4285F4' },
+    { name: 'Google Workspace', logo: 'https://cdn4.iconfinder.com/data/icons/logos-brands-7/512/google_logo-google_icongoogle-1024.png', url: 'https://workspace.google.com', tag: 'Operations', bg: '#4B1426' },
     { name: 'Google Trends', logo: 'https://cdn.simpleicons.org/google/ffffff', url: 'https://trends.google.com', tag: 'Research', bg: '#4285F4' },
     { name: 'Asana', logo: 'https://cdn.simpleicons.org/asana/ffffff', url: 'https://asana.com', tag: 'Planning', bg: '#F06A6A' },
     { name: 'Accurate', logo: 'https://penjualanonline.id/wp-content/uploads/2022/01/Logo-Accurate-Cloud.png', url: 'https://accurate.id', tag: 'Finance', bg: '#1B5FAA' },
   ],
   ai: [
-    { name: 'ChatGPT', logo: 'https://cdn.simpleicons.org/openai/ffffff', url: 'https://chatgpt.com', tag: 'AI', bg: '#10A37F' },
+    { name: 'ChatGPT', logo: 'https://cdn.freebiesupply.com/logos/large/2x/chatgpt-symbol.png', url: 'https://chatgpt.com', tag: 'AI', bg: '#10A37F' },
     { name: 'Claude', logo: 'https://www.anthropic.com/images/icons/apple-touch-icon.png', url: 'https://claude.ai', tag: 'AI', bg: '#D97757' },
     { name: 'Lovable', logo: 'https://lovable.dev/favicon.ico', url: 'https://lovable.dev/invite/SP4QTLM', tag: 'Builder', bg: '#FF5D5D' },
     { name: 'v0', logo: 'https://cdn.simpleicons.org/vercel/ffffff', url: 'https://v0.dev', tag: 'Builder', bg: '#000000' },
     { name: 'Figma', logo: 'https://cdn.simpleicons.org/figma/ffffff', url: 'https://figma.com', tag: 'Design', bg: '#A259FF' },
     { name: 'Gemini', logo: 'https://logos-world.net/wp-content/uploads/2025/02/Google-Gemini-Symbol.png', url: 'https://gemini.google.com', tag: 'AI', bg: '#8B639B' },
-    { name: 'UseAI', logo: 'https://useai.com/favicon.ico', url: 'https://useai.com', tag: 'AI', bg: '#2D1BB8' },
+   
   ],
 }
 
