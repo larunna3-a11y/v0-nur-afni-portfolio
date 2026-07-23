@@ -31,8 +31,8 @@ const tools: Record<string, Tool[]> = {
   marketplace: [
     { name: 'Shopee Seller Center', logo: 'https://cdn.simpleicons.org/shopee/ffffff', url: 'https://seller.shopee.co.id', tag: 'Marketplace', bg: '#EE4D2D' },
     { name: 'TikTok Shop', logo: 'https://cdn.simpleicons.org/tiktok/ffffff', url: 'https://seller-id.tiktok.com', tag: 'Marketplace', bg: '#000000' },
-    { name: 'Lazada Seller Center', logo: 'https://cdn.simpleicons.org/lazada/ffffff', url: 'https://sellercenter.lazada.co.id', tag: 'Marketplace', bg: '#0F146D' },
-    { name: 'Blibli Merchant', logo: 'https://www.static-src.com/frontend/static/img/logo-blibli.svg', url: 'https://merchant.blibli.com', tag: 'Marketplace', bg: '#0072CE' },
+    { name: 'Lazada Seller Center', logo: 'https://freepnglogo.com/images/all_img/1701498708lazada-png-logo.png', url: 'https://sellercenter.lazada.co.id', tag: 'Marketplace', bg: '#0F146D' },
+    { name: 'Blibli Merchant', logo: 'https://static.vecteezy.com/system/resources/previews/067/565/460/non_2x/blibli-rounded-logo-design-free-png.png', url: 'https://merchant.blibli.com', tag: 'Marketplace', bg: '#0072CE' },
   ],
   advertising: [
     { name: 'Meta Business Suite', logo: 'https://cdn.simpleicons.org/meta/ffffff', url: 'https://business.facebook.com', tag: 'Paid Ads', bg: '#0866FF' },
