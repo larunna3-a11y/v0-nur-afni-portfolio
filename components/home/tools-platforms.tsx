@@ -56,7 +56,7 @@ const tools: Record<string, Tool[]> = {
   ],
   ai: [
     { name: 'ChatGPT', logo: 'https://cdn.freebiesupply.com/logos/large/2x/chatgpt-symbol.png', url: 'https://chatgpt.com', tag: 'AI', bg: '#10A37F' },
-    { name: 'Claude', logo: 'https://www.anthropic.com/images/icons/apple-touch-icon.png', url: 'https://claude.ai', tag: 'AI', bg: '#D97757' },
+    { name: 'Claude', logo: 'https://lucifertech.store/images/services/claude.png', url: 'https://claude.ai', tag: 'AI', bg: '#D97757' },
     { name: 'Lovable', logo: 'https://lovable.dev/favicon.ico', url: 'https://lovable.dev/invite/SP4QTLM', tag: 'Builder', bg: '#FF5D5D' },
     { name: 'v0', logo: 'https://cdn.simpleicons.org/vercel/ffffff', url: 'https://v0.dev', tag: 'Builder', bg: '#000000' },
     { name: 'Figma', logo: 'https://cdn.simpleicons.org/figma/ffffff', url: 'https://figma.com', tag: 'Design', bg: '#A259FF' },
