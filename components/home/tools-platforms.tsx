@@ -60,7 +60,7 @@ const tools: Record<string, Tool[]> = {
     { name: 'Lovable', logo: 'https://lovable.dev/favicon.ico', url: 'https://lovable.dev/invite/SP4QTLM', tag: 'Builder', bg: '#FF5D5D' },
     { name: 'v0', logo: 'https://cdn.simpleicons.org/vercel/ffffff', url: 'https://v0.dev', tag: 'Builder', bg: '#000000' },
     { name: 'Figma', logo: 'https://cdn.simpleicons.org/figma/ffffff', url: 'https://figma.com', tag: 'Design', bg: '#A259FF' },
-    { name: 'Gemini', logo: 'https://logos-world.net/wp-content/uploads/2025/02/Google-Gemini-Symbol.png', url: 'https://gemini.google.com', tag: 'AI', bg: '#4285F4' },
+    { name: 'Gemini', logo: 'https://logos-world.net/wp-content/uploads/2025/02/Google-Gemini-Symbol.png', url: 'https://gemini.google.com', tag: 'AI', bg: '#8B639B' },
     { name: 'UseAI', logo: 'https://useai.com/favicon.ico', url: 'https://useai.com', tag: 'AI', bg: '#2D1BB8' },
   ],
 }
