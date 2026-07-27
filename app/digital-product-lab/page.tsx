@@ -152,12 +152,12 @@ export default function DigitalProductLab() {
     },
     {
       id: 2,
-      title: 'Content Strategy Playbook',
-      level: 'Intermediate',
-      description: 'A practical framework for planning content that supports real business goals, not just a calendar.',
-      cover: '/placeholder.svg?height=300&width=400',
-      pdfUrl: '/files/content-strategy-playbook.pdf',
-      pptxUrl: '/files/content-strategy-playbook.pptx',
+      title: 'Marketing In Kpop Ep 1',
+      level: 'Beginner',
+      description: 'What if... K-Pop is actually one of the best marketing case studies? ',
+      cover: '/images/Marketinginkpopep1.png',
+      pdfUrl: 'https://media.licdn.com/dms/document/media/v2/D561FAQGAkomCpa6Efg/feedshare-document-pdf-analyzed/B56Z.emmiqIQAY-/0/1785072358319?e=1785974400&v=beta&t=U0WGEI9-yRgx_Q7Zr-jvghTc6fGUA_vUqIh0lOdShTg',
+      pptxUrl: 'https://media.licdn.com/dms/document/media/v2/D561FAQGAkomCpa6Efg/feedshare-document-pdf-analyzed/B56Z.emmiqIQAY-/0/1785072358319?e=1785974400&v=beta&t=U0WGEI9-yRgx_Q7Zr-jvghTc6fGUA_vUqIh0lOdShTg',
     },
     {
       id: 3,
