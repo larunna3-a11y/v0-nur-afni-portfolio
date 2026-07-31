@@ -358,17 +358,6 @@ export default function DigitalProductLab() {
                         <span className="text-sm font-semibold text-[#0F0A2E] flex-1">PDF</span>
                         <Download className="w-4 h-4 text-gray-400" />
                       </a>
-                      <a
-                        href={mod.pptxUrl}
-                        download
-                        className="flex items-center gap-3 bg-orange-50 hover:bg-orange-100 transition-colors rounded-xl px-3 py-2.5"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center flex-shrink-0">
-                          <Presentation className="w-4 h-4 text-white" />
-                        </div>
-                        <span className="text-sm font-semibold text-[#0F0A2E] flex-1">PPTX</span>
-                        <Download className="w-4 h-4 text-gray-400" />
-                      </a>
                     </div>
                   </div>
                 </motion.div>
