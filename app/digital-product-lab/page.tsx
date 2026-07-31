@@ -104,7 +104,7 @@ export default function DigitalProductLab() {
       status: 'Art Galery',
       statusColor: 'from-cyan-500 to-teal-600',
       thumbnail: '/images/Artchy.png',
-      link: 'https://curious-canvas-cosmos.lovable.app/'
+      link: 'https://artchy.lovable.app'
     },
     {
       id: 4,
