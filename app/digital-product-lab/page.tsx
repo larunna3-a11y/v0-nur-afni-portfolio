@@ -124,7 +124,7 @@ export default function DigitalProductLab() {
       status: 'Legal Library',
       statusColor: 'from-amber-500 to-amber-600',
       thumbnail: '/images/Pustakara.png',
-      link: 'https://hukum-cerita-raya.lovable.app'
+      link: 'https://pustakara.my.id/'
     },
     {
       id: 6,
