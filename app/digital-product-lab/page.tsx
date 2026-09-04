@@ -148,7 +148,7 @@ export default function DigitalProductLab() {
       description: 'Understanding how a business earns attention, customers, and sales in the digital era.',
       cover: '/moduel/digimar101.png',
       pdfUrl: '/moduel/Digital-Marketing-101.pdf',
-      pptxUrl: '/moduel/Digital-Marketing-101.pptx',
+      
     },
     {
       id: 2,
@@ -156,8 +156,7 @@ export default function DigitalProductLab() {
       level: 'Beginner',
       description: 'What if... K-Pop is actually one of the best marketing case studies? ',
       cover: '/images/Marketinginkpopep1.png',
-      pdfUrl: 'https://media.licdn.com/dms/document/media/v2/D561FAQGAkomCpa6Efg/feedshare-document-pdf-analyzed/B56Z.emmiqIQAY-/0/1785072358319?e=1785974400&v=beta&t=U0WGEI9-yRgx_Q7Zr-jvghTc6fGUA_vUqIh0lOdShTg',
-      pptxUrl: 'https://media.licdn.com/dms/document/media/v2/D561FAQGAkomCpa6Efg/feedshare-document-pdf-analyzed/B56Z.emmiqIQAY-/0/1785072358319?e=1785974400&v=beta&t=U0WGEI9-yRgx_Q7Zr-jvghTc6fGUA_vUqIh0lOdShTg',
+      pdfUrl: 'Marketing_Lesson_in_Kpop _Ep1.pdf',
     },
     {
       id: 3,
