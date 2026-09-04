@@ -156,7 +156,7 @@ export default function DigitalProductLab() {
       level: 'Beginner',
       description: 'What if... K-Pop is actually one of the best marketing case studies? ',
       cover: '/images/Marketinginkpopep1.png',
-      pdfUrl: 'Marketing_Lesson_in_Kpop _Ep1.pdf',
+      pdfUrl: '/moduel/Marketing-Lesson-in-Kpop -Ep1.pdf',
     },
     {
       id: 3,
