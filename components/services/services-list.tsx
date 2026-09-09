@@ -17,7 +17,7 @@ const categories = [
       {
         name: 'Strategy Session',
         description: 'A focused consultation to unpack your current challenges and identify quick wins.',
-        price: 'Starting from Rp750K',
+        price: 'Starting from Rp150K',
         features: [
           '60–90 minute consultation',
           'Marketplace review',
@@ -214,7 +214,7 @@ const categories = [
       {
         name: '1-on-1 Mentoring',
         description: 'Focused private sessions tailored to your specific career or business goals.',
-        price: 'Rp300K/hour',
+        price: 'Rp100K/hour',
         features: [
           'Marketplace operations',
           'Digital marketing fundamentals',
