@@ -13,7 +13,7 @@ export const metadata = {
 const packages = [
   {
     name: 'Personal Mentoring',
-    price: 'Rp300K / hour',
+    price: 'Rp100K / hour',
     description: 'Focused one-on-one sessions tailored entirely to your goals — career, business, or skill development.',
     includes: [
       'Personalized session agenda',

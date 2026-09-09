@@ -214,7 +214,7 @@ const categories = [
       {
         name: '1-on-1 Mentoring',
         description: 'Focused private sessions tailored to your specific career or business goals.',
-        price: 'Rp300K/hour',
+        price: 'Rp100K/hour',
         features: [
           'Marketplace operations',
           'Digital marketing fundamentals',

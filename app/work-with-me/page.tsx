@@ -41,7 +41,7 @@ const cards = [
     icon: GraduationCap,
     title: 'Learning',
     description: 'Mentoring, workshops, corporate training, and public speaking.',
-    price: 'Starting from Rp300K/hour',
+    price: 'Starting from Rp100K/hour',
     cta: 'Explore Learning',
     href: '/work-with-me/learning',
   },
