@@ -13,7 +13,7 @@ const cards = [
     icon: Lightbulb,
     title: 'Consulting',
     description: 'Helping businesses make smarter digital decisions through strategy, audits, AI adoption, and operational improvements.',
-    price: 'Starting from Rp750K',
+    price: 'Starting from Rp150K',
     cta: 'Explore Consulting',
     href: '/work-with-me/consulting',
   },

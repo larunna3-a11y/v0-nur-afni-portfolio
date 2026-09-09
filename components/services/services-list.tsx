@@ -17,7 +17,7 @@ const categories = [
       {
         name: 'Strategy Session',
         description: 'A focused consultation to unpack your current challenges and identify quick wins.',
-        price: 'Starting from Rp750K',
+        price: 'Starting from Rp150K',
         features: [
           '60–90 minute consultation',
           'Marketplace review',

@@ -13,7 +13,7 @@ export const metadata = {
 const packages = [
   {
     name: 'Strategy Session',
-    price: 'Starting from Rp750K',
+    price: 'Starting from Rp150K',
     description: 'Perfect for founders, SMEs, or marketing teams who need expert guidance before making important business decisions.',
     includes: [
       '60–90 minute consultation',
