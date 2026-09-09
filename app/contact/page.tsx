@@ -11,12 +11,15 @@ const serviceOptions = [
   'Other',
 ]
 
-const budgetOptions = [
-  'Under Rp5M',
-  'Rp5M – Rp15M',
-  'Rp15M – Rp50M',
-  'Rp50M – Rp100M',
-  'Above Rp100M',
+const currencyOptions = [
+  { code: 'IDR', symbol: 'Rp', tiers: ['Under Rp5M', 'Rp5M – Rp15M', 'Rp15M – Rp50M', 'Rp50M – Rp100M', 'Above Rp100M'] },
+  { code: 'USD', symbol: '$', tiers: ['Under $300', '$300 – $750', '$750 – $1,500', '$1,500 – $3,000', '$3,000+'] },
+  { code: 'SGD', symbol: 'S$', tiers: ['Under S$400', 'S$400 – S$1,000', 'S$1,000 – S$2,500', 'S$2,500 – S$5,000', 'S$5,000+'] },
+  { code: 'MYR', symbol: 'RM', tiers: ['Under RM1,500', 'RM1,500 – RM3,500', 'RM3,500 – RM7,500', 'RM7,500 – RM15,000', 'RM15,000+'] },
+  { code: 'EUR', symbol: '€', tiers: ['Under €300', '€300 – €750', '€750 – €1,500', '€1,500 – €3,000', '€3,000+'] },
+  { code: 'GBP', symbol: '£', tiers: ['Under £250', '£250 – £650', '£650 – £1,250', '£1,250 – £2,500', '£2,500+'] },
+  { code: 'AUD', symbol: 'A$', tiers: ['Under A$500', 'A$500 – A$1,200', 'A$1,200 – A$2,500', 'A$2,500 – A$5,000', 'A$5,000+'] },
+  { code: 'JPY', symbol: '¥', tiers: ['Under ¥50,000', '¥50,000 – ¥120,000', '¥120,000 – ¥250,000', '¥250,000 – ¥500,000', '¥500,000+'] },
 ]
 
 export default function ContactPage() {
@@ -25,12 +28,20 @@ export default function ContactPage() {
     company: '',
     email: '',
     service: '',
+    currency: 'IDR',
     budget: '',
     message: '',
   })
 
+  const selectedCurrency = currencyOptions.find((currency) => currency.code === formData.currency) ?? currencyOptions[0]
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    const { name, value } = e.target
+    setFormData({
+      ...formData,
+      [name]: value,
+      ...(name === 'currency' ? { budget: '' } : {}),
+    })
   }
 
   return (
@@ -149,23 +160,38 @@ export default function ContactPage() {
 
                 {/* Budget */}
                 <div>
-                  <label htmlFor="budget" className="block text-sm font-medium text-[#0F0A2E] mb-2">
+                  <label htmlFor="currency" className="block text-sm font-medium text-[#0F0A2E] mb-2">
                     Budget Range
                   </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#F8F7FF] border border-[#E8E6F8] rounded-xl text-[#0F0A2E] focus:outline-none focus:border-[#2D1BB8] focus:ring-1 focus:ring-[#2D1BB8]"
-                  >
-                    <option value="">Select budget range</option>
-                    {budgetOptions.map((budget) => (
-                      <option key={budget} value={budget}>
-                        {budget}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="space-y-2">
+                    <select
+                      id="currency"
+                      name="currency"
+                      value={formData.currency}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-[#F8F7FF] border border-[#E8E6F8] rounded-xl text-[#0F0A2E] focus:outline-none focus:border-[#2D1BB8] focus:ring-1 focus:ring-[#2D1BB8]"
+                    >
+                      {currencyOptions.map((currency) => (
+                        <option key={currency.code} value={currency.code}>
+                          {currency.code} ({currency.symbol})
+                        </option>
+                      ))}
+                    </select>
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-[#F8F7FF] border border-[#E8E6F8] rounded-xl text-[#0F0A2E] focus:outline-none focus:border-[#2D1BB8] focus:ring-1 focus:ring-[#2D1BB8]"
+                    >
+                      <option value="">Select budget range</option>
+                      {selectedCurrency.tiers.map((budget) => (
+                        <option key={budget} value={`${formData.currency}: ${budget}`}>
+                          {budget}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
 
                 {/* Message */}
