@@ -17,7 +17,7 @@ const caseStudies = [
   },
   {
     id: 2,
-    categories: ['E-Commerce', 'Paid Ads'],
+    categories: ['E-Commerce', 'Paid Ads','KOL & Affiliate'],
     brand: 'QCY Indonesia',
     result: 'Rp91.8M revenue · 576 orders on launch day',
     description: 'New release multi-marketplace product launch campaign combining paid ads, flash sale, voucher, and affiliate strategy for maximum launch-day impact.',
