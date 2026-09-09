@@ -7,7 +7,7 @@ const experiences = [
       'Grew marketplace revenue from Rp95.7M to Rp180.4M within 4 months',
       'Generated Rp286M sales during major campaign periods',
       'Improved TikTok Ads ROAS from 2.28 to 11.05 through campaign restructuring',
-      'Achieved peak ROAS of 96.2 via voucher campaigns',
+      'Achieved peak ROAS of 11.2 via voucher campaigns',
       'Managed budgets in the Rp100–500M range across Meta Ads, TikTok Ads, and marketplace campaigns',
       'Led QCY HT15 & C30 product launch generating Rp91.8M on day one, 576 orders',
       'Managed affiliate campaigns: 200 orders, Rp36.2M GMV, 14.7 ROAS',
