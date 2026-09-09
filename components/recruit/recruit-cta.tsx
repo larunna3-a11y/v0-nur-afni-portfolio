@@ -46,7 +46,7 @@ export function RecruitCTA() {
         >
           {/* Email */}
           <a
-            href="mailto:nur.afni@example.com"
+            href="mailto:nurafni4489@gmail.com"
             className="bg-white/10 border border-white/20 rounded-xl p-6 hover:bg-white/20 transition-colors group"
           >
             <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-colors">
