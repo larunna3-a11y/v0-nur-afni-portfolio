@@ -2,8 +2,9 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, Zap, Lightbulb, Code, Palette, Layers, ExternalLink, ArrowUpRight, FileText, Presentation, Download } from 'lucide-react'
+import { ArrowRight, Zap, Lightbulb, Code, Palette, Layers, ExternalLink, FileText, Presentation, Download } from 'lucide-react'
 import { useState } from 'react'
+import { DesignCreativeCarousel } from '@/components/portfolio/design-creative-carousel'
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -176,13 +177,6 @@ export default function DigitalProductLab() {
       pdfUrl: '/files/email-marketing-fundamentals.pdf',
       pptxUrl: '/files/email-marketing-fundamentals.pptx',
     },
-  ]
-
-  const upcomingExperiments = [
-    { name: 'Mobile App Prototype', description: 'What would this feel like on a phone? Exploring the same ideas in a smaller, more personal format.' },
-    { name: 'AI Assistant Interface', description: 'Designing a smarter, warmer way to interact with AI — less robotic, more like talking to someone useful.' },
-    { name: 'Data Visualization Suite', description: 'Because numbers don\'t tell stories on their own. Building tools that make data actually make sense.' },
-    { name: 'E-Commerce Toolkit', description: 'A practical suite of tools for marketplace sellers — built from years of managing shops firsthand.' },
   ]
 
   return (
@@ -366,35 +360,8 @@ export default function DigitalProductLab() {
         </div>
       </section>
 
-      {/* Future Experiments Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
-            <motion.div variants={fadeIn} className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F0A2E] mb-4">What's Coming Next</h2>
-              <p className="text-gray-600">Ideas living rent-free in my head. Some are half-sketched, some are just a question I haven't answered yet.</p>
-            </motion.div>
-
-            <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-6">
-              {upcomingExperiments.map((exp, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeIn}
-                  className="bg-white rounded-2xl p-8 border-2 border-dashed border-gray-300 hover:border-[#6D4AFF] transition-colors"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-[#0F0A2E] mb-2">{exp.name}</h3>
-                      <p className="text-gray-600">{exp.description}</p>
-                    </div>
-                    <ArrowUpRight className="w-5 h-5 text-gray-400" />
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Design & Creative Section */}
+      <DesignCreativeCarousel />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-[#6D4AFF] to-[#2D1BB8] text-white">
