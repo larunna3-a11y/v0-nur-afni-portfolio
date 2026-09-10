@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { DesignCreativeCarousel } from '@/components/portfolio/design-creative-carousel'
 
 const categories = ['All', 'Social Media', 'E-Commerce', 'Paid Ads', 'KOL & Affiliate', 'Livestream']
 
@@ -76,8 +75,6 @@ export default function PortfolioPage() {
           <p className="mt-4 text-[#9B97C0]">Real campaigns. Real numbers.</p>
         </div>
       </section>
-
-      <DesignCreativeCarousel />
 
       {/* Filter & Cards */}
       <section className="bg-[#F8F7FF] py-16">
