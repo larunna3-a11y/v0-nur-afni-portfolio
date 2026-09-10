@@ -18,17 +18,16 @@ const marketplaceSlides: CreativeSlide[] = [
 ]
 
 const socialMediaSlides: CreativeSlide[] = [
-  { src: '/design-social/1.png', title: 'QCY Product Story', brand: 'QCY Indonesia', description: 'Square social media creative presenting product value through a clear, campaign-led visual story.' },
-  { src: '/design-social/2.png', title: 'Choetech Product Feature', brand: 'Choetech Indonesia', description: 'Product-focused social content designed to make technical features easy to understand.' },
-  { src: '/design-social/3.png', title: 'Lifestyle Product Visual', brand: 'QCY Indonesia', description: 'Lifestyle-led campaign content connecting the product with everyday listening moments.' },
-  { src: '/design-social/4-1.png', title: 'Campaign Carousel Series', brand: 'Choetech Indonesia', description: 'A multi-slide social series combining education, product benefits, and visual consistency.' },
-  { src: '/design-social/4-2.png', title: 'Product Benefits Carousel', brand: 'Choetech Indonesia', description: 'Educational carousel content that turns product specifications into approachable messaging.' },
-  { src: '/design-social/4-3.png', title: 'Feature Education Post', brand: 'Choetech Indonesia', description: 'Informative social design with a strong hierarchy for fast mobile reading.' },
-  { src: '/design-social/4-4.png', title: 'Social Campaign Detail', brand: 'Choetech Indonesia', description: 'Supporting campaign visual built to keep a product story cohesive across a feed.' },
-  { src: '/design-social/4-5.png', title: 'Campaign Closing Visual', brand: 'Choetech Indonesia', description: 'Final carousel frame reinforcing the campaign message and product recall.' },
-  { src: '/design-social/27-1.png', title: 'Seasonal Social Campaign', brand: 'QCY Indonesia', description: 'Seasonal feed design balancing promotional messaging with a recognizable brand look.' },
-  { src: '/design-social/27-2.png', title: 'Social Product Highlight', brand: 'QCY Indonesia', description: 'A focused product highlight created for consistent campaign storytelling.' },
-]
+  '6-16.png', '48.png', 'H010.png', '49.png', '8.png', '14.png', '10-4.png', 'B651 (2).png', '29.png', '15.png',
+  '12.png', '10-2.png', '10-3.png', '13.png', '11.png', 'B651 (3).png', '10-1.png', '10.png', '4 (2).png', 'Photo product  H067.png',
+  '21.png', 'XCC-1036.png', '20.png', '22.png', '27.png', '21 2.png', '24.png', '25.png', '3-3.png', '4.png',
+  '5.png', '3-2.png', '7.png', '6.png', '3-1.png', '3-4.png', 'B651.png', '47.png', 'T200-F.png',
+].map((filename, index) => ({
+  src: `/design-social-new/QCY%20Catalog%20Instagaram-2024/${encodeURIComponent(filename)}`,
+  title: `QCY Social Creative ${String(index + 1).padStart(2, '0')}`,
+  brand: 'QCY Indonesia',
+  description: 'Product and campaign visual designed for a clear, engaging social media feed.',
+}))
 
 const categories: Category[] = [
   { label: 'Marketplace Banner', description: 'Campaign & promotional visuals', icon: ImageIcon, slides: marketplaceSlides },
@@ -89,12 +88,12 @@ export function DesignCreativeCarousel() {
 
         {slides.length ? <>
           <div className="relative mt-12 overflow-hidden pb-8 pt-4" onPointerDown={(event) => setDragStart(event.clientX)} onPointerUp={(event) => { if (dragStart === null) return; const delta = event.clientX - dragStart; if (Math.abs(delta) > 50) goTo(activeIndex + (delta < 0 ? 1 : -1)); setDragStart(null) }}>
-            <div className={`relative mx-auto w-full max-w-6xl ${isSocialMedia ? 'h-[360px] sm:h-[500px] lg:h-[620px]' : 'h-[220px] sm:h-[330px] lg:h-[460px]'}`}>
+            <div className={`relative mx-auto w-full max-w-6xl ${isSocialMedia ? 'h-[300px] sm:h-[420px] lg:h-[520px]' : 'h-[220px] sm:h-[330px] lg:h-[460px]'}`}>
               {slides.map((slide, index) => {
                 const offset = getOffset(index, activeIndex, slides.length)
                 const visible = Math.abs(offset) <= 2
                 const active = offset === 0
-                return <button key={slide.src} type="button" aria-label={`Show ${slide.title}`} aria-pressed={active} onClick={() => goTo(index)} className={`absolute left-1/2 top-1/2 overflow-hidden rounded-2xl border border-[#E8E6F8] bg-white shadow-lg transition-[transform,opacity,filter] duration-600 ease-out ${visible ? 'pointer-events-auto' : 'pointer-events-none'}`} style={{ width: isSocialMedia ? 'min(62vw, 496px)' : 'min(78vw, 820px)', aspectRatio: isSocialMedia ? '4 / 5' : undefined, height: isSocialMedia ? 'auto' : '100%', zIndex: active ? 30 : 20 - Math.abs(offset), opacity: active ? 1 : visible ? 0.4 : 0, transform: `translate(-50%, -50%) translateX(calc(${offset} * ${isSocialMedia ? 'min(42vw, 430px)' : 'min(60vw, 570px)'})) scale(${active ? 1 : 0.78})`, filter: active ? 'none' : 'saturate(0.7)' }}>
+                return <button key={slide.src} type="button" aria-label={`Show ${slide.title}`} aria-pressed={active} onClick={() => goTo(index)} className={`absolute left-1/2 top-1/2 overflow-hidden rounded-2xl border border-[#E8E6F8] bg-white shadow-lg transition-[transform,opacity,filter] duration-600 ease-out ${visible ? 'pointer-events-auto' : 'pointer-events-none'}`} style={{ width: isSocialMedia ? 'min(68vw, 520px)' : 'min(78vw, 820px)', aspectRatio: isSocialMedia ? '1 / 1' : undefined, height: isSocialMedia ? 'auto' : '100%', zIndex: active ? 30 : 20 - Math.abs(offset), opacity: active ? 1 : visible ? 0.4 : 0, transform: `translate(-50%, -50%) translateX(calc(${offset} * ${isSocialMedia ? 'min(42vw, 430px)' : 'min(60vw, 570px)'})) scale(${active ? 1 : 0.78})`, filter: active ? 'none' : 'saturate(0.7)' }}>
                   <Image src={slide.src} alt={slide.title} fill sizes="(max-width: 768px) 78vw, 820px" className="object-cover" />
                   {!active && <span className="absolute inset-0 bg-[#0F0A2E]/10" aria-hidden="true" />}
                 </button>
@@ -105,7 +104,7 @@ export function DesignCreativeCarousel() {
             <div className="mt-5 flex justify-center gap-2" role="tablist" aria-label={`${category.label} slides`}>{slides.map((slide, index) => <button key={slide.src} type="button" aria-label={`Go to ${slide.title}`} aria-selected={activeIndex === index} onClick={() => goTo(index)} className={`h-2.5 rounded-full transition-all duration-300 ${activeIndex === index ? 'w-7 bg-[#2D1BB8]' : 'w-2.5 bg-[#C9C6E6] hover:bg-[#9B97C0]'}`} />)}</div>
           </div>
           <div className="rounded-2xl border border-[#E8E6F8] bg-white p-6 sm:p-8"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2D1BB8]">{category.label}</p><div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"><h3 className="text-2xl font-bold text-[#0F0A2E]">{slides[activeIndex].title}</h3><span className="text-sm text-[#4B4680]">{activeIndex + 1} / {slides.length}</span></div><p className="mt-3 max-w-3xl text-[#4B4680] leading-relaxed">{slides[activeIndex].description}</p><p className="mt-2 text-sm font-medium text-[#6D4AFF]">{slides[activeIndex].brand}</p></div>
-          <div className="mt-8"><h3 className="mb-4 text-lg font-bold text-[#0F0A2E]">More {category.label}</h3><div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">{slides.map((slide, index) => <button key={slide.src} type="button" onClick={() => goTo(index)} className={`overflow-hidden rounded-xl border-2 bg-white text-left ${activeIndex === index ? 'border-[#2D1BB8]' : 'border-transparent'}`}><div className={`relative ${isSocialMedia ? 'aspect-[4/5]' : 'aspect-[16/9]'}`}><Image src={slide.src} alt={slide.title} fill sizes="160px" className="object-cover" /></div><span className="block truncate px-2 py-2 text-xs text-[#4B4680]">{slide.title}</span></button>)}</div></div>
+          <div className="mt-8"><h3 className="mb-4 text-lg font-bold text-[#0F0A2E]">More {category.label}</h3><div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">{slides.map((slide, index) => <button key={slide.src} type="button" onClick={() => goTo(index)} className={`overflow-hidden rounded-xl border-2 bg-white text-left ${activeIndex === index ? 'border-[#2D1BB8]' : 'border-transparent'}`}><div className={`relative ${isSocialMedia ? 'aspect-square' : 'aspect-[16/9]'}`}><Image src={slide.src} alt={slide.title} fill sizes="160px" className="object-cover" /></div><span className="block truncate px-2 py-2 text-xs text-[#4B4680]">{slide.title}</span></button>)}</div></div>
         </> : <div className="mt-10 rounded-2xl border border-dashed border-[#C9C6E6] bg-white p-10 text-center text-[#4B4680]">This showcase is coming soon. New work will be added here.</div>}
       </div>
     </section>
