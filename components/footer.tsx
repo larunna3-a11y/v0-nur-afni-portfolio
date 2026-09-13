@@ -1,28 +1,23 @@
-'use client'
-
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+
+const footerLinks = {
+  navigation: [
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/services', label: 'Services' },
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/contact', label: 'Contact' },
+  ],
+  services: [
+    { href: '/services#social-media', label: 'Social Media' },
+    { href: '/services#ecommerce', label: 'E-Commerce' },
+    { href: '/services#paid-ads', label: 'Paid Ads' },
+    { href: '/services#strategy', label: 'Digital Strategy' },
+    { href: '/services#kol', label: 'KOL Strategy' },
+  ],
+}
 
 export function Footer() {
-  const t = useTranslations('footer')
-
-  const footerLinks = {
-    navigation: [
-      { href: '/', label: t('nav.home') },
-      { href: '/about', label: t('nav.about') },
-      { href: '/services', label: t('nav.services') },
-      { href: '/portfolio', label: t('nav.portfolio') },
-      { href: '/contact', label: t('nav.contact') },
-    ],
-    services: [
-      { href: '/services#social-media', label: t('services.socialMedia') },
-      { href: '/services#ecommerce', label: t('services.ecommerce') },
-      { href: '/services#paid-ads', label: t('services.paidAds') },
-      { href: '/services#strategy', label: t('services.strategy') },
-      { href: '/services#kol', label: t('services.kol') },
-    ],
-  }
-
   return (
     <footer className="bg-[#0F0A2E] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -33,7 +28,7 @@ export function Footer() {
               Nur Afni
             </Link>
             <p className="mt-4 text-[#9B97C0] max-w-md">
-              {t('tagline')}
+              Digital Marketing Specialist based in Jakarta, Indonesia. Helping brands grow across social media, paid ads, and marketplaces.
             </p>
             <div className="mt-6 flex gap-4">
               <a
@@ -72,7 +67,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="font-semibold text-white mb-4">{t('navigation')}</h3>
+            <h3 className="font-semibold text-white mb-4">Navigation</h3>
             <ul className="space-y-3">
               {footerLinks.navigation.map((link) => (
                 <li key={link.href}>
@@ -89,7 +84,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-white mb-4">{t('nav.services')}</h3>
+            <h3 className="font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
@@ -109,10 +104,10 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-[#1A0F7A]">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-[#9B97C0] text-sm">
-              &copy; {new Date().getFullYear()} Nur Afni. {t('rights')}
+              &copy; {new Date().getFullYear()} Nur Afni. All rights reserved.
             </p>
             <p className="text-[#9B97C0] text-sm">
-              {t('location')}
+              Jakarta, Indonesia
             </p>
           </div>
         </div>

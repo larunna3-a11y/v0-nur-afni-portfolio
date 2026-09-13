@@ -2,34 +2,30 @@
 
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
-import { useTranslations } from 'next-intl'
 import { Menu, X } from 'lucide-react'
 import { PortfolioDropdown } from './portfolio-dropdown'
 import { ServicesDropdown } from './services-dropdown'
-import { LanguageSwitcher } from './language-switcher'
+
+const otherNavLinks = [
+  { href: '/about', label: 'About' },
+  { href: '/digital-product-lab', label: 'Lab' },
+  { href: '/contact', label: 'Contact' },
+]
+
+const servicesMenuLinks = [
+  { href: '/services/Marketing', label: 'Marketing' },
+  { href: '/services/builder', label: 'Builder' },
+  { href: '/services/Consulting', label: 'Consulting' },
+  { href: '/services/Learning', label: 'Learning' },
+]
+
+const portfolioDropdownLinks = [
+  { href: '/portfolio/case-studies', label: 'Case Studies' },
+  { href: '/portfolio/recruit-me', label: 'Recruit Me' },
+  { href: '/portfolio/hire-me', label: 'Hire Me' },
+]
 
 export function Navbar() {
-  const t = useTranslations('nav')
-
-  const otherNavLinks = [
-    { href: '/about', label: t('about') },
-    { href: '/digital-product-lab', label: t('lab') },
-    { href: '/contact', label: t('contact') },
-  ]
-
-  const servicesMenuLinks = [
-    { href: '/services/Marketing', label: t('marketing') },
-    { href: '/services/builder', label: t('builder') },
-    { href: '/services/Consulting', label: t('consulting') },
-    { href: '/services/Learning', label: t('learning') },
-  ]
-
-  const portfolioDropdownLinks = [
-    { href: '/portfolio/case-studies', label: t('caseStudies') },
-    { href: '/portfolio/recruit-me', label: t('recruitMe') },
-    { href: '/portfolio/hire-me', label: t('hireMe') },
-  ]
-
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [portfolioOpen, setPortfolioOpen] = useState(false)
@@ -142,7 +138,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-[#2D1BB8] font-bold text-xl">
-            {t('home')}
+            Home
           </Link>
 
           {/* Desktop Navigation */}
@@ -171,7 +167,7 @@ export function Navbar() {
                   servicesOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
                 ].join(' ')}
               >
-                {t('services')}
+                Services
                 {/* Animated underline */}
                 <span
                   className={[
@@ -199,7 +195,7 @@ export function Navbar() {
                   portfolioOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
                 ].join(' ')}
               >
-                {t('portfolio')}
+                Portfolio
                 {/* Animated underline */}
                 <span
                   className={[
@@ -222,8 +218,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-
-            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -261,7 +255,7 @@ export function Navbar() {
                     mobileServicesOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
                   ].join(' ')}
                 >
-                  {t('services')}
+                  Services
                 </button>
 
                 {mobileServicesOpen && (
@@ -289,7 +283,7 @@ export function Navbar() {
                     mobilePortfolioOpen ? 'text-[#2D1BB8]' : 'text-[#4B4680] hover:text-[#2D1BB8]',
                   ].join(' ')}
                 >
-                  {t('portfolio')}
+                  Portfolio
                 </button>
 
                 {mobilePortfolioOpen && (
@@ -318,10 +312,6 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-
-              <div className="px-2 pt-2">
-                <LanguageSwitcher />
-              </div>
             </div>
           </div>
         )}

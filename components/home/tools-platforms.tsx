@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
 
 const fadeIn = {
   initial: { opacity: 0, y: 16 },
@@ -26,7 +25,6 @@ type Category = {
   title: string
   description: string
   tools: Tool[]
-  translationKey: string
 }
 
 const tools: Record<string, Tool[]> = {
@@ -73,42 +71,36 @@ const categories: Category[] = [
     title: 'Marketplace Management',
     description: 'Managing store operations, product listings, campaigns, promotions, and marketplace growth.',
     tools: tools.marketplace,
-    translationKey: 'marketplace',
   },
   {
     id: 'advertising',
     title: 'Advertising & Growth',
     description: 'Managing paid acquisition, optimization, and performance campaigns.',
     tools: tools.advertising,
-    translationKey: 'advertising',
   },
   {
     id: 'affiliate',
     title: 'Affiliate & Livestream Commerce',
     description: 'Managing affiliate activation, creator partnerships, and livestream commerce.',
     tools: tools.affiliate,
-    translationKey: 'affiliate',
   },
   {
     id: 'creative',
     title: 'Content & Creative',
     description: 'Creating content assets, marketing visuals, and social media creatives.',
     tools: tools.creative,
-    translationKey: 'creative',
   },
   {
     id: 'analytics',
     title: 'Analytics & Operations',
     description: 'Reporting, forecasting, planning, and operational management.',
     tools: tools.analytics,
-    translationKey: 'analytics',
   },
   {
     id: 'ai',
     title: 'AI & Product Development',
     description: 'Building digital products, workflows, systems, dashboards, and websites.',
     tools: tools.ai,
-    translationKey: 'ai',
   },
 ]
 
@@ -141,7 +133,6 @@ function ToolCard({ tool }: { tool: Tool }) {
 }
 
 export function ToolsPlatforms() {
-  const t = useTranslations('home.tools')
   return (
     <section className="bg-[#F8F7FF] py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,11 +145,11 @@ export function ToolsPlatforms() {
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           <span className="inline-block text-xs font-semibold tracking-widest text-[#2D1BB8] uppercase mb-3">
-            {t('label')}
+            The Stack
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F0A2E]">{t('title')}</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F0A2E]">Digital Toolkit</h2>
           <p className="mt-4 text-[#4B4680] leading-relaxed">
-            {t('description')}
+            The platforms, AI tools, and systems I use to build campaigns, analyze data, manage marketplaces, and create digital products.
           </p>
         </motion.div>
 
@@ -176,7 +167,7 @@ export function ToolsPlatforms() {
               <motion.div variants={fadeIn} className="flex items-center gap-4 mb-6">
                 <span className="flex-1 h-px bg-gradient-to-r from-transparent via-[#E8E6F8] to-[#E8E6F8]" />
                 <span className="px-4 py-1.5 bg-[#F0EEFF] border border-[#E0DCFF] rounded-full text-xs font-bold text-[#2D1BB8] uppercase tracking-wide whitespace-nowrap">
-                  {t(`categories.${category.translationKey}.title`)}
+                  {category.title}
                 </span>
                 <span className="flex-1 h-px bg-gradient-to-l from-transparent via-[#E8E6F8] to-[#E8E6F8]" />
               </motion.div>
