@@ -8,13 +8,14 @@ type CreativeSlide = { src: string; title: string; brand: string; description: s
 type Category = { label: string; description: string; icon: typeof ImageIcon; slides: CreativeSlide[] }
 
 const marketplaceSlides: CreativeSlide[] = [
-  { src: '/design-creative/1.png', title: 'Giant Sale Campaign', brand: 'QCY & Choetech', description: 'Marketplace campaign banner created for a high-impact promotional moment.' },
-  { src: '/design-creative/2.png', title: 'Promotional Campaign Visual', brand: 'QCY Indonesia', description: 'Promotional visual balancing product focus, offer messaging, and strong hierarchy.' },
-  { src: '/design-creative/3.png', title: 'Product Campaign Banner', brand: 'Choetech Indonesia', description: 'Product-led campaign creative designed for marketplace visibility.' },
-  { src: '/design-creative/4.png', title: 'Brand Promotion Visual', brand: 'Choetech Indonesia', description: 'A clean promotional composition built around brand and product storytelling.' },
-  { src: '/design-creative/12.12 Choetech.png', title: '12.12 Choetech Campaign', brand: 'Choetech Indonesia', description: 'Seasonal marketplace banner for a major shopping campaign.' },
-  { src: '/design-creative/12.12 QCY.png', title: '12.12 QCY Campaign', brand: 'QCY Indonesia', description: 'Seasonal campaign visual combining product presentation and promotional messaging.' },
-  { src: '/design-creative/Promo 7.7.png', title: '7.7 Musical Campaign with spotify', brand: 'QCY Indonesia', description: 'Promotional 7.7 Sale special with free gift.' },
+  { src: '/design-creative/1.png', title: 'Power Sale 11.11', brand: 'Choetech Indonesia', description: 'Power bank campaign banner for the 11.11 sale, offering up to 60% off.' },
+  { src: '/design-creative/2.png', title: 'Giant Sale November 11.11', brand: 'QCY Indonesia', description: 'Audio product campaign banner for the 11.11 giant sale, with up to 40% off plus an extra discount.' },
+  { src: '/design-creative/3.png', title: 'Clearance Mega Sale', brand: 'QCY Indonesia', description: 'Earbuds clearance campaign banner offering up to 70% off.' },
+  { src: '/design-creative/4.png', title: 'End of Season Sale', brand: 'QCY Indonesia', description: 'End-of-season campaign banner for the QCY H3 Pro headphone, offering up to 70% off.' },
+  { src: '/design-creative/12.12 Choetech.png', title: 'Pay Day Sale — Akhir Tahun', brand: 'Choetech Indonesia', description: 'Year-end pay day sale banner for the Choetech power bank series, offering up to 70% off.' },
+  { src: '/design-creative/12.12 QCY.png', title: 'Pay Day Mega Sale', brand: 'QCY Indonesia', description: 'Pay day mega sale banner for QCY audio products, offering up to 70% off.' },
+  { src: '/design-creative/Promo 7.7.png', title: '7.7 Flash Sale', brand: 'QCY Indonesia', description: 'Flash sale banner offering up to 70% off plus one month of free Spotify Premium with minimum purchase.' },
+  { src: '/design-creative/Choetech cuci gudang.png', title: 'End of Season Clearance', brand: 'Choetech Indonesia', description: 'Clearance campaign banner for chargers, power banks, and accessories, offering up to 80% off all items.' },
 ]
 
 const socialMediaSlides: CreativeSlide[] = [
@@ -123,13 +124,13 @@ export function DesignCreativeCarousel() {
 
         {slides.length ? <>
           <div className="relative mt-12 overflow-hidden pb-8 pt-4" onPointerDown={(event) => setDragStart(event.clientX)} onPointerUp={(event) => { if (dragStart === null) return; const delta = event.clientX - dragStart; if (Math.abs(delta) > 50) goTo(activeIndex + (delta < 0 ? 1 : -1)); setDragStart(null) }}>
-            <div className={`relative mx-auto w-full max-w-6xl ${isSocialMedia ? 'h-[300px] sm:h-[420px] lg:h-[520px]' : 'h-[220px] sm:h-[330px] lg:h-[460px]'}`}>
+            <div className="relative mx-auto w-full max-w-6xl" style={{ height: isSocialMedia ? 'min(68vw, 520px)' : 'calc(min(78vw, 820px) / 2)' }}>
               {slides.map((slide, index) => {
                 const offset = getOffset(index, activeIndex, slides.length)
                 const visible = Math.abs(offset) <= 2
                 const active = offset === 0
-                return <button key={slide.src} type="button" aria-label={`Show ${slide.title}`} aria-pressed={active} onClick={() => goTo(index)} className={`absolute left-1/2 top-1/2 overflow-hidden rounded-2xl border border-[#E8E6F8] bg-white shadow-lg transition-[transform,opacity,filter] duration-600 ease-out ${visible ? 'pointer-events-auto' : 'pointer-events-none'}`} style={{ width: isSocialMedia ? 'min(68vw, 520px)' : 'min(78vw, 820px)', aspectRatio: isSocialMedia ? '1 / 1' : undefined, height: isSocialMedia ? 'auto' : '100%', zIndex: active ? 30 : 20 - Math.abs(offset), opacity: active ? 1 : visible ? 0.4 : 0, transform: `translate(-50%, -50%) translateX(calc(${offset} * ${isSocialMedia ? 'min(42vw, 430px)' : 'min(60vw, 570px)'})) scale(${active ? 1 : 0.78})`, filter: active ? 'none' : 'saturate(0.7)' }}>
-                  <Image src={slide.src} alt={slide.title} fill sizes="(max-width: 768px) 78vw, 820px" className="object-cover" />
+                return <button key={slide.src} type="button" aria-label={`Show ${slide.title}`} aria-pressed={active} onClick={() => goTo(index)} className={`absolute left-1/2 top-1/2 overflow-hidden rounded-2xl border border-[#E8E6F8] bg-white shadow-lg transition-[transform,opacity,filter] duration-600 ease-out ${visible ? 'pointer-events-auto' : 'pointer-events-none'}`} style={{ width: isSocialMedia ? 'min(68vw, 520px)' : 'min(78vw, 820px)', aspectRatio: isSocialMedia ? '1 / 1' : '2 / 1', height: 'auto', zIndex: active ? 30 : 20 - Math.abs(offset), opacity: active ? 1 : visible ? 0.4 : 0, transform: `translate(-50%, -50%) translateX(calc(${offset} * ${isSocialMedia ? 'min(42vw, 430px)' : 'min(60vw, 570px)'})) scale(${active ? 1 : 0.78})`, filter: active ? 'none' : 'saturate(0.7)' }}>
+                  <Image src={slide.src} alt={slide.title} fill sizes="(max-width: 768px) 78vw, 820px" className="object-contain" />
                   {!active && <span className="absolute inset-0 bg-[#0F0A2E]/10" aria-hidden="true" />}
                 </button>
               })}
@@ -139,7 +140,7 @@ export function DesignCreativeCarousel() {
             <div className="mt-5 flex justify-center gap-2" role="tablist" aria-label={`${category.label} slides`}>{slides.map((slide, index) => <button key={slide.src} type="button" aria-label={`Go to ${slide.title}`} aria-selected={activeIndex === index} onClick={() => goTo(index)} className={`h-2.5 rounded-full transition-all duration-300 ${activeIndex === index ? 'w-7 bg-[#2D1BB8]' : 'w-2.5 bg-[#C9C6E6] hover:bg-[#9B97C0]'}`} />)}</div>
           </div>
           <div className="rounded-2xl border border-[#E8E6F8] bg-white p-6 sm:p-8"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2D1BB8]">{category.label}</p><div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"><h3 className="text-2xl font-bold text-[#0F0A2E]">{slides[activeIndex].title}</h3><span className="text-sm text-[#4B4680]">{activeIndex + 1} / {slides.length}</span></div><p className="mt-3 max-w-3xl text-[#4B4680] leading-relaxed">{slides[activeIndex].description}</p><p className="mt-2 text-sm font-medium text-[#6D4AFF]">{slides[activeIndex].brand}</p></div>
-          <div className="mt-8"><h3 className="mb-4 text-lg font-bold text-[#0F0A2E]">More {category.label}</h3><div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">{slides.map((slide, index) => <button key={slide.src} type="button" onClick={() => goTo(index)} className={`overflow-hidden rounded-xl border-2 bg-white text-left ${activeIndex === index ? 'border-[#2D1BB8]' : 'border-transparent'}`}><div className={`relative ${isSocialMedia ? 'aspect-square' : 'aspect-[16/9]'}`}><Image src={slide.src} alt={slide.title} fill sizes="160px" className="object-cover" /></div><span className="block truncate px-2 py-2 text-xs text-[#4B4680]">{slide.title}</span></button>)}</div></div>
+          <div className="mt-8"><h3 className="mb-4 text-lg font-bold text-[#0F0A2E]">More {category.label}</h3><div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">{slides.map((slide, index) => <button key={slide.src} type="button" onClick={() => goTo(index)} className={`overflow-hidden rounded-xl border-2 bg-white text-left ${activeIndex === index ? 'border-[#2D1BB8]' : 'border-transparent'}`}><div className={`relative ${isSocialMedia ? 'aspect-square' : 'aspect-[2/1]'}`}><Image src={slide.src} alt={slide.title} fill sizes="160px" className="object-contain" /></div><span className="block truncate px-2 py-2 text-xs text-[#4B4680]">{slide.title}</span></button>)}</div></div>
         </> : <div className="mt-10 rounded-2xl border border-dashed border-[#C9C6E6] bg-white p-10 text-center text-[#4B4680]">This showcase is coming soon. New work will be added here.</div>}
       </div>
     </section>
