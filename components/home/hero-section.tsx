@@ -26,7 +26,7 @@ export function HeroSection() {
             
             {/* Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              {"Hi, I'm "}
+              {t('greeting')}
               <span className="text-[#F97316]">Nur Afni</span>
             </h1>
             
