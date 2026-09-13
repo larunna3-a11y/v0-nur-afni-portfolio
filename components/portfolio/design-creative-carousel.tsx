@@ -26,7 +26,7 @@ const socialMediaSlides: CreativeSlide[] = [
   src: `/design-social-new/QCY%20Catalog%20Instagaram-2024/${encodeURIComponent(filename)}`,
   title: `QCY Social Creative ${String(index + 1).padStart(2, '0')}`,
   brand: 'QCY Indonesia',
-  description: 'Product and campaign visual designed for a clear, engaging social media feed.',
+  description: 'Social media creatives built to communicate product features, campaign offers, launches, and brand stories through engaging visual storytelling.',
 }))
 
 const categories: Category[] = [
