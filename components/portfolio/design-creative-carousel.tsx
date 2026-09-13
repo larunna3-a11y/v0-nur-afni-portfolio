@@ -18,8 +18,8 @@ const marketplaceSlides: CreativeSlide[] = [
 ]
 
 const socialMediaSlides: CreativeSlide[] = [
-  ['6-16.png', 'QCY T20 New Arrival', "Product launch creative highlighting the QCY T20's new-arrival positioning."],
-  ['48.png', 'Choetech 65W Mini Charger', 'Promotional social creative highlighting the compact 65W charger and offer messaging.'],
+  ['6-16.png', 'QCY Offline Store', "Product launch creative highlighting of the products it's here close yout doorstep from our offlinr distributor with new-arrival positioning."],
+  ['48.png', 'Choetech ECN TWS new feature', 'Promotional social creative highlighting the compact 65W charger and offer messaging.'],
   ['H010.png', 'QCY Playlist — Armageddon', "Lifestyle-driven social creative connecting QCY's audio products with music and playlist culture."],
   ['49.png', 'Choetech Product Feature', 'Product feature creative presenting the featured Choetech device through clear visual storytelling.'],
   ['8.png', 'QCY Audio Product Story', 'Brand storytelling creative focused on QCY listening and audio-product culture.'],
