@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "lab": "Lab",
+    "contact": "Kontak",
+    "services": "Layanan",
+    "portfolio": "Portofolio",
+    "marketing": "Marketing",
+    "builder": "Builder",
+    "consulting": "Konsultasi",
+    "learning": "Pembelajaran",
+    "caseStudies": "Studi Kasus",
+    "recruitMe": "Rekrut Saya",
+    "hireMe": "Sewa Jasa Saya"
+  },
+  "footer": {
+    "tagline": "Digital Marketing Specialist berbasis di Jakarta, Indonesia. Membantu brand berkembang lewat media sosial, iklan berbayar, dan marketplace.",
+    "navigation": "Navigasi",
+    "rights": "Seluruh hak cipta dilindungi.",
+    "location": "Jakarta, Indonesia",
+    "nav": {
+      "home": "Beranda",
+      "about": "Tentang",
+      "services": "Layanan",
+      "portfolio": "Portofolio",
+      "contact": "Kontak"
+    },
+    "services": {
+      "socialMedia": "Media Sosial",
+      "ecommerce": "E-Commerce",
+      "paidAds": "Iklan Berbayar",
+      "strategy": "Strategi Digital",
+      "kol": "Strategi KOL"
+    }
+  },
+  "home": {
+    "hero": {
+      "availableBadge": "Terbuka untuk Proyek Baru",
+      "greeting": "Hai, aku ",
+      "subtitle": "Membantu brand berkembang lewat media sosial, e-commerce, dan marketing berbasis data.",
+      "bio": "Saat ini mengelola beberapa brand sambil membangun side project dan berbagi insight seputar growth, sistem kerja, dan kreativitas.",
+      "stats": {
+        "peakRevenue": "Puncak Revenue",
+        "revenueGrowth": "Pertumbuhan Revenue",
+        "followerGrowth": "Pertumbuhan Followers",
+        "peakOrders": "Puncak Pesanan",
+        "totalEngagement": "Total Engagement",
+        "budgetManaged": "Budget Dikelola"
+      }
+    },
+    "servicesSnapshot": {
+      "title": "Apa yang Aku Kerjakan",
+      "subtitle": "Digital marketing end-to-end di setiap channel yang mendorong pertumbuhan.",
+      "viewAll": "Lihat semua layanan",
+      "items": {
+        "socialMedia": {
+          "title": "Manajemen Media Sosial",
+          "description": "Strategi konten, perencanaan kalender, dan eksekusi growth di Instagram & TikTok."
+        },
+        "ecommerce": {
+          "title": "Manajemen E-Commerce",
+          "description": "Pengelolaan marketplace end-to-end di Shopee, TikTok Shop, Tokopedia & Lazada."
+        },
+        "paidAds": {
+          "title": "Iklan Berbayar",
+          "description": "Kampanye Meta Ads, TikTok Ads, dan Shopee CPAS yang dioptimalkan untuk ROAS."
+        },
+        "strategy": {
+          "title": "Strategi Digital",
+          "description": "Strategi growth full-funnel yang menggabungkan konten, iklan, dan eksekusi marketplace."
+        },
+        "kol": {
+          "title": "Strategi KOL & Affiliator",
+          "description": "Manajemen kampanye creator dan affiliate dari brief sampai laporan performa."
+        }
+      }
+    },
+    "selectedWork": {
+      "title": "Karya Pilihan",
+      "subtitle": "Kampanye nyata. Angka nyata.",
+      "viewFull": "Lihat portofolio lengkap",
+      "items": {
+        "priskila": {
+          "category": "Manajemen E-Commerce",
+          "result": "Rp24M \u2192 Rp1.2B (pertumbuhan 31x)"
+        },
+        "qcy": {
+          "category": "Product Launch",
+          "result": "Revenue Rp91.8M di hari peluncuran"
+        },
+        "islamCendekia": {
+          "category": "Media Sosial",
+          "result": "Pertumbuhan followers +189% dalam 4 bulan"
+        }
+      }
+    },
+    "tools": {
+      "label": "Perkakas Kerja",
+      "title": "Digital Toolkit",
+      "description": "Platform, tools AI, dan sistem yang aku pakai untuk membangun kampanye, menganalisis data, mengelola marketplace, dan membuat produk digital.",
+      "categories": {
+        "marketplace": {
+          "title": "Manajemen Marketplace",
+          "description": "Mengelola operasional toko, listing produk, kampanye, promosi, dan pertumbuhan marketplace."
+        },
+        "advertising": {
+          "title": "Advertising & Growth",
+          "description": "Mengelola akuisisi berbayar, optimasi, dan kampanye performa."
+        },
+        "affiliate": {
+          "title": "Affiliate & Livestream Commerce",
+          "description": "Mengelola aktivasi affiliate, kerja sama creator, dan livestream commerce."
+        },
+        "creative": {
+          "title": "Konten & Kreatif",
+          "description": "Membuat aset konten, visual marketing, dan materi kreatif media sosial."
+        },
+        "analytics": {
+          "title": "Analytics & Operasional",
+          "description": "Pelaporan, forecasting, perencanaan, dan manajemen operasional."
+        },
+        "ai": {
+          "title": "AI & Pengembangan Produk",
+          "description": "Membangun produk digital, alur kerja, sistem, dashboard, dan website."
+        }
+      }
+    }
+  }
+}
