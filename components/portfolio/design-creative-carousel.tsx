@@ -14,7 +14,7 @@ const marketplaceSlides: CreativeSlide[] = [
   { src: '/design-creative/4.png', title: 'Brand Promotion Visual', brand: 'Choetech Indonesia', description: 'A clean promotional composition built around brand and product storytelling.' },
   { src: '/design-creative/12.12 Choetech.png', title: '12.12 Choetech Campaign', brand: 'Choetech Indonesia', description: 'Seasonal marketplace banner for a major shopping campaign.' },
   { src: '/design-creative/12.12 QCY.png', title: '12.12 QCY Campaign', brand: 'QCY Indonesia', description: 'Seasonal campaign visual combining product presentation and promotional messaging.' },
-  { src: '/design-creative/CHoetech cuci gudang 1.png', title: 'Clearance Campaign', brand: 'Choetech Indonesia', description: 'Clearance campaign banner with direct offer-led communication.' },
+  { src: '/design-creative/7.png', title: 'Musical Campaign with spotify', brand: 'QCY Indonesia', description: 'Promotional 7.7 Sale special with free gift.' },
 ]
 
 const socialMediaSlides: CreativeSlide[] = [
