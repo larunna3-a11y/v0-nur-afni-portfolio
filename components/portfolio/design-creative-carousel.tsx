@@ -8,13 +8,14 @@ type CreativeSlide = { src: string; title: string; brand: string; description: s
 type Category = { label: string; description: string; icon: typeof ImageIcon; slides: CreativeSlide[] }
 
 const marketplaceSlides: CreativeSlide[] = [
-  { src: '/design-creative/1.png', title: 'Giant Sale Campaign', brand: 'QCY & Choetech', description: 'Marketplace campaign banner created for a high-impact promotional moment.' },
-  { src: '/design-creative/2.png', title: 'Promotional Campaign Visual', brand: 'QCY Indonesia', description: 'Promotional visual balancing product focus, offer messaging, and strong hierarchy.' },
-  { src: '/design-creative/3.png', title: 'Product Campaign Banner', brand: 'Choetech Indonesia', description: 'Product-led campaign creative designed for marketplace visibility.' },
-  { src: '/design-creative/4.png', title: 'Brand Promotion Visual', brand: 'Choetech Indonesia', description: 'A clean promotional composition built around brand and product storytelling.' },
-  { src: '/design-creative/12.12 Choetech.png', title: '12.12 Choetech Campaign', brand: 'Choetech Indonesia', description: 'Seasonal marketplace banner for a major shopping campaign.' },
-  { src: '/design-creative/12.12 QCY.png', title: '12.12 QCY Campaign', brand: 'QCY Indonesia', description: 'Seasonal campaign visual combining product presentation and promotional messaging.' },
-  { src: '/design-creative/Promo 7.7.png', title: '7.7 Musical Campaign with spotify', brand: 'QCY Indonesia', description: 'Promotional 7.7 Sale special with free gift.' },
+  { src: '/design-creative/1.png', title: 'Power Sale 11.11', brand: 'Choetech Indonesia', description: 'Power bank campaign banner for the 11.11 sale, offering up to 60% off.' },
+  { src: '/design-creative/2.png', title: 'Giant Sale November 11.11', brand: 'QCY Indonesia', description: 'Audio product campaign banner for the 11.11 giant sale, with up to 40% off plus an extra discount.' },
+  { src: '/design-creative/3.png', title: 'Clearance Mega Sale', brand: 'QCY Indonesia', description: 'Earbuds clearance campaign banner offering up to 70% off.' },
+  { src: '/design-creative/4.png', title: 'End of Season Sale', brand: 'QCY Indonesia', description: 'End-of-season campaign banner for the QCY H3 Pro headphone, offering up to 70% off.' },
+  { src: '/design-creative/12.12 Choetech.png', title: 'Pay Day Sale — Akhir Tahun', brand: 'Choetech Indonesia', description: 'Year-end pay day sale banner for the Choetech power bank series, offering up to 70% off.' },
+  { src: '/design-creative/12.12 QCY.png', title: 'Pay Day Mega Sale', brand: 'QCY Indonesia', description: 'Pay day mega sale banner for QCY audio products, offering up to 70% off.' },
+  { src: '/design-creative/Promo 7.7.png', title: '7.7 Flash Sale', brand: 'QCY Indonesia', description: 'Flash sale banner offering up to 70% off plus one month of free Spotify Premium with minimum purchase.' },
+  { src: '/design-creative/Choetech cuci gudang.png', title: 'End of Season Clearance', brand: 'Choetech Indonesia', description: 'Clearance campaign banner for chargers, power banks, and accessories, offering up to 80% off all items.' },
 ]
 
 const socialMediaSlides: CreativeSlide[] = [
