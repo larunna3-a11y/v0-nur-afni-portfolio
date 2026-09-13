@@ -14,12 +14,12 @@ const marketplaceSlides: CreativeSlide[] = [
   { src: '/design-creative/4.png', title: 'Brand Promotion Visual', brand: 'Choetech Indonesia', description: 'A clean promotional composition built around brand and product storytelling.' },
   { src: '/design-creative/12.12 Choetech.png', title: '12.12 Choetech Campaign', brand: 'Choetech Indonesia', description: 'Seasonal marketplace banner for a major shopping campaign.' },
   { src: '/design-creative/12.12 QCY.png', title: '12.12 QCY Campaign', brand: 'QCY Indonesia', description: 'Seasonal campaign visual combining product presentation and promotional messaging.' },
-  { src: '/design-creative/CHoetech cuci gudang 1.png', title: 'Clearance Campaign', brand: 'Choetech Indonesia', description: 'Clearance campaign banner with direct offer-led communication.' },
+  { src: '/design-creative/7.png', title: '7.7 Musical Campaign with spotify', brand: 'QCY Indonesia', description: 'Promotional 7.7 Sale special with free gift.' },
 ]
 
 const socialMediaSlides: CreativeSlide[] = [
-  ['6-16.png', 'QCY T20 New Arrival', "Product launch creative highlighting the QCY T20's new-arrival positioning."],
-  ['48.png', 'Choetech 65W Mini Charger', 'Promotional social creative highlighting the compact 65W charger and offer messaging.'],
+  ['6-16.png', 'QCY Offline Store', "Product launch creative highlighting of the products it's here close yout doorstep from our offlinr distributor with new-arrival positioning."],
+  ['48.png', 'Choetech ECN TWS new feature', 'Promotional social creative highlighting the compact 65W charger and offer messaging.'],
   ['H010.png', 'QCY Playlist — Armageddon', "Lifestyle-driven social creative connecting QCY's audio products with music and playlist culture."],
   ['49.png', 'Choetech Product Feature', 'Product feature creative presenting the featured Choetech device through clear visual storytelling.'],
   ['8.png', 'QCY Audio Product Story', 'Brand storytelling creative focused on QCY listening and audio-product culture.'],
