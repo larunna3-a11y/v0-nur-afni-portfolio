@@ -125,6 +125,14 @@
           "description": "Building digital products, workflows, systems, dashboards, and websites."
         }
       }
+    },
+    "categories": {
+      "marketplace": { "title": "Marketplace Management", "description": "Managing store operations, product listings, campaigns, promotions, and marketplace growth." },
+      "advertising": { "title": "Advertising & Growth", "description": "Managing paid acquisition, optimization, and performance campaigns." },
+      "affiliate": { "title": "Affiliate & Livestream Commerce", "description": "Managing affiliate activation, creator partnerships, and livestream commerce." },
+      "creative": { "title": "Content & Creative", "description": "Creating content assets, marketing visuals, and social media creatives." },
+      "analytics": { "title": "Analytics & Operations", "description": "Reporting, forecasting, planning, and operational management." },
+      "ai": { "title": "AI & Product Development", "description": "Building digital products, workflows, systems, dashboards, and websites." }
     }
   }
 }

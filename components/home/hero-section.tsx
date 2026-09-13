@@ -1,10 +1,13 @@
-const stats = [
-  { value: 'Rp1.2B', label: 'Peak Revenue' },
-  { value: '31x', label: 'Revenue Growth' },
-  { value: '+189%', label: 'Follower Growth' },
+const statKeys = [
+  { value: 'Rp1.2B', key: 'peakRevenue' },
+  { value: '31x', key: 'revenueGrowth' },
+  { value: '+189%', key: 'followerGrowth' },
 ]
 
+import { useTranslations } from 'next-intl'
+
 export function HeroSection() {
+  const t = useTranslations('home.hero')
   return (
     <section className="relative bg-[#2D1BB8] overflow-hidden">
       {/* Glow effects */}
@@ -18,7 +21,7 @@ export function HeroSection() {
             {/* Availability Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#Ffffff] bg-transparent mb-6">
               <span className="w-2 h-2 bg-[#06D001] rounded-full animate-pulse" />
-              <span className="text-[#06D001] text-sm font-medium">Available for Projects</span>
+              <span className="text-[#06D001] text-sm font-medium">{t('availableBadge')}</span>
             </div>
             
             {/* Heading */}
@@ -29,23 +32,23 @@ export function HeroSection() {
             
             {/* Subtitle */}
             <p className="mt-4 text-xl text-[#E8E6F8]">
-              Helping brands grow through social media, e-commerce, and data-driven marketing.
+              {t('subtitle')}
             </p>
             
             {/* Bio */}
             <p className="mt-6 text-[#9B97C0] leading-relaxed max-w-lg">
-              Currently managing brands while building side projects and sharing insights on growth, systems, and creativity.
+              {t('bio')}
             </p>
             
             {/* Stats Cards */}
             <div className="mt-10 grid grid-cols-3 gap-4">
-              {stats.map((stat) => (
+              {statKeys.map((stat) => (
                 <div
-                  key={stat.label}
+                  key={stat.key}
                   className="glass-card rounded-xl p-4 text-center"
                 >
                   <div className="text-xl sm:text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-[#9B97C0] mt-1">{stat.label}</div>
+                  <div className="text-xs text-[#9B97C0] mt-1">{t(`stats.${stat.key}`)}</div>
                 </div>
               ))}
             </div>

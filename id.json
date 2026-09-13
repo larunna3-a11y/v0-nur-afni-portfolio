@@ -125,6 +125,14 @@
           "description": "Membangun produk digital, alur kerja, sistem, dashboard, dan website."
         }
       }
+    },
+    "categories": {
+      "marketplace": { "title": "Manajemen Marketplace", "description": "Mengelola operasional toko, listing produk, kampanye, promosi, dan pertumbuhan marketplace." },
+      "advertising": { "title": "Advertising & Growth", "description": "Mengelola akuisisi berbayar, optimasi, dan kampanye performa." },
+      "affiliate": { "title": "Affiliate & Livestream Commerce", "description": "Mengelola aktivasi affiliate, kerja sama creator, dan livestream commerce." },
+      "creative": { "title": "Konten & Kreatif", "description": "Membuat aset konten, visual marketing, dan materi kreatif media sosial." },
+      "analytics": { "title": "Analytics & Operasional", "description": "Pelaporan, forecasting, perencanaan, dan manajemen operasional." },
+      "ai": { "title": "AI & Pengembangan Produk", "description": "Membangun produk digital, alur kerja, sistem, dashboard, dan website." }
     }
   }
 }
